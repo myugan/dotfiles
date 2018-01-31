@@ -1,0 +1,19 @@
+#!/bin/sh
+
+xrdb -merge ~/.Xresources
+
+# font
+xset fp+ ~/.fonts
+xset fp rehash
+
+# wifi
+nm-applet &
+
+# volume
+volwheel &
+
+# Wallpaper
+feh --bg-fill ~/Pictures/Wallpaper/multicolor.jpg
+
+# Panel
+tint2 -c ~/.config/tint2/candy.tint2rc

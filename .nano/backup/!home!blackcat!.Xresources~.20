@@ -1,0 +1,64 @@
+! Colors
+#include "/home/blackcat/.colors/night"
+
+! Extention
+URxvt.perl-lib: /home/blackcat/.urxvt/urxvt-perls
+URxvt.perl-ext-common:  default,clipboard,keyboard-select,url-select,resize-font
+URxvt.clipboard.autocopy: true
+
+! Config
+URxvt.termName: rxvt-unicode
+URxvt.geometry: 125x26+344+202
+URxvt.internalBorder: 23
+!URxvt.transparent: true
+!URxvt.shading: 5
+!URxvt.fadecolor: #0c0c0c
+!URxvt.fading: 30
+URxvt.scrollBar: false
+URxvt.saveLine: 10000
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.letterSpace: -1
+!URxvt.lineSpace: 2
+URxvt.cursorUnderline: true
+URxvt.url-select.launcher: firefox
+URxvt.url-select.underline: true
+
+! Keybind
+URxvt.keysym.Control-Alt-C: perl:clipboard:copy
+URxvt.keysym.Control-Alt-V: perl:clipboard:paste
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-u: perl:url-select:select_next
+
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+! Xft
+Xft.antialias:  1
+Xft.autohint:   0
+Xft.dpi:    96
+Xft.hinting:    1
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
+Xft.rgba: rgb
+
+! Fonts
+!URxvt*font: xft:Fira Mono for Powerline:Regular:pixelsize=9:antialias=true:hinting=true
+URxvt*font: xft:Fantasque Sans Mono:Regular:pixelsize=9:antialias=true:hinting=true
+
+! Bitmap Fonts
+!URxvt*font: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
+!URxvt*boldFont: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
+!URxvt*italicFont: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
+!URxvt*bolditalicFont: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
+
+!URxvt*font:  -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
+!URxvt*boldFont: -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
+!URxvt*italicFont: -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
+!URxvt*bolditalicFont: -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
+
+!URxvt*font:-kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
+!URxvt*boldFont:-kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
+!URxvt*italicFont:-kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
+!URxvt*bolditalicFont:-kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1

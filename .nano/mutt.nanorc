@@ -1,0 +1,146 @@
+## Syntax definition for mutt emails with GNU Nano
+##
+## (C) 02/2013 Lilian Besson (lilian DOT besson AT normale DOT fr)
+## Last version : http://besson.qc.to/NanoSyntax/mutt.nanorc
+##############################################################################
+# Definition of the syntax for emails, under mutt.
+syntax "mutt"
+
+##############################################################################
+## Embed rST coloration
+## because rST is the badass language!
+# Numbers
+color white "-?[0-9\.][0-9\._,]*([eE]-?)?[0-9\._,]*"
+# code block
+color brightred,black "(::|FIXME|TODO|NEW|XXX|HOWTO|DEBUG|WARNING|PEP)"
+# wrong links (empty)
+color white,red "[a-z][a-z]+://[^([[:alnum:]]|[\]\[])]*"
+# literals blocks (quotation) like in emails
+color red "^ *>+.*$"
+# Specials zones
+color yellow "\$[^\$]+\$"
+# unknown interpreted text
+color green,black "`[[:alnum:]]+`"
+# anon link targets
+color brightgreen "[[:alnum:]]+_[^[[:alnum:]]]"
+color cyan "^[[:blank:]]*__ .*$"
+# highligths (fixme)
+# color brightmagenta "[^`]?`([[:alnum:]]|[[:space:]]|[,-\.\+\(\)\|\[\])+`[^`]?"
+color brightmagenta "`([[:alnum:]]|[,-\.\+\(\)\|\[\])+`"
+color magenta,black "`([[:alnum:]]|[[:space:]]|[,-\.\+\(\)\|\[\])+`\\"
+# Balise <truc> et </truc>, pour embarquer du JavaScript notamment.
+color brightwhite,black "</?[[:alnum:]]+([[:space:]]+[[:alnum:]]*=\"[^\"]*\")*>"
+##############################################################################
+#
+# Comments and directives
+#
+# comments
+color blue "^\.\. [^[\[_]]*.*$"
+# unknown directives
+color brightwhite,red "^([[:blank:]]|\|)*\.\. [a-z][a-zA-Z0-9_-]*::.*$"
+# usual rst (docutils) directives
+icolor brightcyan "^([[:blank:]]|\|)*\.\. (warning|attention|caution|danger|error|hint|important|note|tip|image|figure|contents|container|rubric|topic|sidebar|parsed-literal|epigraph|highlights|pull-quote|compound|table|csv-table|list-table|raw|include|class|meta|title|default-role|role|section-numbering|admonition)*::.*$"
+# sphinx directives
+color brightcyan "^([[:blank:]]|\|)*\.\. (code-block|literalinclude|senctionauthor|codeauthor|index|only|tabularcolumns|productionlist|glossary|hlist|rubric|centered|seealso|deprecated|versionchanged|versionadded|toctree|function|warning)*::.*$"
+# sphinx extensions directives
+color brightcyan "^([[:blank:]]|\|)*\.\. (gnuplot|runblock|math|todo|todolist|graphviz|digraph|graph|pypi-release)*::.*$"
+# rst2s5 additionals directives
+color brightcyan "^([[:blank:]]|\|)*\.\. (footer|target-notes)*::.*$"
+# directives options
+# color cyan "^([[:blank:]]|\|)*:[a-zA-Z][a-zA-Z0-9-]*([[:blank:]]*[[:alnum:]]+(=[[:alnum:]]+)?)*: *"
+color cyan ":[a-zA-Z][a-zA-Z0-9-]*([[:blank:]]*[[:alnum:]]+(=[[:alnum:]]+)?)*: *"
+##############################################################################
+#
+# Lists, and tables
+#
+# lists (not yet perfect)
+color brightwhite "(^ *[\*\+-]([[:blank:]]| *[\*\+-])+)|(^ *#\.[[:blank:]]+)|(^ *[0-9]+\.[[:blank:]]+)|(^ *[\(]?[a-z]+[\.\)][[:blank:]]+)|(^ *[\(]?[A-Z]+[\.\)][[:blank:]]+)"
+# options lists
+color white "^ *([/\+\-]{1,2}[a-zA-Z0-9][[:blank:]]?([[:alnum:]]|_)*[,=]*([[:alnum:]]|_)*[[:blank:]]*)+"
+# tables
+color white,red "\+--(-+\+)*-+"
+color white "\+--(-+\+)*-+\+"
+color brightwhite,red "\+==(=+\+)*=+"
+color brightwhite "\+==(=+\+)*=+\+"
+color brightwhite "^ *==+([[:blank:]]+==+)+"
+# special caracter '|' : for tables and for line blocks
+color brightwhite "\|"
+##############################################################################
+#
+# Citations and footnotes
+#
+# Citations
+color brightwhite "(\[[[:alnum:]]+\]_)|(^\.\. \[[[:alnum:]]+\])"
+# Footnotes
+color white "(\[#\*\]_)|(^\.\. \[\*\])"
+color white "(\[#[[:alnum:]]*\]_)|(^\.\. \[#[[:alnum:]]*\])"
+# Substitutions
+color brightblack "(\|[[:alnum:]]+\||^\.\. \|[[:alnum:]]+\| .*)"
+##############################################################################
+#
+# Links and others:
+#
+# link reference
+color brightgreen "((`[^`]+`_{1,2})|([[:blank:]]*\.\. _[[:alnum:]]+.*: .*$))"
+# targets
+color brightgreen "^ *\.\. _[[:alnum:]]+:"
+# email
+icolor brightred,black "(mailto:)?[[:alnum:]]([[:alnum:]]|[_\.\[\]\--]|\.|-)*(@|AT)[[:alnum:]]([[:alnum:]]|[_\.\[\]\--]|\.|-)*\.[[:alnum:]]+"
+# http, ftp, https, apt, links
+icolor red,black "[a-z][a-z]+://[[:alnum:]]([[:alnum:]]|[-_\.~#\?:=%&])*([[:alnum:]]|[-/_\.~#\?:=%&;])*"
+##############################################################################
+#
+# Markup for bold, italics and code
+#
+# italics
+color red "\*[[:alnum:]]([[:alnum:]]|[[:space:]]|-|,|;|\.|'|\$|\\|/)*\*\\?"
+color brightmagenta "\"[a-zA-Z]([[:alnum:]]|[[:space:]]|-|,|;|\.|'|\$|\\|/)*\"\\?"
+color brightmagenta "'[a-zA-Z]([[:alnum:]]|-|,|;|\.|'|\$|\\|/)*'\\?"
+color brightmagenta "“[a-zA-Z]([[:alnum:]]|-|,|;|\.|'|\$|\\|/)*”\\?"
+# bold
+color brightyellow "\*\*[^*^*]+\*\*\\?"
+# error handling
+color brightred,black "\|\*\*\*[^*]+\*\*\*\|"
+# unknown interpreted texts
+color yellow ":[[:alnum:]]+:`[^`]+`\\?"
+color yellow "`[^`]+`:[[:alnum:]]+:\\?"
+# eq and others
+color brightyellow ":(PEP|RFC|sub|sup|strong|code|emphasis|strong|literal):`[^`]+`\\?"
+# math
+color brightyellow,black ":math:`[^`]+`\\?"
+# specials comments (un handle by previous rules)
+color red "^\.\. \(c\).*$"
+# code
+color white,red "``.+``"
+#color white,red start="``" end="``"
+color yellow "``[^`]+``\\?"
+##############################################################################
+#
+# Titles
+#
+# h1
+color brightyellow "^###+$"
+color yellow "^\*\*\*+$"
+# h2
+color brightmagenta "^===+$"
+# h3
+color brightred "^---+$"
+# h4
+color brightblue "^\^\^\^+$"
+# h5
+color blue "^"""+$"
+# h6
+color brightmagenta "^~~~+$"
+# inline markups
+color brightmagenta,black "^```+$"
+##############################################################################
+## Specials for mutt
+# Quotations
+color brightred "^>.*"
+color red "^> >.*"
+
+# Headers
+color blue,white "^[A-Za-z\-]+:"
+
+## END
+##############################################################################

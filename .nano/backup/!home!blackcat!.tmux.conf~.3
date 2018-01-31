@@ -1,0 +1,159 @@
+activity-action other
+assume-paste-time 1
+base-index 0
+bell-action any
+default-command ""
+default-shell "/usr/bin/zsh"
+destroy-unattached off
+detach-on-destroy on
+display-panes-active-colour red
+display-panes-colour blue
+display-panes-time 1000
+display-time 750
+history-limit 2000
+key-table "root"
+lock-after-time 0
+lock-command "lock -np"
+message-command-style fg=yellow,bg=black
+message-style fg=black,bg=yellow
+mouse off
+prefix C-b
+prefix2 None
+renumber-windows off
+repeat-time 500
+set-titles off
+set-titles-string "#S:#I:#W - \"#T\" #{session_alerts}"
+silence-action other
+status on
+status-interval 15
+status-justify left
+status-keys vi
+status-left "[#S] "
+status-left-length 10
+status-left-style default
+status-position bottom
+status-right " \"#{=21:pane_title}\" %H:%M %d-%b-%y"
+status-right-length 40
+status-right-style default
+status-style fg=black,bg=green
+update-environment[0] "DISPLAY"
+update-environment[1] "SSH_ASKPASS"
+update-environment[2] "SSH_AUTH_SOCK"
+update-environment[3] "SSH_AGENT_PID"
+update-environment[4] "SSH_CONNECTION"
+update-environment[5] "WINDOWID"
+update-environment[6] "XAUTHORITY"
+visual-activity off
+visual-bell off
+visual-silence off
+word-separators " -_@"
+##
+## Basic Options
+##
+
+# UTF-8
+set -g utf8 on
+set -g status-utf8 on
+
+# Mouse
+set -g mouse-select-pane off
+set -g mode-mouse off
+set -g mouse-select-window off
+set -g mouse-resize-pane off
+
+# Shut up!
+set -g bell-action none
+set -g bell-on-alert off
+set quiet off
+
+# Fix terminal name issues
+set -s escape-time 1
+
+# Enable status bar
+bind-key b set status
+
+
+##
+## Copy mode
+##
+
+unbind [
+bind Escape copy-mode
+setw -g mode-keys vi
+unbind p
+bind p paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+
+
+##
+## Key bindings
+##
+
+unbind b
+set -g prefix C-k
+
+# Reload configuration
+bind r source-file ~/.tmux.conf
+
+# Panel splites and selection
+unbind %
+bind g split-window -h
+unbind '"'
+bind v split-window -v
+unbind o
+bind-key -n C-g last-window
+bind-key -n C-b previous-window
+bind-key -n C-n next-window
+bind n next-window
+bind b previous-window
+
+# Move around panes with hjkl, as one would in vim after pressing ctrl-w
+unbind Left
+unbind Right
+unbind Up
+unbind Down
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Resize
+bind H resize-pane -L 5
+bind J resize-pane -D 5
+bind K resize-pane -U 5
+bind L resize-pane -R 5
+
+# Kill
+bind q kill-window
+bind Q kill-session
+
+
+##
+## Appearance
+##
+
+# Status bar
+set -g status-position bottom
+set -g status-interval 4
+set -g status-left ''
+set -g status-right ''
+set -g status-justify centre # center align window list
+
+setw -g status-bg default
+setw -g window-status-current-bg default
+setw -g window-status-current-fg default
+setw -g window-status-bg default
+setw -g window-status-fg white
+setw -g window-status-format '#[bg=black]#[fg=black,bold] #I #[bg=default] #[fg=black]#W  '
+setw -g window-status-current-format '#[fg=white]#[bg=cyan] #I #[fg=cyan]#[bg=default] #W  '
+
+# Panel borders
+set -g pane-active-border-fg cyan
+set -g pane-active-border-bg default
+set -g pane-border-fg black
+set -g pane-border-bg default
+
+# Message text
+set-option -g message-bg default
+set-option -g message-fg default

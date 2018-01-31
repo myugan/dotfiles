@@ -1,0 +1,358 @@
+$font = "PF Arma Five:size=6#left#XFT"
+
+Require
+{
+	Templates	= "True"
+}
+
+Define = "Base"
+{
+	Height		= "20"
+	Pad		= "3 0 10 0"
+
+	Focused		= "Image title.png"
+	Unfocused	= "Image title.png"
+
+	Tab {
+		Focused		  = "Image title.png"
+		FocusedSelected   = "Image title.png"
+		Unfocused	  = "Image title.png"
+		UnfocusedSelected = "Image title.png"
+	}
+	Font 
+	{
+		Focused			= "$font"
+		FocusedSelected		= "$font"
+		Unfocused		= "$font"
+		UnfocusedSelected	= "$font"
+        }
+        FontColor 
+	{
+                Focused			= "#878787"
+                FocusedSelected		= "#878787"
+                Unfocused		= "#616161"
+		UnfocusedSelected	= "#616161"
+        }
+	Separator 
+	{
+		Focused   = "Empty"
+		Unfocused = "Empty"
+	}
+	
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Image border.png"
+			Top		= "Image border.png"
+			TopRight	= "Image border.png"
+			Left		= "Image left.png"
+			Right		= "Image right.png"
+			BottomLeft	= "Image border.png"
+			Bottom		= "Image border_bottom.png"
+			BottomRight	= "Image border.png"
+		}
+		Unfocused 
+		{
+			TopLeft		= "Image border.png"
+			Top		= "Image border.png"
+			TopRight	= "Image border.png"
+			Left		= "Image left.png"
+			Right		= "Image right.png"
+			BottomLeft	= "Image border.png"
+			Bottom		= "Image border_bottom.png"
+			BottomRight	= "Image border.png"
+		}
+	}
+}
+	
+Define = "Buttons"
+{
+	Buttons 
+	{
+		Right = "Close"
+		{
+			Focused   = "Image close.png"
+			Unfocused = "Image close.png"
+			Hoover    = "Image close_hover.png"
+			Pressed	  = "Image close_pressed.png"
+			Button    = "1" { Actions = "Close" }
+			Button    = "3" { Actions = "Kill" }
+		}
+		Right = "Maximize"
+		{
+			Focused   = "Image max.png"
+			Unfocused = "Image max.png"
+			Hoover    = "Image max_hover.png"
+			Pressed	  = "Image max_pressed.png"
+			Button    = "1" { Actions = "Toggle Maximized 1 1" }
+		}
+		Right = "Iconify"
+		{
+			Focused   = "Image min.png"
+			Unfocused = "Image min.png"
+			Hoover    = "Image min_hover.png"
+			Pressed	  = "Image min_pressed.png"
+			Button    = "1" { Actions = "Set Iconified" }
+		}
+	}
+}
+
+Define = "Menu"
+{
+	Height = "0"
+	Pad = "0 0 4 4"
+		
+	Focused = "Empty"
+	Unfocused = "Empty"
+
+	Tab 
+	{
+		Focused = "Empty"
+		FocusedSelected = "Empty"
+		Unfocused = "Empty"
+		UnfocusedSelected = "Empty"  
+	}
+	Separator 
+	{
+		Focused = "Empty"
+		Unfocused = "Empty"
+	}       
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Image menu_left.png"
+			Top		= "Image top.png"
+			TopRight	= "Image menu_right.png"
+			Left		= "Image menu_left.png"
+			Right		= "Image menu_right.png"
+			BottomLeft	= "Image menu_left.png"
+			Bottom		= "Image top.png"
+			BottomRight	= "Image menu_right.png"
+		}
+		Unfocused {
+			TopLeft		= "Image menu_left.png"
+			Top		= "Image top.png"
+			TopRight	= "Image menu_right.png"
+			Left		= "Image menu_left.png"
+			Right		= "Image menu_right.png"
+			BottomLeft	= "Image menu_left.png"
+			Bottom		= "Image top.png"
+			BottomRight	= "Image menu_right.png"
+		}
+	}
+}	
+
+Define = "Workspace"
+{
+	Height = "0"
+	Pad = "0 0 0 0"
+
+	Font 
+	{
+		Focused = "$font"
+	}
+	FontColor 
+	{
+		Focused			= "Empty"
+		FocusedSelected		= "Empty"  
+		Unfocused		= "Empty"
+		UnfocusedSelected	= "Empty" 
+	}
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Empty"
+			Top		= "Empty"
+			TopRight	= "Empty"
+			Left		= "Empty"
+			Right		= "Empty"
+			BottomLeft	= "Empty"
+			Bottom		= "Empty"
+			BottomRight	= "Empty"
+		}
+		Unfocused 
+		{
+			TopLeft		= "Empty"
+			Top		= "Empty"
+			TopRight	= "Empty"
+			Left		= "Empty"
+			Right		= "Empty"
+			BottomLeft	= "Empty"
+			Bottom		= "Empty"
+			BottomRight	= "Empty"
+		}
+	}		
+}
+	
+Define = "Empty"
+{
+	Focused = "Empty"
+	Unfocused = "Empty"
+
+	Tab 
+	{
+		Focused			= "Empty"
+		FocusedSelected		= "Empty"
+		Unfocused		= "Empty"
+		UnfocusedSelected	= "Empty"
+	}
+
+	Separator {
+			Focused = "Empty"
+			Unfocused = "Empty"
+	}
+	Font 
+	{
+		Focused = "Empty"
+	}
+	FontColor 
+	{
+		Focused			= "Empty"
+		FocusedSelected		= "Empty"
+		Unfocused		= "Empty"
+		UnfocusedSelected	= "Empty"
+	}    
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Empty"
+			Top		= "Empty"
+			TopRight	= "Empty"
+			Left		= "Empty"
+			Right		= "Empty"
+			BottomLeft	= "Empty"
+			Bottom		= "Empty"
+			BottomRight	= "Empty"
+		}
+		Unfocused 
+		{
+			TopLeft		= "Empty"           
+			Top		= "Empty"           
+			TopRight	= "Empty"           
+			Left		= "Empty"           
+			Right		= "Empty"           
+			BottomLeft	= "Empty"           
+			Bottom		= "Empty"           
+			BottomRight	= "Empty"
+		}
+	}
+}
+
+PDecor
+{
+	Decor = "Default"
+	{
+		Title
+		{
+			@Base
+			@Buttons
+		}
+	}
+
+	Decor = "Menu"
+	{
+		Title
+		{
+			@Menu
+		}
+	}
+  
+	Decor = "WorkspaceIndicator"
+	{
+		Title
+		{
+			@Workspace
+		}
+	}
+
+	Decor = "Titlebarless"
+	{
+		Title
+		{
+			@Empty
+		}
+	}
+
+	Decor = "Statuswindow"
+	{
+		Title
+		{
+			@Empty
+		}
+	}
+
+	Decor = "CmdDialog"
+	{
+		Title
+		{
+			@Base
+		}
+	}
+}
+
+Harbour 
+{
+        Texture = "Solid #dcddcf"
+}
+
+Menu
+{
+	Pad = "6 6 9 6" 
+	Focused 
+	{
+    		Font		= "$font"
+		Background	= "Solid #151515"
+    		Item		= "Empty"
+		Text		= "#CFCCCC" 
+		Separator	= "Empty"
+                Arrow		= "Empty"
+  	}
+  	Unfocused 
+	{
+    		Font		= "$font"
+                Background	= "Solid #151515"
+    		Item		= "Empty"
+		Text		= "#CFCCCC"
+		Separator	= "Empty"
+                Arrow		= "Empty"
+  	}
+  	Selected 
+	{
+    		Font		= "$font"
+    		Background	= "Solid #151515"
+		Item		= "Empty"
+    		Text		= "#FFFFFF"
+                Arrow		= "Empty"
+  	}
+}
+
+CmdDialog 
+{
+ 	Font	= "$font"
+	Texture = "Solid #151515"
+	Text	= "#ECECEC"
+        Pad	= "2 2 2 2"
+}
+
+Status 
+{
+	Font	= "$font"
+	Texture = "Solid #f5f5f5"  
+	Text	= "#787878"
+	Pad	= "2 2 10 10"
+}
+WorkspaceIndicator
+{
+	Font			= "$font"
+	Background		= "Solid #151515"
+	Workspace		= "Solid #A0A0A0"
+	WorkspaceActive		= "Solid #E6E6E6"
+	Text			= "#ECECEC"
+	EdgePadding		= "7"
+	WorkspacePadding	= "7"
+}
+	 

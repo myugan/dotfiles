@@ -1,0 +1,16 @@
+[:ac0eeced-58e5-4794-b7b2-b8fc7d22d71a]
+foreground-color='rgb(238,238,236)'
+visible-name='Nord'
+palette=['rgb(47,52,63)', 'rgb(191,97,106)', 'rgb(161,188,139)', 'rgb(235,203,139)', 'rgb(129,161,193)', 'rgb(178,141,172)', 'rgb(136,191,207)', 'rgb(226,230,237)', 'rgb(59,66,82)', 'rgb(191,97,106)', 'rgb(161,188,139)', 'rgb(235,203,139)', 'rgb(129,161,193)', 'rgb(178,141,172)', 'rgb(136,191,207)', 'rgb(226,230,237)']
+default-size-columns=113
+default-size-rows=24
+use-system-font=false
+use-transparent-background=false
+use-theme-colors=false
+font='Monaco for Powerline 8'
+allow-bold=true
+bold-color-same-as-fg=true
+bold-color='rgb(47,52,63)'
+background-color='rgb(47,52,63)'
+audible-bell=false
+scrollbar-policy='never'

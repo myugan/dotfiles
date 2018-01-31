@@ -1,0 +1,35 @@
+## Conky config highlighting
+## 
+syntax "Conky" ".conkyrc$"
+
+# keywords
+color brightblue "(use_spacer|background|use_xft|xftfont|xftalpha)" 
+color brightblue "(mail_spool|update_interval|own_window)"
+color brightblue "(double_buffer|minimum_size)"
+color brightblue "(draw_(outline|borders|shades)|stippled_borders)"
+color brightblue "border_(margin|width)"
+color brightblue "default_((shade_|outline_)?color)"
+color brightblue "(alignment|gap_x|gap_y|no_buffers|uppercase)"
+color brightblue "^TEXT[[:space:]]*$"
+
+# Highlight boolean toggles
+color brightred "[[:space:]]+(yes|no)[[:space:]]*"
+
+# Conky position descriptors
+color brightred "(top_left|top_right|bottom_left|bottom_right)[[:space:]]*$"
+
+# Numbers 
+color magenta "[[:space:]]+([[:space:]]*([0-9]\.?))+[[:space:]]*"
+
+# variables
+color brightred "\$\{?[a-zA-Z_0-9\# ]+\}?"
+
+# Comments - match 0 or more spaces/tabs preceding the comment
+# back assertions don't seem to work, so we have to assume that all
+# comments will start on a new line (otherwise the RGB colour codes
+# will cause their lines to get treated as comments
+color green "^[[:space:]]*#.*"
+
+# apply after comments (it's just easier)
+# colour codes
+color white "[[:space:]]+\#[0-9A-Fa-f]{6}"
