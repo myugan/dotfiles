@@ -1,0 +1,10 @@
+## Here is an example for manpages.
+##
+syntax "man" "\.[1-9]x?$"
+
+SECTION: "\.(S|T)H.*$"
+KEYWORD: "\.(BR?|I[PR]?).*$"
+MACRO:   "\.(S|T)H|\.TP|\.(BR?|I[PR]?|PP)|\\f[BIPR]"
++STRING
+STRING:  "\.(br|DS|RS|RE|PD)"
++LINT

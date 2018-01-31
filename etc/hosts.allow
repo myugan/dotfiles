@@ -1,0 +1,6 @@
+#
+# /etc/hosts.allow
+#
+mpd: ALL
+
+# End of file

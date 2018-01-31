@@ -1,0 +1,33 @@
+## Here is an example for Python.
+## GNU Nano 2.2.6 or higher syntax definition of Python files, using regexp.
+##
+## (C) 02/2013 Lilian Besson (lilian DOT besson AT normale DOT fr)
+## Last version : http://besson.qc.to/NanoSyntax/python.nanorc
+##
+syntax "python" "\.py$"
+header "^#!.*/python[-0-9._]*"
+## Method application
+color white "[a-zA-Z_][a-zA-Z0-9_]+\.[a-zA-Z][a-zA-Z0-9_]+"
+## Definition of values and classes
+icolor brightblue "def [0-9A-Z_]+"
+icolor brightblue "class [0-9A-Z_]+"
+## Keywords
+color brightcyan "\<(and|as|assert|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|not|or|pass|print|raise|return|try|while|with|yield)\>"
+## Commentary
+color brightred "#.*$"
+## Specials keywords
+color brightwhite "__[a-zA-Z][a-zA-Z0-9_]*"
+icolor brightwhite "__[a-zA-Z][a-zA-Z0-9_]*__"
+## Usuals functions
+color brightyellow "\<(min|max|len|str|repr|==)\>"
+## strings, docstrings
+color brightmagenta "['][^']*[^\\][']" "[']{3}.*[^\\][']{3}"
+color brightmagenta "["][^"]*[^\\]["]" "["]{3}.*[^\\]["]{3}"
+color brightmagenta "['][^']*\\[']"
+color brightmagenta "["][^"]*\\["]"
+## Empty strings
+color brightmagenta """" "''"
+color brightyellow start=""""[^"]" end=""""" start="'''[^']" end="'''"
+color brightyellow start=""""" end=""""" start="'''" end="'''"
+## Empty strings, docstrings
+color brightyellow """"""""

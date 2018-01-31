@@ -1,0 +1,8 @@
+vte-terminal {
+    padding: 8px;
+}
+
+.window-frame:backdrop, .window-frame:decoration, .window-fame.csd, .window-frame.csd.popup {
+  box-shadow: none;
+  margin: 0;
+}

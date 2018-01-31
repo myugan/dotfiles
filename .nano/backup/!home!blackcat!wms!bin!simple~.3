@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# colour
+bg="#141212"
+fg="#c8c8c8"
+fgw="#404040"
+fgy="#d0d0d0"
+geo="1366x25+0+0"
+fm="-kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1"
+fs="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+
+bar="-g ${geo} -f ${fm} -f ${fs} -F ${fg} -B ${bg}"
+
+wrk(){
+    desk=$(xdotool get_desktop)
+    case $desk in
+        0) echo "%{F$fgw}  1  %{F$fgy} 2   3   4  %{F-}%{B-}";;
+        1) echo "%{F$fgy}  1  %{F$fgw} 2  %{F$fgy} 3   4  %{F-}%{B-}";;
+        2) echo "%{F$fgy}  1   2  %{F$fgw} 3  %{F$fgy} 4  %{F-}%{B-}";;
+        3) echo "%{F$fgy}  1   2   3  %{F$fgw} 4  %{F-}%{B-}";;
+    esac
+}
+
+ttl(){
+	title=$(xtitle)
+	echo -n " $title"
+}
+
+vol(){
+	VOL=$(amixer get Master | grep % | sed -n 1p | awk -F '[' '{print $2}' | awk -F ']' '{print $1}')
+	if [ $VOL = '0%' ]; then
+		echo -n "%{F$fgy} vol: Mute %{F-}"
+	else
+		echo -n "%{F$fgy} vol: $VOL %{F-}"
+	fi
+}
+
+bat() {
+    percent=$(cat /sys/class/power_supply/BAT0/capacity)
+    status=$(cat /sys/class/power_supply/BAT0/status)
+
+    if test $status = "Charging"; then
+        echo -n "%{F$fgy} $percent%%{F-} "
+    elif test $status = "Full"; then
+        echo -n "%{F$fgy} $percent%%{F-} "
+    else
+        if test $percent -gt 60; then
+            echo -n "%{F$fgy}bat: $percent%%{F-} "
+        elif test $percent -gt 25; then
+            echo -n "%{F$fgy}bat: $percent%%{F-} "
+        else
+            echo -n "%{F$fgy}bat: %{F#EC5C5C}$percent%%{F-} "
+        fi
+    fi
+   # echo -e "%{F$fgy}$percent% %{F-}"
+}
+
+wifi(){
+    net=$(iwconfig wlp3s0 |grep ESSID| awk '{print $NF}'|cut -d ":" -f 2)
+    echo -n "%{F$fgy} wifi: $net %{F-}"
+}
+
+tgl(){
+	date=$(date "+%A %d %b %H:%M")
+	echo -n "%{F$fgy} $date %{F-} "
+}
+
+while true; do
+	echo "%{l}$(wrk)| $(ttl)%{r} $(vol) $(wifi) $(bat) $(tgl)"
+	sleep 1
+done | lemonbar ${bar} | sh & > /dev/null

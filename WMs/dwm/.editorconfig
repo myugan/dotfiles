@@ -1,0 +1,10 @@
+# http://editorconfig.org
+root = true
+
+# config.h file looks weird on github because of tab size.
+# I need this to match github with my tab settings.
+[*.h]
+charset = utf-8
+indent_style = tab
+indent_size = 4
+trim_trailing_whitespace = true

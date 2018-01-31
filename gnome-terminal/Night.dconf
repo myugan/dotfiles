@@ -1,0 +1,14 @@
+[:d45db4f6-1d1c-4fea-9a73-48fb26077579]
+foreground-color='rgb(238,238,236)'
+visible-name='Night'
+scrollbar-policy='never'
+palette=['rgb(60,60,60)', 'rgb(236,92,92)', 'rgb(92,245,119)', 'rgb(249,235,61)', 'rgb(2,134,213)', 'rgb(128,125,182)', 'rgb(96,207,230)', 'rgb(254,254,254)', 'rgb(60,60,60)', 'rgb(236,92,92)', 'rgb(92,245,119)', 'rgb(249,235,61)', 'rgb(2,134,213)', 'rgb(128,125,182)', 'rgb(96,207,230)', 'rgb(254,254,254)']
+default-size-rows=29
+default-size-columns=113
+use-system-font=false
+use-transparent-background=false
+use-theme-colors=false
+font='Bitstream Vera Sans Mono 8'
+background-color='rgb(20,18,18)'
+background-transparency-percent=2
+audible-bell=false

@@ -1,0 +1,49 @@
+activity-action other
+assume-paste-time 1
+base-index 0
+bell-action any
+default-command ""
+default-shell "/usr/bin/zsh"
+destroy-unattached off
+detach-on-destroy on
+display-panes-active-colour red
+display-panes-colour blue
+display-panes-time 1000
+display-time 750
+history-limit 2000
+key-table "root"
+lock-after-time 0
+lock-command "lock -np"
+message-command-style fg=yellow,bg=black
+message-style fg=black,bg=yellow
+mouse off
+prefix C-b
+prefix2 None
+renumber-windows off
+repeat-time 500
+set-titles off
+set-titles-string "#S:#I:#W - \"#T\" #{session_alerts}"
+silence-action other
+status on
+status-interval 15
+status-justify left
+status-keys vi
+status-left "[#S] "
+status-left-length 10
+status-left-style default
+status-position bottom
+status-right " \"#{=21:pane_title}\" %H:%M %d-%b-%y"
+status-right-length 40
+status-right-style default
+status-style fg=black,bg=green
+update-environment[0] "DISPLAY"
+update-environment[1] "SSH_ASKPASS"
+update-environment[2] "SSH_AUTH_SOCK"
+update-environment[3] "SSH_AGENT_PID"
+update-environment[4] "SSH_CONNECTION"
+update-environment[5] "WINDOWID"
+update-environment[6] "XAUTHORITY"
+visual-activity off
+visual-bell off
+visual-silence off
+word-separators " -_@"

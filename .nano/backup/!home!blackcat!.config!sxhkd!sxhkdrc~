@@ -1,0 +1,82 @@
+. $HOME/.wmrc
+
+super + shift + r
+	notify-send -u low "Windowchef configuration reloaded" && $WCHEF/windowchefrc
+
+super + {Left,Down,Up,Right}
+	waitron window_move {-30 0, 0 30, 0 -30, 30 0}
+
+super + shift + {Left,Down,Up,Right}
+	waitron window_resize {-20 0, 0 20, 0 -20, 20 0}
+
+alt + {h,j,k,l}
+	waitron window_cardinal_focus {left,down,up,right}
+
+ctrl + alt + q
+	waitron wm_quit 0
+
+super + w
+	waitron window_close
+
+alt + Tab
+	waitron window_cycle
+
+alt + shift + Tab
+	waitron window_rev_cycle
+
+alt + ctrl + Tab
+	waitron window_focus_last
+
+super + {_, shift +} {1-4}
+	waitron group_add_window {1-4}
+
+super + ctrl + r
+	waitron group_remove_window
+
+super + alt + ctrl + {1-4}
+	waitron group_remove_all_windows {1-4}
+
+# Apps
+super + Return
+	urxvt
+
+super + d
+	dmenu_run 
+
+# Audio
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+
+XF86AudioLowerVolume
+	amixer set Master 5%-
+
+XF86AudioMute
+	amixer set Master toggle
+
+# Window position
+super + g
+	waitron window_snap middle
+
+super + h
+	waitron window_snap topleft
+
+super + k
+	waitron window_snap topright
+
+super + j
+	waitron window_snap bottomleft
+
+super + l
+	waitron window_snap bottomright
+
+super + b
+    waitron window_hor_maximize
+
+super + v
+    waitron window_ver_maximize
+
+super + m
+    waitron window_monocle
+
+super + f
+	waitron window_maximize

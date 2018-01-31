@@ -1,0 +1,359 @@
+$font = "Fira Sans Medium:size=9#left#XFT"
+$font1 = "Fira Sans Medium:size=8#center#XFT"
+
+Require
+{
+	Templates	= "True"
+}
+
+Define = "Base"
+{
+	Height		= "25"
+	Pad		= "7 0 10 0"
+
+	Focused		= "Image title.png"
+	Unfocused	= "Image title.png"
+
+	Tab {
+		Focused		  = "Image title.png"
+		FocusedSelected   = "Image title.png"
+		Unfocused	  = "Image title.png"
+		UnfocusedSelected = "Image title.png"
+	}
+	Font 
+	{
+		Focused			= "$font1"
+		FocusedSelected		= "$font1"
+		Unfocused		= "$font1"
+		UnfocusedSelected	= "$font1"
+        }
+        FontColor 
+	{
+                Focused			= "#616161"
+                FocusedSelected		= "#616161"
+                Unfocused		= "#878787"
+		UnfocusedSelected	= "#878787"
+        }
+	Separator 
+	{
+		Focused   = "Empty"
+		Unfocused = "Empty"
+	}
+	
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Image top.png"
+			Top		= "Image top.png"
+			TopRight	= "Image top.png"
+			Left		= "Image bottom.png"
+			Right		= "Image bottom.png"
+			BottomLeft	= "Image bottom.png"
+			Bottom		= "Image bottom.png"
+			BottomRight	= "Image bottom.png"
+		}
+		Unfocused 
+		{
+			TopLeft		= "Image top.png"
+			Top		= "Image top.png"
+			TopRight	= "Image top.png"
+			Left		= "Image bottom.png"
+			Right		= "Image bottom.png"
+			BottomLeft	= "Image bottom.png"
+			Bottom		= "Image bottom.png"
+			BottomRight	= "Image bottom.png"
+		}
+	}
+}
+	
+Define = "Buttons"
+{
+	Buttons 
+	{
+		Right = "Close"
+		{
+			Focused   = "Image button.png"
+			Unfocused = "Image button.png"
+			Hoover    = "Image button_hover.png"
+			Pressed	  = "Image button_hover.png"
+			Button    = "1" { Actions = "Close" }
+			Button    = "3" { Actions = "Kill" }
+		}
+		Right = "Maximize"
+		{
+			Focused   = "Image button.png"
+			Unfocused = "Image button.png"
+			Hoover    = "Image button_hover.png"
+			Pressed	  = "Image button_hover.png"
+			Button    = "1" { Actions = "Toggle Maximized 1 1" }
+		}
+		Right = "Iconify"
+		{
+			Focused   = "Image button.png"
+			Unfocused = "Image button.png"
+			Hoover    = "Image button_hover.png"
+			Pressed	  = "Image button_hover.png"
+			Button    = "1" { Actions = "Set Iconified" }
+		}
+	}
+}
+
+Define = "Menu"
+{
+	Height = "0"
+	Pad = "0 0 0 0"
+		
+	Focused = "Empty"
+	Unfocused = "Empty"
+
+	Tab 
+	{
+		Focused = "Empty"
+		FocusedSelected = "Empty"
+		Unfocused = "Empty"
+		UnfocusedSelected = "Empty"  
+	}
+	Separator 
+	{
+		Focused = "Empty"
+		Unfocused = "Empty"
+	}       
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Image menu.png"
+			Top		= "Image menu.png"
+			TopRight	= "Image menu.png"
+			Left		= "Image menu.png"
+			Right		= "Image menu.png"
+			BottomLeft	= "Image menu.png"
+			Bottom		= "Image menu.png"
+			BottomRight	= "Image menu.png"
+		}
+		Unfocused {
+			TopLeft		= "Image menu.png"
+			Top		= "Image menu.png"
+			TopRight	= "Image menu.png"
+			Left		= "Image menu.png"
+			Right		= "Image menu.png"
+			BottomLeft	= "Image menu.png"
+			Bottom		= "Image menu.png"
+			BottomRight	= "Image menu.png"
+		}
+	}
+}	
+
+Define = "Workspace"
+{
+	Height = "0"
+	Pad = "0 0 0 0"
+
+	Font 
+	{
+		Focused = "$font"
+	}
+	FontColor 
+	{
+		Focused			= "Empty"
+		FocusedSelected		= "Empty"  
+		Unfocused		= "Empty"
+		UnfocusedSelected	= "Empty" 
+	}
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Empty"
+			Top		= "Empty"
+			TopRight	= "Empty"
+			Left		= "Empty"
+			Right		= "Empty"
+			BottomLeft	= "Empty"
+			Bottom		= "Empty"
+			BottomRight	= "Empty"
+		}
+		Unfocused 
+		{
+			TopLeft		= "Empty"
+			Top		= "Empty"
+			TopRight	= "Empty"
+			Left		= "Empty"
+			Right		= "Empty"
+			BottomLeft	= "Empty"
+			Bottom		= "Empty"
+			BottomRight	= "Empty"
+		}
+	}		
+}
+	
+Define = "Empty"
+{
+	Focused = "Empty"
+	Unfocused = "Empty"
+
+	Tab 
+	{
+		Focused			= "Empty"
+		FocusedSelected		= "Empty"
+		Unfocused		= "Empty"
+		UnfocusedSelected	= "Empty"
+	}
+
+	Separator {
+			Focused = "Empty"
+			Unfocused = "Empty"
+	}
+	Font 
+	{
+		Focused = "Empty"
+	}
+	FontColor 
+	{
+		Focused			= "Empty"
+		FocusedSelected		= "Empty"
+		Unfocused		= "Empty"
+		UnfocusedSelected	= "Empty"
+	}    
+	Border 
+	{
+		Focused 
+		{
+			TopLeft		= "Empty"
+			Top		= "Empty"
+			TopRight	= "Empty"
+			Left		= "Empty"
+			Right		= "Empty"
+			BottomLeft	= "Empty"
+			Bottom		= "Empty"
+			BottomRight	= "Empty"
+		}
+		Unfocused 
+		{
+			TopLeft		= "Empty"           
+			Top		= "Empty"           
+			TopRight	= "Empty"           
+			Left		= "Empty"           
+			Right		= "Empty"           
+			BottomLeft	= "Empty"           
+			Bottom		= "Empty"           
+			BottomRight	= "Empty"
+		}
+	}
+}
+
+PDecor
+{
+	Decor = "Default"
+	{
+		Title
+		{
+			@Base
+			@Buttons
+		}
+	}
+
+	Decor = "Menu"
+	{
+		Title
+		{
+			@Menu
+		}
+	}
+  
+	Decor = "WorkspaceIndicator"
+	{
+		Title
+		{
+			@Workspace
+		}
+	}
+
+	Decor = "Titlebarless"
+	{
+		Title
+		{
+			@Empty
+		}
+	}
+
+	Decor = "Statuswindow"
+	{
+		Title
+		{
+			@Empty
+		}
+	}
+
+	Decor = "CmdDialog"
+	{
+		Title
+		{
+			@Base
+		}
+	}
+}
+
+Harbour 
+{
+        Texture = "Solid #dcddcf"
+}
+
+Menu
+{
+	Pad = "6 4 6 6" 
+	Focused 
+	{
+    		Font		= "$font"
+		Background	= "Solid #F8F8F8"
+    		Item		= "Empty"
+		Text		= "#777777" 
+		Separator	= "Image menuline.png#scaled"
+                Arrow		= "Image arrow.png#scaled"
+  	}
+  	Unfocused 
+	{
+    		Font		= "$font"
+                Background	= "Solid #F8F8F8"
+    		Item		= "Empty"
+		Text		= "#777777"
+		Separator	= "Image menuline.png#scaled"
+                Arrow		= "Image arrow.png#scaled"
+  	}
+  	Selected 
+	{
+    		Font		= "$font"
+    		Background	= "Solid #F8F8F8"
+		Item		= "Empty"
+    		Text		= "#87AEE8"
+                Arrow		= "Image arrow.png#scaled"
+  	}
+}
+
+CmdDialog 
+{
+ 	Font	= "$font"
+	Texture = "Solid #f5f5f5"
+	Text	= "#787878"
+        Pad	= "2 2 2 2"
+}
+
+Status 
+{
+	Font	= "$font"
+	Texture = "Solid #f5f5f5"  
+	Text	= "#787878"
+	Pad	= "2 2 10 10"
+}
+WorkspaceIndicator
+{
+	Font			= "$font1"
+	Background		= "Solid #F8F8F8"
+	Workspace		= "Solid #878787"
+	WorkspaceActive		= "Solid #87AEE8"
+	Text			= "#878787"
+	EdgePadding		= "5"
+	WorkspacePadding	= "5"
+}
+	 

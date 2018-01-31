@@ -1,0 +1,40 @@
+#!/bin/bash
+
+. $HOME/.wmrc
+
+systemctl --user import-environment DISPLAY
+
+xrdb -merge $HOME/.Xresources &
+
+# Driver
+xrandr --auto
+
+ruler &
+
+dunst -config $DUNST &
+
+# Wallpaper
+feh --bg-fill $WALL/sea.jpg
+
+# Fonts
+xset fp+ $HOME/.fonts &
+xset fp rehash &
+
+# Keyboard layout
+setxkbmap -layout us &
+
+# Panel
+. $BAR/simple
+
+# Multi session
+session=windowchef
+case "$1" in
+			2bwm			) exec 2bwm ;;
+			gnome-session 	) exec gnome-session ;;
+			openbox		) exec openbox-session ;;
+			pekwm		) exec pekwm ;;
+			windowchef	) sxhkd -c $SXHKD &
+						  exec windowchef -c $WCHEF;;
+		    	xfce4		) exec startxfce4 ;;
+			*) exec $session ;;
+esac

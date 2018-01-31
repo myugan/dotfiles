@@ -1,0 +1,3 @@
+#!/bin/bash
+
+conky -c ~/bin/conky_dwm

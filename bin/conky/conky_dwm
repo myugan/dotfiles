@@ -1,0 +1,9 @@
+out_to_console yes
+out_to_x no
+background no
+update_interval 2
+total_run_times 0
+use_spacer none
+
+TEXT
+CPU: ${cpu}% MEM: ${memperc}% LA: ${loadavg} | NET:${wireless_essid} UP: ${upspeedf wlan0}KiB/s DOWN: ${downspeedf wlan0}KiB/s | BAT: ${battery_percent}% ${battery_time} | ${time %a %d %b %I:%M:%S %p} 

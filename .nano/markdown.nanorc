@@ -1,0 +1,79 @@
+## Syntax definition for Markdown for coloration with GNU Nano
+## (Syntax reference: http://daringfireball.net/projects/markdown/syntax)
+##
+## (C) 01/2014 Lilian Besson (lilian DOT besson AT normale DOT fr)
+## Last version : http://besson.qc.to/NanoSyntax/markdown.nanorc
+##############################################################################
+# Definition of the name of the syntax : rst
+# and capture of the extension : .txt .text .md .markdown
+syntax "markdown" "\.md$" "\.markdown$"
+##############################################################################
+# Numbers
+color white "-?[0-9\.][0-9\._,]*([eE]-?)?[0-9\._,]*"
+# code block
+color brightred,black "(FIXME|TODO|NEW|XXX|HOWTO|DEBUG|WARNING|PEP)"
+# wrong links (empty)
+color white,red "[a-z][a-z]+://[^([[:alnum:]]|[\]\[])]*"
+# Balise <truc> et </truc>, pour embarquer du JavaScript notamment.
+color brightblue,black "</?[[:alnum:]]+([[:space:]]+[[:alnum:]]*=\"[^\"]*\")*>"
+
+# lists (not yet perfect)
+color brightwhite "(^ *[\*\+-]([[:blank:]]| *[\*\+-])+)|(^ *#\.[[:blank:]]+)|(^ *[0-9]+\.[[:blank:]]+)|(^ *[\(]?[a-z]+[\.\)][[:blank:]]+)|(^ *[\(]?[A-Z]+[\.\)][[:blank:]]+)"
+# options lists
+color white "^ *([/\+\-]{1,2}[a-zA-Z0-9][[:blank:]]?([[:alnum:]]|_)*[,=]*([[:alnum:]]|_)*[[:blank:]]*)+"
+
+## Links and others:
+##
+## link reference
+## color brightgreen "((`[^`]+`_{1,2})|([[:blank:]]*\.\. _[[:alnum:]]+.*: .*$))"
+## targets
+## color brightgreen "^ *\.\. _[[:alnum:]]+:"
+
+# email
+icolor brightred,black "(mailto:)?[[:alnum:]]([[:alnum:]]|[_\.\[\]\--]|\.|-)*(@|AT)[[:alnum:]]([[:alnum:]]|[_\.\[\]\--]|\.|-)*\.[[:alnum:]]+"
+# http, ftp, https, apt, links
+icolor red,black "[a-z][a-z]+://[[:alnum:]]([[:alnum:]]|[-_\.~#\?:=%&])*([[:alnum:]]|[-/_\.~#\?:=%&;])*"
+
+# italics
+color red "\*[[:alnum:]]([[:alnum:]]|[[:space:]]|-|,|;|\.|'|\$|\\|/)*\*\\?"
+color brightmagenta "\"[a-zA-Z]([[:alnum:]]|[[:space:]]|-|,|;|\.|'|\$|\\|/)*\"\\?"
+color brightmagenta "'[a-zA-Z]([[:alnum:]]|-|,|;|\.|'|\$|\\|/)*'\\?"
+color brightmagenta "“[a-zA-Z]([[:alnum:]]|-|,|;|\.|'|\$|\\|/)*”\\?"
+# bold
+color brightyellow "\*\*[^*^*]+\*\*\\?"
+
+##############################################################################
+## Old stuff
+# Quotations
+color cyan "^>.*"
+# Emphasis
+color green "_[^_]*_"
+color green "\*[^\*]*\*"
+# Strong emphasis
+color brightgreen "\*\*[^\*]*\*\*"
+color brightgreen "__[\_]*__"
+# Underline headers
+color brightblue "^====(=*)"
+color brightblue "^----(-*)"
+# Hash headers
+color brightcyan "^#.*"
+# Linkified URLs (and inline html tags)
+color brightmagenta start="<" end=">"
+# Links
+color brightmagenta "\[.*\](\([^\)]*\))?"
+# Link id's:
+color brightmagenta "^\[.*\]:( )+.*"
+# Code spans
+color brightyellow "`[^`]*`"
+# Code blocks
+# disabled, because indented lines aren't always code blocks
+# color brightyellow "^(    ).*"
+# Links and inline images
+color brightred start="!\[" end="\]"
+color white start="\[" end="\]"
+# Lists
+color yellow "^( )*(\*|\+|\-|[0-9]+\.) "
+# <hr>
+color ,red "^\* \* \*.*$"
+color ,red "^- - -.*$"
+color ,red "^-----.*$"

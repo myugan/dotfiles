@@ -1,0 +1,15 @@
+INCLUDE = "$_PEKWM_ETC_PATH/config_system"
+
+Files {
+    Theme = "~/.pekwm/themes/Cream"
+}
+
+Screen {
+    Workspaces = "4"
+    WorkspacesPerRow = "4"
+    WorkspaceNames = "あ;う;え;お"
+
+    Placement {
+        Model = "CenteredOnParent Smart MouseNotUnder"
+    }
+}

@@ -1,0 +1,105 @@
+#!/bin/bash
+# ----------------------------------------#
+#  Author : blackcat  --  Copyright 2017  #
+# ----------------------------------------#
+
+# Glyphs
+glyweb=""
+glyterm=""
+glypop=""
+glymisc=""
+glycal=""
+glypow=""
+
+# Colors
+fg="#e0e0e0"
+bg="#181818"
+bgh="#6D8EC1"
+bgi="#000000"
+red="#CC4343"
+
+# Formating
+F="$F"
+B="%{B-}"
+BG="%{B$bg}"
+U="%{U$fg}%{+u}"
+UE="%{-u}"
+FB="%{F-}%{B-}"
+FG="%{F$fg}"
+LFT="%{l}"
+CTR="%{c}"
+RGT="%{r}"
+
+
+wrksp(){
+    desk=$(xdotool get_desktop)
+    case $desk in
+        0) echo "%{B$bgi}$FG$U  ${glyweb}  $UE$BG$FG  $glyterm    $glypop    $glymisc  $FB ";;
+        1) echo "$BG$FG  ${glyweb}  %{B$bgi}$FG$U  $glyterm  $UE$BG$FG  $glypop    $glymisc  $FB ";;
+        2) echo "$BG$FG  ${glyweb}    $glyterm  %{B$bgi}$FG$U  $glypop  $UE$BG$FG  $glymisc  $FB ";;
+        3) echhttps://github.com/tudurom/windowchef/releaseso "$BG$FG  ${glyweb}    $glyterm    $glypop  %{B$bgi}$FG$U  $glymisc  $UE$FB ";;
+    esac
+}
+
+title(){
+	ttl=$(xtitle)
+	echo -n "$FG$ttl$F"
+}
+
+bat() {
+    percent=$(cat /sys/class/power_supply/BAT0/capacity)
+    status=$(cat /sys/class/power_supply/BAT0/status)
+
+    if test $status = "Charging"; then
+        echo -n "$FG $F"
+    elif test $status = "Full"; then
+        echo -n "$FG $F"
+    else
+        if test $percent -gt 90; then
+            echo -n "$FG $F"
+        elif test $percent -gt 60; then
+            echo -n "$FG $F"
+        elif test $percent -gt 30; then
+            echo -n "$FG $F"
+        else
+            echo -n "%{F$red} $F"
+        fi
+    fi
+    echo -e "$FG$percent%$F"
+}
+
+wifi(){
+    net=$(iwconfig wlp3s0 |grep ESSID| awk '{print $NF}'|cut -d ":" -f 2)
+    echo -n "$FG  $net$F"
+}
+
+vol(){
+	VOL=$(amixer get Master | grep % | sed -n 1p | awk -F '[' '{print $2}' | awk -F ']' '{print $1}')
+	if [ $VOL = '0%' ]; then
+		echo -n "$FG  Mute  $F"
+	else
+		echo -n "$FG  $VOL  $F"
+	fi
+}
+
+clock(){
+	time=$(date "+%a %d %b %H:%M %p")
+	echo -n "$FG $glycal $time $F"
+}
+
+pow(){
+	echo -n "$FG%{A:poweroff:} $glypow %{A}$F"
+}
+
+# Bar configuration
+geo="-g 1366x30+0+0"
+und="-u 2"
+fonts="-f -kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1 -f -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+bar="lemonbar $geo $fonts -F ${fg} -B ${bg} $und"
+
+# Pipe output!
+while true; do
+	echo "%{l}$(wrksp) $(title) %{r}$(wifi) $(vol) $(bat) $(clock) $(pow) "
+	sleep 1
+done | ${bar} | sh & > /dev/null
+

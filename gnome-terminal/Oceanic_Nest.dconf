@@ -1,0 +1,18 @@
+[:ad4adffd-cbc4-41f9-8098-e035423846bb]
+foreground-color='#CDD3DE'
+visible-name='Oceanic Next'
+scrollbar-policy='never'
+palette=['#1B2B34', '#EC5F67', '#99C794', '#FAC863', '#6699CC', '#C594C5', '#5FB3B3', '#A7ADBA', '#4F5B66', '#EC5F67', '#99C794', '#FAC863', '#6699CC', '#C594C5', '#5FB3B3', '#D8DEE9']
+default-size-rows=29
+default-size-columns=113
+use-system-font=false
+use-transparent-background=false
+use-theme-colors=false
+font='Monaco for Powerline 8'
+allow-bold=true
+use-theme-background=false
+bold-color-same-as-fg=true
+bold-color='#CDD3DE'
+background-color='#1B2B34'
+background-transparency-percent=2
+audible-bell=false

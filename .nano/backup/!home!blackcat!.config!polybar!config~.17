@@ -1,0 +1,119 @@
+[global/wm]
+;margin-top = 2
+;margin-bottom = 2
+
+[colors]
+fg = ${xrdb:color7}
+bg = ${xrdb:color0}
+
+[bar/top]
+width = 100%
+height = 27
+offset-x = 0%
+offset-y= 0%
+fixed-center = true
+override-redirect = false 
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+font-0 = artwiz lemon:size=9:;0
+font-1 = Wuncon Siji:size=9:;0
+
+modules-right = volume battery date 
+modules-center = xwindow 
+modules-left = ewmh
+
+tray-position = right
+tray-padding = 0
+tray-background = ${colors.bg}
+tray-transparent = false
+tray-detached = false2
+
+underline-size = 3
+
+spacing = 1 
+padding-left = 1
+padding-right = 1
+module-margin-left = 2
+module-margin-right = 2
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume><label-volume>
+module-margin-right = 1
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+format-volume-background = ${colors.bg}
+ramp-volume-foreground = ${xrdb:color6}
+
+label-muted = - muted 
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+format-prefix = " "
+format-prefix-foreground = ${xrdb:color6}
+module-margin-left = 2
+format-padding = 2
+format-background = ${colors.bg}
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-scroll = true
+
+format = <label-state>
+
+label-active =  
+label-active-foreground = ${xrdb:color6}
+label-active-background = ${colors.bg}
+;label-active-padding = 1
+
+label-empty = 
+label-empty-foreground = ${colors.fg}
+label-empty-background = ${colors.bg}
+;label-empty-padding = 1
+
+label-urgent = 
+label-urgent-foreground = #EC5f67
+label-urgent-background = ${colors.bg}
+;label-urgent-padding = 1
+
+[module/date]
+type = internal/date
+interval = 1
+date = " %A, %d %b %H:%M %P"
+format-prefix = "" 
+format-prefix-foreground = ${xrdb:color6}
+
+[module/battery]
+type = internal/battery
+full-at = 100
+battery = BAT0
+adapter = ACAD
+poll-interval = 5
+
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+label-charging = %percentage%%
+label-charging-foreground = ${colors.fg}
+label-discharging = %percentage%%
+label-discharging-foreground = ${colors.fg}
+label-full =  FULL
+ramp-capacity-foreground = ${xrdb:color6}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+bar-capacity-width = 10
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${xrdb:color6}
+animation-charging-framerate = 750

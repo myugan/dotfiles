@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# set VAR 
+export CONFIG=$HOME/.config
+export SXHKD=$CONFIG/sxhkd/sxhkdrc
+export WCHEF=$CONFIG/windowchef/windowchefrc
+export DUNST=$CONFIG/dunst/dunstrc
+export WALL=$HOME/Pictures
+export BAR=$HOME/wms/bin

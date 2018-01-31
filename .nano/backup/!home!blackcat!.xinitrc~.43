@@ -1,0 +1,45 @@
+#!/bin/bash
+
+. $HOME/.wmrc
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+systemctl --user import-environment DISPLAY
+
+# source for the terminal
+xrdb -merge $HOME/.Xresources &
+
+# Driver
+xrandr --auto
+
+# Wallpaper
+. $HOME/.fehbg
+
+# Fonts
+xset fp+ $HOME/.fonts &
+xset fp rehash &
+
+# Keyboard layout to us keymap
+setxkbmap -layout us &
+
+# Panel
+. $BAR/simple
+
+dunst &
+ruler &
+sxhkd -c $SXHKD &
+
+# Multi session
+DEFAULTSESSION=windowchef
+case "$1" in
+			none)       exec xwait ;;
+			2bwm)       exec 2bwm ;;
+			openbox)    exec openbox-session ;;
+			pekwm)      exec pekwm ;;
+			swm)        exec swm ;;
+			windowchef) exec windowchef -c $WCHEF;;
+		    	xfwm4)      xfsettingsd &
+                           exec xfdesktop ;;
+			*)          exec $DEFAULTSESSION ;;
+esac
