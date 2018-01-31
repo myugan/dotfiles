@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# colour
+fg="#F0F0F0"
+fgy="#272432"
+bg="#2B2C33"
+bgh="#6D8EC1"
+bgw="#F0F0F0"
+b="8"
+geo="1366x19+0+0"
+fa="-kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1"
+fs="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+
+bar="-g ${geo} -f ${fa} -f ${fs} -F ${fg} -B ${bg} -u ${b} -r ${b} -R ${bg}"
+
+wrk(){
+    desk=$(xdotool get_desktop)
+    case $desk in
+        0) echo "%{B$bgh}%{F#F0F0F0} 1 %{B$bgw}%{F$fgy} 2  3  4 %{F-}%{B-} ";;
+        1) echo "%{B$bgw}%{F$fgy} 1 %{B$bgh}%{F$fgy} 2 %{B$bgw}%{F$fgy} 3  4 %{F-}%{B-} ";;
+        2) echo "%{B$bgw}%{F$fgy} 1  2 %{B$bgh}%{F$fgy} 3 %{B$bgw}%{F$fgy} 4 %{F-}%{B-} ";;
+        3) echo "%{B$bgw}%{F$fgy} 1  2  3 %{B$bgh}%{F$fgy} 4 %{F-}%{B-} ";;
+    esac
+}
+
+task(){
+    id=$(xtitle)
+    echo -n "%{F#F0F0F0} $id %{F-}"
+}
+
+vol(){
+	VOL=$(amixer get Master | grep % | sed -n 1p | awk -F '[' '{print $2}' | awk -F ']' '{print $1}')
+	if [ $VOL = '0%' ]; then
+		echo -n "%{B#F0F0F0}%{F$fgy}  %{B#6D8EC1}%{F#F0F0F0} Mute %{F-}%{B-}"
+	else
+		echo -n "%{B#F0F0F0}%{F$fgy}  %{B#6D8EC1}%{F#F0F0F0} $VOL %{F-}%{B-}"
+	fi
+}
+
+bat() {
+    percent=$(cat /sys/class/power_supply/BAT0/capacity)
+    status=$(cat /sys/class/power_supply/BAT0/status)
+
+    if test $status = "Charging"; then
+        echo -n "%{B#F0F0F0}%{F$fgy}  %{F-}"
+    elif test $status = "Full"; then
+        echo -n "%{B#F0F0F0}%{F$fgy}  %{F-}"
+    else
+        if test $percent -gt 60; then
+            echo -n "%{B#F0F0F0}%{F$fgy}  %{F-}"
+        elif test $percent -gt 25; then
+            echo -n "%{B#F0F0F0}%{F$fgy}  %{F-}"
+        else
+            echo -n "%{B#F0F0F0}%{F$fgy}  %{F-}%{B-}"
+        fi
+    fi
+    echo -e "%{B#6D8EC1}%{F#F0F0F0} $percent% %{F-}%{B-}"
+}
+
+wifi(){
+    net=$(iwconfig wlp3s0 |grep ESSID| awk '{print $NF}'|cut -d ":" -f 2)
+    echo -n "%{B#F0F0F0}%{F$fgy}  %{B#6D8EC1}%{F#F0F0F0} $net %{F-}%{B-}"
+}
+
+clock(){
+	time=$(date "+%H:%M")
+	echo -n "%{A:$HOME/Scripts/wms/bin/cal:}%{B#F0F0F0}%{F$fgy}  %{B#6D8EC1}%{F#F0F0F0} $time %{F-}%{B-}%{A} "
+}
+
+while true; do
+	echo "%{l}$(wrk) $(task)%{r}$(wifi) $(vol) $(bat) $(clock) "
+	sleep 1
+done | lemonbar ${bar} | sh & > /dev/null
