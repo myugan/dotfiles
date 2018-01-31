@@ -7,13 +7,12 @@
 ![scrot](img/chef.png)
 
 
-Lemonbar config in bin/panel/pane
+Lemonbar config in `bin/panel/pane`
 
 
 ![scrot1](img/chef-arc.png)
 
 
-Lemonbar config in bin/panel/arc-pane
 
 
 Stuff
