@@ -1,9 +1,9 @@
 ```
 
-						 	 ___   ___ _____ ___ ___ _    ___ ___ 
-							|   \ / _ \_   _| __|_ _| |  | __/ __|
-							| |) | (_) || | | _| | || |__| _|\__ \
-							|___/ \___/ |_| |_| |___|____|___|___/
+				 ___   ___ _____ ___ ___ _    ___ ___ 
+				|   \ / _ \_   _| __|_ _| |  | __/ __|
+				| |) | (_) || | | _| | || |__| _|\__ \
+				|___/ \___/ |_| |_| |___|____|___|___/
                                       
 
 ```
@@ -13,26 +13,23 @@ Welcome to my Archlinux configuration for windowchef.
 Screenshots
 ===============
 
-![scrot](img/chef.png)
-![scrot1](img/chef-arc.png)
-![scrot2](img/pebble.png)
+![scrot1](img/ocean.png)
 
 Tables of Contents
 ====================
-- [Introduction](#dotfiles)
-- [Installation](#managing)
-- [Configuration](#installing)
-- [Installed apps](#how-it-works)
-- [Housekeeping](#tldr)
-- [TODO](#my-shell)
-- [Credits](#vim)
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Installed apps](#installed-apps)
+- [TODO](#todo)
+- [Credits](#credits)
 
 
 Introduction
 ===============
 
 What is `windowchef`? windowchef is stacking window manager written in C with the help of the XCB library,
-using `waitron` as sends commands to windowchef through X client messages created by ![tudurom](https://github.com/tudurom/).
+using `waitron` as sends commands to windowchef through X client messages created by [tudurom](https://github.com/tudurom/).
 How about keybind? windowchef use a third party program like `sxhkd` to send pointer events to `waitron` using keyboard.
 
 Installation
@@ -43,7 +40,7 @@ Before installing, you must install some dependencies for windowchef :
 * `xcb-randr`
 * `xcb-util-wm`
 * `xcb-keysyms`
-* `xproto (compile-time dependency)``
+* `xproto (compile-time dependency)`
 
 Windowchef also available on `AUR` :
 * `windowchef`
@@ -71,7 +68,7 @@ Installed Apps
 * `dunst` -- A customizable and lightweight notification-daemon.
 * `feh` -- A fast and light image viewer to set wallpaper.
 * `gpicview` -- A simple and fast image viewer for X.
-* `lemonbar` -- A lightweight xcb based bar, this is a ![fork](https://github.com/dark-yux/bar) that supports fontconfig and borders \w color.
+* `lemonbar` -- A lightweight xcb based bar, this is a [fork](https://github.com/dark-yux/bar) that supports fontconfig and borders \w color.
 * `mpc` -- Client for `mpd`, responsible for telling lemonbar about the currently playing media.
 * `mpd` -- A daemon for playing music of various formats with `ncmpcpp` as client.
 * `mpdviz` -- Client for `mpd` to display visualizer.
@@ -89,12 +86,12 @@ Installed Apps
 
 TODO
 ===============
-* Chnager desktop themes for windowchef.
+* Desktop themes changer for windowchef.
 * User Guide.
 
-Credits
+:octocat:Credits
 ===============
-* Thanks to ![tudurom](https://github.com/tudurom/).
-* Ruka Nanda Vera ![yuune]() for references.
+* Thanks to [tudurom](https://github.com/tudurom/).
+* Ruka Nanda Vera [yuune](https://github.com/yuune) for references.
 * Linuxer Desktop Art, Eye Candy Linux and r/unixporn.
 * And another user to sharing their dotfiles.
