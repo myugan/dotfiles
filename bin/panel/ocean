@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# Colors
+bg="#1C1F26"
+fg="#e0e0e0"
+BG="%{B#1C1F26}"
+BH="%{B#343D46}"
+FG="%{F#e0e0e0}"
+FR="%{F#CC4343}" # Red for status battery
+UA="%{U#8FA1B3}%{+u}"
+F="%{F-}"
+B="%{B-}"
+U="%{-u}"
+u="4"
+SEP="  "
+
+# configuration
+geo="1366x30+0+0"
+lemon="-benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1"
+siji="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+
+status(){
+     group=$(xdotool get_desktop)
+     desk=("" "" "" "")
+	for i in {1..4}; do
+		echo -n "%{A:waitron group_activate_specific $i:}"
+		if [[ "$((group+1))" == "$i" ]]; then
+			echo -n "$BH$UA$SEP${desk[$((i-1))]}$SEP$U$B"
+		else
+			echo -n "$BG$SEP${desk[$((i-1))]}$SEP$B"
+		fi
+		echo -n "%{A}"
+	done
+}
+
+title(){
+	foc=$(xdotool getwindowfocus getwindowname)
+	echo -n "$foc"
+}
+
+bat(){
+    value=$(cat /sys/class/power_supply/BAT0/capacity)
+    stat=$(cat /sys/class/power_supply/BAT0/status)
+    if test $stat = "Charging"; then
+        echo -n " $value"
+    elif test $stat = "Full"; then
+        echo -n " Full"
+    else
+        if test $value -gt 70; then
+            echo -n " $value%"
+        elif test $value -gt 30; then
+            echo -n " $value%"
+        else
+            echo -n "$FR $value%$F"
+        fi
+    fi
+}
+
+temp()
+{
+	tmp=$(acpi -t | awk '{print $4}' | tr -d '.0')
+	if [[ ${TEMP} -gt 63 ]] ; then
+	   echo -n "$FR$tmp°C$F"
+     else 
+	   echo -n " $tmp°C"
+     fi
+}
+
+vol(){
+	VOL=$(amixer get Master | grep % | sed -n 1p | awk -F '[' '{print $2}' | awk -F ']' '{print $1}')
+	if [ $VOL = '0%' ]; then
+		echo -n " $VOL"
+	else
+		echo -n " $VOL"
+	fi
+}
+
+wifi(){
+    net=$(iwconfig wlp3s0 |grep ESSID| awk '{print $NF}'|cut -d ":" -f 2)
+    if [ $net = 'off/any' ];then
+          echo -n " $net"
+    else
+          echo -n " $net"
+    fi
+}
+
+clock(){
+	time=$(date "+%A %d %b %H:%M %p")
+	echo -n " $time"
+}
+
+# print to output!
+while true; do
+	echo "%{l}$(status)$SEP$(title)%{r}$(temp)$SEP$(wifi)$SEP$(bat)$SEP$(vol) $(clock)$SEP"
+	sleep 1
+done | lemonbar -g "${geo}" -f "${lemon}" -f "${siji}" -F "${fg}" -B "${bg}" -u "${u}"| sh & > /dev/null

@@ -1,10 +1,14 @@
-###  Windowchef sxhkdrc by blackcat
+#
+#          _    _      _        
+#   ____ _| |_ | |____| |_ _ __ 
+#  (_-< \ / ' \| / / _` | '_/ _|
+#  /__/_\_\_||_|_\_\__,_|_| \__|
+#
+#
 
-. $HOME/.wmrc
-
-# rc config
+# reload config
 super + shift + r
-	$WCHEF && notify-send -u low "windowchefrc reloaded"
+	$HOME/.config/windowchef/windowchefrc && notify-send -u low "windowchefrc reloaded"
 
 super + shift + e
 	pkill -USR1 -x sxhkd && notify-send -u low "sxhkdrc reloaded"
@@ -19,20 +23,8 @@ super + shift + {Left,Down,Up,Right}
 alt + {h,j,k,l}
 	waitron window_cardinal_focus {left,down,up,right}
 
-super + g
-     waitron window_snap middle
-
-super + h
-     waitron window_snap topleft
-
-super + k
-     waitron window_snap topright
-
-super + j
-     waitron window_snap bottomleft
-
-super + l
-     waitron window_snap bottomright
+super + {h,k,j,l,g}
+     waitron window_snap {topleft,topright,bottomleft,bottomright,middle}
 
 super + b
     waitron window_hor_maximize
@@ -43,20 +35,9 @@ super + v
 super + m
     waitron window_monocle
 
-super + f
-     waitron window_maximize
-
-# group
 super + {_, shift +} {1-4}
      waitron {group_toggle,group_add_window} {1-4}
 
-super + ctrl + r
-     waitron group_remove_window
-
-super + alt + ctrl + {1-4}
-     waitron group_remove_all_windows {1-4}
-
-# quiter
 ctrl + alt + q
 	waitron wm_quit 0
 
@@ -77,24 +58,20 @@ alt + ctrl + Tab
 super + Return
 	urxvt
 
-super + d
-	./wms/bin/menu 
+super + @space
+	rofi -show run
 
 Print
 	scrot ~/Pictures/Screenshots/%H-%M-%S.png && notify-send -u low "Screenshot taken!"
 
-
-# manage audio
 XF86AudioRaiseVolume
-	amixer set Master 5%+
+	pactl set-sink-volume 0 +5%
 
 XF86AudioLowerVolume
-	amixer set Master 5%-
+	pactl set-sink-volume 0 -5%
 
 XF86AudioMute
 	amixer set Master toggle
-
-# xbacklight
 
 XF86MonBrightness{Up,Down}
 	xbacklight -{inc,dec} 5

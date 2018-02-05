@@ -1,11 +1,15 @@
+defaults.ctl.card 1
+defaults.pcm.card 1
+defaults.timer.card 1
+
 pcm.!default {
-    type hw
-    card 1
+     type pulse
+	fallback "sysdefault"
 }
 
 ctl.!default {
-    type hw
-    card 1
+     type pulse
+	fallback "sysdefault"
 }
 
 

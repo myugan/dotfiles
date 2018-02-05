@@ -1,7 +1,4 @@
 #!/bin/bash
-# ----------------------------------------#
-#  Author : blackcat  --  Copyright 2017  #
-# ----------------------------------------#
 
 # Glyphs
 glyweb=""
@@ -37,7 +34,7 @@ wrksp(){
         0) echo "%{B$bgi}$FG$U  ${glyweb}  $UE$BG$FG  $glyterm    $glypop    $glymisc  $FB ";;
         1) echo "$BG$FG  ${glyweb}  %{B$bgi}$FG$U  $glyterm  $UE$BG$FG  $glypop    $glymisc  $FB ";;
         2) echo "$BG$FG  ${glyweb}    $glyterm  %{B$bgi}$FG$U  $glypop  $UE$BG$FG  $glymisc  $FB ";;
-        3) echhttps://github.com/tudurom/windowchef/releaseso "$BG$FG  ${glyweb}    $glyterm    $glypop  %{B$bgi}$FG$U  $glymisc  $UE$FB ";;
+        3) echo "$BG$FG  ${glyweb}    $glyterm    $glypop  %{B$bgi}$FG$U  $glymisc  $UE$FB ";;
     esac
 }
 

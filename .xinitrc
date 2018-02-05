@@ -1,11 +1,15 @@
 #!/bin/bash
 
-. ~/.wmrc
-
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# dunst to be better
 systemctl --user import-environment DISPLAY
+
+# Set cursor from X to pointer
+xsetroot -cursor_name left_ptr &
+
+start-pulseaudio-x11 &
 
 # source for the terminal
 xrdb -merge ~/.Xresources &
@@ -13,7 +17,11 @@ xrdb -merge ~/.Xresources &
 # Driver
 xrandr --auto
 
-# Wallpaper
+# Services
+urxvtd -q -o -f &
+xrdb -q &
+
+# wallpaper
 . ~/.fehbg
 
 # Fonts
@@ -23,18 +31,10 @@ xset fp rehash &
 # Keyboard layout to us keymap
 setxkbmap -layout us &
 
-# Panel
-. $BAR/pane
-dunst &
-ruler &
-sxhkd -c $SXHKD &
-
 # Multi session
-DEFAULTSESSION=windowchef
+wm=windowchef
 case "$1" in
-			2bwm)       exec 2bwm ;;
-			awesomewm)  exec awesomewm ;;
-			dwm)        exec dwm ;;
+			awesomewm)  exec awesome ;;
 			windowchef) exec windowchef -c $WCHEF;;
-			*)          exec $DEFAULTSESSION ;;
+			*)          exec $wm ;;
 esac

@@ -1,15 +1,12 @@
-"   ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
-"   ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
-"   ██║   ██║██║██╔████╔██║██████╔╝██║     
-"   ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
-" ██╗╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
-" ╚═╝ ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
-" 
-" by Blackcat <blackcat@dracos-linux.org>
-" (c) Copyright 2016
+"        _
+"   __ _(_)_ __  _ _ __ 
+"   \ V / | '  \| '_/ _|
+"  (_)_/|_|_|_|_|_| \__|
+"
+" by blackcat (c) Copyright 2016
 
-set nocompatible              
-filetype off  
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -66,7 +63,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
-set expandtab
+set noexpandtab
 
 "" Neocomplete {{
 	" Disable AutoComplPop.
@@ -184,12 +181,12 @@ endif
 " Airline symbols
 "let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'
-let g:airline_left_sep = ''
-"let g:airline_left_sep = '▓░'
-let g:airline_right_sep = ''
+"let g:airline_left_sep = ''
+let g:airline_left_sep = '▓░'
+"let g:airline_right_sep = ''
 "let g:airline_right_sep = '«'
 "let g:airline_right_sep = '◀'
-"let g:airline_right_sep = '░▓'
+let g:airline_right_sep = '░▓'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''

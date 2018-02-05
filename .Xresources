@@ -1,28 +1,40 @@
-! Colors
-#include "/home/blackcat/.colors/night"
+!
+!    __  __
+!    \ \/ /_ _ ___ ___ ___ _  _ _ _ __ ___ ___
+!   _ >  <| '_/ -_|_-</ _ \ || | '_/ _/ -_|_-<
+!  (_)_/\_\_| \___/__/\___/\_,_|_| \__\___/__/
+!
+!  with many extensions
 
-! Extention
-URxvt.perl-lib: /home/blackcat/.urxvt/urxvt-perls
-URxvt.perl-ext-common:  default,clipboard,keyboard-select,url-select,resize-font
-URxvt.clipboard.autocopy: true
+#include "/home/blackcat/.colors/ocean"
+!#include "/home/blackcat/.x/fonts/"
+#include "/home/blackcat/.x/rofi/ocean"
 
-! Config
 URxvt.termName: rxvt-unicode
-URxvt.geometry: 123x25+344+202
+URxvt.geometry: 120x24+352+209
 URxvt.internalBorder: 23
 !URxvt.transparent: true
 !URxvt.shading: 5
 !URxvt.fadecolor: #0c0c0c
 !URxvt.fading: 30
+!URxvt.depth: 32
 URxvt.scrollBar: false
+URxvt.scrollBar_right: false
 URxvt.saveLine: 10000
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.letterSpace: -1
-!URxvt.lineSpace: 2
+!URxvt.lineSpace: 1
 URxvt.cursorUnderline: true
+!URxvt.highlightColor:
+!URxvt.hightlightTextColor:
 URxvt.url-select.launcher: firefox
 URxvt.url-select.underline: true
+URxvt.loginShell: true
+
+URxvt.perl-lib: /home/blackcat/.urxvt/urxvt-perls
+URxvt.perl-ext-common:  default,clipboard,keyboard-select,url-select,resize-font
+URxvt.clipboard.autocopy: true
 
 ! Keybind
 URxvt.keysym.Control-Alt-C: perl:clipboard:copy
@@ -35,29 +47,14 @@ URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
 
 ! Xft
-Xft.antialias:  1
-Xft.autohint:   0
-Xft.dpi:    96
-Xft.hinting:    1
+Xft.antialias:  true
+Xft.autohint:   true
+Xft.dpi:        96
+Xft.hinting:    true
 Xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
-Xft.rgba: rgb
+Xft.rgba:       rgb
 
 ! Fonts
-URxvt*font: xft:Fira Mono for Powerline:Regular:pixelsize=9:antialias=true:hinting=true
-
-! Bitmap Fonts
-!URxvt*font: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
-!URxvt*boldFont: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
-!URxvt*italicFont: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
-!URxvt*bolditalicFont: -kori-metis-normal-r-normal--11-90-75-75-p-58-iso10646-1
-
-!URxvt*font:  -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
-!URxvt*boldFont: -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
-!URxvt*italicFont: -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
-!URxvt*bolditalicFont: -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
-
-!URxvt*font: -kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
-!URxvt*boldFont: -kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
-!URxvt*italicFont: -kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
-!URxvt*bolditalicFont: -kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1
+URxvt*font: xft:Hack:Regular:pixelsize=9:antialias=true:hinting=true
+!URxvt*font: xft:Fira Mono for Powerline:Regular:pixelsize=9:antialias=true:hinting=true

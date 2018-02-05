@@ -1,10 +1,6 @@
-class="Firefox"
-	waitron window_monocle
-class="Chromium"
-	waitron window_monocle
-class="Vlc"
-	waitron window_monocle
-class="Thunar"
-	waitron window_snap middle
-class="Gcolor2"
+type="normal"
+	waitron window_snap middle;cooker put_window
+role="browser"
+	waitron window_snap monocle;
+type="dialog"
 	waitron window_snap middle
