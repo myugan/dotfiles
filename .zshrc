@@ -151,17 +151,21 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #------------------------------
 # Prompt
 #------------------------------
+TIME=$(date "+%H:%M %p")
 if [[ $EUID -ne 0 ]]; then
     #PROMPT='%B%F{magenta}%n@%m:%F{yellow}%~%f%b '
     #PROMPT='%B%F{blue}%n@%m %F{magenta}%d%f%b » '
     #PROMPT='%F{blue}%~%f ➜ '
-    PROMPT='%B%F{blue}%n@%m %F{white}[%F{magenta} %~%f ]%f%b ' 
+    PROMPT='%B%F{blue}%n@%m %F{white} %~ %f%b '
+    #PROMPT='%B$TIME %F{white} ─ %f%b'
+    #PROMPT='%B%F{blue}$TIME %F{white} %~ %f%b '
 else
     PROMPT='%B%F{red}%n@%m %F{white}%d%f%b » '
     #PROMPT='%B%F{red}%n@%m:%F{yellow}%~%f%b '
     #PROMPT='%B%F{red}%n %F{yellow}%~%f%b '
 fi
 #RPROMPT='%F{white}[%D{%H:%M:%S %p}]'
+RPROMPT=''
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 #ZSH_THEME="af-magic"
@@ -174,3 +178,9 @@ export LANG=en_US.UTF-8
 
 DISABLE_AUTO_UPDATE="false"
 
+
+PATH="/home/blackcat/.perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/blackcat/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/blackcat/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/blackcat/.perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/blackcat/.perl5"; export PERL_MM_OPT;

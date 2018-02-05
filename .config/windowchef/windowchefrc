@@ -1,14 +1,65 @@
 #!/bin/sh
+#
+#          _         _               _         __        
+#  __ __ _(_)_ _  __| |_____ __ ____| |_  ___ / _|_ _ __ 
+#  \ V  V / | ' \/ _` / _ \ V  V / _| ' \/ -_)  _| '_/ _|
+#   \_/\_/|_|_||_\__,_\___/\_/\_/\__|_||_\___|_| |_| \__|
+#  
+#  Cooking window since 2016 created by tudurom.
+#
+#
 
-waitron wm_config border_width 2
-waitron wm_config color_focused 0xd9d9d9
-waitron wm_config color_focused 0x7E9C80
-waitron wm_config gap_width all 10
-waitron wm_config gap_width top 40
-waitron wm_config grid_gap_width 5
+# wallpaper
+. $HOME/.fehbg
+
+# check instance
+[ ! -z 'pidof sxhkd' ] && pkill sxhkd
+[ ! -z 'pidof ruler' ] && pkill ruler
+[ ! -z 'pidof dunst' ] && pkill dunst
+[ ! -z 'pidof compton' ] && pkill compton
+[ ! -z 'pidof lemonbar' ] && pkill lemonbar
+[ ! -s $HOME/.mpd/pid ] && mpd
+sleep 1
+
+# keybind
+sxhkd &
+
+# rule of daemon
+ruler &
+
+# notification daemon
+dunst &
+
+# compositor
+compton &
+
+# panel
+. $HOME/.config/lemonbar/ocean
+
+# configuration
+border=8
+internal_border=3
+focused=0xE1E4E8 #C0C5CE
+unfocused=0x373C47
+internal_focused=0xE1E4E8
+internal_unfocused=0xAEB4BF
+gap=10
+panel_height=32
+gap_top=$(( gap + panel_height ))
+gap_grid=$(( gap / 2 ))
+group=4
+
+waitron wm_config border_width $border
+waitron wm_config color_focused $unfocused
+waitron wm_config color_unfocused $unfocused
+waitron wm_config internal_border_width $internal_border
+waitron wm_config internal_color_focused $focused
+waitron wm_config internal_color_unfocused $internal_unfocused
+waitron wm_config gap_width all $gap
+waitron wm_config gap_width top $gap_top
+waitron wm_config grid_gap_width $gap_grid
 waitron wm_config cursor_position middle
-waitron wm_config groups_nr 4
-waitron wm_config group_activate_specific true
+waitron wm_config groups_nr $group
 waitron wm_config enable_resize_hints false
 waitron wm_config enable_sloppy_focus true
 waitron wm_config sticky_windows false
@@ -19,3 +70,5 @@ waitron wm_config replay_click_on_focus true
 waitron wm_config pointer_actions move resize_side resize_corner
 waitron wm_config pointer_modifier super
 waitron wm_config click_to_focus any
+
+

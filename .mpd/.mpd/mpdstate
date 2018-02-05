@@ -1,0 +1,26 @@
+sw_volume: 98
+audio_device_state:1:pulse audio
+audio_device_state:1:MyFIFO
+state: stop
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:The Chainsmokers - All We Know (feat. Phoebe Ryan).mp3
+1:The Chainsmokers - Closer (feat. Halsey).mp3
+2:The Chainsmokers - Dont Let Me Down (feat. Daya).mp3
+3:The Chainsmokers - Good Intentions.mp3
+4:The Chainsmokers - Inside Out (feat. Charlee).mp3
+5:The Chainsmokers - New York City.mp3
+6:The Chainsmokers - Roses (feat. ROZES).mp3
+7:The Chainsmokers - Setting Fires (feat. XYL).mp3
+8:The Chainsmokers - Sick Boy.mp3
+9:The Chainsmokers - Waterbed (feat. Waterbed).mp3
+10:The Chainsmokers - Hollow (ft Selena Gomez).mp3
+11:The_Chainsmokers_ft_Jhene_Aiko_-_Wake_Up_Alone.mp3
+12:The Chainsmokers - Until You Were Gone (feat. Emily Warren).mp3
+playlist_end

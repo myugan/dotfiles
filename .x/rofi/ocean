@@ -1,0 +1,19 @@
+rofi.color-enabled: true
+!                  bg       border   separator
+rofi.color-window: #373C47, #373C47, #AEB4BF
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+rofi.color-normal: #373C47, #e0e0e0, #373C47, #E1E4E8, #373C47
+rofi.color-active: #AEB4BF, #373C47, #373C47, #1C1F26, #e0e0e0
+rofi.separator-style: solid
+rofi.sidebar-mode: false
+rofi.hide-scrollbar: true
+rofi.bw: 1
+rofi.columns: 1
+rofi.padding: 12
+rofi.yoffset: 0
+rofi.fake-transparency: false
+rofi.location: 0
+rofi.width: 40
+rofi.font: lemon 8
+rofi.lines: 5
+rofi.fixed-num-lines: true
