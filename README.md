@@ -86,12 +86,12 @@ Installed Apps
 
 TODO
 ===============
-* Desktop themes changer for windowchef.
-* User Guide.
+- [ ] Desktop themes `windowchef`.
+- [x] [User Guide](https://github.com/noirecat/dotfiles/wiki/windowchef-for-dummies)
 
 :octocat:Credits
 ===============
 * Thanks to [tudurom](https://github.com/tudurom/).
 * Ruka Nanda Vera [yuune](https://github.com/yuune) for references.
-* Linuxer Desktop Art, Eye Candy Linux and r/unixporn.
+* [Linuxer Desktop Art](https://web.facebook.com/groups/linuxart/), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn.
 * And another user to sharing their dotfiles.
