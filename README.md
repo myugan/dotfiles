@@ -1,66 +1,16 @@
-```
+Welcome to my Archlinux configuration.
 
-				 ___   ___ _____ ___ ___ _    ___ ___ 
-				|   \ / _ \_   _| __|_ _| |  | __/ __|
-				| |) | (_) || | | _| | || |__| _|\__ \
-				|___/ \___/ |_| |_| |___|____|___|___/
-                                      
+## Screenshots
 
-```
-
-Welcome to my Archlinux configuration for windowchef.
-
-Screenshots
-===============
+* windowchef based on `base16-ocean` and `Nord`.
 
 ![scrot1](img/ocean.png)
 
-Tables of Contents
-====================
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Installed apps](#installed-apps)
-- [TODO](#todo)
-- [Credits](#credits)
+* windowchef using own colorscheme `.colors/fbox`.
 
+![scrot2](img/pebble.png)
 
-Introduction
-===============
-
-What is `windowchef`? windowchef is stacking window manager written in C with the help of the XCB library,
-using `waitron` as sends commands to windowchef through X client messages created by [tudurom](https://github.com/tudurom/).
-How about keybind? windowchef use a third party program like `sxhkd` to send pointer events to `waitron` using keyboard.
-
-Installation
-===============
-
-Before installing, you must install some dependencies for windowchef :
-* `xcb`
-* `xcb-randr`
-* `xcb-util-wm`
-* `xcb-keysyms`
-* `xproto (compile-time dependency)`
-
-Windowchef also available on `AUR` :
-* `windowchef`
-* `windowchef-git`
-
-Or install it from source using git clone and `make` it!
-1. `git clone https://github.com/tudurom/windowchef.git`
-2. `cd windowchef`
-3. `make && sudo make install`
-
-Configuration
-===============
-
-1. `mkdir $HOME/.config/windowchef`
-2. `cp windowchef/examples/windowchefrc $HOME/.config/windowchef`
-3. `cp windowchef/examples/sxhkdrc $HOME/.config/sxhkd`
-4. Then set permission to executable using `chmod +x`.
-
-Installed Apps
-===============
+## Installed Apps
 
 * `bum` -- A daemon that downloads album art for songs playing in `mpd`/`mopidy`.
 * `cmus` -- A small ncurses based music player.
@@ -83,15 +33,14 @@ Installed Apps
 * `xtitle` -- Outputs X window titles to show current window title on `lemonbar`.
 * `xdotool` -- Command-line X11 automation tool to show workspace status.
 
-
-TODO
-===============
+## TODO
+- [ ] Colorschemes.
 - [ ] Desktop themes `windowchef`.
 - [x] [User Guide](https://github.com/noirecat/dotfiles/wiki/windowchef-for-dummies)
 
-:octocat:Credits
-===============
-* Thanks to [tudurom](https://github.com/tudurom/).
+## :octocat: Credits
+
+* Thanks to [tudurom](https://github.com/tudurom/) for created `windowchef`.
 * Ruka Nanda Vera [yuune](https://github.com/yuune) for references.
 * [Linuxer Desktop Art](https://web.facebook.com/groups/linuxart/), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn.
-* And another user to sharing their dotfiles.
+* And another user for sharing their dotfiles.
