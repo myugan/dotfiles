@@ -1,38 +1,52 @@
-*background: #2B303B
-*foreground: #C0C5CE
+*background: 	#1B1F23
+*foreground: 	#C0C5CE
 
 ! BLK
-*color0:      #343D46
-*color8:      #4F5B66
-!#2B303B  
+*color0:      	#343D46
+*color8:      	#4F5B66  
 
 ! RED
-*color1:      #BF616A 
-*color9:      #D08770  
+*color1:      	#BF616A 
+*color9:      	#D08770  
 
 ! GRN
-*color2:      #A3BE8C  
-*color10:     #A3BE8C  
+*color2:      	#A3BE8C  
+*color10:     	#A3BE8C  
 
 ! YLW
-*color3:      #EBCB8B  
-*color11:     #EBCB8B 
+*color3:      	#EBCB8B  
+*color11:    	#EBCB8B 
 
 ! BLU
-*color4:      #8FA1B3  
-*color12:     #8FA1B3  
+*color4:      	#8FA1B3  
+*color12:     	#8FA1B3  
 
 ! MAG
-*color5:      #B48EAD  
-*color13:     #B48EAD  
+*color5:      	#B48EAD  
+*color13:     	#B48EAD  
 
 ! CYN
-*color6:      #96B5B4  
-*color14:     #AB7967  
+*color6:      	#96B5B4  
+*color14:     	#AB7967  
 
 ! WHT
-*color7:		#C0C5CE
-*color15:		#C0C5CE
+*color7:      	#C0C5CE
+*color15:     	#C0C5CE
 
-!*color7:      #65737E  
-!*color15:     #A7ADBA
+!                  	'background', 'border'
+rofi.color-window: 	#373C47, #373C47, #AEB4BF
+!	           	'bg',     'fg',     'bg-alt',  'hlbg',   'hlfg'
+rofi.color-normal: 	#373C47, #e0e0e0, #373C47, #E1E4E8, #373C47
+rofi.color-active: 	#AEB4BF, #373C47, #373C47, #1C1F26, #e0e0e0
+rofi.bw: 		1
+rofi.columns: 		1
+rofi.padding: 		12
+rofi.yoffset: 		0
+rofi.xoffset: 		0
+rofi.width: 		40
+rofi.font: 		lemon 8
+rofi.lines: 		5
+rofi.case-sensitive:	false
+rofi.separator-style:	solid
+rofi.sidebar-mode: 	false
+rofi.hide-scrollbar: 	true

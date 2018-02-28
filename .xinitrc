@@ -1,40 +1,37 @@
 #!/bin/bash
+#
+# Start needed programs for multi session
+#
+# usage : 
+#	startx ~/.xinitrc (session)
+# example :
+#	startx ~/.xinitrc dwm
+#
 
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# dunst to be better
-systemctl --user import-environment DISPLAY
-
-# Set cursor from X to pointer
-xsetroot -cursor_name left_ptr &
-
-start-pulseaudio-x11 &
+# load the profile
+source ~/.profile
 
 # source for the terminal
 xrdb -merge ~/.Xresources &
 
-# Driver
-xrandr --auto
+xsetroot -cursor_name left_ptr &
 
-# Services
-urxvtd -q -o -f &
-xrdb -q &
+start-pulseaudio-x11 &
 
-# wallpaper
+pgrep redshift &> /dev/null || redshift &> /dev/null &
+
+
 . ~/.fehbg
 
-# Fonts
-xset fp+ ~/.fonts &
-xset fp rehash &
-
-# Keyboard layout to us keymap
-setxkbmap -layout us &
-
-# Multi session
-wm=windowchef
-case "$1" in
-			awesomewm)  exec awesome ;;
-			windowchef) exec windowchef -c $WCHEF;;
-			*)          exec $wm ;;
+case $1 in
+		dwm	)
+			exec dwm ;;
+		ob	)
+			exec openbox-session ;;
+		wchf	)
+			exec windowchef ;;
+		xfce ) 
+			exec startxfce4 ;;
+		*) 
+			exec windowchef ;;
 esac

@@ -1,0 +1,97 @@
+#  Tint2 config by
+
+# ID-1 (Panel)
+rounded = 0
+border_width = 0
+background_color = #282E39 100
+# #1C1F26 100
+border_color = #282E39 0
+# #1C1F26 0
+
+# ID-2 (Iconify)
+rounded = 0
+border_width = 0
+background_color = #1C1F26 100
+# #2B343D 100
+border_color = #1C1F26 0
+##343D46 0
+
+# ID-3 (Hover)
+rounded = 0
+border_width = 0
+background_color = #3F4453 100
+border_color = #3F4453 0
+
+# Panel
+panel_monitor = all
+panel_items = TSC
+panel_position = top center horizontal
+panel_size = 100% 32
+panel_margin = 0 0
+panel_padding = 0 0 0
+panel_dock = 0
+panel_layer = top
+panel_background_id= 1
+
+# Taskbar
+taskbar_name = 0
+taskbar_name_padding = 0
+taskbar_name_background_id = 0
+taskbar_name_active_background_id = 0
+taskbar_name_font = Bebas Neue 10
+taskbar_name_font_color = #474747 100
+taskbar_name_active_font_color = #888888 100
+taskbar_mode = single_desktop
+taskbar_padding = 0 0 0
+taskbar_background_id = 0
+taskbar_active_background_id = 1
+
+# Tasks
+urgent_nb_of_blink = 20
+task_icon = 1
+task_text = 0
+task_centered = 1
+task_maximum_size = 50 0
+task_padding = 5 5
+task_background_id = 1
+task_active_background_id = 3
+task_urgent_background_id = 2
+task_iconified_background_id = 1
+
+# Task Icons
+task_icon_asb = 200 0 0
+task_active_icon_asb = 100 0 0
+task_urgent_icon_asb = 100 0 0
+task_iconified_icon_asb = 80 0 0
+
+# Fonts
+task_font = Bebas Neue 10
+task_font_color = #CFCCCC 100
+task_active_font_color = #F1F1F1 100
+task_urgent_font_color = #CFCCCC 100
+task_iconified_font_color = #CFCCCC 80
+font_shadow = 0
+
+# System Tray
+systray = 1
+systray_padding = 4 5
+systray_sort = right2left
+systray_background_id = 1
+systray_icon_size = 18
+systray_icon_asb = 100 0 0
+
+# Clock
+time1_format = %H:%M %p
+time1_font = Bebas Neue 11
+clock_font_color = #F1F1F1 100
+clock_padding = 15 5
+clock_background_id = 1
+clock_lclick_command = gsimplecal
+clock_rclick_command = gsimplecal
+
+# Mouse
+mouse_left = toggle_iconify
+mouse_middle = close
+mouse_right = close
+mouse_scroll_up = prev_task
+mouse_scroll_down = next_task

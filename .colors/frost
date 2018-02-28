@@ -1,0 +1,52 @@
+*background: 	#111117
+*foreground: 	#D9DDDD
+
+! BLK
+*color0:      	#11141C
+*color8:      	#11141C
+
+! RED
+*color1:      	#BF616A 
+*color9:      	#D65656
+
+! GRN
+*color2:      	#39BE8D
+*color10:     	#39BE8D  
+
+! YLW
+*color3:      	#e8c87d 
+*color11:     	#e8c87d 
+
+! BLU
+*color4:      	#407EBC  
+*color12:     	#407EBC  
+
+! MAG
+*color5:      	#994AC5  
+*color13:     	#994AC5
+
+! CYN
+*color6:      	#37B6B2
+*color14:     	#37B6B2  
+
+! WHT
+*color7:	#C0C5CE
+*color15:	#C0C5CE
+
+!                  	'background', 'border'
+rofi.color-window: 	#17171D, #2c2c32, #AEB4BF
+!	           	'bg',     'fg',     'bg-alt',  'hlbg',   'hlfg'
+rofi.color-normal: 	#17171D, #e0e0e0, #17171D, #E1E4E8, #373C47
+rofi.color-active: 	#AEB4BF, #373C47, #373C47, #1C1F26, #e0e0e0
+rofi.bw: 		4
+rofi.columns: 		1
+rofi.padding: 		12
+rofi.xoffset:		0
+rofi.yoffset: 		0
+rofi.width: 		30
+rofi.font: 		Fira Sans Bold 8
+rofi.lines: 		3
+rofi.case-sensitive:	false
+rofi.separator-style: 	none
+rofi.sidebar-mode: 	false
+rofi.hide-scrollbar: 	true

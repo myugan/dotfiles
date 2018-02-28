@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# load fonts
+xset fp+ ~/.fonts
+xset fp rehash
+
+# Sources for terminal
+xrdb -merge ~/.X-openbox
+
+# Dock
+plank &
+
+# Wallpaper
+nitrogen --restore &
+
+# notification daemon
+dunst &
+
+# compositor
+compton &
+
+# color temperature
+redshift &
+
+# System Tray
+volumeicon &
+xfce4-power-manager &
+nm-applet &
+#gvolwheel -d hw:1 &
+pamac-tray &
+
+# Panel
+tint2 -c ~/.config/tint2/Numix-Square.tint2rc

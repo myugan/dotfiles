@@ -1,8 +1,9 @@
 sw_volume: 100
-audio_device_state:1:MyALSA
+audio_device_state:1:pulse audio
 audio_device_state:1:MyFIFO
-state: stop
-current: 0
+state: play
+current: 3
+time: 4.086000
 random: 0
 repeat: 0
 single: 0
@@ -11,57 +12,23 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:The Chainsmokers - All We Know (feat. Phoebe Ryan).mp3
-1:The Chainsmokers - Closer (feat. Halsey).mp3
-2:The Chainsmokers - Dont Let Me Down (feat. Daya).mp3
-3:The Chainsmokers - Good Intentions (feat. BullySongs).mp3
-4:The Chainsmokers - Inside Out (feat. Charlee).mp3
-5:The Chainsmokers - New York City.mp3
-6:The Chainsmokers - Roses (feat. ROZES).mp3
-7:The Chainsmokers - Setting Fires (feat. XYL).mp3
-8:The Chainsmokers - Sick Boy.mp3
-9:The Chainsmokers - Waterbed (feat. Waterbed).mp3
-10:The Chainsmokers - Until You Were Gone (feat. Emily Warren).mp3
-11:03 Daniel Powter Bad Day.mp3
-12:Alan Walker ft. Gavin James - Tired.mp3
-13:Anjulie featuring Oskar Flood - Where The Love Goes (Official Music Video).mp3
-14:Avicii - Without You Audio ft. Sandro Cavazza.mp3
-15:Axwell Λ Ingrosso - More Than You Know.mp3
-16:Cheat Codes - Stay With You (LyricsLyric Video) With CADE.mp3
-17:Clean Bandit - Rockabye ft. Sean Paul & Anne-Marie Official Video.mp3
-18:Felix Jaehn, Hight, Alex Aiono - Hot2Touch (Lyric Video).mp3
-19:Jason Derulo - Swalla (feat. Nicki Minaj & Ty Dolla $ign) (Official Music Video).mp3
-20:Jessica Mauboy - Fallin'.mp3
-21:Jonas Blue - Perfect Strangers ft. JP Cooper.mp3
-22:LINKIN PARK Kiiara Heavy.mp3
-23:Lost_Kings_-_Quit_You_Lyric_ft_Tinashe[SaveFrom.online].mp3
-24:Mama (feat. William Singe).mp3
-25:Maroon 5 - What Lovers Do ft. SZA.mp3
-26:Martin Garrix & Bebe Rexha - In The Name Of Love (Official Video).mp3
-27:Martin Garrix & Dua Lipa - Scared To Be Lonely (Official Video).mp3
-28:Party Favor & NJOMZA - Caskets (feat. FKi 1st) Official Lyric Video.mp3
-29:Sabrina Treat You Better.mp3
-30:Shawn Mendes - There's Nothing Holdin' Me Back.mp3
-31:Simple Plan ft. Natasha Bedingfield - Jet Lag.mp3
-32:The-Way-I-Are-Dance-With-Somebody-Bebe-Rexha-ft.-Lil-Wayne.mp3
-33:Weird Genius  - Sweet Scar (feat. Prince Husein).mp3
-34:Zayn Malik - Dusk Till Dawn .mp3
-35:Alan Walker ft. Gavin James - Tired.mp3
-36:Anjulie featuring Oskar Flood - Where The Love Goes (Official Music Video).mp3
-37:Avicii - Without You Audio ft. Sandro Cavazza.mp3
-38:Axwell Λ Ingrosso - More Than You Know.mp3
-39:Cheat Codes - Stay With You (LyricsLyric Video) With CADE.mp3
-40:Clean Bandit - Rockabye ft. Sean Paul & Anne-Marie Official Video.mp3
-41:Felix Jaehn, Hight, Alex Aiono - Hot2Touch (Lyric Video).mp3
-42:Jason Derulo - Swalla (feat. Nicki Minaj & Ty Dolla $ign) (Official Music Video).mp3
-43:Jessica Mauboy - Fallin'.mp3
-44:Jonas Blue - Perfect Strangers ft. JP Cooper.mp3
-45:Lost_Kings_-_Quit_You_Lyric_ft_Tinashe[SaveFrom.online].mp3
-46:Maroon 5 - What Lovers Do ft. SZA.mp3
-47:Martin Garrix & Bebe Rexha - In The Name Of Love (Official Video).mp3
-48:Martin Garrix & Dua Lipa - Scared To Be Lonely (Official Video).mp3
-49:Party Favor & NJOMZA - Caskets (feat. FKi 1st) Official Lyric Video.mp3
-50:Shawn Mendes - There's Nothing Holdin' Me Back.mp3
-51:Zayn Malik - Dusk Till Dawn .mp3
-52:The-Way-I-Are-Dance-With-Somebody-Bebe-Rexha-ft.-Lil-Wayne.mp3
+0:Music/The Chainsmokers - All We Know (feat. Phoebe Ryan).mp3
+1:Music/The Chainsmokers - Bloodstream.mp3
+2:Music/The Chainsmokers - Break Up Every Night.mp3
+3:Music/The Chainsmokers - Closer (feat. Halsey).mp3
+4:Music/The Chainsmokers - Don't Say ft. Emily Warren.mp3
+5:Music/The Chainsmokers - Dont Let Me Down (feat. Daya).mp3
+6:Music/The Chainsmokers - Good Intentions.mp3
+7:Music/The Chainsmokers - Hollow (ft Selena Gomez).mp3
+8:Music/The Chainsmokers - Inside Out (feat. Charlee).mp3
+9:Music/The Chainsmokers - New York City.mp3
+10:Music/The Chainsmokers - Roses (feat. ROZES).mp3
+11:Music/The Chainsmokers - Setting Fires (feat. XYL).mp3
+12:Music/The Chainsmokers - Sick Boy.mp3
+13:Music/The Chainsmokers - Until You Were Gone (feat. Emily Warren).mp3
+14:Music/The Chainsmokers - Waterbed (feat. Waterbed).mp3
+15:Music/The Chainsmokers - Young .mp3
+16:Music/The_Chainsmokers_ft_Jhene_Aiko_-_Wake_Up_Alone.mp3
+17:Music/The-Way-I-Are-Dance-With-Somebody-Bebe-Rexha-ft.-Lil-Wayne.mp3
+18:Indie/Payung Teduh - Payung TeduhCover by Alffy Rev ft Brisia Jodie.mp3
 playlist_end
