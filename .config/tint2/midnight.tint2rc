@@ -1,0 +1,222 @@
+#  Tint2 config by
+
+# ID-1 (Panel)
+rounded = 0
+border_width = 0
+background_color = #1C1F26 100
+border_color = #1C1F26 0
+
+# ID-2 (Iconify)
+rounded = 0
+border_width = 0
+background_color = #2B343D 100
+border_color = #2B343D 0
+
+# Panel
+panel_monitor = all
+panel_items = TEEEEEEC
+panel_position = bottom center horizontal
+panel_size = 100% 30
+panel_margin = 0 0
+panel_padding = 0 0 0
+panel_dock = 0
+panel_layer = top
+panel_background_id= 1
+
+# Taskbar
+taskbar_name = 0
+taskbar_name_padding = 0
+taskbar_name_background_id = 0
+taskbar_name_active_background_id = 0
+taskbar_name_font = artwiz lemon 8
+taskbar_name_font_color = #474747 100
+taskbar_name_active_font_color = #888888 100
+taskbar_mode = single_desktop
+taskbar_padding = 0 0 0
+taskbar_background_id = 0
+taskbar_active_background_id = 1
+
+# Tasks
+urgent_nb_of_blink = 20
+task_icon = 0
+task_text = 1
+task_centered = 1
+task_maximum_size = 200 0
+task_padding = 8 6
+task_background_id = 1
+task_active_background_id = 2
+task_urgent_background_id = 2
+task_iconified_background_id = 1
+
+# Task Icons
+task_icon_asb = 200 0 0
+task_active_icon_asb = 100 0 0
+task_urgent_icon_asb = 100 0 0
+task_iconified_icon_asb = 80 0 0
+
+# Fonts
+task_font = artwiz lemon 8
+task_font_color = #CFCCCC 100
+task_active_font_color = #F1F1F1 100
+task_urgent_font_color = #CFCCCC 100
+task_iconified_font_color = #CFCCCC 80
+font_shadow = 0
+
+# System Tray
+systray = 1
+systray_padding = 7 5 7
+systray_sort = right2left
+systray_background_id = 1
+systray_icon_size = 12
+systray_icon_asb = 100 0 0
+
+# Executor 1
+execp = new
+execp_command = ~/wms/bin/wifi
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 1
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = artwiz lemon 8
+execp_font_color = #CFCCCC 100
+execp_padding = 5 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+# Separator
+execp = new
+execp_command = echo "//"
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 1
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = artwiz lemon 8
+execp_font_color = #CFCCCC 100
+execp_padding = 5 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+# Executor 2
+execp = new
+execp_command = ~/wms/bin/sound
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 1
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = artwiz lemon 8
+execp_font_color = #CFCCCC 100
+execp_padding = 7 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+# Separator
+execp = new
+execp_command = echo "//"
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 1
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = artwiz lemon 8
+execp_font_color = #CFCCCC 100
+execp_padding = 5 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+# Executor 3 
+execp = new
+execp_command = ~/wms/bin/bat
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 1
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = artwiz lemon 8
+execp_font_color = #CFCCCC 100
+execp_padding = 5 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+# Separator
+execp = new
+execp_command = echo "//"
+execp_interval = 0
+execp_has_icon = 0
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 1
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = artwiz lemon 8
+execp_font_color = #CFCCCC 100
+execp_padding = 5 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+# Clock
+time1_format = %A, %d %B %H:%M %p
+time1_font = lemon 8
+clock_font_color = #CFCCCC 100
+clock_padding = 8 4
+clock_background_id = 1
+clock_lclick_command = gsimplecal
+clock_rclick_command = gsimplecal
+
+# Tooltips
+tooltip = 1
+tooltip_padding = 6 6
+tooltip_show_timeout = 1.0
+tooltip_hide_timeout = 0.0
+tooltip_background_id = 1
+tooltip_font = artwiz lemon 8
+tooltip_font_color = #474747 100
+
+# Mouse
+mouse_left = toggle_iconify
+mouse_middle = close
+mouse_right = close
+mouse_scroll_up = prev_task
+mouse_scroll_down = next_task

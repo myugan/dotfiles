@@ -1,3 +1,18 @@
 vte-terminal {
-    padding: 10px;
+	padding: 25px;
+}
+
+.window-frame, .window-frame:backdrop {
+    box-shadow: 0 0 0 black;
+    border-style: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+#pulseaudio-button { 
+	padding: 2px 2px;
+}
+
+#xfce4-power-manager-plugin {
+	padding: 5px;
 }

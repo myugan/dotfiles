@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case $1 in
+	bg)
+		xrdb -query | grep '*background'| awk '{print $NF}'
+	;;
+	fg)
+		xrdb -query | grep '*foreground'| awk '{print $NF}'
+	;;
+	*)
+	 	xrdb -query | grep "*color$1:" | awk '{print $NF}'	
+	;;
+esac

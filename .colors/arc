@@ -1,11 +1,11 @@
-*background:   #2B303B
+! based on base16-ocean, nord.
+
+*background:   #2F343F
 *foreground:   #d2d2d2  
 
 ! BLK
-*color0:      #2B303B
+*color0:      #353944
 *color8:      #3B4252
-
-!#414158  
 
 ! RED
 *color1:      #BF606B  
@@ -34,3 +34,21 @@
 ! WHT
 *color7:      #CAC8D5  
 *color15:     #CAC8D5  
+
+!                  	'background', 'border'
+rofi.color-window: 	#353944,      #404552
+!	           	'bg',     'fg',     'bg-alt',  'hlbg',   'hlfg'
+rofi.color-normal: 	#353944,  #FFFFFF,  #353944,  #5294E2,  #FFFFFF
+rofi.color-active: 	#34405a,  #34405a,  #5671a0,  #5d729f,  #5e73a0
+rofi.bw:		4
+rofi.columns:		1
+rofi.padding:		20
+rofi.yoffset: 		0
+rofi.xoffset: 		0
+rofi.width: 		40
+rofi.font:  		SFNS Display Bold 8
+rofi.lines: 		5
+rofi.case-sensitive:	false
+rofi.separator-style:  	solid
+rofi.sidebar-mode: 	false
+rofi.hide-scrollbar:  	true
