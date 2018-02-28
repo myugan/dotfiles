@@ -12,19 +12,19 @@
 
 - Tint2 
 
-![desktop1](img/1-numix.png)
+![desktop1](img/panel/1-numix.png)
 
-![desktop1](img/2-numix.png)
+![desktop1](img/panel/2-numix.png)
 
-![desktop1](img/3-numix.png)
+![desktop1](img/panel/3-numix.png)
 
 - Lemonbar
 
-![desktop1](img/bluepane.png)
+![desktop1](img/panel/bluepane.png)
 
-![desktop1](img/pane.png)
+![desktop1](img/panel/pane.png)
 
-![desktop1](img/pebble.png)
+![desktop1](img/panel/pebble.png)
 
 ### Rofi
 
