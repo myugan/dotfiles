@@ -1,14 +1,48 @@
-Welcome to my Archlinux configuration.
+## Previews
 
-## Screenshots
+- Openbox
 
-* windowchef based on `base16-ocean` and `Nord`.
+![desktop](img/openbox-numix.png)
 
-![scrot1](img/ocean.png)
+- Windowchef
 
-* windowchef using own colorscheme `.colors/fbox`.
+![desktop1](img/pebble.png)
 
-![scrot2](img/pebble.png)
+### Panel
+
+- Tint2 
+
+![desktop1](img/1-numix.png)
+
+![desktop1](img/2-numix.png)
+
+![desktop1](img/3-numix.png)
+
+- Lemonbar
+
+![desktop1](img/bluepane.png)
+
+![desktop1](img/pane.png)
+
+![desktop1](img/pebble.png)
+
+### Rofi
+
+- Numix style
+
+![desktop1](img/rofi-numix.png)
+
+- Arc style
+
+![desktop1](img/rofi-arc.png)
+
+## Setup
+- Dock: `plank`
+- App Launcher: `rofi`
+- File Manager: `ranger`
+- Terminal Emulator: `rxvt-unicode`
+- Text Editor: `geany`
+- Music Player: `mpd`, `ncmpcpp` and `cava`
 
 ## Installed Apps
 
@@ -33,14 +67,8 @@ Welcome to my Archlinux configuration.
 * `xtitle` -- Outputs X window titles to show current window title on `lemonbar`.
 * `xdotool` -- Command-line X11 automation tool to show workspace status.
 
-## TODO
-- [ ] Colorschemes.
-- [ ] Desktop themes `windowchef`.
-- [x] [User Guide](https://github.com/noirecat/dotfiles/wiki/windowchef-for-dummies)
-
 ## :octocat: Credits
 
-* Thanks to [tudurom](https://github.com/tudurom/) for created `windowchef`.
-* Ruka Nanda Vera [yuune](https://github.com/yuune) for references.
+* Thanks to [tudurom](https://github.com/tudurom/) and [yuune](https://github.com/yuune) for references.
 * [Linuxer Desktop Art](https://web.facebook.com/groups/linuxart/), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn.
 * And another user for sharing their dotfiles.
