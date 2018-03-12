@@ -1,6 +1,9 @@
-# DOTFILES
+=========
+DOTFILES
+=========
 
-### About
+About
+=========
 Currently, i am using openbox (Groove) and windowchef (setup not ready) and this is the list of apps contained on my setup.
 
 + Shell: `fish`
@@ -42,7 +45,9 @@ Previews
 
 .. image:: img/adapta.png
 
-## :octocat: Credits
+=========
+:octocat: Credits
+=========
 
 * Thanks to [tudurom](https://github.com/tudurom/) and [yuune](https://github.com/yuune) for references.
 * [Linuxer Desktop Art](https://web.facebook.com/groups/linuxart/), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn.
