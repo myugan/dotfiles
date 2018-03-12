@@ -48,6 +48,6 @@ Previews
 :octocat: Credits
 =========
 
-+ Thanks to .. _tudurom: https://github.com/tudurom/ and .. _yuune: https://github.com/yuune for references.
++ Thanks to `tudurom<https://github.com/tudurom>`_ and `yuune<https://github.com/yuune>`_.
 
-+ .. _Linuxer Desktop Art: https://web.facebook.com/groups/linuxart, .. _Eye Candy Linux: https://plus.google.com/communities/104794997718869399105 and r/unixporn_.
++ `Linuxer Desktop Art<https://web.facebook.com/groups/linuxart>`_, `Eye Candy Linux<https://plus.google.com/communities/104794997718869399105>`_ and r/unixporn.
