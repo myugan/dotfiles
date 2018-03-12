@@ -17,7 +17,7 @@ Previews
 
 **openbox** Numix GNOME styled.
 
-![img][img/numix.png]
+![img](img/numix.png)
 
 **openbox** - Groove + Monokai.
 
@@ -33,7 +33,7 @@ Previews
 
 **windowchef** - Adapta theme adapted!
 
-![img](img/adaopta.png)
+![img](img/adapta.png)
 
 :octocat: Credits
 =========
