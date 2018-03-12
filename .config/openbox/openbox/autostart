@@ -1,0 +1,32 @@
+#!/bin/bash
+
+export TINT="Arc"
+export BAR="Monokai"
+
+# load fonts
+xset fp+ ~/.fonts
+xset fp rehash
+
+# Sources for terminal
+xrdb -merge ~/.X-openbox
+
+# Wallpaper
+nitrogen --restore &
+
+# notification daemon
+dunst &
+
+# compositor
+compton &
+
+# color temperature
+redshift &
+
+# System Tray
+#cbatticon &
+#volumeicon &
+#nm-applet &
+
+# Panel
+#tint2 -c ~/.config/tint2/${TINT}.tint2rc &
+polybar -c ~/.config/polybar/${BAR} top &

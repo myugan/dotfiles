@@ -1,0 +1,54 @@
+! Base16 One Light
+! Scheme: Daniel Pfeifer (http://github.com/purpleKarrot)
+
+#define base00 #fafafa
+#define base01 #f0f0f1
+#define base02 #e5e5e6
+#define base03 #a0a1a7
+#define base04 #696c77
+#define base05 #383a42
+#define base06 #202227
+#define base07 #090a0b
+#define base08 #ca1243
+#define base09 #d75f00
+#define base0A #c18401
+#define base0B #50a14f
+#define base0C #0184bc
+#define base0D #4078f2
+#define base0E #a626a4
+#define base0F #986801
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06

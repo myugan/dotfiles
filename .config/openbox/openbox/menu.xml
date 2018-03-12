@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://openbox.org/">
+  <menu id="root-menu" label="Applications">
+    <item label="File Manager"><action name="Execute"><command>nautilus</command></action></item>
+    <item label="Web Browser"><action name="Execute"><command>firefox</command></action></item>
+  <separator/>
+  <menu id="text-editor" label="Text Editor">
+    <item label="Android Studio"><action name="Execute"><command>android-studio></command></action></item>
+    <item label="Arduino IDE"><action name="Execute"><command>arduino></command></action></item>
+    <item label="Geany"><action name="Execute"><command>geany</command></action></item>
+ </menu>
+  <menu id="graphics" label="Graphics">
+    <item label="GColor"><action name="Execute"><command>gcolor2></command></action></item>
+    <item label="GIMP"><action name="Execute"><command>gimp-2.8></command></action></item>
+    <item label="Inkscape"><action name="Execute"><command>inkscape></command></action></item>
+  </menu>
+  <menu id="multimedia" label="Multimedia">
+    <item label="Audacious"><action name="Execute"><command>audacious></command></action></item>
+    <item label="DeaDBeeF"><action name="Execute"><command>deadbeef></command></action></item>
+    <item label="Recorder"><action name="Execute"><command>simplescreenrecorder --logfile></command></action></item>
+    <item label="VLC"><action name="Execute"><command>/usr/bin/vlc --started-from-file></command></action></item>
+  </menu>
+  <menu id="internet" label="Internet">
+    <item label="Telegram"><action name="Execute"><command>/usr/bin/telegram-desktop --></command></action></item>
+    <item label="WhatsApp Desktop"><action name="Execute"><command>Whatsapp></command></action></item>
+  </menu>
+  <menu id="office" label="Office">
+    <item label="LibreOffice Base"><action name="Execute"><command>libreoffice --base></command></action></item>
+    <item label="LibreOffice Calc"><action name="Execute"><command>libreoffice --calc></command></action></item>
+    <item label="LibreOffice Draw"><action name="Execute"><command>libreoffice --draw></command></action></item>
+    <item label="LibreOffice Impress"><action name="Execute"><command>libreoffice --impress></command></action></item>
+    <item label="LibreOffice Math"><action name="Execute"><command>libreoffice --math></command></action></item>
+    <item label="LibreOffice Writer"><action name="Execute"><command>libreoffice --writer></command></action></item>
+  </menu>
+  <menu id="tools" label="Tools">
+	  <menu id="web" label="Web Apps">
+		<item label="Burpsuite"><action name="Execute"><command>burpsuite</command></action></item>
+		<item label="Zenmap"><action name="Execute"><command>gksudo zenmap</command></action></item>
+	  </menu>
+	  <menu id="stegano" label="Stegano">
+		<item label="Stegsolve"><action name="Execute"><command>stegsolve</command></action></item>
+	  </menu>
+	  <menu id="forensic" label="Forensic">
+		<item label="Hex Editor"><action name="Execute"><command>bless</command></action></item>
+	  </menu>
+	  <menu id="reverse" label="Reverse">
+		<item label="Cutter"><action name="Execute"><command>cutter</command></action></item>
+		<item label="JD-GUI"><action name="Execute"><command>jd-gui</command></action></item>
+		<item label="APK Studio"><action name="Execute"><command>apkstudio</command></action></item>
+	  </menu>
+	  <menu id="exploitation" label="Exploitation">
+		<item label="Metasploit"><action name="Execute"><command>urxvt -hold -e bash -c "sudo msfconsole;bash"</command></action></item>
+	  </menu>
+  </menu>
+  <separator/>
+  <menu id="settings" label="Settings">
+    <item label="Obconf"><action name="Execute"><command>obconf</command></action></item>
+    <item label="Appearance"><action name="Execute"><command>lxappearance</command></action></item>
+    <item label="Reconfigure"><action name="Execute"><command>openbox --reconfigure</command></action></item>
+  </menu>
+  <separator/>
+
+    <item label="Exit"><action name="Execute"><command>oblogout</command></action></item>
+  </menu>
+</openbox_menu>

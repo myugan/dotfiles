@@ -1,0 +1,45 @@
+! Base16 Zenburn
+! Scheme: elnawe
+
+#define base00 #3f3f3f
+#define base01 #404040
+#define base02 #606060
+#define base03 #4f4f4f
+#define base04 #808080
+#define base05 #dcdccc
+#define base06 #c0c0c0
+#define base07 #ffffff
+#define base08 #dca3a3
+#define base09 #dfaf8f
+#define base0A #e0cf9f
+#define base0B #5f7f5f
+#define base0C #93e0e3
+#define base0D #7cb8bb
+#define base0E #dc8cc3
+#define base0F #000000
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07

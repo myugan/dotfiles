@@ -1,0 +1,84 @@
+# Titlebars
+border.width: 0
+padding.height: 10
+padding.width: 12
+
+# Menu
+menu.items.active.bg: Solid Flat
+menu.items.active.bg.color: #333333
+menu.items.active.text.color: #eeeeee
+menu.items.bg: Flat Solid
+menu.items.bg.color: #eeeeee
+menu.items.disabled.text.color: #777777
+menu.items.font: shadow=n
+menu.items.text.color: #333333
+menu.border.width: 15
+menu.overlap.x: -20
+menu.overlap.y: 0
+menu.border.color: #eeeeee
+menu.separator.width: 1
+menu.separator.padding.width: 10
+menu.separator.padding.height: 2
+menu.separator.color: #eeeeee
+menu.title.bg: Solid Flat
+menu.title.bg.color: #eeeeee
+menu.title.text.color: #1D2021
+menu.title.text.font: shadow=n
+menu.title.text.justify: Center
+
+# OSD
+osd.bg: Solid Flat
+osd.bg.color: #f2f2f2
+osd.label.text.color: #071d22
+
+# Window
+window.client.padding.width: 0
+window.handle.width: 0
+window.*.title.bg: solid flat
+window.*.title.bg.color: #f7f7f7
+window.*.title.separator.color: #f8f8f8
+window.*.text.justify: center
+window.active.label.bg: parentrelative
+window.active.label.text.color: #f8f8f8
+window.*.handle.bg: flat solid
+window.*.handle.bg.color: #f8f8f8
+window.*.grip.bg: flat solid
+window.*.grip.bg.color: #f8f8f8
+
+window.active.button.pressed.bg: parentrelative
+window.active.button.pressed.bg.color: #C2E0B1
+window.inactive.button.pressed.bg: flat solid
+window.inactive.button.pressed.bg.color: #f8f8f8
+
+window.active.button.unpressed.bg: parentrelative
+window.inactive.button.unpressed.bg: flat solid
+window.*.button.unpressed.bg.color: #f8f8f8
+
+window.active.button.disabled.bg: parentrelative
+window.inactive.button.disabled.bg: flat solid
+window.*.button.disabled.bg.color: #f8f8f8
+window.*.button.disabled.image.color: #f8f8f8
+
+window.active.button.toggled.bg: parentrelative
+window.active.button.toggled.image.color: #C2E0B1
+
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #f8f8f8
+window.inactive.button.toggled.bg: parentrelative
+window.inactive.button.toggled.image.color: #C2E0B1
+
+# Button
+window.*.button.iconify.unpressed.image.color: #F2DCB2
+window.*.button.iconify.pressed.image.color: #F2DCB2
+window.*.button.iconify.hover.image.color: #F7E9CD
+
+window.*.button.max.unpressed.image.color: #C2E0B1
+window.*.button.max.pressed.image.color: #C2E0B1
+window.*.button.max.hover.image.color: #D5EDC7
+
+window.*.button.close.unpressed.image.color: #F1BAB9
+window.*.button.close.pressed.image.color: #F1BAB9
+window.*.button.close.hover.image.color: #F5CFCE
+
+
+

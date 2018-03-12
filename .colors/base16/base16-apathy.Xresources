@@ -1,0 +1,45 @@
+! Base16 Apathy
+! Scheme: Jannik Siebert (https://github.com/janniks)
+
+#define base00 #031a16
+#define base01 #0b342d
+#define base02 #184e45
+#define base03 #2b685e
+#define base04 #5f9c92
+#define base05 #81b5ac
+#define base06 #a7cec8
+#define base07 #d2e7e4
+#define base08 #3e9688
+#define base09 #3e7996
+#define base0A #3e4c96
+#define base0B #883e96
+#define base0C #963e4c
+#define base0D #96883e
+#define base0E #4c963e
+#define base0F #3e965b
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
