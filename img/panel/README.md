@@ -1,20 +1,20 @@
 ### Tint2 
 
-![tint](img/panel/1-numix.png)
+![tint](1-numix.png)
 
-![tint](img/panel/2-numix.png)
+![tint](2-numix.png)
 
-![tint](img/panel/3-numix.png)
+![tint](3-numix.png)
 
 ### Lemonbar
 
-![lemon](img/panel/bluepane.png)
+![lemon](bluepane.png)
 
-![lemon](img/panel/pane.png)
+![lemon](pane.png)
 
-![lemon](img/panel/pebble.png)
+![lemon](pebble.png)
 
 ### Polybar
 
-![poly](img/panel/groove.png)
+![poly](groove.png)
 
