@@ -1,4 +1,3 @@
-=========
 DOTFILES
 =========
 
@@ -49,5 +48,6 @@ Previews
 :octocat: Credits
 =========
 
-* Thanks to [tudurom](https://github.com/tudurom/) and [yuune](https://github.com/yuune) for references.
-* [Linuxer Desktop Art](https://web.facebook.com/groups/linuxart/), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn.
++ Thanks to .. _tudurom: https://github.com/tudurom/ and .. _yuune: https://github.com/yuune for references.
+
++ .. _Linuxer Desktop Art: https://web.facebook.com/groups/linuxart, .. _Eye Candy Linux: https://plus.google.com/communities/104794997718869399105 and r/unixporn_.
