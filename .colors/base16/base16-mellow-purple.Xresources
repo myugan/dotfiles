@@ -1,0 +1,45 @@
+! Base16 Mellow Purple
+! Scheme: gidsi
+
+#define base00 #1e0528
+#define base01 #1a092d
+#define base02 #331354
+#define base03 #320f55
+#define base04 #873582
+#define base05 #ffeeff
+#define base06 #ffeeff
+#define base07 #f8c0ff
+#define base08 #00d9e9
+#define base09 #aa00a3
+#define base0A #955ae7
+#define base0B #05cb0d
+#define base0C #b900b1
+#define base0D #550068
+#define base0E #8991bb
+#define base0F #4d6fff
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07

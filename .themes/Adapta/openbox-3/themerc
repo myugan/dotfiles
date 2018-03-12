@@ -1,0 +1,135 @@
+# Name: Adapta
+# Author: blackcat
+# License: GPL-3.0+
+
+# General
+border.width: 2
+padding.width: 7
+padding.height: 5
+window.handle.width: 0
+window.client.padding.width: 0
+window.label.text.justify: center
+
+# Menu
+menu.border.color: #28343A
+menu.border.width: 15
+menu.overlap.x: -23
+menu.overlap.y: 0
+menu.title.bg: flat solid
+menu.title.bg.color: #28343A
+menu.*.text.color: #B9C2C7
+menu.title.text.justify: center
+menu.items.bg: flat solid
+menu.items.bg.color: #28343A
+menu.items.disabled.text.color: #566067
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #384449
+menu.items.active.text.color: #CFD8DC
+menu.separator.color: #222D32
+menu.separator.width: 1
+menu.separator.padding.width: 2
+menu.separator.padding.height: 4
+
+# Active window
+window.*.border.color: #222D32
+window.*.title.bg: flat solid
+window.*.title.bg.color: #222D32
+window.*.title.separator.color: #222D32
+window.*.text.justify: center
+window.*.title.bg.highlight: 0
+window.*.title.bg.shadow: 0
+window.*.label.bg: parentrelative
+window.active.label.text.color: #CFD8DC
+window.*.handle.bg: flat solid
+window.*.handle.bg.color: #222D32
+window.*.grip.bg: flat solid
+window.*.grip.bg.color: #222D32
+
+window.*.button.unpressed.bg: flat solid
+window.active.button.unpressed.bg.color: #222D32
+window.active.button.unpressed.image.color: #B8C1C6
+
+window.*.button.hover.bg: flat solid
+window.active.button.hover.bg.color: #364146
+window.active.button.hover.image.color: #CFD8DC
+
+window.*.button.pressed.bg: flat solid
+window.active.button.pressed.bg.color: #4C575C
+window.active.button.pressed.image.color: #CFD8DC
+
+window.*.button.toggled.bg: flat solid
+window.active.button.toggled.bg.color: #222D32
+window.active.button.toggled.image.color: #B8C1C6
+window.active.button.toggled.hover.image.color: #CFD8DC
+
+window.*.button.disabled.bg: flat solid
+window.active.button.disabled.bg.color: #222D32
+window.active.button.disabled.image.color: #555F64
+
+window.inactive.button.hover.bg.color: #283237
+window.inactive.button.hover.image.color: #788286
+
+window.inactive.button.pressed.bg.color: #2A393E
+window.inactive.button.pressed.image.color: #788286
+
+window.inactive.button.toggled.bg.color: #222D32
+window.inactive.button.toggled.image.color: #555F64
+window.inactive.button.toggled.hover.image.color: #788286
+
+window.inactive.button.disabled.bg.color: #222D32
+window.inactive.button.disabled.image.color: #3B464B
+
+window.inactive.label.text.color: #555F64
+window.inactive.button.unpressed.bg.color: #222D32
+window.inactive.button.unpressed.image.color: #555F64
+
+# OSD
+osd.border.width: 1
+osd.border.color: #222D32
+
+osd.bg: flat solid
+osd.bg.color: #222D32
+osd.label.text.color: #CFD8DC
+
+osd.active.label.bg: flat solid
+osd.active.label.bg.color: #222D32
+osd.active.label.text.color: #8DCDC8
+
+osd.inactive.label.bg: flat solid
+osd.inactive.label.bg.color: #222D32
+osd.inactive.label.text.color: #677176
+
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #4DB6AC
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #323D42
+
+osd.button.unpressed.bg: flat border 
+osd.button.unpressed.bg.color: #222D32
+osd.button.unpressed.*.border.color: #222D32
+osd.button.unpressed.text.color: #449690
+
+osd.button.hover.bg: flat solid border
+osd.button.hover.bg.color: #2D4348
+osd.button.hover.*.border.color: #2D4348
+osd.button.hover.text.color: #8DCDC8
+
+osd.button.pressed.bg: flat border 
+osd.button.pressed.bg.color: #315054
+osd.button.pressed.*.border.color: #315054
+osd.button.pressed.text.color: #8DCDC8
+
+osd.button.focused.bg: flat solid border 
+osd.button.focused.bg.color: #2D4348
+osd.button.focused.*.border.color: #2D4348
+osd.button.focused.text.color: #8DCDC8
+
+osd.button.focused.box.color: #2D4348
+
+
+# Fonts
+window.active.label.text.font:shadow=n
+window.inactive.label.text.font:shadow=n
+menu.items.font:shadow=n
+menu.title.text.font:shadow=n

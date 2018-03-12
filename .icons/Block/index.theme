@@ -1,0 +1,48 @@
+[Icon Theme]
+Name=BlockIcons 
+Comment=Arc
+Inherits=Flattr
+
+Directories=actions/16,devices/16,mimetypes/16,mimetypes/64,places/16,places/64
+
+##############	Actions
+
+[actions/16]
+Size=16
+Context=Actions
+Type=Fixed
+
+##############	Devices
+
+[devices/16]
+Size=16
+Context=Devices
+Type=Fixed
+
+##############
+
+##############	Mimetypes
+
+[mimetypes/16]
+Size=16
+Context=MimeTypes
+Type=Fixed
+
+[mimetypes/64]
+Size=64
+Context=MimeTypes
+Type=Fixed
+
+##############
+
+##############	Places
+
+[places/16]
+Size=16
+Context=Places
+Type=Fixed
+
+[places/64]
+Size=64
+Context=Places
+Type=Fixed
