@@ -1,33 +1,46 @@
-# Previews
 
-## Setup
+
+### About
+Currently, i am using openbox (Groove) and windowchef (setup not ready) and this is the list of apps contained on my setup.
+
+- Shell: `fish`
 - Dock: `plank`
 - App Launcher: `rofi`
 - File Manager: `ranger`
 - Terminal Emulator: `rxvt-unicode`
-- Text Editor: `geany`
-- Music Player: `mpd`, `ncmpcpp` and `cava`
+- Text Editor: `vim`
+- Music Player: `mpd` and `ncmpcpp`
+- Visualizer: `cava`
 
-Openbox
-=========
+## Previews
+
+### Openbox
+
+<sub>Theme: Numix GNOME styled.</sub>
 
 ![ob](img/numix.png)
 
+<sub>Theme: Groove</sub>
+
 ![ob](img/groove.png)
 
-Windowchef
-===========
+### Windowchef
+
+<sub>Theme: pebble</sub>
 
 ![wchf](img/pebble.png)
 
+<sub>Theme: Frost</sub>
+
 ![wchf](img/frost.png)
+
+<sub>Theme: Adapta</sub>
 
 ![wchf](img/adapta.png)
 
-# Panel
+## Panel
 
-Tint2 
-======
+### Tint2 
 
 ![tint](img/panel/1-numix.png)
 
@@ -35,7 +48,7 @@ Tint2
 
 ![tint](img/panel/3-numix.png)
 
-Lemonbar
+### Lemonbar
 ==========
 
 ![lemon](img/panel/bluepane.png)
@@ -44,18 +57,17 @@ Lemonbar
 
 ![lemon](img/panel/pebble.png)
 
-Polybar
-=========
+### Polybar
 
 ![poly](img/panel/groove.png)
 
 ## Rofi
 
-- Numix
+### Numix
 
 ![desktop1](img/rofi-numix.png)
 
-- Arc
+### Arc
 
 ![desktop1](img/rofi-arc.png)
 
