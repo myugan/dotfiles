@@ -39,4 +39,4 @@ Previews
 =========
 
 - Thanks to [tudurom](https://github.com/tudurom) and [yuune](https://github.com/yuune).
-- [LDA](https://web.facebook.com/groups/linuxart), [Eye Candy Linu](https://plus.google.com/communities/104794997718869399105) and r/unixporn.
+- [Linuxer Desktop Art](https://web.facebook.com/groups/linuxart), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn.
