@@ -1,0 +1,66 @@
+! -- Title:     simplicity
+! -- Author:    dkeg
+! -- Created:   2015
+! -- Modified:  2017
+
+*background:      #1E1E21
+*foreground:      #F3F3F3
+
+! BLK
+*color0:      #29292D
+*color8:      #404047
+
+! RED
+*color1:      #BF5C56
+*color9:      #BF5C56
+
+! GRN
+*color2:      #97B19C
+*color10:     #97B19C
+
+! YLW
+*color3:      #D7BD8A
+*color11:     #D7BD8A
+
+! BLU
+*color4:      #545F72
+*color12:     #545F72
+
+! MAG
+*color5:      #A18673
+*color13:     #A18673
+
+! CYN
+*color6:      #75909F
+*color14:     #BE926B
+
+! WHT
+*color7:      #BE926B
+*color15:     #F4F4F2
+
+
+#define bg #1E1E21
+#define fg #F3F3F3
+#define border #404040
+#define hover #97B19C
+
+!                  		bg	  border
+rofi.color-window: 		bg,    border    
+!	           		bg     fg     bg-alt   hlbg     hlfg
+rofi.color-normal: 		bg,    fg,    bg,      hover,     fg
+rofi.color-active: 		bg,    fg,    bg,      hover,     fg
+rofi.bw:		     	2
+rofi.columns:			2
+rofi.padding:			20
+rofi.yoffset: 			0
+rofi.xoffset: 			0
+rofi.width: 			60
+rofi.font:  			Fira Sans Bold 8
+rofi.lines: 			10
+rofi.case-sensitive:	false
+rofi.separator-style:  	none
+rofi.sidebar-mode: 		false
+rofi.display-drun:		Apps
+rofi.hide-scrollbar:  	true
+rofi.show-icons:		true
+rofi.drun-icon-theme:	Papirus

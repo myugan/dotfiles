@@ -1,3 +1,9 @@
+#
+#  ▐▘▘  ▌
+#  ▜▘▌▛▘▛▌
+#  ▐ ▌▄▌▌▌
+#
+
 # Path
 test -d "/sbin"; and set PATH "/sbin" $PATH
 test -d "/bin"; and set PATH "/bin"

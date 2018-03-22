@@ -1,14 +1,22 @@
 #!/bin/bash
+#
+#      ▗     ▗     ▗ 
+#  ▀▌▌▌▜▘▛▌▛▘▜▘▀▌▛▘▜▘
+#  █▌▙▌▐▖▙▌▄▌▐▖█▌▌ ▐▖
+#
+#
 
-export TINT="Arc"
-export BAR="Monokai"
+export PRESET="groove"
 
 # load fonts
 xset fp+ ~/.fonts
 xset fp rehash
 
+# Screen
+xrandr --output HDMI1 --auto
+
 # Sources for terminal
-xrdb -merge ~/.X-openbox
+xrdb -merge ~/.Xresources
 
 # Wallpaper
 nitrogen --restore &
@@ -23,10 +31,10 @@ compton &
 redshift &
 
 # System Tray
-#cbatticon &
-#volumeicon &
-#nm-applet &
+cbatticon &
+volumeicon &
+nm-applet &
+clipit &
 
 # Panel
-#tint2 -c ~/.config/tint2/${TINT}.tint2rc &
-polybar -c ~/.config/polybar/${BAR} top &
+polybar top -c ~/.config/polybar/simplicity

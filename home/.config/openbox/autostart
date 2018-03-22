@@ -1,14 +1,22 @@
 #!/bin/bash
+#
+#      ▗     ▗     ▗ 
+#  ▀▌▌▌▜▘▛▌▛▘▜▘▀▌▛▘▜▘
+#  █▌▙▌▐▖▙▌▄▌▐▖█▌▌ ▐▖
+#
+#
+
+export PRESET="groove"
 
 # load fonts
 xset fp+ ~/.fonts
 xset fp rehash
 
-# Sources for terminal
-xrdb -merge ~/.X-openbox
+# Screen
+xrandr --output HDMI1 --auto
 
-# Dock
-plank &
+# Sources for terminal
+xrdb -merge ~/.Xresources
 
 # Wallpaper
 nitrogen --restore &
@@ -23,11 +31,10 @@ compton &
 redshift &
 
 # System Tray
+cbatticon &
 volumeicon &
-xfce4-power-manager &
 nm-applet &
-#gvolwheel -d hw:1 &
-pamac-tray &
+clipit &
 
 # Panel
-tint2 -c ~/.config/tint2/Numix-Square.tint2rc
+polybar top -c ~/.config/polybar/simplicity

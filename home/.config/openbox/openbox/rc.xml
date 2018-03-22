@@ -19,9 +19,9 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Groove</name>
-    <titleLayout>LIMC</titleLayout>
-    <cornerRadius>6</cornerRadius>
+    <name>simplicity</name>
+    <titleLayout>ILC</titleLayout>
+    <cornerRadius>0</cornerRadius>
     <roundedCorners>yes</roundedCorners>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
@@ -142,17 +142,17 @@
         <to>4</to>
       </action>
     </keybind>
-	<keybind key="A-W-Left">
-		<action name="SendToDesktopLeft">
-			<wrap>no</wrap>
-	  </action>
-	</keybind>
-	<keybind key="A-W-Right">
-		<action name="SendToDesktopRight">
-			<wrap>no</wrap>
-	  </action>
-	</keybind>
-	<keybind key="W-d">
+    <keybind key="A-W-Left">
+      <action name="SendToDesktopLeft">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="A-W-Right">
+      <action name="SendToDesktopRight">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
@@ -374,7 +374,7 @@
     </keybind>
     <keybind key="W-S-r">
       <action name="Execute">
-        <command>openbox --restart</command>
+        <command>wm-reload</command>
       </action>
     </keybind>
     <keybind key="Print">

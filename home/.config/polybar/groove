@@ -1,0 +1,117 @@
+[colors]
+fg = ${xrdb:color15}
+bg = ${xrdb:color0}
+
+[bar/top]
+;monitor=eDP1
+width = 100%
+height = 30
+offset-x = 0
+offset-y= 0
+fixed-center = false
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+font-0 = artwiz lemon:size=8:;0
+font-1 = Wuncon Siji:size=8:;0
+
+modules-left = ewmh xwindow
+modules-center =
+modules-right = wlan volume battery date 
+
+spacing = 1
+padding-left = 1
+padding-right = 1
+module-margin-left = 2
+module-margin-right = 2
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = false
+format = <label-state>
+
+label-active = 
+label-active-foreground = ${xrdb:color1}
+label-active-background = ${colors.bg}
+label-active-padding = 1
+
+label-empty = 
+label-empty-foreground = ${colors.fg}
+label-empty-background = ${colors.bg}
+label-empty-padding = 1
+
+label-urgent = 
+label-urgent-foreground = #EC5f67
+label-urgent-background = ${colors.bg}
+label-urgent-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50:...%
+format-prefix = " "
+format-prefix-foreground = ${xrdb:color1}
+format-background = ${colors.bg}
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+format-connected = <ramp-signal><label-connected>
+label-connected = %essid%
+format-disconnected =  off
+format-connected-foreground=${colors.fg}
+format-disconnected-foreground=${colors.fg}
+ramp-signal-foreground = ${xrdb:color1}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume><label-volume>
+format-volume-background = ${colors.bg}
+label-muted = - muted 
+ramp-volume-foreground = ${xrdb:color1}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/battery]
+type = internal/battery
+full-at = 100
+battery = BAT0
+adapter = ACAD
+poll-interval = 5
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+label-charging = %percentage%%
+label-charging-foreground = ${colors.fg}
+label-discharging = %percentage%%
+label-discharging-foreground = ${colors.fg}
+label-full =  FULL
+ramp-capacity-foreground = ${xrdb:color1}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+bar-capacity-width = 10
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${xrdb:color1}
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+interval = 1
+date = " %a %d %b %H:%M %P"
+format-prefix = "" 
+format-prefix-foreground = ${xrdb:color1}
+
