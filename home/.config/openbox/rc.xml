@@ -19,18 +19,20 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Numix-Default</name>
-    <titleLayout>IMC</titleLayout>
+    <name>simplicity</name>
+    <titleLayout>ILC</titleLayout>
+    <cornerRadius>0</cornerRadius>
+    <roundedCorners>yes</roundedCorners>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>SFNS Display</name>
+      <name>Fira Sans Medium</name>
       <size>8</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>SFNS Display</name>
+      <name>Fira Sans Medium</name>
       <size>8</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
@@ -140,6 +142,16 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="A-W-Left">
+      <action name="SendToDesktopLeft">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="A-W-Right">
+      <action name="SendToDesktopRight">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -155,7 +167,7 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
-		<dialog>icons</dialog>
+        <dialog>icons</dialog>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -172,7 +184,7 @@
         <y>center</y>
       </action>
     </keybind>
-    <!-- Window Tiling: Snap feature -->
+    <!-- Window Tiling: Snap feature 
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
@@ -189,13 +201,14 @@
       </action>
       <action name="MoveToEdgeEast"/>
     </keybind>
-    <keybind key="W-Up">
+    -->
+    <keybind key="W-F">
       <action name="MaximizeFull"/>
     </keybind>
-    <keybind key="W-Down">
+    <keybind key="W-S-F">
       <action name="UnmaximizeFull"/>
     </keybind>
-    <keybind key="W-S-Right">
+    <keybind key="W-S-k">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>-15</x>
@@ -204,7 +217,7 @@
         <width>47%</width>
       </action>
     </keybind>
-    <keybind key="W-S-Left">
+    <keybind key="W-S-j">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>15</x>
@@ -272,6 +285,52 @@
         <width>32%</width>
       </action>
     </keybind>
+    <!-- Move -->
+    <keybind key="W-Right">
+      <action name="MoveRelative">
+        <x>20</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="MoveRelative">
+        <x>-20</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>-20</y>
+      </action>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>20</y>
+      </action>
+    </keybind>
+    <!-- Resize -->
+    <keybind key="W-S-Right">
+      <action name="ResizeRelative">
+        <right>20</right>
+      </action>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="ResizeRelative">
+        <right>-20</right>
+      </action>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="ResizeRelative">
+        <bottom>20</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="ResizeRelative">
+        <bottom>-20</bottom>
+      </action>
+    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -281,6 +340,11 @@
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
         <command>pactl set-sink-volume 0 -5%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer set Master toggle</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessUp">
@@ -303,11 +367,6 @@
         <command>urxvt</command>
       </action>
     </keybind>
-    <keybind key="W-f">
-      <action name="Execute">
-        <command>nautilus</command>
-      </action>
-    </keybind>
     <keybind key="W-space">
       <action name="Execute">
         <command>rofi -show drun</command>
@@ -315,7 +374,7 @@
     </keybind>
     <keybind key="W-S-r">
       <action name="Execute">
-        <command>openbox --restart</command>
+        <command>wm-reload</command>
       </action>
     </keybind>
     <keybind key="Print">

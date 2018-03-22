@@ -1,0 +1,99 @@
+#!/bin/bash
+
+# COLORS
+fg="#E0E0E0"
+bg="#11141C"
+BG="%{B#1C1F26}"
+BH="%{B#0A0E17}"
+BB="%{B#5883C4}"
+BR="%{B#BF616A}"
+#FB="%{F#555A65}"
+#FB="%{F#11141C}"
+FB="%{F#5883C4}"
+FC="%{F#60CFE6}"
+FH="%{F#FFFFFF}"
+FG="%{F#39BE8D}"
+FY="%{F#E8C87D}"
+FR="%{F#BF616A}"
+UP="%{U#407EBC}%{+u}"
+UM="%{-u}"
+F="%{F-}"
+B="%{B-}"
+SEP="  "
+SPC="   "
+#SPC="   "
+#SPC=" // "
+
+# CONFIGURATION
+geo="1366x25+0+0"
+fonts=("Ohruri:bold:size=7"
+       "Wuncon Siji:size=7"
+	  "Noto Sans Condensed:bold:size=6"
+	  "Fira Sans:bold:size=7")
+UPPER="tr '[:lower:]' '[:upper:]'"
+
+spaces(){
+    spaces=1
+    until [ $spaces -gt $1 ]
+    do
+        echo -n " "
+        ((spaces++))
+    done
+}
+
+Workspace(){
+     group=$(xdotool get_desktop)
+     desk=("MAIN" "TERM" "FILES" "MISC")
+     #desk=("ターミナル" "ウェブ" "ファイルズ" "ミュージック")
+	for i in {1..4}; do
+		echo -n "%{A:waitron group_activate_specific $i:}"
+		if [[ "$((group+1))" == "$i" ]]; then
+			echo -n "$BR$(spaces 4)${desk[$((i-1))]}$(spaces 4)$B"
+		else
+			echo -n "$(spaces 4)${desk[$((i-1))]}$(spaces 4)"
+		fi
+		echo -n "%{A}"
+	done
+}
+
+ActiveWindow(){
+	echo -n "$(spaces 4)$(xdotool getwindowfocus getwindowname | $UPPER)"
+}
+
+Battery() {
+    VALUE=$(cat /sys/class/power_supply/BAT0/capacity)
+    STATUS=$(cat /sys/class/power_supply/BAT0/status)
+    if [ $STATUS = "Charging" ]; then
+        echo -n "CHARGING:  $VALUE%  $FB$SPC$F"
+    else
+        echo -n "BAT:  $VALUE%  $FB$SPC$F"
+    fi
+}
+
+Wlan(){
+       ID=$(iwgetid -r)
+       if [[ ! -z $ID ]]; then
+          echo -n "WLAN:  $ID  $FG$SPC$F"
+       else
+          echo -n "WLAN:  ---  $FG$SPC$F"
+       fi
+}
+
+Sound(){
+	NOTMUTED=$( amixer sget Master | grep "\[on\]" )
+	VOL=$(amixer get Master | grep % | sed -n 1p | awk -F '[' '{print $2}' | awk -F ']' '{print $1}')
+	if [[ ! -z $NOTMUTED ]] ; then
+	     echo -e "VOL:  $VOL  $FY$SPC$F"
+	else
+		echo -e "VOL:  MUTED  $FY$SPC$F"
+	fi
+}
+
+Clock(){
+	echo -n $(date "+%H:%M %p" | $UPPER)
+}
+
+while true; do
+	echo "%{l}$(spaces 2)$(Workspace)$(spaces 3)$(ActiveWindow)%{r}$(Wlan)$(spaces 2)$(Sound)$(spaces 2)$(Battery)$(spaces 4)$(Clock)$(spaces 8)"
+	sleep 1
+done | lemonbar -g "${geo}" -f "${fonts[3]}" -f "${fonts[0]}" -f "${fonts[1]}" -F "${fg}" -B "${bg}" -u "2" -r "5" -R "${bg}" | sh & > /dev/null

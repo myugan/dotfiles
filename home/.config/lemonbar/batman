@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# COLORS
+BG="#131313"
+FG="#e0e0e0"
+FH="%{F#8A8A8A}"
+F="%{F-}"
+SEP="  "
+
+# BEHAVIOUR
+geo="1366x30+0+0"
+fonts=("-benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1"
+       "-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1")
+
+Workspace(){
+     group=$(xdotool get_desktop)
+	for i in {1..4}; do
+		echo -n "%{A:waitron group_activate_specific $i:}"
+		if [[ "$((group+1))" == "$i" ]]; then
+			echo -n "$FH$SEP$((i-1))$SEP$F"
+		else
+			echo -n "$SEP$((i-1))$SEP"
+		fi
+		echo -n "%{A}"
+	done
+}
+
+ActiveWindow(){
+	echo -n "$(xdotool getwindowfocus getwindowname)"
+}
+
+Battery() {
+    VALUE=$(cat /sys/class/power_supply/BAT0/capacity)
+    STATUS=$(cat /sys/class/power_supply/BAT0/status)
+    if [ $STATUS = "Charging" ]; then
+        echo -n "CHARGING: $VALUE%"
+    else
+        echo -n "BAT: $VALUE%"
+    fi
+}
+
+Sound(){
+	NOTMUTED=$( amixer sget Master | grep "\[on\]" )
+	VOL=$(amixer get Master | grep % | sed -n 1p | awk -F '[' '{print $2}' | awk -F ']' '{print $1}')
+	if [[ ! -z $NOTMUTED ]] ; then
+	     echo -e "VOL: $VOL"
+	else
+		echo -e "VOL: MUTED"
+	fi
+}
+
+Wifi(){
+       WIFI=$(iwgetid -r)
+       if [[ ! -z $WIFI ]]; then
+          echo -n "WIFI: $WIFI"
+       else
+          echo -n "WIFI: --"
+       fi
+}
+
+Clock(){
+	echo -n $(date "+%A %d %B %H:%M %p")
+}
+
+while true; do
+	echo "%{l}$(Workspace)$SEP$(ActiveWindow)%{r}$SEP//$SEP$(Wifi)$SEP//$SEP$(Sound)$SEP//$SEP$(Battery)$SEP//$SEP$(Clock)$SEP"
+	sleep 1
+done | lemonbar -g "${geo}" -f "${fonts[0]}" -f "${fonts[1]}" -F "${FG}" -B "${BG}" -r "2" -R "${BG}"| sh & > /dev/null

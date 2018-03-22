@@ -1,0 +1,55 @@
+[bar/top]
+monitor = eDP1
+width = 100%
+height = 31
+offset-x = 0
+offset-y = 0
+fixed-center = true
+background = #28282C
+foreground = #242624
+
+font-0 = "Roboto:size=9;2"
+font-1 = "Wuncon Siji:size=8;2"
+
+tray-position = right
+tray-padding = 2
+override-redirect = false
+
+modules-left = ewmh xwindow
+modules-center = 
+modules-right = 
+
+spacing = 1
+padding = 4
+module-margin-left = 2
+module-margin-right = 2
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = false
+format = <label-state>
+
+label-active = 
+label-active-foreground = #f4f4f4
+label-active-background = #28282C
+label-active-padding = 1
+
+label-empty = 
+label-empty-foreground = #747474
+label-empty-background = #28282c
+label-empty-padding = 1
+
+label-urgent = 
+label-urgent-foreground = #747474
+label-urgent-background = #28282c
+label-urgent-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 50
+format-padding = 5
+format-background = #28282C
+format-foreground = #242624

@@ -1,0 +1,45 @@
+*foreground: #E3E0D6
+*background: #262626
+*cursorColor: #E3E0D6
+*color0: #343538
+*color1: #93877A
+*color2: #C89C7A
+*color3: #949188
+*color4: #AEA698
+*color5: #C8B4A2
+*color6: #D2C9B4
+*color7: #E3E0D6
+*color8: #999999
+*color9: #93877A
+*color10: #C89C7A
+*color11: #949188
+*color12: #AEA698
+*color13: #C8B4A2
+*color14: #D2C9B4
+*color15: #E3E0D6
+*color66: #343538
+
+#define bg #343538
+#define fg #E3E0D6
+#define border #C89C7A
+#define hover #C89C7A
+
+!                  		bg	  border
+rofi.color-window: 		bg,    border    
+!	           		bg     fg     bg-alt   hlbg     hlfg
+rofi.color-normal: 		bg,    fg,    bg,      hover,     fg
+rofi.color-active: 		bg,    fg,    bg,      hover,     fg
+rofi.bw:		     	2
+rofi.columns:			1
+rofi.padding:			20
+rofi.yoffset: 			0
+rofi.xoffset: 			0
+rofi.width: 			40
+rofi.font:  			Fira Sans Bold 8
+rofi.lines: 			10
+rofi.case-sensitive:	false
+rofi.separator-style:  	none
+rofi.sidebar-mode: 		false
+rofi.hide-scrollbar:  	true
+rofi.show-icons:		true
+rofi.drun-icon-theme:	Moka

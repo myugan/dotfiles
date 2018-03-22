@@ -1,54 +1,59 @@
-[global]
-    monitor = 0
-    geometry = "350x5-20+50"
-    alignment = left
-    indicate_hidden = yes
-    shrink = yes
-    transparency = 0
-    separator_height = 4
-    padding = 12
-    horizontal_padding = 15
-    frame_width = 2
-    separator_color = auto
-    frame_color = "#1C1F26"
-    sort = yes
-    idle_threshold = 120
-    font = artwiz lemon 8
-    format = "%s\n%b"
-    show_age_threshold = 60
-    word_wrap = yes
-    ignore_newline = no
-    stack_duplicates = false
-    hide_duplicate_count = false
-    show_indicators = yes
-    icon_position = left
-    max_icon_size = 0
-    icon_path = /usr/share/icons/paper/16x16/status/:/usr/share/icons/paper/16x16/devices/:/usr/share/icons/paper/16x16/devices/
-    history_length = 10
-    dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
-    always_run_script = true
 
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
+    frame_width                   = 0
+    frame_colr                   = "#212121"
 
 [urgency_low]
-    background = "#1C1F26"
-    foreground = "#b5b5bc"
-    timeout = 2
-    icon = /usr/share/icons/Paper/16x16/status/dialog-info.png
+    background              = "#28282C"
+    foreground              = "#b5b5bc"
+    timeout                 = 4
 
 [urgency_normal]
-    background = "#1C1F26"
-    foreground = "#b5b5bc"
-    timeout = 4
-    icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
+    background              = "#28282C"
+    foreground              = "#b5b5bc"
+    timeout                     = 4
 
 [urgency_critical]
-    background = "#051d23"
-    foreground = "#b5b5bc"
-    timeout = 0
-    icon = /usr/share/icons/Paper/16x16/status/dialog-error.png
+    background              = "#28282C"
+    foreground              = "#b5b5bc"
+    timeout                 = 2
+
+[global]
+    # The format of the message.  Possible variables:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p progress value if set ([ 0%] to [100%]) or nothing
+    format                  = "%s\n%b"
+    geometry                = "450x5-35+55"
+    monitor                 = 0
+    transparency            = 0
+    separator_height        = 2
+    padding                 = 12
+    horizontal_padding      = 15
+    separator_color         = frame
+    idle_threshold          = 120
+    font                    = Roboto Bold 8
+    history_length          = 5
+    show_age_threshold      = 60
+    sort                    = yes
+    shrink                  = yes
+    indicate_hidden         = yes
+    word_wrap               = yes
+    ignore_newline          = yes
+    show_indicators         = yes
+    alignment               = left
+    icon_position           = left
+    max_icon_size           = 0
+    icon_path            = /usr/share/icons/paper/16x16
+    startup_notification    = false
+    browser                 = /usr/bin/firefox -new-tab
+
+[shortcuts]
+    close                   = ctrl+space
+    close_all               = ctrl+shift+space
+    history                 = ctrl+grave
+    context                 = ctrl+shift+period
+
+
