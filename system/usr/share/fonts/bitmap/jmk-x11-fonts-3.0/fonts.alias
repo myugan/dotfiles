@@ -1,0 +1,234 @@
+neep-iso8859-1-8	"-jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1"
+neep-iso8859-1-9	"-jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-1"
+neep-iso8859-1-10	"-jmk-neep-medium-r-normal--11-100-75-75-c-60-iso8859-1"
+neep-iso8859-1-12	"-jmk-neep-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+neep-iso8859-1-14	"-jmk-neep-medium-r-normal--15-140-75-75-c-80-iso8859-1"
+neep-iso8859-1-18	"-jmk-neep-medium-r-normal--20-180-75-75-c-100-iso8859-1"
+neep-iso8859-1-24	"-jmk-neep-medium-r-normal--24-240-75-75-c-120-iso8859-1"
+neep-iso8859-1-bold-9	"-jmk-neep-bold-r-semicondensed--11-100-75-75-c-50-iso8859-1"
+neep-iso8859-1-bold-10	"-jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-1"
+neep-iso8859-1-bold-12	"-jmk-neep-bold-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+neep-iso8859-1-bold-14	"-jmk-neep-bold-r-normal--15-140-75-75-c-80-iso8859-1"
+neep-iso8859-1-bold-18	"-jmk-neep-bold-r-normal--20-180-75-75-c-100-iso8859-1"
+neep-iso8859-1-bold-24	"-jmk-neep-bold-r-normal--24-240-75-75-c-120-iso8859-1"
+
+neep-alt-iso8859-1-8	"-jmk-neep alt-medium-r-normal--10-80-75-75-c-50-iso8859-1"
+neep-alt-iso8859-1-9	"-jmk-neep alt-medium-r-semicondensed--11-100-75-75-c-50-iso8859-1"
+neep-alt-iso8859-1-10	"-jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-1"
+neep-alt-iso8859-1-12	"-jmk-neep alt-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+neep-alt-iso8859-1-14	"-jmk-neep alt-medium-r-normal--15-140-75-75-c-80-iso8859-1"
+neep-alt-iso8859-1-18	"-jmk-neep alt-medium-r-normal--20-180-75-75-c-100-iso8859-1"
+neep-alt-iso8859-1-24	"-jmk-neep alt-medium-r-normal--24-240-75-75-c-120-iso8859-1"
+neep-alt-iso8859-1-bold-9	"-jmk-neep alt-bold-r-semicondensed--11-100-75-75-c-50-iso8859-1"
+neep-alt-iso8859-1-bold-10	"-jmk-neep alt-bold-r-normal--11-100-75-75-c-60-iso8859-1"
+neep-alt-iso8859-1-bold-12	"-jmk-neep alt-bold-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+neep-alt-iso8859-1-bold-14	"-jmk-neep alt-bold-r-normal--15-140-75-75-c-80-iso8859-1"
+neep-alt-iso8859-1-bold-18	"-jmk-neep alt-bold-r-normal--20-180-75-75-c-100-iso8859-1"
+neep-alt-iso8859-1-bold-24	"-jmk-neep alt-bold-r-normal--24-240-75-75-c-120-iso8859-1"
+
+neep-iso8859-2-8	"-jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-2"
+neep-iso8859-2-9	"-jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-2"
+neep-iso8859-2-10	"-jmk-neep-medium-r-normal--11-100-75-75-c-60-iso8859-2"
+neep-iso8859-2-12	"-jmk-neep-medium-r-semicondensed--13-120-75-75-c-60-iso8859-2"
+neep-iso8859-2-14	"-jmk-neep-medium-r-normal--15-140-75-75-c-80-iso8859-2"
+neep-iso8859-2-18	"-jmk-neep-medium-r-normal--20-180-75-75-c-100-iso8859-2"
+neep-iso8859-2-24	"-jmk-neep-medium-r-normal--24-240-75-75-c-120-iso8859-2"
+neep-iso8859-2-bold-9	"-jmk-neep-bold-r-semicondensed--11-100-75-75-c-50-iso8859-2"
+neep-iso8859-2-bold-10	"-jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-2"
+neep-iso8859-2-bold-12	"-jmk-neep-bold-r-semicondensed--13-120-75-75-c-60-iso8859-2"
+neep-iso8859-2-bold-14	"-jmk-neep-bold-r-normal--15-140-75-75-c-80-iso8859-2"
+neep-iso8859-2-bold-18	"-jmk-neep-bold-r-normal--20-180-75-75-c-100-iso8859-2"
+neep-iso8859-2-bold-24	"-jmk-neep-bold-r-normal--24-240-75-75-c-120-iso8859-2"
+
+neep-alt-iso8859-2-8	"-jmk-neep alt-medium-r-normal--10-80-75-75-c-50-iso8859-2"
+neep-alt-iso8859-2-9	"-jmk-neep alt-medium-r-semicondensed--11-100-75-75-c-50-iso8859-2"
+neep-alt-iso8859-2-10	"-jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-2"
+neep-alt-iso8859-2-12	"-jmk-neep alt-medium-r-semicondensed--13-120-75-75-c-60-iso8859-2"
+neep-alt-iso8859-2-14	"-jmk-neep alt-medium-r-normal--15-140-75-75-c-80-iso8859-2"
+neep-alt-iso8859-2-18	"-jmk-neep alt-medium-r-normal--20-180-75-75-c-100-iso8859-2"
+neep-alt-iso8859-2-24	"-jmk-neep alt-medium-r-normal--24-240-75-75-c-120-iso8859-2"
+neep-alt-iso8859-2-bold-9	"-jmk-neep alt-bold-r-semicondensed--11-100-75-75-c-50-iso8859-2"
+neep-alt-iso8859-2-bold-10	"-jmk-neep alt-bold-r-normal--11-100-75-75-c-60-iso8859-2"
+neep-alt-iso8859-2-bold-12	"-jmk-neep alt-bold-r-semicondensed--13-120-75-75-c-60-iso8859-2"
+neep-alt-iso8859-2-bold-14	"-jmk-neep alt-bold-r-normal--15-140-75-75-c-80-iso8859-2"
+neep-alt-iso8859-2-bold-18	"-jmk-neep alt-bold-r-normal--20-180-75-75-c-100-iso8859-2"
+neep-alt-iso8859-2-bold-24	"-jmk-neep alt-bold-r-normal--24-240-75-75-c-120-iso8859-2"
+
+neep-iso8859-9-8	"-jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-9"
+neep-iso8859-9-9	"-jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-9"
+neep-iso8859-9-10	"-jmk-neep-medium-r-normal--11-100-75-75-c-60-iso8859-9"
+neep-iso8859-9-12	"-jmk-neep-medium-r-semicondensed--13-120-75-75-c-60-iso8859-9"
+neep-iso8859-9-14	"-jmk-neep-medium-r-normal--15-140-75-75-c-80-iso8859-9"
+neep-iso8859-9-18	"-jmk-neep-medium-r-normal--20-180-75-75-c-100-iso8859-9"
+neep-iso8859-9-24	"-jmk-neep-medium-r-normal--24-240-75-75-c-120-iso8859-9"
+neep-iso8859-9-bold-9	"-jmk-neep-bold-r-semicondensed--11-100-75-75-c-50-iso8859-9"
+neep-iso8859-9-bold-10	"-jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-9"
+neep-iso8859-9-bold-12	"-jmk-neep-bold-r-semicondensed--13-120-75-75-c-60-iso8859-9"
+neep-iso8859-9-bold-14	"-jmk-neep-bold-r-normal--15-140-75-75-c-80-iso8859-9"
+neep-iso8859-9-bold-18	"-jmk-neep-bold-r-normal--20-180-75-75-c-100-iso8859-9"
+neep-iso8859-9-bold-24	"-jmk-neep-bold-r-normal--24-240-75-75-c-120-iso8859-9"
+
+neep-alt-iso8859-9-8	"-jmk-neep alt-medium-r-normal--10-80-75-75-c-50-iso8859-9"
+neep-alt-iso8859-9-9	"-jmk-neep alt-medium-r-semicondensed--11-100-75-75-c-50-iso8859-9"
+neep-alt-iso8859-9-10	"-jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-9"
+neep-alt-iso8859-9-12	"-jmk-neep alt-medium-r-semicondensed--13-120-75-75-c-60-iso8859-9"
+neep-alt-iso8859-9-14	"-jmk-neep alt-medium-r-normal--15-140-75-75-c-80-iso8859-9"
+neep-alt-iso8859-9-18	"-jmk-neep alt-medium-r-normal--20-180-75-75-c-100-iso8859-9"
+neep-alt-iso8859-9-24	"-jmk-neep alt-medium-r-normal--24-240-75-75-c-120-iso8859-9"
+neep-alt-iso8859-9-bold-9	"-jmk-neep alt-bold-r-semicondensed--11-100-75-75-c-50-iso8859-9"
+neep-alt-iso8859-9-bold-10	"-jmk-neep alt-bold-r-normal--11-100-75-75-c-60-iso8859-9"
+neep-alt-iso8859-9-bold-12	"-jmk-neep alt-bold-r-semicondensed--13-120-75-75-c-60-iso8859-9"
+neep-alt-iso8859-9-bold-14	"-jmk-neep alt-bold-r-normal--15-140-75-75-c-80-iso8859-9"
+neep-alt-iso8859-9-bold-18	"-jmk-neep alt-bold-r-normal--20-180-75-75-c-100-iso8859-9"
+neep-alt-iso8859-9-bold-24	"-jmk-neep alt-bold-r-normal--24-240-75-75-c-120-iso8859-9"
+
+neep-iso8859-15-8	"-jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-15"
+neep-iso8859-15-9	"-jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-15"
+neep-iso8859-15-10	"-jmk-neep-medium-r-normal--11-100-75-75-c-60-iso8859-15"
+neep-iso8859-15-12	"-jmk-neep-medium-r-semicondensed--13-120-75-75-c-60-iso8859-15"
+neep-iso8859-15-14	"-jmk-neep-medium-r-normal--15-140-75-75-c-80-iso8859-15"
+neep-iso8859-15-18	"-jmk-neep-medium-r-normal--20-180-75-75-c-100-iso8859-15"
+neep-iso8859-15-24	"-jmk-neep-medium-r-normal--24-240-75-75-c-120-iso8859-15"
+neep-iso8859-15-bold-9	"-jmk-neep-bold-r-semicondensed--11-100-75-75-c-50-iso8859-15"
+neep-iso8859-15-bold-10	"-jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-15"
+neep-iso8859-15-bold-12	"-jmk-neep-bold-r-semicondensed--13-120-75-75-c-60-iso8859-15"
+neep-iso8859-15-bold-14	"-jmk-neep-bold-r-normal--15-140-75-75-c-80-iso8859-15"
+neep-iso8859-15-bold-18	"-jmk-neep-bold-r-normal--20-180-75-75-c-100-iso8859-15"
+neep-iso8859-15-bold-24	"-jmk-neep-bold-r-normal--24-240-75-75-c-120-iso8859-15"
+
+neep-alt-iso8859-15-8	"-jmk-neep alt-medium-r-normal--10-80-75-75-c-50-iso8859-15"
+neep-alt-iso8859-15-9	"-jmk-neep alt-medium-r-semicondensed--11-100-75-75-c-50-iso8859-15"
+neep-alt-iso8859-15-10	"-jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-15"
+neep-alt-iso8859-15-12	"-jmk-neep alt-medium-r-semicondensed--13-120-75-75-c-60-iso8859-15"
+neep-alt-iso8859-15-14	"-jmk-neep alt-medium-r-normal--15-140-75-75-c-80-iso8859-15"
+neep-alt-iso8859-15-18	"-jmk-neep alt-medium-r-normal--20-180-75-75-c-100-iso8859-15"
+neep-alt-iso8859-15-24	"-jmk-neep alt-medium-r-normal--24-240-75-75-c-120-iso8859-15"
+neep-alt-iso8859-15-bold-9	"-jmk-neep alt-bold-r-semicondensed--11-100-75-75-c-50-iso8859-15"
+neep-alt-iso8859-15-bold-10	"-jmk-neep alt-bold-r-normal--11-100-75-75-c-60-iso8859-15"
+neep-alt-iso8859-15-bold-12	"-jmk-neep alt-bold-r-semicondensed--13-120-75-75-c-60-iso8859-15"
+neep-alt-iso8859-15-bold-14	"-jmk-neep alt-bold-r-normal--15-140-75-75-c-80-iso8859-15"
+neep-alt-iso8859-15-bold-18	"-jmk-neep alt-bold-r-normal--20-180-75-75-c-100-iso8859-15"
+neep-alt-iso8859-15-bold-24	"-jmk-neep alt-bold-r-normal--24-240-75-75-c-120-iso8859-15"
+
+neep-8		neep-iso8859-1-8
+neep-9		neep-iso8859-1-9
+neep-10		neep-iso8859-1-10
+neep-12		neep-iso8859-1-12
+neep-14		neep-iso8859-1-14
+neep-18		neep-iso8859-1-18
+neep-24		neep-iso8859-1-24
+neep-bold-9	neep-iso8859-1-bold-9
+neep-bold-10	neep-iso8859-1-bold-10
+neep-bold-12	neep-iso8859-1-bold-12
+neep-bold-14	neep-iso8859-1-bold-14
+neep-bold-18	neep-iso8859-1-bold-18
+neep-bold-24	neep-iso8859-1-bold-24
+
+neep-alt-8	neep-alt-iso8859-1-8
+neep-alt-9	neep-alt-iso8859-1-9
+neep-alt-10	neep-alt-iso8859-1-10
+neep-alt-12	neep-alt-iso8859-1-12
+neep-alt-14	neep-alt-iso8859-1-14
+neep-alt-18	neep-alt-iso8859-1-18
+neep-alt-24	neep-alt-iso8859-1-24
+neep-alt-bold-9	neep-alt-iso8859-1-bold-9
+neep-alt-bold-10	neep-alt-iso8859-1-bold-10
+neep-alt-bold-12	neep-alt-iso8859-1-bold-12
+neep-alt-bold-14	neep-alt-iso8859-1-bold-14
+neep-alt-bold-18	neep-alt-iso8859-1-bold-18
+neep-alt-bold-24	neep-alt-iso8859-1-bold-24
+
+!neep-8		neep-iso8859-2-8
+!neep-9		neep-iso8859-2-9
+!neep-10		neep-iso8859-2-10
+!neep-12		neep-iso8859-2-12
+!neep-14		neep-iso8859-2-14
+!neep-18		neep-iso8859-2-18
+!neep-24		neep-iso8859-2-24
+!neep-bold-9	neep-iso8859-2-bold-9
+!neep-bold-10	neep-iso8859-2-bold-10
+!neep-bold-12	neep-iso8859-2-bold-12
+!neep-bold-14	neep-iso8859-2-bold-14
+!neep-bold-18	neep-iso8859-2-bold-18
+!neep-bold-24	neep-iso8859-2-bold-24
+!
+!neep-alt-8	neep-alt-iso8859-2-8
+!neep-alt-9	neep-alt-iso8859-2-9
+!neep-alt-10	neep-alt-iso8859-2-10
+!neep-alt-12	neep-alt-iso8859-2-12
+!neep-alt-14	neep-alt-iso8859-2-14
+!neep-alt-18	neep-alt-iso8859-2-18
+!neep-alt-24	neep-alt-iso8859-2-24
+!neep-alt-bold-9	neep-alt-iso8859-2-bold-9
+!neep-alt-bold-10	neep-alt-iso8859-2-bold-10
+!neep-alt-bold-12	neep-alt-iso8859-2-bold-12
+!neep-alt-bold-14	neep-alt-iso8859-2-bold-14
+!neep-alt-bold-18	neep-alt-iso8859-2-bold-18
+!neep-alt-bold-24	neep-alt-iso8859-2-bold-24
+!
+!neep-8		neep-iso8859-9-8
+!neep-9		neep-iso8859-9-9
+!neep-10		neep-iso8859-9-10
+!neep-12		neep-iso8859-9-12
+!neep-14		neep-iso8859-9-14
+!neep-18		neep-iso8859-9-18
+!neep-24		neep-iso8859-9-24
+!neep-bold-9	neep-iso8859-9-bold-9
+!neep-bold-10	neep-iso8859-9-bold-10
+!neep-bold-12	neep-iso8859-9-bold-12
+!neep-bold-14	neep-iso8859-9-bold-14
+!neep-bold-18	neep-iso8859-9-bold-18
+!neep-bold-24	neep-iso8859-9-bold-24
+!
+!neep-alt-8	neep-alt-iso8859-9-8
+!neep-alt-9	neep-alt-iso8859-9-9
+!neep-alt-10	neep-alt-iso8859-9-10
+!neep-alt-12	neep-alt-iso8859-9-12
+!neep-alt-14	neep-alt-iso8859-9-14
+!neep-alt-18	neep-alt-iso8859-9-18
+!neep-alt-24	neep-alt-iso8859-9-24
+!neep-alt-bold-9	neep-alt-iso8859-9-bold-9
+!neep-alt-bold-10	neep-alt-iso8859-9-bold-10
+!neep-alt-bold-12	neep-alt-iso8859-9-bold-12
+!neep-alt-bold-14	neep-alt-iso8859-9-bold-14
+!neep-alt-bold-18	neep-alt-iso8859-9-bold-18
+!neep-alt-bold-24	neep-alt-iso8859-9-bold-24
+!
+!neep-8		neep-iso8859-15-8
+!neep-9		neep-iso8859-15-9
+!neep-10		neep-iso8859-15-10
+!neep-12		neep-iso8859-15-12
+!neep-14		neep-iso8859-15-14
+!neep-18		neep-iso8859-15-18
+!neep-24		neep-iso8859-15-24
+!neep-bold-9	neep-iso8859-15-bold-9
+!neep-bold-10	neep-iso8859-15-bold-10
+!neep-bold-12	neep-iso8859-15-bold-12
+!neep-bold-14	neep-iso8859-15-bold-14
+!neep-bold-18	neep-iso8859-15-bold-18
+!neep-bold-24	neep-iso8859-15-bold-24
+!
+!neep-alt-8	neep-alt-iso8859-15-8
+!neep-alt-9	neep-alt-iso8859-15-9
+!neep-alt-10	neep-alt-iso8859-15-10
+!neep-alt-12	neep-alt-iso8859-15-12
+!neep-alt-14	neep-alt-iso8859-15-14
+!neep-alt-18	neep-alt-iso8859-15-18
+!neep-alt-24	neep-alt-iso8859-15-24
+!neep-alt-bold-9	neep-alt-iso8859-15-bold-9
+!neep-alt-bold-10	neep-alt-iso8859-15-bold-10
+!neep-alt-bold-12	neep-alt-iso8859-15-bold-12
+!neep-alt-bold-14	neep-alt-iso8859-15-bold-14
+!neep-alt-bold-18	neep-alt-iso8859-15-bold-18
+!neep-alt-bold-24	neep-alt-iso8859-15-bold-24
+
+modd-iso8859-1-10	"-jmk-modd-medium-r-normal--11-100-75-75-c-60-iso8859-1"
+modd-iso8859-1-12	"-jmk-modd-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+modd-iso8859-1-bold-10	"-jmk-modd-bold-r-normal--11-100-75-75-c-60-iso8859-1"
+modd-iso8859-1-bold-12	"-jmk-modd-bold-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+
+modd-10		modd-iso8859-1-10
+modd-12		modd-iso8859-1-12
+modd-bold-10	modd-iso8859-1-bold-10
+modd-bold-12	modd-iso8859-1-bold-12
+
