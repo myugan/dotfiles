@@ -8,7 +8,7 @@
 #
 #  Author : blackcat - https://github.com/noirecat
 #  Usage : 
-#      startx ~/.xinitrc [session]
+#	   startx ~/.xinitrc [session]
 #
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
@@ -18,8 +18,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-# screen
-xrandr --output HDMI1 --auto
+## Configuring monitor
+if [[ -z `xrandr | grep " connected" | grep 'VGA'` ]]; then
+	echo "No monitor found" &
+else
+	xrandr --output HDMI1 --auto &
+fi
 
 # load the profile
 source ~/.profile
@@ -28,6 +32,7 @@ source ~/.profile
 xset +fp /usr/share/fonts/misc
 xset +fp ~/.fonts
 xset fp rehash
+sleep 2
 
 # source for the terminal
 xrdb -merge ~/.Xresources &
@@ -40,21 +45,17 @@ pgrep redshift &> /dev/null || redshift &> /dev/null &
 
 # multi session
 2bwm(){
-    exec 2bwm
+	exec 2bwm
 }
+
 dwm(){
-    exec dwm
-}
-openbox(){
-    exec openbox-session
-}
-wchef(){
-    exec windowchef
+	exec dwm
 }
 
 case $1 in
-    dwm)    dwm;;
-    ob)     openbox;;
-    wchf)   wchef;;
-    *)      openbox;;
+	2bwm)		2bwm;;
+	dwm)		dwm;;
+	openbox)	exec openbox-session;;
+	windowchef) exec windowchef;;
+	*)			exec openbox-session;;
 esac
