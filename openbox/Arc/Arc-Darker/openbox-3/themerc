@@ -1,0 +1,64 @@
+# Name: Arc-Dark
+# Author: blackcat
+# License: GPL-3.0+
+
+# General
+border.width: 0
+padding.height: 8
+padding.width: 8
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+window.label.text.justify: center
+
+# Window
+window.*.border.color: #2d3036
+window.*.title.separator.color: #2f343f
+window.*.client.color: #2d3036
+window.*.title.bg.color: #303641
+window.*.label.bg.color: #303641
+window.*.*.bg: flat solid
+window.*.*.*.bg: parentrelative
+window.*.*.*.*.bg: parentrelative
+window.active.label.text.color: #D3DAE3
+window.inactive.label.text.color: #7F8388
+window.*.button.unpressed.image.color: #D3DAE3
+window.*.button.pressed.image.color: #5294E2
+window.*.button.disabled.image.color: #2d3036
+window.*.button.hover.image.color: #afb8c5
+window.*.button.toggled.unpressed.image.color: #D3DAE3
+window.*.button.toggled.pressed.image.color: #5294E2
+window.*.button.toggled.hover.image.color: #afb8c5
+
+# Menu
+menu.border.width: 10
+menu.separator.width: 1
+menu.separator.padding.width: 10
+menu.separator.padding.height: 2
+menu.separator.color: #F5F6F7
+menu.overlap.x: -18
+menu.overlap.y: 0
+menu.border.color:#F5F6F7
+menu.title.text.color: #383838
+menu.items.text.color: #383838
+menu.items.disabled.text.color: #383838
+menu.items.active.text.color: #ffffff
+menu.items.active.disabled.text.color: #aeb0b
+menu.items.bg: flat solid
+menu.items.bg.color: #F5F6F7
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #5294E2
+menu.title.bg: flat solid
+menu.title.bg.color: #F5F6F7
+menu.title.text.justify: center
+
+# OSD
+osd.border.width: 1
+osd.border.color: #2d3036
+osd.label.text.color: #D3DAE3
+osd.bg: flat solid
+osd.bg.color: #2f343f
+osd.*.bg: flat solid
+osd.label.bg.color: #2f343f
+osd.hilight.bg.color: #5294E2
+osd.unhilight.bg.color: #000000
