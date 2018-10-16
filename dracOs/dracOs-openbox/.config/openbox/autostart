@@ -1,0 +1,11 @@
+# ogg
+ogg123 -q /root/Music/gamelan_bebarongan_calonarang.ogg &
+
+# brightness
+xbacklight -dec 55
+
+# wallpaper
+sh ~/.fehbg &
+
+# panel
+tint2 -c ~/.config/tint2/midnight.tint2rc &

@@ -1,0 +1,33 @@
+double_buffer no
+background yes
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+own_window_argb_visual no
+own_window_argb_value 0
+draw_borders no
+draw_graph_borders no
+draw_shades no
+use_xft yes
+xftfont ProFont:size=8
+gap_x 0
+gap_y 0
+alignment top_middle
+minimum_size 1380 20
+maximum_width 1380
+update_interval 0.5
+use_spacer none
+no_buffers true
+uppercase yes
+
+
+TEXT
+
+${goto 50}${color #CFCCCC}|   ${desktop_name}   |\
+${goto 180}${color #CFCCCC}UP : $uptime $color\
+${goto 340}${color #CFCCCC}BAT : ${battery_bar 6,90} $battery_percent% $color\
+${goto 560}${color #CFCCCC}RAM : ${membar 6,90} $memperc% $color\
+${goto 780}${color #CFCCCC}CPU : ${cpubar 6,90} $cpu% $color\
+${goto 990}${color #CFCCCC}UP: ${upspeed wlp3s0}  DOWN: ${downspeed wlps30} $color\
+${goto 1170}${color #CFCCCC}${utime %A, %d %B %H:%M}$color\
