@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<!--DNS Analysis-->
+<menu id="dns-analysis-menu" label="DNS Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnsdict6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnsdict6 -e sh -c 'dnsdict6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnsenum">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnsenum -e sh -c 'dnsenum -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnsmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnsmap -e sh -c 'dnsmap; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnsrecon">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnsrecon -e sh -c 'dnsrecon -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnsrevnum6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnsrevenum6 -e sh -c 'dnsrevenum6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnssecwalk">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnssecwalk -e sh -c 'dnssecwalk -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dmitry">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dmitry -e sh -c 'dmitry -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="fierce">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fierce -e sh -c 'fierce -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nmap -e sh -c 'nmap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="urlcrazy">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title urlcrazy -e sh -c 'urlcrazy -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Fingerprint Analysis-->
+<menu id="fingerprint-analysis-menu" label="Fingerprint Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nmap -e sh -c  'nmap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="p0f">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title p0f -e sh -c 'p0f -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Firewall Analysis-->
+<menu id="firewall-analysis-menu" label="Firewall Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="denial6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title denial6 -e sh -c  'denial6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dumprouter6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dump_router6 -e sh -c 'dump_router6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="firewall6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title firewall6 -e sh -c 'firewall6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="fragrouter6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title ragrouter6 -e sh -c 'fragrouter6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="fragmentation6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fragmentation6 -e sh -c 'fragmentation6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="implementation6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title implementation6 -e sh -c 'implementation6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nmap -e sh -c 'nmap -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Livehost Analysis-->
+<menu id="livehost-analysis-menu" label="Livehost Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="alive6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title alive6 -e sh -c 'alive6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="detect-new-ip6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title detect-new-ip6  -e sh -c 'detect-new-ip6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="four2six">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title four2six -e sh -c 'four2six -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="inverselookup6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title inverse_lookup6 -e sh -c 'inverse_lookup6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nmap -e sh -c 'nmap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nodequery6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title node_query6 -e sh -c 'node_query6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="randicmp6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title randicmp6 -e sh -c 'randicmp6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="thcping6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title thcping6 -e sh -c 'thcping6 -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Network Analysis-->
+<menu id="network-analysis-menu" label="Network Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="ace">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title ace -e sh -c 'ace -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="automater">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title automater -e sh -c 'automater -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="address6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title address6 -e sh -c 'address6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="amap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title amap -e sh -c 'amap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="amap6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title amap6 -e sh -c 'amap6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="detect_sniffer6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title detect_sniffer6 -e sh -c 'detect_sniffer6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnmap-client">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnmap-client -e sh -c 'dnmap_client -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dnmap-server">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnmap-server -e sh -c 'dnmap_server -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="dumpdhcp6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dump_dhcp6 -e sh -c 'dump_dhcp6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="bin-ip2hosts">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title bin-ip2hosts -e sh -c 'bin-ip2hosts -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="masscan">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title masscan -e sh -c 'masscan -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nmap -e sh -c 'nmap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nping">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nping -e sh -c 'nping -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="tcpdump">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title tcpdump -e sh -c 'tcpdump -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="trace6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title trace6 -e sh -c 'trace6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="tshark">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title tshark -e sh -c 'tshark -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="wol-e">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title wol-e -e sh -c 'wol-e -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Port Analysis-->
+<menu id="port-analysis-menu" label="Port Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="braa">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title braa -e sh -c 'braa -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="hping">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title hping -e sh -c 'hping -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="masscan">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title masscan -e sh -c 'masscan -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nmap -e sh -c 'nmap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="sslsplit">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title sslsplit -e sh -c 'sslsplit -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="sslyze">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title sslyze -e sh -c 'sslyze.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="smpt-user-enum">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title smpt-user-enum -e sh -c 'smtp-user-enum -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Service Analysis-->
+<menu id="service-analysis-menu" label="Service Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="amap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title amap -e sh -c 'amap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="miranda">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title miranda -e sh -c 'miranda -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" label="nmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nmap -e sh -c 'nmap -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Arachni Tools-->
+<menu id="arachni-tools-menu" label="Arachni Tools">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="arachni">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title arachni -e sh -c 'arachni -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="arachni-console">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title arachni-console -e sh -c 'arachni_console -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Cisco Tools-->
+<menu id="cisco-tools-menu" label="Cisco Tools">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cisco-auditing-tool">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title cisco-auditing-tool -e sh -c 'cd /opt/cisco-auditing-tool;./CAT -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cisco-global-exploiter">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title cisco-global-exploiter -e sh -c 'cge; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cisco-torch">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title cisco-torch -e sh -c 'cd /opt/cisco-torch;./cisco-torch.pl -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Web Testing-->
+<menu id="web-testing-menu" label="Web Testing">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="Atscan">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title atscan -e sh -c 'cd /opt/atscan; ./atscan.pl; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="apache_users">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title apache_users -e sh -c 'apache_users; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="CMSmap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title CMSmap -e sh -c 'cd /opt/CMSmap; ./cmsmap.py; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="dirbuster-ng">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dirbuster-ng  -e sh -c 'dirbuster -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="dirs3arch">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dirs3arch -e sh -c 'dirs3arch -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="joomscan">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title joomscan -e sh -c 'cd /opt/joomscan; ./joomscan.pl; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="uniscan">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title uniscan -e sh -c 'cd /opt/uniscan;./uniscan.pl  -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Stress Testing-->
+<menu id="stress-testing-menu" label="Stress Testing">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="dhcpig">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dhcpig -e sh -c 'pig -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="dos-new-ip6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dos-new-ip6 -e sh -c 'dos-new-ip6; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodadvertise6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_advertise6 -e sh -c 'flood_advertise6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="flooddhcpc6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_dhcpc6 -e sh -c 'flood_dhcpc6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodmld26">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title floodmld26 -e sh -c 'flood_mld26 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodmld6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title floodmld6 -e sh -c 'flood_mld6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="flood_mldrouter6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_mldrouter6 -e sh -c 'flood_mldrouter6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodredir6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_redir6 -e sh -c 'flood_redir6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodrouter26">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_router26 -e sh -c 'flood_router26 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodrouter6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_router6 -e sh -c 'flood_router6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodrs6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_rs6 -e sh -c 'flood_rs6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="floodsolicitate6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title flood_solicitate6 -e sh -c 'flood_solicitate6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fragmentation6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fragmentation6 -e sh -c 'fragmentation6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="kill_router6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title kill_router6 -e sh -c 'kill_router6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="mdk3">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title mdk3 -e sh -c 'mdk3; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="ndpexhaust6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dnpexhaust6 -e sh -c 'ndpexhaust6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="ndpexhaust26">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title ndpexhaust26 -e sh -c 'ndpexhaust26 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="slowhttptest">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title slowhttptest -e sh -c 'slowhttptest -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="slowloris">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title slowloris -e sh -c 'slowloris -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="smurf6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title smurf6 -e sh -c 'smurf6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="termineter">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title termineter -e sh -c 'termineter -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="thc-ssl-dos">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title thc-ssl-dos -e sh -c 'thc-ssl-dos -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="thcsyn6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title thcsync6 -e sh -c 'thcsyn6 -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Fuzzers-->
+<menu id="fuzzers-menu" label="Fuzzers">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="doona">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title doona -e sh -c 'cd /opt/doona; ./doona.pl -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="dotdotpwn">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title dotdotpwn -e sh -c 'cd /opt/dotdotpwn; ./dotdotpwn.pl -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fuzzdhcpc6">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title fuzz_dhcpc6 -e sh -c 'fuzz_dhcpc6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fuzzdhcps6">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title fuzz_dhcps6 -e sh -c 'fuzz_dhcps6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fuzzip6">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title fuzz_ip6 -e sh -c 'fuzz_ip6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="ohrwurm">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title ohrwurm -e sh -c 'ohrwurm -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="sfuzz">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title sfuzz -e sh -c 'sfuzz -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="webfuzzer">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title webfuzzer -e sh -c 'webfuzzer -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Metasploit (MSF)-->
+<menu id="metasploit-menu" label="Metasploit (MSF)">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g5157.png" label="msfconsole">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title msf -e sh -c 'msfconsole; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g5157.png" label="msfvenom">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title msf -e sh -c 'msfvenom -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g5157.png" label="msfupdate">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title msf -e sh -c 'msfupdate; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Database Analysis-->
+<menu id="database-analysis-menu" label="Database Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="bbqsql">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title bbqsql -e sh -c 'cd /opt/bbqsql/scripts; ./bbqsql -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="DBPwAudit">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title DBPwAudit -e sh -c 'cd /opt/DBPwAudit;./dbpwaudit.sh -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="sqlmap">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title sqlmap -e sh -c 'cd /opt/sqlmap; ./sqlmap.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="sqlninja">
+    <action name="Execute"><command>urxvt  -geometry 100x30 -title sqlninja -e sh -c 'cd /opt/sqlninja; ./sqlninja -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--jboss-->
+<menu id="jboss-menu" label="jboss">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="jboss-linux">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title jboss-linux -e sh -c 'cd /opt/jboss/;./jboss-linux; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="jboss-windows">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title jboss-windows -e sh -c 'cd /opt/jboss;./jboss-windows; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--aircrack-tools-->
+<menu id="aircrack-tools-menu" label="aircrack-tools">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="aircrack-ng">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title aircrack-ng -e sh -c 'aircrack-ng --help; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="airbase-ng">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title airbase-ng -e sh -c 'airbase-ng --help; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="airodump-ng">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title airodump-ng -e sh -c 'airodump-ng --help; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="airtun-ng">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title airtun-ng -e sh -c 'airtun-ng --help; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Password Attack-->
+<menu id="password-attack-menu" label="Password Attack">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="aircrack-ng">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title aircrack-ng -e sh -c 'aircrack-ng --help; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="eapmd5pass">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title aeapmd5pass -e sh -c 'eapmd5pass -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="doona">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title doona -e sh -c 'cd /opt/doona; ./doona.pl -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cowpatty">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title cowpatty -e sh -c 'cowpatty -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="enumiax">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title enumiax -e sh -c 'enumiax -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="findMyhash">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title findMyhash -e sh -c 'findmyhash -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="hash-identifier">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title hash-identifier -e sh -c 'python /usr/local/bin/hash-identifier; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="hydra">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title hydra -e sh -c 'hydra -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="john">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title john -e sh -c 'cd /opt/john; ./john -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="mkbrutus">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title mkbrutus -e sh -c 'cd /opt/mkbrutus/; python3 mkbrutus.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="patator">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title patator -e sh -c 'patator -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="pyrit">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title pyrit -e sh -c 'pyrit; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="rainbowcrack">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title rainbowcrack -e sh -c 'cd /opt/rainbowcrack; ./rcrack -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Social Engineering-->
+<menu id="social-engineering-menu" label="Social Engineering">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="geotweet">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title geotweet -e sh -c 'cd /opt/geotweet/; ./geotweet.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="goofile">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title goofile -e sh -c 'cd /opt/goofile; python goofile.py  -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="S.E.T">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title S.E.T -e sh -c 'cd /opt/set; ./setoolkit; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="twofi">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title twofi -e sh -c 'cd /opt/twofi;./twofi.rb -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Man In The Middle Attack (MITM)-->
+<menu id="mitm-menu" label="Man In The Middle Attack (MITM)">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="ace">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title ace -e sh -c 'ace -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="connsplit6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title connsplit6 -e sh -c 'connsplit6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="driftnet">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title driftnet -e sh -c 'driftnet -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="ettercap">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title ettercap -e sh -c 'ettercap -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakeadvertise6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fakeadvertise6 -e sh -c 'fake_advertise6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakedhcps6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fake_dhcps6 -e sh -c 'fake_dhcps6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakedns6d">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fake_dns6d -e sh -c 'fake_dns6d -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakednsupdate6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fake_dnsupdate6 -e sh -c 'fake_dnsupdate6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakemld6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fakemld6 -e sh -c 'fake_mld6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakemld26">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fakemld26 -e sh -c 'fake_mld26 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakemldrouter6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fakemldrouter6 -e sh -c 'fake_mldrouter6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakemipv6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fake_mipv6 -e sh -c 'fake_mipv6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakepim6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fake_pim6 -e sh -c 'fake_pim6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakerouter6">
+    <action name="Execute"><command>urxvt -geometry 100x30-title fake_router6 -e sh -c 'fake_router6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakerouter26">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fake_router26 -e sh -c 'fake_router26 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="fakesolicitate6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title fakesolicitate6 -e sh -c 'fake_solicitate6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="ferret">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title ferret -e sh -c 'ferret -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="hamster">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title hamster -e sh -c 'hamster -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="mitmf">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title mitmf -e sh -c 'cd /opt/mitmf; ./mitmf.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="parasite6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title parasite6 -e sh -c 'parasite6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="passivediscovery6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title passive_discovery6 -e sh -c 'passive_discovery6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="redir6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title redir6 -e sh -c 'redir6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="redirsniff6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title redirsniff6 -e sh -c 'redirsniff6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="responder">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title responder -e sh -c 'cd /opt/responder; ./Responder.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="sendpees6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title sendpees6 -e sh -c 'sendpees6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="sendpeesmp6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title sendpeesmp6 -e sh -c 'sendpeesmp6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="sslstrip">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title sslstrip -e sh -c 'sslstrip -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="tshark">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title tshark -e sh -c 'tshark -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Maintaining Access-->
+<menu id="maintaining-access-menu" label="Maintaining Access">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="backdoor-factory">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title backdoor-factory -e sh -c 'cd /opt/bdfactory; ./backdoor.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="covertsend6">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title covert_send6 -e sh -c 'covert_send6 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="covertsend6d">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title covert_send6d -e sh -c 'covert_send6d -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cymothoa">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title cymothoa -e sh -c 'cd /opt/cymothoa; ./cymothoa -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="msfvenom">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title msfvenom -e sh -c 'msfvenom -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="netcat">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title netcat -e sh -c 'netcat -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="nishang">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title nishang -e sh -c 'cd /opt/nishang;ls -l; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="PowerSploit">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title PowerSploit -e sh -c 'cd /opt/PowerSploit; ls; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="shellcraft">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title shellcraft -e sh -c 'shellcraft -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="tomcatWarDeployer">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title shellcraft -e sh -c 'tomcatWarDeployer; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="weevely">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title weevely -e sh -c 'cd /opt/weevely3; ./weevely.py -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="u3pwn">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title u3pwn -e sh -c 'cd /opt/u3-pwn; ./u3-pwn.py; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Network Forensics-->
+<menu id="network-forensics-menu" label="Network Forensics ">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="crackle">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title crackle -e sh -c 'crackle -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="tshark">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title tshark -e sh -c 'tshark -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Revovery & Carving-->
+<menu id="revovery-carving-menu" label="Revovery & Carving">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="testdisk">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title testdisk -e sh -c 'testdisk -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="photorec">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title photorec -e sh -c 'photorec -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Reverse Engineering-->
+<menu id="reverse-engineering-menu" label="Reverse Engineering">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="asm">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title asm -e sh -c 'asm -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="constgrep">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title constgrep -e sh -c 'constgrep -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="disasm">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title disasm -e sh -c 'disasm -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cyclic">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title cyclic -e sh -c 'cyclic -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="checksec">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title checksec -e sh -c 'checksec -h; bash -l'</command></action>
+  </item>	
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="elfpatch">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title elfpatch -e sh -c 'elfpatch -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="elfdiff">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title elfdiff -e sh -c 'elfdiff -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="gdb">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title gdb -e sh -c 'gdb -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="hex">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title hex -e sh -c 'hex -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="hexedit">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title hexedit -e sh -c 'hexedit; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="hexdump">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title hexdump -e sh -c 'hexdump -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="phd">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title phd -e sh -c 'phd -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="unhex">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title unhex -e sh -c 'unhex -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Malware Analysis-->
+<menu id="malware-analysis-menu" label="Malware Analysis">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4816.png" label="balbuzard">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title balbuzard -e sh -c 'cd /usr/lib/python2.7/site-packages/balbuzard; python balbuzard.py; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4816.png" label="Malware-Fragmentation-Tool">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title Malware-Fragmentation-Tool -e sh -c 'mft; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Covering Track-->
+<menu id="covering-track-menu" label="Covering Track">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="macchanger">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title macchancer -e sh -c 'macchanger -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="openvpn-client">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title openvpn-client -e sh -c 'openvpn --help; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="proxychains-ngt">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title proxychains-ng -e sh -c 'proxychains4; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="tunneling-sock5">
+    <action name="Execute"><command>urxvt -geometry 100x30 -title tunneling-sock5 -e sh -c 'tunneling-sock5 -h; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--nginx-->
+<menu id="nginx-menu" label="nginx">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g5161.png" label="start-nginx">
+    <action name="Execute"><command>urxvt -ls +sb -g 60x8+900+600 -title start-nginx -e sh -c 'echo starting nginx server; /usr/sbin/nginx -c /etc/nginx/nginx.conf;sleep 5;exit 1; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g5161.png" label="stop-nginx">
+    <action name="Execute"><command>urxvt -ls +sb -g 60x8+900+600 -title 'nginx' -e sh -c 'echo stoping nginx server; /usr/sbin/nginx -s stop;sleep 5; exit 1; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g5161.png" label="reload-nginx">
+    <action name="Execute"><command>urxvt -ls +sb -g 60x8+900+600 -title 'nginx' -e sh -c "/usr/sbin/nginx -s reload;sleep 5; exit 1; bash -l"</command></action>
+  </item>
+</menu>
+
+<!--Postgresql-->
+<menu id="postgresql-menu" label="Postgresql">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="start-postgreSQL">
+    <action name="Execute"><command>urxvt -ls +sb -g 68x8x900+600 -title 'postgreSQL' -e sh -c "/etc/init.d/postgresql start;sleep 5;exit 1; bash -l"</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="stop-postgreSQL">
+    <action name="Execute"><command>urxvt -ls +sb -g 60x8+900+600 -title 'postgreSQL' -e sh -c "/etc/init.d/postgresql stop;sleep 5;exit 1; bash -l"</command></action>
+  </item>
+</menu>
+
+<!--ppp/pppoe-->
+<menu id="ppp-pppoe-menu" label="ppp/pppoe">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="pppoe-connect">
+    <action name="Execute"><command>urxvt -title pppoe-connect -e sh -c 'pppoe-connect -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="pppoe-setup">
+    <action name="Execute"><command>urxvt -title pppoe-setup -e sh -c 'pppoe-setup; bash -l'</command></action>
+  </item>
+</menu>
+
+<!--Multimedia-->
+<menu id="multimedia-menu" label="Multimedia">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="mpg123">
+    <action name="Execute"><command>urxvt -title mpg123 -e sh -c 'mgp123 -h; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cmus">
+    <action name="Execute"><command>urxvt -title cmus -e sh -c 'cmus'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="recordmydesktop">
+    <action name="Execute"><command>urxvt -geometry 100x30 -e sh -c 'recordmydesktop -h; bash -;'</command></action>
+  </item>
+</menu>
+
+<!--File & Games-->
+<menu id="file-games-menu" label="File & Games">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="File Manager">
+    <action name="Execute"><command>urxvt -geometry 100x30 --title lfm -e sh -c 'lfm; bash -l'</command></action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="nsnake">
+    <action name="Execute"><command>urxvt -title nsnake -e sh -c 'nsnake'</command></action>
+  </item>
+</menu>
+
+<!--System-->
+<menu id="system-menu" label="System">
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4491.png" label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4491.png" label="Reconfigure Openbox">
+    <action name="Reconfigure"/>
+  </item>
+</menu>
+
+<!--MENU-->
+<menu id="root-menu" label="Openbox 3">
+  <menu id="inteligent-gathering-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4683.png" label="Inteligent Gathering">
+  	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" id="dns-analysis-menu"/>
+  	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" id="fingerprint-analysis-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" id="firewall-analysis-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" id="livehost-analysis-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" id="network-analysis-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" id="port-analysis-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4683.png" id="service-analysis-menu"/>
+  </menu>
+  <menu id="vulnerability-assessment-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4697.png" label="Vulnerability Assessment">
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4697.png" id="arachni-tools-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4697.png" id="cisco-tools-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4697.png" id="web-testing-menu"/>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="w3af">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title w3af -e sh -c 'w3af; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="websploit">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title websploit -e sh -c 'websploit -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="inguma">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title inguma -e sh -c 'cd /opt/inguma;./inguma.py -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="lynis">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title lynis -e sh -c 'cd /opt/lynis; ./lynis -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="nikto">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title nikto -e sh -c 'nikto -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="golismero">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title golismero -e sh -c 'golismero -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="recon-ng">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title recon-ng -e sh -c 'recon-ng; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="sidguess">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title sidguess -e sh -c 'sidguess; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="tnscmd10g">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title tnscmd10g -e sh -c 'tnscmd10g; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="yasuo">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title yasuo -e sh -c 'yasuo -h; bash -l'</command></action>
+  	</item>
+
+  </menu>
+  <menu id="exploitation testing-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4713.png" label="Exploitation Testing">
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4713.png" id="fuzzers-menu"/>	
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g5157.png" id="metasploit-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4713.png" id="database-analysis-menu"/>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="beef">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title beef -e sh -c 'cd /opt/beef; ./beef -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="brutexor">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title brutexor -e sh -c 'brutexor -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cisco-global-exploiter">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title cisco-global-exploiter -e sh -c 'cge; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="commix">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title commix -e sh -c 'cd /opt/commix; ./commix.py  -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="exploit6">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title exploit6 -e sh -c 'exploit6 -h; bash -l'</command></action>
+  	</item>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" id="jboss-menu"/>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="Linux Exploit Suggester">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title Linux_Exploit_Suggester -e sh -c 'Linux_Exploit_Suggester -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="lynis">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title lynis -e sh -c 'cd /opt/lynis; ./lynis -h; bash -l'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="routersploit">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title routersploit -e sh -c 'cd /opt/routersploit; ./rsf.py'</command></action>
+  	</item>
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="shellnoob">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title shellnoob -e sh -c 'cd /opt/shellnoob; ./shellnoob.py /opt/shellnoob.py -h; bash -l'</command></action>
+  	</item>	
+  </menu>
+  <menu id="wireless-bluetooth-radio-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4717.png" label="Wireless, Bluetooth, Radio">
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4717.png" id="aircrack-tools-menu"/>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="asleap">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title asleap -e sh -c 'cd /opt/asleap;./asleap -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="besside-ng">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title besside-ng -e sh -c 'besside-ng -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="bluelog">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title bluelog -e sh -c 'bluelog -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="bluesnarfer">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title eapmd5pass -e sh -c 'eapmd5pass -h; bash -l'</command></action>
+  	</item>  
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="cowpatty">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title cowpatty -e sh -c 'cowpatty -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="crackle">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title crackle -e sh -c 'crackle -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="eapmd5pass">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title eapmd5pass -e sh -c 'eapmd5pass -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="macchanger">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title macchancer -e sh -c 'macchanger -h; bash -l'</command></action>
+  	</item>  	
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="mdk3">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title mdk3 -e sh -c 'mdk3 --help; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="mfoc">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title mfoc -e sh -c 'mfoc -h;bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="kalibrate-rtl">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title kalibrate-rtl -e sh -c 'kal -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="kismet">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title kismet -e sh -c 'kismet -h; bash -l'</command></action>
+  	</item>  	
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="pixiewps">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title pixiewps -e sh -c 'pixiewps -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="reaver">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title reaver -e sh -c 'reaver -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="rfidiot">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title rfidiot -e sh -c 'rfidiot-cli.py -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="wifihoney">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title wifihoney -e sh -c 'cd /opt/wifihoney; ./wifi_honey.sh -h; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="wifitap">
+    		<action name="Execute"><command>urxvt -geometry 100x30 -title wifitap -e sh -c 'wifitap -h; bash -l'</command></action>
+  	</item>
+  </menu>
+  <menu id="password-attack-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4732.png"/>
+  <menu id="social-engineering-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4737.png" label="Social Engineering"/>
+  <menu id="mitm-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4743.png"/>
+  <menu id="stress-testing-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4766.png"/>
+  <menu id="maintaining-access-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4795.png"/>
+  <menu id="forenscis-analysis-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4801.png" label="Forenscis Analysis">
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4801.png" id="network-forensics-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4801.png" id="revovery-carving-menu"/>
+  </menu>
+  <menu id="reverse-engineering-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4808.png" />
+  <menu id="malware-analysis-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4816.png"/>
+  <menu id="covering-track-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4820.png"/>
+  <menu id="service-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4824.png" label="Service">
+	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4828.png" label="samba">
+    		<action name="Execute">
+      		<command>inkscape</command></action>
+  	</item>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g5161.png" id="nginx-menu"/>
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g5167.png" id="postgresql-menu"/>
+  </menu>
+  <menu id="internet-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4828.png" label="Internet">
+	<menu icon="/usr/share/images/menu-icons/tomato/22x22/g4828.png" id="ppp-pppoe-menu" label="ppp/pppoe"/>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="links2">
+    		<action name="Execute"><command>links -g https://dracos-linux.org/</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="w3m">
+    		<action name="Execute"><command>urxvt -title w3m -e sh -c 'w3m https://dracos-linux.org/ ; bash -l'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="irssi">
+    		<action name="Execute"><command>urxvt -title irssi -e sh -c 'irssi'</command></action>
+  	</item>
+  	<item icon="/usr/share/images/menu-icons/tomato/22x22/g4863.png" label="mutt">
+    		<action name="Execute"><command>urxvt -title mutt -e sh -c 'mutt'</command></action>
+  	</item>
+  </menu>
+  <menu id="multimedia-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4835.png"/>
+  <menu id="file-games-menu" icon="/usr/share/images/menu-icons/tomato/24x24/g4850.png"/>
+  <menu icon="/usr/share/images/menu-icons/tomato/22x22/g4491.png" id="system-menu"/>
+  <item icon="/usr/share/images/menu-icons/tomato/22x22/g4480.png" label="Exit">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu>
+</openbox_menu>

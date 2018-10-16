@@ -1,0 +1,2 @@
+#!/bin/bash
+conky -c .conkyrc | lemonbar -g 1366x30+0+0 -f "-kakwa-kakwafont-medium-r-normal--12-120-72-72-c-60-iso8859-1" -F "#D2D2D2" -B "#131313"
