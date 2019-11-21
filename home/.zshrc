@@ -7,11 +7,19 @@
 
 limit -s coredumpsize 0
 
+export ZSH="/home/debian/.oh-my-zsh"
+export HISTIGNORE="pwd:ls:cd"
 export EDITOR="vim"
 
+ZSH_THEME="agnoster"
+
 # Plugins
+. $ZSH/oh-my-zsh.sh
 . $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 . $HOME/.zsh/functions.zsh
+. $HOME/.oh-my-zsh/custom/plugins/warhol/warhol.plugin.zsh
+
+plugins=(git)
 
 # History
 HISTFILE=~/.histfile
@@ -29,7 +37,7 @@ bindkey '\eOd' 	backward-word			# C-Left
 bindkey '\e[2~'	overwrite-mode 		# Insert
 
 # Title
-print -Pn "\e]0;%n@%m: %~\a"
+#print -Pn "\e]0;%n@%m: %~\a"
 
 # Completion
 eval $(dircolors)
@@ -51,24 +59,18 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}		# color
 compdef _gnu_generic gcc
 compdef _gnu_generic gdb
 
+alias ls="lsd"
 # Prompt
-if [[ $EUID -ne 0 ]]; then
+#if [[ $EUID -ne 0 ]]; then
     #PROMPT='%B%F{blue}%n@%m %F{magenta}%d%f%b » '
-    PROMPT='➜ '
+    #PROMPT='➜ '
     #PROMPT='%B%F{blue}%n@%m %F{green} %~ %f%b '
-else
-    PROMPT='%B%F{red}%n@%m %F{white}%d%f%b » '
-fi
+    #PROMPT='%~ » '
+#else
+    #PROMPT='%B%F{red}%n@%m %F{white}%d%f%b » '
+    #PROMPT='%F{red}%~%f%b » '
+#fi
 RPROMPT='%D{%H:%M %p}'
 
-. ~/.zsh-aliases
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-PATH="/home/blackcat/.perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/blackcat/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/blackcat/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/blackcat/.perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/blackcat/.perl5"; export PERL_MM_OPT;
+# Created by `userpath` on 2019-11-18 01:36:04
+export PATH="$PATH:/home/debian/.local/bin"
