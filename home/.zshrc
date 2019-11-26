@@ -7,7 +7,7 @@
 
 limit -s coredumpsize 0
 
-export ZSH="/home/debian/.oh-my-zsh"
+export ZSH="/home/myugan/.oh-my-zsh"
 export HISTIGNORE="pwd:ls:cd"
 export EDITOR="vim"
 
@@ -59,7 +59,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}		# color
 compdef _gnu_generic gcc
 compdef _gnu_generic gdb
 
-alias ls="lsd"
 # Prompt
 #if [[ $EUID -ne 0 ]]; then
     #PROMPT='%B%F{blue}%n@%m %F{magenta}%d%f%b » '
@@ -73,4 +72,10 @@ alias ls="lsd"
 RPROMPT='%D{%H:%M %p}'
 
 # Created by `userpath` on 2019-11-18 01:36:04
-export PATH="$PATH:/home/debian/.local/bin"
+export PATH="$PATH:/home/myugan/.local/bin"
+
+PATH="/home/myugan/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/myugan/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/myugan/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/myugan/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/myugan/perl5"; export PERL_MM_OPT;

@@ -6,20 +6,21 @@
 #
 #
 
-export PRESET="groove"
+export PRESET="monokai"
 
 # load fonts
 xset fp+ ~/.fonts
 xset fp rehash
 
 # Screen
-xrandr --output HDMI1 --auto
+xrandr --output eDP-1 --mode 2560x1440
 
 # Sources for terminal
 xrdb -merge ~/.Xresources
 
 # Wallpaper
 nitrogen --restore &
+#$(wal -i ~/Pictures/15201.jpeg)
 
 # notification daemon
 dunst &
@@ -34,7 +35,8 @@ redshift &
 cbatticon &
 volumeicon &
 nm-applet &
+blueman-applet & 
 clipit &
 
 # Panel
-polybar top -c ~/.config/polybar/simplicity
+tint2 -c ~/.config/tint2/tint2rc
