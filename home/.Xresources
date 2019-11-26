@@ -6,15 +6,16 @@
 !  URxvt, XTerm, XScreenSaver configuration
 !
 
-#define geo 115x24+366+209
+#define geo 118x29+366+209
 
-#include ".colors/simplicity"
+#include ".colors/monokai"
 !#include ".x/fonts/lemon"
 
 !URxvt*font:     xft:M+ 2m medium:pixelsize=10:antialias=true:hinting=true
 !URxvt*font:     xft:Source Code Pro:Bold:pixelsize=9:antialias=true:hinting=true
-!URxvt*font:     xft:Hack:Bold:pixelsize=9:antialias=true:hinting=true
-URxvt*font:     xft:Fira Mono for Powerline:Bold:pixelsize=9:antialias=true:hinting=true
+URxvt*font:     xft:Hack:Bold:pixelsize=12:antialias=true:hinting=true
+!URxvt*font:     xft:Roboto Mono for Powerline:Bold:pixelsize=12:antialias=true:hinting=true
+!URxvt*font:     xft:Fira Mono for Powerline:Bold:pixelsize=9:antialias=true:hinting=true
 
 URxvt.termName:             rxvt-unicode
 URxvt.geometry:             geo
@@ -36,7 +37,7 @@ URxvt.cursorUnderline:      true
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
 URxvt.loginShell:           true
-URxvt.perl-lib:             /home/blackcat/.urxvt/urxvt-perls
+URxvt.perl-lib:             /home/myugan/.urxvt/urxvt-perls
 URxvt.perl-ext-common:      default,clipboard,keyboard-select,url-select,resize-font
 URxvt.clipboard.autocopy:   true
 

@@ -1,4 +1,3 @@
-#              
 #    ▛▌▀▌▛▌▛▌▛▘▛▘
 #  ▗ ▌▌█▌▌▌▙▌▌ ▙▖
 #
@@ -7,17 +6,16 @@ unset autoindent
 set matchbrackets "(<[{)>]}"
 ## set brackets "\"')]}"
 set tabsize 5
-set const
+#set const
 set smooth
-set rebindkeypad
 set boldtext
 set multibuffer
 set quickblank
 set wordbounds
 set nowrap
 set backup
-set backupdir "/home/blackcat/.nano/backup"
-set rebindkeypad
+set backupdir "/home/myugan/.nano/backup"
+#set rebindkeypad
 set historylog
 set nonewlines
 set nohelp
@@ -93,11 +91,3 @@ include "~/.nano/pkg-config.nanorc"
 include "~/.nano/sed.nanorc"
 
 #------- Keybindings ------------
-bind ^S savefile main
-bind Del backspace all
-bind ^X cut  main
-bind ^C copytext main
-bind ^Z undo         all
-bind ^Y redo         all
-bind ^F whereis      main
-bind ^H replace      main
