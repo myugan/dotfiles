@@ -4,9 +4,10 @@
 
 unset autoindent
 set matchbrackets "(<[{)>]}"
-## set brackets "\"')]}"
+# set brackets "\"')]}"
+set linenumbers
 set tabsize 5
-#set const
+# set const
 set smooth
 set boldtext
 set multibuffer
@@ -14,7 +15,7 @@ set quickblank
 set wordbounds
 set nowrap
 set backup
-set backupdir "/home/myugan/.nano/backup"
+set backupdir "/home/myuga/.nano/backup"
 #set rebindkeypad
 set historylog
 set nonewlines
