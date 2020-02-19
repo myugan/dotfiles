@@ -1,0 +1,32 @@
+.syntax--source.syntax--yaml {
+  color: @syntax-color-json-key;
+
+  .syntax--comment {
+    color: @syntax-color-json-comment;
+    font-style: italic;
+  }
+
+  .syntax--tag {
+    color: @syntax-color-json-key;
+  }
+
+  .syntax--string {
+    color: @syntax-color-json-value;
+
+    * {
+      color: @syntax-color-json-value;
+    }
+  }
+
+  .syntax--punctuation:not(.syntax--string):not(.syntax--comment) {
+    color: @syntax-color-json-punctuation;
+  }
+
+  .syntax--numeric {
+    color: @syntax-color-json-numeric;
+  }
+
+  .syntax--language {
+    color: @syntax-color-json-constant;
+  }
+}

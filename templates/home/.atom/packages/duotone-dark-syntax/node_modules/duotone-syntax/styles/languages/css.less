@@ -1,0 +1,33 @@
+// CSS
+
+.syntax--css {
+  &.syntax--source {
+    .uno-5();
+  }
+  &.syntax--support.syntax--property-name {
+    .uno-3();
+  }
+  &.syntax--attribute-name {
+    &.syntax--id,
+    &.syntax--class,
+    &.syntax--parent-selector {
+      .uno-1();
+    }
+  }
+  &.syntax--unit {
+    .duo-2();
+  }
+  &.syntax--function {
+    .duo-3();
+  }
+  &.syntax--punctuation.syntax--terminator {
+    .duo-3();
+  }
+  &.syntax--at-rule {
+    .uno-1();
+    .syntax--keyword.syntax--punctuation {
+      color: inherit;
+    }
+  }
+
+}

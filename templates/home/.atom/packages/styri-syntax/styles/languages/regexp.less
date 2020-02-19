@@ -1,0 +1,66 @@
+.syntax--source.syntax--regexp {
+  color: @syntax-color-regexp-text;
+
+  // ^ $
+  .syntax--control.syntax--anchor {
+    color: @syntax-color-regexp-anchor;
+  }
+
+  .syntax--group:not(.syntax--assertion) {
+
+    // ()
+    .syntax--punctuation {
+      color: @syntax-color-regexp-group;
+    }
+  }
+
+  .syntax--group.syntax--assertion {
+
+    // (?=)
+    .syntax--punctuation,
+    .syntax--look-ahead,
+    .syntax--look-behind,
+    .syntax--negative-look-ahead,
+    .syntax--negative-look-behind {
+      color: @syntax-color-regexp-assertion;
+    }
+  }
+
+  // |
+  .syntax--operator.syntax--or {
+    color: @syntax-color-regexp-group;
+  }
+
+  // $1
+  .syntax--variable.syntax--variable.syntax--replacement {
+    color: @syntax-color-regexp-group;
+  }
+
+  // \"
+  .syntax--escape.syntax--character {
+    color: @syntax-color-regexp-text;
+  }
+
+  // \s \w
+  .syntax--character-class.syntax--character {
+    color: @syntax-color-regexp-class;
+  }
+
+  .syntax--character-class.syntax--set {
+
+    // [^]
+    .syntax--punctuation, .syntax--negation {
+      color: @syntax-color-regexp-set;
+    }
+
+    // a-z
+    .syntax--range {
+      color: @syntax-color-regexp-set;
+    }
+  }
+
+  // ? + * {}
+  .syntax--operator.syntax--quantifier {
+    color: @syntax-color-regexp-quantifier;
+  }
+}

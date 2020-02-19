@@ -1,0 +1,26 @@
+html, body, .tree-view, .tab-bar .tab .editor {
+   font-weight: bold;
+}
+
+html, body, .tree-view, .tab-bar .tab {
+   font-family: Roboto;
+   font-size: 11px;
+}
+
+// Make tree-view more compact
+.tree-view {
+  .list-group li:not(.list-nested-item),
+  .list-tree li:not(.list-nested-item),
+  .list-group li.list-nested-item > .list-item,
+  .list-tree li.list-nested-item > .list-item {
+    line-height: 24px;
+  }
+  .list-group .selected:before,
+  .list-tree .selected:before {
+    height: 24px;
+  }
+}
+
+.line, .line-number, .cursor {
+  line-height: 1.5;
+}

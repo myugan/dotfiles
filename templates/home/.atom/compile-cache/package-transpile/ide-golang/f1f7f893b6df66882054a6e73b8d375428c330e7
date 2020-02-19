@@ -1,0 +1,42 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const path = require("path");
+const utils = require("./utils");
+class GoGetDoc {
+    constructor(core) {
+        this.core = core;
+    }
+    getDatatip(editor, bufferPos, _) {
+        const m = this.core.reportBusy("Getting data tip...");
+        return new Promise((resolve) => {
+            const offset = editor.getBuffer().characterIndexForPosition(bufferPos);
+            const filePath = editor.getPath();
+            this.core.spawn("gogetdoc", ["-json", "-modified", "-pos=" + filePath + ":#" + offset], {
+                cwd: filePath && path.dirname(filePath),
+                input: utils.getFileArchive(editor),
+            }).then((out) => {
+                const output = JSON.parse(out.toString());
+                m.dispose();
+                resolve({
+                    markedStrings: [
+                        {
+                            grammar: atom.grammars.grammarForScopeName("source.go") || editor.getGrammar(),
+                            type: "snippet",
+                            value: output.decl,
+                        },
+                        {
+                            type: "markdown",
+                            value: output.doc,
+                        },
+                    ],
+                    range: utils.getCurrentWordBufferRange(editor, bufferPos),
+                });
+            }).catch((err) => {
+                this.core.logTrace(err);
+                m.dispose();
+                resolve(null);
+            });
+        });
+    }
+}
+exports.GoGetDoc = GoGetDoc;

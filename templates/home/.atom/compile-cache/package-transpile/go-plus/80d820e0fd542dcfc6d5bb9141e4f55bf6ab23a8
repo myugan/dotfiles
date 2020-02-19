@@ -1,0 +1,37 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.EmptyTabView = undefined;
+
+var _etch = require('etch');
+
+var _etch2 = _interopRequireDefault(_etch);
+
+var _etchComponent = require('./../etch-component');
+
+var _etchOcticon = require('etch-octicon');
+
+var _etchOcticon2 = _interopRequireDefault(_etchOcticon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class EmptyTabView extends _etchComponent.EtchComponent {
+  render() {
+    return _etch2.default.dom(
+      'div',
+      { className: 'go-plus-empty-tab' },
+      _etch2.default.dom(
+        'span',
+        { className: 'text-subtle' },
+        _etch2.default.dom(_etchOcticon2.default, { name: 'issue-opened', className: 'auto-size' }),
+        'The go-plus panel is active when a Go project is loaded.',
+        _etch2.default.dom('br', null),
+        'Open a .go file to get started.'
+      )
+    );
+  }
+}
+exports.EmptyTabView = EmptyTabView;
+/** @jsx etch.dom */
+/* eslint-disable react/no-unknown-property */
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVtcHR5LXRhYi12aWV3LmpzIl0sIm5hbWVzIjpbIkVtcHR5VGFiVmlldyIsIkV0Y2hDb21wb25lbnQiLCJyZW5kZXIiXSwibWFwcGluZ3MiOiI7Ozs7O0FBSUE7Ozs7QUFDQTs7QUFDQTs7Ozs7O0FBRU8sTUFBTUEsWUFBTixTQUEyQkMsNEJBQTNCLENBQXlDO0FBQzlDQyxXQUFTO0FBQ1AsV0FDRTtBQUFBO0FBQUEsUUFBSyxXQUFVLG1CQUFmO0FBQ0U7QUFBQTtBQUFBLFVBQU0sV0FBVSxhQUFoQjtBQUNFLDJCQUFDLHFCQUFELElBQVMsTUFBSyxjQUFkLEVBQTZCLFdBQVUsV0FBdkMsR0FERjtBQUVHLGtFQUZIO0FBR0Usc0NBSEY7QUFJRztBQUpIO0FBREYsS0FERjtBQVVEO0FBWjZDO1FBQW5DRixZLEdBQUFBLFk7QUFQYjtBQUNBIiwiZmlsZSI6ImVtcHR5LXRhYi12aWV3LmpzIiwic291cmNlUm9vdCI6Ii9ob21lL215dWdhLy5hdG9tL3BhY2thZ2VzL2dvLXBsdXMvbGliL3BhbmVsIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZsb3dcbi8qKiBAanN4IGV0Y2guZG9tICovXG4vKiBlc2xpbnQtZGlzYWJsZSByZWFjdC9uby11bmtub3duLXByb3BlcnR5ICovXG5cbmltcG9ydCBldGNoIGZyb20gJ2V0Y2gnXG5pbXBvcnQgeyBFdGNoQ29tcG9uZW50IH0gZnJvbSAnLi8uLi9ldGNoLWNvbXBvbmVudCdcbmltcG9ydCBPY3RpY29uIGZyb20gJ2V0Y2gtb2N0aWNvbidcblxuZXhwb3J0IGNsYXNzIEVtcHR5VGFiVmlldyBleHRlbmRzIEV0Y2hDb21wb25lbnQge1xuICByZW5kZXIoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ28tcGx1cy1lbXB0eS10YWJcIj5cbiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC1zdWJ0bGVcIj5cbiAgICAgICAgICA8T2N0aWNvbiBuYW1lPVwiaXNzdWUtb3BlbmVkXCIgY2xhc3NOYW1lPVwiYXV0by1zaXplXCIgLz5cbiAgICAgICAgICB7J1RoZSBnby1wbHVzIHBhbmVsIGlzIGFjdGl2ZSB3aGVuIGEgR28gcHJvamVjdCBpcyBsb2FkZWQuJ31cbiAgICAgICAgICA8YnIgLz5cbiAgICAgICAgICB7J09wZW4gYSAuZ28gZmlsZSB0byBnZXQgc3RhcnRlZC4nfVxuICAgICAgICA8L3NwYW4+XG4gICAgICA8L2Rpdj5cbiAgICApXG4gIH1cbn1cbiJdfQ==

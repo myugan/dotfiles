@@ -1,0 +1,50 @@
+// Git power-ups for Tree View and for Status Bar
+
+status-bar {
+  .git-view {
+    .status {
+      color: @text-color;
+    }
+
+    .status-added {
+      color: @git-color-added;
+    }
+
+    .status-ignored {
+      color: @git-color-ignored;
+    }
+
+    .status-modified {
+      color: @git-color-modified;
+    }
+
+    .status-removed {
+      color: @git-color-removed;
+    }
+
+    .status-renamed {
+      color: @git-color-renamed;
+    }
+  }
+}
+
+.list-group,
+.list-tree {
+  .generate-list-item-status-color(@color, @status) {
+    li:not(.list-nested-item).status-@{status},
+    li.list-nested-item.status-@{status} > .list-item {
+      color: @color;
+    }
+
+    li:not(.list-nested-item).selected.status-@{status},
+    li.list-nested-item.selected.status-@{status} > .list-item {
+      color: @color;
+    }
+  }
+
+  .generate-list-item-status-color(@git-color-added, added);
+  .generate-list-item-status-color(@git-color-ignored, ignored);
+  .generate-list-item-status-color(@git-color-modified, modified);
+  .generate-list-item-status-color(@git-color-removed, removed);
+  .generate-list-item-status-color(@git-color-renamed, renamed);
+}

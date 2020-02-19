@@ -1,0 +1,68 @@
+@simple-old
+"input" {
+  "input": scope
+}
+
+@simple-new
+"input": scope
+
+@html-image
+"<img src='image.jpg' alt='text'>" {
+  html {
+    tag {
+      "<": punctuation
+      "img": name
+      " "
+      # src-attribute
+      "src='image.jpg'" {
+        attribute {
+          "src": name
+          "='": punctuation
+          value {
+            # filename
+            "image.jpg" {
+              filename {
+                "image": name
+                ".jpg": extension
+              }
+            }
+          }
+          "'": punctuation
+        }
+      }
+      " "
+      # alt-attribute
+      "alt='text'" {
+        attribute {
+          "alt": name
+          "='": punctuation
+          "text": value
+          "'": punctuation
+        }
+      }
+      ">": punctuation
+    }
+  }
+}
+
+"- alpha"+
+"- beta"+
+"- gamma"+
+"- delta" {
+  text.md {
+    unordered.list.md {
+      "-": punctuation.md
+      " "
+      "alpha"
+      "-": punctuation.md
+      " "
+      "beta"
+      "-": punctuation.md
+      " "
+      "gamma"
+      "-": punctuation.md
+      " "
+      "delta"
+    }
+  }
+}

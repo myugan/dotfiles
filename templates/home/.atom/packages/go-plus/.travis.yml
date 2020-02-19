@@ -1,0 +1,61 @@
+language: go
+
+go:
+  - 1.11
+
+matrix:
+  fast_finish: true
+
+os:
+  - linux
+  - osx
+
+env:
+  global:
+    - GO111MODULE=off
+    - APM_TEST_PACKAGES="go-signature-statusbar go-debug"
+  matrix:
+    - ATOM_CHANNEL=beta
+    - ATOM_CHANNEL=stable
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+install:
+  - nvm install 8
+  - go get -u golang.org/x/tools/cmd/goimports
+  - go get -u golang.org/x/tools/cmd/gorename
+  - go get -u github.com/sqs/goreturns
+  - go get -u github.com/mdempsky/gocode
+  - go get -u github.com/alecthomas/gometalinter
+  - go get -u github.com/zmb3/gogetdoc
+  - go get -u github.com/zmb3/goaddimport
+  - go get -u github.com/rogpeppe/godef
+  - go get -u github.com/fatih/gomodifytags
+  - go get -u golang.org/x/tools/cmd/guru
+  - go get -u github.com/ramya-rao-a/go-outline
+  - go get -u github.com/tpng/gopkgs
+
+script:
+  - 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+
+sudo: false
+
+git:
+  depth: 10
+
+addons:
+  apt:
+    packages:
+    - build-essential
+    - git
+    - libgnome-keyring-dev
+    - fakeroot
+
+branches:
+  only:
+    - master
+    - /^greenkeeper-.*$/
+    - /^greenkeeper/.*$/

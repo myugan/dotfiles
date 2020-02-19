@@ -1,0 +1,140 @@
+// ------------------ Base colors ------------------
+
+@styri-bg:          hsl(232, 12%, 22%); // Background
+@styri-mono-1:      hsl(232, 50%, 92%); // Text
+@styri-mono-2:      hsl(232, 50%, 89%); // Punctuation
+@styri-mono-3:      hsl(232, 16%, 44%); // Comments
+
+@styri-red:         hsv(350, 67%, 98%);
+@styri-pink:        hsv(315, 81%, 99%);
+@styri-blue:        hsv(206, 98%, 98%);
+@styri-cyan:        hsv(186, 97%, 91%);
+@styri-sea:         hsv(170, 95%, 92%);
+@styri-green:       hsv(150, 92%, 90%);
+@styri-orange:      hsv( 41, 48%, 95%);
+@styri-amber:       hsv( 14, 51%, 97%);
+
+// ------------------ Editor colors ------------------
+
+// General colors
+@syntax-text-color:                         @styri-mono-1;
+@syntax-cursor-color:                       darken(@styri-mono-1, 5%);
+@syntax-selection-color:                    hsla(hue(@styri-bg), 80%, 80%, .2);
+@syntax-selection-flash-color:              hsla(hue(@styri-bg), 70%, 80%, .6);
+@syntax-background-color:                   @styri-bg;
+@syntax-cursor-line-color:                  hsla(hue(@styri-bg), 100%, 85%, .04);
+@syntax-bracket-matcher-color:              hsla(hue(@styri-bg), 80%, 81%, .45);
+
+// Guide colors
+@syntax-wrap-guide-color:                   darken(@styri-mono-3, 9%);
+@syntax-indent-guide-color:                 darken(@styri-mono-3, 9%);
+@syntax-invisible-character-color:          darken(@styri-mono-3, 9%);
+
+// Find and replace colors
+@syntax-result-marker-color:                hsla(hue(@styri-bg), 90%, 77%, .27);
+@syntax-result-marker-color-selected:       hsla(hue(@styri-bg), 80%, 77%, .38);
+
+// Gutter colors
+@syntax-gutter-text-color:                  lighten(saturate(@styri-mono-3, 1%), 9%);
+@syntax-gutter-text-color-selected:         lighten(saturate(@styri-mono-3, 15%), 32%);
+@syntax-gutter-border-color:                @styri-mono-1;
+@syntax-gutter-background-color:            transparent;
+@syntax-gutter-background-color-selected:   transparent;
+@syntax-gutter-cursor-line-color:           hsla(hue(@styri-bg), 99%, 83%, .063);
+
+// Git colors
+@syntax-color-renamed:                 hsv(340, 50%, 99%);
+@syntax-color-added:                   hsv(170, 90%, 99%);
+@syntax-color-modified:                hsv(210, 75%, 99%);
+@syntax-color-removed:                 hsv(340, 50%, 99%);
+
+// ------------------ Language colors ------------------
+
+@syntax-color-src-comment:             @styri-mono-3;
+@syntax-color-src-punctuation:         @styri-mono-2;
+@syntax-color-src-operator:            @styri-mono-2;
+@syntax-color-src-keyword:             @styri-green;
+@syntax-color-src-language:            @styri-green;
+@syntax-color-src-variable:            @styri-blue;
+@syntax-color-src-string:              @styri-orange;
+@syntax-color-src-symbol:              @styri-orange;
+@syntax-color-src-regexp:              @styri-orange;
+@syntax-color-src-special:             @styri-amber;
+@syntax-color-src-placeholder:         @styri-amber;
+@syntax-color-src-format:              @styri-pink;
+@syntax-color-src-numeric:             @styri-pink;
+@syntax-color-src-constant:            @styri-pink;
+@syntax-color-src-invalid:             @styri-red;
+
+@syntax-color-template-comment:        @styri-mono-3;
+@syntax-color-template-punctuation:    @styri-amber;
+@syntax-color-template-operator:       @styri-amber;
+@syntax-color-template-keyword:        @styri-amber;
+@syntax-color-template-language:       @styri-amber;
+@syntax-color-template-variable:       @styri-amber;
+@syntax-color-template-string:         @styri-amber;
+@syntax-color-template-symbol:         @styri-amber;
+@syntax-color-template-regexp:         @styri-amber;
+@syntax-color-template-special:        @styri-amber;
+@syntax-color-template-placeholder:    @styri-amber;
+@syntax-color-template-format:         @styri-amber;
+@syntax-color-template-numeric:        @styri-amber;
+@syntax-color-template-constant:       @styri-amber;
+@syntax-color-template-invalid:        @styri-red;
+
+@syntax-color-regexp-text:             @styri-mono-1;
+@syntax-color-regexp-anchor:           @styri-pink;
+@syntax-color-regexp-class:            @styri-pink;
+@syntax-color-regexp-set:              @styri-pink;
+@syntax-color-regexp-group:            @styri-blue;
+@syntax-color-regexp-assertion:        @styri-orange;
+@syntax-color-regexp-quantifier:       @styri-sea;
+
+@syntax-color-gfm-text:                @styri-mono-1;
+@syntax-color-gfm-comment:             @styri-mono-3;
+@syntax-color-gfm-code:                @styri-mono-3;
+@syntax-color-gfm-marker:              @styri-pink;
+@syntax-color-gfm-link:                @styri-cyan;
+@syntax-color-gfm-style:               @styri-sea;
+@syntax-color-gfm-critic:              @styri-orange;
+
+@syntax-color-json-comment:            @styri-mono-3;
+@syntax-color-json-punctuation:        @styri-mono-2;
+@syntax-color-json-key:                @styri-blue;
+@syntax-color-json-value:              @styri-cyan;
+@syntax-color-json-numeric:            @styri-sea;
+@syntax-color-json-constant:           @styri-sea;
+
+@syntax-color-html-text:               @styri-orange;
+@syntax-color-html-comment:            @styri-mono-3;
+@syntax-color-html-punctuation:        @styri-mono-2;
+@syntax-color-html-bracket:            @styri-mono-2;
+@syntax-color-html-template:           @styri-amber;
+@syntax-color-html-tag-name:           @styri-pink;
+@syntax-color-html-attribute:          @styri-blue;
+@syntax-color-html-value:              @styri-cyan;
+
+@syntax-color-css-comment:             @styri-mono-3;
+@syntax-color-css-punctuation:         @styri-mono-2;
+@syntax-color-css-at-rule:             @styri-pink;
+@syntax-color-css-selector:            @styri-pink;
+@syntax-color-css-pseudo-selector:     @styri-sea;
+@syntax-color-css-property:            @styri-blue;
+@syntax-color-css-value:               @styri-cyan;
+@syntax-color-css-important:           @styri-sea;
+@syntax-color-css-variable:            @styri-blue;
+
+// ------------------ Exported colors ------------------
+
+@syntax-color-attribute:               @styri-mono-1;
+@syntax-color-class:                   @styri-mono-1;
+@syntax-color-constant:                @styri-mono-1;
+@syntax-color-function:                @styri-mono-1;
+@syntax-color-import:                  @styri-mono-1;
+@syntax-color-keyword:                 @styri-mono-1;
+@syntax-color-method:                  @styri-mono-1;
+@syntax-color-property:                @styri-mono-1;
+@syntax-color-snippet:                 @styri-mono-1;
+@syntax-color-tag:                     @styri-mono-1;
+@syntax-color-value:                   @styri-mono-1;
+@syntax-color-variable:                @styri-mono-1;

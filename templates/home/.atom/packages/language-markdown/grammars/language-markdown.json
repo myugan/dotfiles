@@ -1,0 +1,4313 @@
+{
+  "name": "Markdown",
+  "scopeName": "text.md",
+  "limitLineLength": false,
+  "fileTypes": [
+    "markdown",
+    "md",
+    "mdown",
+    "mkd",
+    "mkdown",
+    "rmd",
+    "ron",
+    "emdee",
+    "spec"
+  ],
+  "patterns": [
+    {
+      "include": "#blocks"
+    },
+    {
+      "include": "#inlines"
+    },
+    {
+      "include": "#flavors"
+    }
+  ],
+  "repository": {
+    "blocks": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#front-matter"
+        },
+        {
+          "include": "#hr"
+        },
+        {
+          "include": "#headings"
+        },
+        {
+          "include": "#lists"
+        },
+        {
+          "include": "#quotes"
+        },
+        {
+          "include": "#rmarkdown"
+        },
+        {
+          "include": "#fenced-code-blocks"
+        },
+        {
+          "include": "#fenced-code"
+        },
+        {
+          "include": "#github-blocks"
+        },
+        {
+          "include": "#math-block"
+        }
+      ]
+    },
+    "inlines": {
+      "patterns": [
+        {
+          "include": "#escapes"
+        },
+        {
+          "include": "#code"
+        },
+        {
+          "include": "#entities"
+        },
+        {
+          "include": "#links"
+        },
+        {
+          "include": "#html"
+        },
+        {
+          "include": "#liquid"
+        },
+        {
+          "include": "#emphasis"
+        },
+        {
+          "include": "#line-breaks"
+        },
+        {
+          "include": "#todo"
+        },
+        {
+          "include": "#references"
+        },
+        {
+          "include": "#github-inlines"
+        },
+        {
+          "include": "#math-inline"
+        }
+      ]
+    },
+    "flavors": {
+      "patterns": [
+        {
+          "include": "#criticmark"
+        },
+        {
+          "include": "#github-inlines"
+        },
+        {
+          "include": "#markdown-extra"
+        },
+        {
+          "include": "#pandoc"
+        },
+        {
+          "include": "#ia-writer"
+        }
+      ]
+    },
+    "inlines-in-blocks": {
+      "patterns": [
+        {
+          "include": "#escapes"
+        },
+        {
+          "include": "#code"
+        },
+        {
+          "include": "#entities"
+        },
+        {
+          "include": "#links"
+        },
+        {
+          "include": "#html"
+        },
+        {
+          "include": "#liquid"
+        },
+        {
+          "include": "#emphasis"
+        },
+        {
+          "include": "#todo"
+        },
+        {
+          "include": "#references"
+        },
+        {
+          "include": "#flavors"
+        },
+        {
+          "include": "#math-inline"
+        }
+      ]
+    },
+    "inlines-in-inlines": {
+      "patterns": [
+        {
+          "include": "#escapes"
+        },
+        {
+          "include": "#code"
+        },
+        {
+          "include": "#entities"
+        },
+        {
+          "include": "#links"
+        },
+        {
+          "include": "#html"
+        },
+        {
+          "include": "#liquid"
+        },
+        {
+          "include": "#emphasis"
+        },
+        {
+          "include": "#todo"
+        },
+        {
+          "include": "#references"
+        },
+        {
+          "include": "#github-inlines"
+        },
+        {
+          "include": "#criticmark"
+        }
+      ]
+    },
+    "fenced-code": {
+      "patterns": [
+        {
+          "begin": "^\\s{0,3}([`]{3,})$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s{0,3}(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded"
+        },
+        {
+          "begin": "^\\s{0,3}([~]{3,})$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s{0,3}(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded"
+        }
+      ]
+    },
+    "headings": {
+      "patterns": [
+        {
+          "match": "^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$",
+          "name": "empty.heading.markup.md",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "match": "^(#{6})\\s*(#*)\\s*$",
+                  "name": "heading-6.md",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "punctuation.md"
+                    }
+                  }
+                },
+                {
+                  "match": "^(#{5})\\s*(#*)\\s*$",
+                  "name": "heading-5.md",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "punctuation.md"
+                    }
+                  }
+                },
+                {
+                  "match": "^(#{4})\\s*(#*)\\s*$",
+                  "name": "heading-4.md",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "punctuation.md"
+                    }
+                  }
+                },
+                {
+                  "match": "^(#{3})\\s*(#*)\\s*$",
+                  "name": "heading-3.md",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "punctuation.md"
+                    }
+                  }
+                },
+                {
+                  "match": "^(#{2})\\s*(#*)\\s*$",
+                  "name": "heading-2.md",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "punctuation.md"
+                    }
+                  }
+                },
+                {
+                  "match": "^(#{1})\\s*(#*)\\s*$",
+                  "name": "heading-1.md",
+                  "captures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "punctuation.md"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$",
+          "name": "heading.markup.md",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "begin": "^(?: {0,3})(#{1})(?: +)",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
+                  "name": "heading-1.md",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#inlines-in-blocks"
+                    }
+                  ]
+                },
+                {
+                  "begin": "^(?: {0,3})(#{2})(?: +)",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
+                  "name": "heading-2.md",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#inlines-in-blocks"
+                    }
+                  ]
+                },
+                {
+                  "begin": "^(?: {0,3})(#{3})(?: +)",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
+                  "name": "heading-3.md",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#inlines-in-blocks"
+                    }
+                  ]
+                },
+                {
+                  "begin": "^(?: {0,3})(#{4})(?: +)",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
+                  "name": "heading-4.md",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#inlines-in-blocks"
+                    }
+                  ]
+                },
+                {
+                  "begin": "^(?: {0,3})(#{5})(?: +)",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
+                  "name": "heading-5.md",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#inlines-in-blocks"
+                    }
+                  ]
+                },
+                {
+                  "begin": "^(?: {0,3})(#{6})(?: +)",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
+                  "name": "heading-6.md",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#inlines-in-blocks"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "hr": {
+      "patterns": [
+        {
+          "name": "hr.constant.md",
+          "match": "^[ ]{0,3}[-]{1,} *[-]{1,} *[-]{1,}[ -]*$"
+        },
+        {
+          "name": "hr.constant.md",
+          "match": "^[ ]{0,3}[*]{1,} *[*]{1,} *[*]{1,}[ *]*$"
+        },
+        {
+          "name": "hr.constant.md",
+          "match": "^[ ]{0,3}[_]{1,} *[_]{1,} *[_]{1,}[ _]*$"
+        }
+      ]
+    },
+    "lists": {
+      "patterns": [
+        {
+          "match": "^(?:\\s*)([-+\\*] \\[ \\]\\s?)$",
+          "name": "empty.task.unordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[ \\]\\s)$",
+          "name": "empty.task.ordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([-+\\*]{1}\\s?)$",
+          "name": "empty.unordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)]\\s?)$",
+          "name": "empty.ordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([-+\\*] \\[ \\]\\s)(.*)$",
+          "name": "task.unordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[ \\]\\s)(.*)$",
+          "name": "task.ordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([-+\\*] \\[[xX]\\]\\s)(.*)$",
+          "name": "completed.task.unordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[[xX]\\]\\s)(.*)$",
+          "name": "completed.task.ordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([-+\\*]{1}\\s)(.*)$",
+          "name": "unordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)]\\s)(.*)$",
+          "name": "ordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "quotes": {
+      "patterns": [
+        {
+          "match": "^(?: {0,3})(>){1}(?: ){0,1}(.*)$",
+          "name": "quote.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "criticmark": {
+      "patterns": [
+        {
+          "name": "addition.critic.inserted.markup.md",
+          "begin": "({\\+\\+)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "(\\+\\+})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#emphasis"
+            }
+          ]
+        },
+        {
+          "name": "deletion.critic.deleted.markup.md",
+          "begin": "({--)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "(--})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#emphasis"
+            }
+          ]
+        },
+        {
+          "name": "highlight.critic.changed.markup.md",
+          "begin": "({==)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "(==})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#emphasis"
+            }
+          ]
+        },
+        {
+          "name": "comment.critic.markup.md",
+          "begin": "({>>)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "patterns": [
+            {
+              "match": "(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=[\\s|:|<])",
+              "captures": {
+                "1": {
+                  "name": "username.reference.variable.md"
+                },
+                "2": {
+                  "name": "punctuation.md"
+                }
+              }
+            },
+            {
+              "include": "#emphasis"
+            }
+          ],
+          "end": "(<<})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "substitution.critic.inserted.markup.md",
+          "begin": "({~~)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "(~~})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "patterns": [
+            {
+              "match": "~>",
+              "name": "punctuation.md"
+            },
+            {
+              "include": "#emphasis"
+            }
+          ]
+        }
+      ]
+    },
+    "front-matter": {
+      "patterns": [
+        {
+          "begin": "\\A---$",
+          "beginCaptures": {
+            "0": {
+              "name": "hr.constant.md"
+            }
+          },
+          "end": "^(---|\\.\\.\\.)$",
+          "endCaptures": {
+            "1": {
+              "name": "hr.constant.md"
+            }
+          },
+          "name": "front-matter.yaml.source.md",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        },
+        {
+          "begin": "\\A\\+\\+\\+$",
+          "beginCaptures": {
+            "0": {
+              "name": "hr.constant.md"
+            }
+          },
+          "end": "^\\+\\+\\+$",
+          "endCaptures": {
+            "0": {
+              "name": "hr.constant.md"
+            }
+          },
+          "name": "front-matter.toml.source.md",
+          "patterns": [
+            {
+              "include": "source.toml"
+            }
+          ]
+        },
+        {
+          "begin": "\\A;{3}$",
+          "beginCaptures": {
+            "0": {
+              "name": "hr.constant.md"
+            }
+          },
+          "end": "^;{3}$",
+          "endCaptures": {
+            "0": {
+              "name": "hr.constant.md"
+            }
+          },
+          "name": "front-matter.json.source.md",
+          "patterns": [
+            {
+              "include": "source.json"
+            }
+          ]
+        }
+      ]
+    },
+    "github-blocks": {
+      "patterns": [
+        {
+          "name": "table.storage.md",
+          "match": "^(\\|(?= |:|-)[ |:-]*?)(\\|?)$",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "match": "(\\|)(?: ?)(:?)(-+)(:?)(?: ?)(?=\\|| |$)",
+                  "captures": {
+                    "1": {
+                      "name": "vertical.punctuation.md"
+                    },
+                    "2": {
+                      "name": "alignment.punctuation.md"
+                    },
+                    "3": {
+                      "name": "horizontal.punctuation.md"
+                    },
+                    "4": {
+                      "name": "alignment.punctuation.md"
+                    }
+                  }
+                }
+              ]
+            },
+            "2": {
+              "name": "vertical.punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "table.storage.md",
+          "match": "^(\\|)(?= )(.+)$",
+          "captures": {
+            "1": {
+              "name": "vertical.punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "match": "(?<= )\\|(?=$| )",
+                  "name": "vertical.punctuation.md"
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "github-inlines": {
+      "patterns": [
+        {
+          "match": "(?<=^|\\s|\"|'|\\(|\\[)((#|GH-)(\\d+))(?=[\\s\"'\\.,;:\\)\\]]|$)",
+          "captures": {
+            "1": {
+              "name": "reference.gfm.variable.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "issue.gfm.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(/)([a-zA-Z0-9][a-zA-Z0-9\\-\\._]*)((#)(\\d+)))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "2": {
+              "name": "user.gfm.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "4": {
+              "name": "repository.gfm.md"
+            },
+            "6": {
+              "name": "punctuation.md"
+            },
+            "7": {
+              "name": "issue.gfm.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(/)([a-zA-Z0-9][a-zA-Z0-9\\-\\._]*)(@)(([0-9a-f]{7})([0-9a-f]{33})))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "2": {
+              "name": "user.gfm.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "4": {
+              "name": "repository.gfm.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "name": "sha.gfm.md"
+            },
+            "8": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(@)(([0-9a-f]{7})([0-9a-f]{33})))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "2": {
+              "name": "user.gfm.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "4": {
+              "name": "sha.gfm.md"
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([0-9a-f]{7})([0-9a-f]{33}))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "sha.gfm.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "({)([A-Z][a-zA-Z]+)(})",
+          "name": "class.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "({)([A-Z][a-zA-Z]+)(::)([a-z][a-zA-Z]+)(})",
+          "name": "instance.method.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "({)([A-Z][a-zA-Z]+)(.)([a-z][a-zA-Z]+)(})",
+          "name": "class.method.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<=^|[^\\w\\d~])(~~)(?!~)(.+?)(~~(?=$|[^\\w\\d~]))",
+          "name": "strike.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<=^|\\s)(:)(\\+1|\\-1|100|1234|8ball|a|ab|abc|abcd|accept|aerial_tramway|airplane|alarm_clock|alien|ambulance|anchor|angel|anger|angry|anguished|ant|apple|aquarius|aries|arrow_backward|arrow_double_down|arrow_double_up|arrow_down|arrow_down_small|arrow_forward|arrow_heading_down|arrow_heading_up|arrow_left|arrow_lower_left|arrow_lower_right|arrow_right|arrow_right_hook|arrow_up|arrow_up_down|arrow_up_small|arrow_upper_left|arrow_upper_right|arrows_clockwise|arrows_counterclockwise|art|articulated_lorry|astonished|atm|b|baby|baby_bottle|baby_chick|baby_symbol|back|baggage_claim|balloon|ballot_box_with_check|bamboo|banana|bangbang|bank|bar_chart|barber|baseball|basketball|bath|bathtub|battery|bear|bee|beer|beers|beetle|beginner|bell|bento|bicyclist|bike|bikini|bird|birthday|black_circle|black_joker|black_medium_small_square|black_medium_square|black_nib|black_small_square|black_square|black_square_button|blossom|blowfish|blue_book|blue_car|blue_heart|blush|boar|boat|bomb|book|bookmark|bookmark_tabs|books|boom|boot|bouquet|bow|bowling|bowtie|boy|bread|bride_with_veil|bridge_at_night|briefcase|broken_heart|bug|bulb|bullettrain_front|bullettrain_side|bus|busstop|bust_in_silhouette|busts_in_silhouette|cactus|cake|calendar|calling|camel|camera|cancer|candy|capital_abcd|capricorn|car|card_index|carousel_horse|cat|cat2|cd|chart|chart_with_downwards_trend|chart_with_upwards_trend|checkered_flag|cherries|cherry_blossom|chestnut|chicken|children_crossing|chocolate_bar|christmas_tree|church|cinema|circus_tent|city_sunrise|city_sunset|cl|clap|clapper|clipboard|clock1|clock10|clock1030|clock11|clock1130|clock12|clock1230|clock130|clock2|clock230|clock3|clock330|clock4|clock430|clock5|clock530|clock6|clock630|clock7|clock730|clock8|clock830|clock9|clock930|closed_book|closed_lock_with_key|closed_umbrella|cloud|clubs|cn|cocktail|coffee|cold_sweat|collision|computer|confetti_ball|confounded|confused|congratulations|construction|construction_worker|convenience_store|cookie|cool|cop|copyright|corn|couple|couple_with_heart|couplekiss|cow|cow2|credit_card|crocodile|crossed_flags|crown|cry|crying_cat_face|crystal_ball|cupid|curly_loop|currency_exchange|curry|custard|customs|cyclone|dancer|dancers|dango|dart|dash|date|de|deciduous_tree|department_store|diamond_shape_with_a_dot_inside|diamonds|disappointed|disappointed_relieved|dizzy|dizzy_face|do_not_litter|dog|dog2|dollar|dolls|dolphin|donut|door|doughnut|dragon|dragon_face|dress|dromedary_camel|droplet|dvd|e\\-mail|ear|ear_of_rice|earth_africa|earth_americas|earth_asia|egg|eggplant|eight|eight_pointed_black_star|eight_spoked_asterisk|electric_plug|elephant|email|end|envelope|es|euro|european_castle|european_post_office|evergreen_tree|exclamation|expressionless|eyeglasses|eyes|facepunch|factory|fallen_leaf|family|fast_forward|fax|fearful|feelsgood|feet|ferris_wheel|file_folder|finnadie|fire|fire_engine|fireworks|first_quarter_moon|first_quarter_moon_with_face|fish|fish_cake|fishing_pole_and_fish|fist|five|flags|flashlight|floppy_disk|flower_playing_cards|flushed|foggy|football|fork_and_knife|fountain|four|four_leaf_clover|fr|free|fried_shrimp|fries|frog|frowning|fu|fuelpump|full_moon|full_moon_with_face|game_die|gb|gem|gemini|ghost|gift|gift_heart|girl|globe_with_meridians|goat|goberserk|godmode|golf|grapes|green_apple|green_book|green_heart|grey_exclamation|grey_question|grimacing|grin|grinning|guardsman|guitar|gun|haircut|hamburger|hammer|hamster|hand|handbag|hankey|hash|hatched_chick|hatching_chick|headphones|hear_no_evil|heart|heart_decoration|heart_eyes|heart_eyes_cat|heartbeat|heartpulse|hearts|heavy_check_mark|heavy_division_sign|heavy_dollar_sign|heavy_exclamation_mark|heavy_minus_sign|heavy_multiplication_x|heavy_plus_sign|helicopter|herb|hibiscus|high_brightness|high_heel|hocho|honey_pot|honeybee|horse|horse_racing|hospital|hotel|hotsprings|hourglass|hourglass_flowing_sand|house|house_with_garden|hurtrealbad|hushed|ice_cream|icecream|id|ideograph_advantage|imp|inbox_tray|incoming_envelope|information_desk_person|information_source|innocent|interrobang|iphone|it|izakaya_lantern|jack_o_lantern|japan|japanese_castle|japanese_goblin|japanese_ogre|jeans|joy|joy_cat|jp|key|keycap_ten|kimono|kiss|kissing|kissing_cat|kissing_closed_eyes|kissing_face|kissing_heart|kissing_smiling_eyes|koala|koko|kr|large_blue_circle|large_blue_diamond|large_orange_diamond|last_quarter_moon|last_quarter_moon_with_face|laughing|leaves|ledger|left_luggage|left_right_arrow|leftwards_arrow_with_hook|lemon|leo|leopard|libra|light_rail|link|lips|lipstick|lock|lock_with_ink_pen|lollipop|loop|loudspeaker|love_hotel|love_letter|low_brightness|m|mag|mag_right|mahjong|mailbox|mailbox_closed|mailbox_with_mail|mailbox_with_no_mail|man|man_with_gua_pi_mao|man_with_turban|mans_shoe|maple_leaf|mask|massage|meat_on_bone|mega|melon|memo|mens|metal|metro|microphone|microscope|milky_way|minibus|minidisc|mobile_phone_off|money_with_wings|moneybag|monkey|monkey_face|monorail|moon|mortar_board|mount_fuji|mountain_bicyclist|mountain_cableway|mountain_railway|mouse|mouse2|movie_camera|moyai|muscle|mushroom|musical_keyboard|musical_note|musical_score|mute|nail_care|name_badge|neckbeard|necktie|negative_squared_cross_mark|neutral_face|new|new_moon|new_moon_with_face|newspaper|ng|nine|no_bell|no_bicycles|no_entry|no_entry_sign|no_good|no_mobile_phones|no_mouth|no_pedestrians|no_smoking|non\\-potable_water|nose|notebook|notebook_with_decorative_cover|notes|nut_and_bolt|o|o2|ocean|octocat|octopus|oden|office|ok|ok_hand|ok_woman|older_man|older_woman|on|oncoming_automobile|oncoming_bus|oncoming_police_car|oncoming_taxi|one|open_file_folder|open_hands|open_mouth|ophiuchus|orange_book|outbox_tray|ox|package|page_facing_up|page_with_curl|pager|palm_tree|panda_face|paperclip|parking|part_alternation_mark|partly_sunny|passport_control|paw_prints|peach|pear|pencil|pencil2|penguin|pensive|performing_arts|persevere|person_frowning|person_with_blond_hair|person_with_pouting_face|phone|pig|pig2|pig_nose|pill|pineapple|pisces|pizza|plus1|point_down|point_left|point_right|point_up|point_up_2|police_car|poodle|poop|post_office|postal_horn|postbox|potable_water|pouch|poultry_leg|pound|pouting_cat|pray|princess|punch|purple_heart|purse|pushpin|put_litter_in_its_place|question|rabbit|rabbit2|racehorse|radio|radio_button|rage|rage1|rage2|rage3|rage4|railway_car|rainbow|raised_hand|raised_hands|raising_hand|ram|ramen|rat|recycle|red_car|red_circle|registered|relaxed|relieved|repeat|repeat_one|restroom|revolving_hearts|rewind|ribbon|rice|rice_ball|rice_cracker|rice_scene|ring|rocket|roller_coaster|rooster|rose|rotating_light|round_pushpin|rowboat|ru|rugby_football|runner|running|running_shirt_with_sash|sa|sagittarius|sailboat|sake|sandal|santa|satellite|satisfied|saxophone|school|school_satchel|scissors|scorpius|scream|scream_cat|scroll|seat|secret|see_no_evil|seedling|seven|shaved_ice|sheep|shell|ship|shipit|shirt|shit|shoe|shower|signal_strength|six|six_pointed_star|ski|skull|sleeping|sleepy|slot_machine|small_blue_diamond|small_orange_diamond|small_red_triangle|small_red_triangle_down|smile|smile_cat|smiley|smiley_cat|smiling_imp|smirk|smirk_cat|smoking|snail|snake|snowboarder|snowflake|snowman|sob|soccer|soon|sos|sound|space_invader|spades|spaghetti|sparkle|sparkler|sparkles|sparkling_heart|speak_no_evil|speaker|speech_balloon|speedboat|squirrel|star|star2|stars|station|statue_of_liberty|steam_locomotive|stew|straight_ruler|strawberry|stuck_out_tongue|stuck_out_tongue_closed_eyes|stuck_out_tongue_winking_eye|sun_with_face|sunflower|sunglasses|sunny|sunrise|sunrise_over_mountains|surfer|sushi|suspect|suspension_railway|sweat|sweat_drops|sweat_smile|sweet_potato|swimmer|symbols|syringe|tada|tanabata_tree|tangerine|taurus|taxi|tea|telephone|telephone_receiver|telescope|tennis|tent|thought_balloon|three|thumbsdown|thumbsup|ticket|tiger|tiger2|tired_face|tm|toilet|tokyo_tower|tomato|tongue|top|tophat|tractor|traffic_light|train|train2|tram|triangular_flag_on_post|triangular_ruler|trident|triumph|trolleybus|trollface|trophy|tropical_drink|tropical_fish|truck|trumpet|tshirt|tulip|turtle|tv|twisted_rightwards_arrows|two|two_hearts|two_men_holding_hands|two_women_holding_hands|u5272|u5408|u55b6|u6307|u6708|u6709|u6e80|u7121|u7533|u7981|u7a7a|uk|umbrella|unamused|underage|unlock|up|us|v|vertical_traffic_light|vhs|vibration_mode|video_camera|video_game|violin|virgo|volcano|vs|walking|waning_crescent_moon|waning_gibbous_moon|warning|watch|water_buffalo|watermelon|wave|wavy_dash|waxing_crescent_moon|waxing_gibbous_moon|wc|weary|wedding|whale|whale2|wheelchair|white_check_mark|white_circle|white_flower|white_large_square|white_medium_small_square|white_medium_square|white_small_square|white_square_button|wind_chime|wine_glass|wink|wolf|woman|womans_clothes|womans_hat|womens|worried|wrench|x|yellow_heart|yen|yum|zap|zero|zzz)(:)(?=\\s|$)",
+          "name": "emoji.constant.gfm.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "ia-writer": {
+      "patterns": [
+        {
+          "match": "(?x) ^\\s{0,3}( (/)([^'\"()]*?) (\\.[a-z0-9]+) (\\s*?) ((\"|')[^'\"]*?(\\7))? )$",
+          "captures": {
+            "1": {
+              "name": "block.content.link.markup.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "name": "title.string.markup.md"
+            },
+            "7": {
+              "name": "punctuation.md"
+            },
+            "8": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?x) ^\\s{0,3}( (/)([^'\"()]*?) (\\.[a-z0-9]+) (\\s*?) ((\\()[^()]*?(\\)))? )$",
+          "captures": {
+            "1": {
+              "name": "block.content.link.markup.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "name": "title.string.markup.md"
+            },
+            "7": {
+              "name": "punctuation.md"
+            },
+            "8": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "markdown-extra": {
+      "patterns": [
+        {
+          "name": "definition.list.markup.md",
+          "match": "^(?:\\s*)(:)( +)(.*)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "abbreviation.reference.link.markup.md",
+          "match": "^((?:\\*\\[)(?:[^\\]]+)(?:\\]))(:) (.*)$",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "math-block": {
+      "patterns": [
+        {
+          "name": "block.math.markup.md",
+          "begin": "(\\${2})",
+          "end": "(\\${2})(?:.*)",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ],
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "math-inline": {
+      "patterns": [
+        {
+          "name": "inline.math.markup.md",
+          "match": "(\\$)(?! )(.+?)(?<! )(\\$)(?!\\d)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "text.tex.latex"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "pandoc": {
+      "patterns": [
+        {
+          "name": "table.storage.md",
+          "match": "^(\\+-+)+\\+$",
+          "captures": {
+            "0": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "table.storage.md",
+          "match": "^(\\+=+)+\\+$",
+          "captures": {
+            "0": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "rmarkdown-attributes": {
+      "patterns": [
+        {
+          "match": "(?x) (?#<=^|,|,\\s) ([A-Za-z0-9\\.]+) (?:\\s?) (=) (?:\\s?) (TRUE|FALSE)",
+          "name": "rmarkdown.attribute.meta.md",
+          "captures": {
+            "1": {
+              "name": "key.keyword.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "value.constant.md"
+            }
+          }
+        },
+        {
+          "match": "(?x) (?#<=^|,|,\\s) ([A-Za-z0-9\\.]+) (?:\\s?) (=) (?:\\s?) ([A-Za-z0-9]+)",
+          "name": "rmarkdown.attribute.meta.md",
+          "captures": {
+            "1": {
+              "name": "key.keyword.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "value.constant.md"
+            }
+          }
+        },
+        {
+          "match": "(?x) (?#<=^|,|,\\s) ([A-Za-z0-9\\.]+) (?:\\s?) (=) (?:\\s?) ( ('|\") ([^\\4]*?) (\\4) )",
+          "name": "rmarkdown.attribute.meta.md",
+          "captures": {
+            "1": {
+              "name": "key.keyword.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "value.string.md"
+            },
+            "4": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "rmarkdown": {
+      "patterns": [
+        {
+          "begin": "(?x) (```)( \\{r\\s? (.*?) \\}$ )",
+          "end": "^(\\1)$",
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.r",
+          "patterns": [
+            {
+              "include": "source.r"
+            }
+          ],
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "begin": "(\\{)(r)(\\s?)",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "language.constant.md"
+                    }
+                  },
+                  "end": "(\\})$",
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#rmarkdown-attributes"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "special-attribute-elements": {
+      "patterns": [
+        {
+          "name": "id.special.attribute.meta.md",
+          "match": "(?<=^|\\s)(#)([^\\s|\\}]*)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "class.special.attribute.meta.md",
+          "match": "(\\.)([^\\s|\\}]*)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "([^ ]+)(=)([^\\s|\\}]*)",
+          "name": "other.special.attribute.meta.md",
+          "captures": {
+            "1": {
+              "name": "key.keyword.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "value.string.md"
+            }
+          }
+        }
+      ]
+    },
+    "special-attributes": {
+      "patterns": [
+        {
+          "name": "special-attributes.raw.markup.md",
+          "match": "^(\\{)([^\\}]*)(\\})$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "code": {
+      "patterns": [
+        {
+          "match": "(?<!`)(`+)(?!`).+?(?<!`)(\\1)(?!`)",
+          "name": "code.raw.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.md",
+          "begin": "(<!(?:-{2,}))",
+          "end": "((?:-{2,})>)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "emphasis": {
+      "patterns": [
+        {
+          "match": "(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)",
+          "name": "strong.emphasis.bold.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#inlines-in-inlines"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)",
+          "name": "strong.emphasis.bold.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#inlines-in-inlines"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\w)([\\*]{2})(?:.+?)(?<!\\W)(\\1)",
+          "name": "strong.emphasis.bold.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+?)(\\1)(?=\\w)",
+          "name": "strong.emphasis.bold.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)",
+          "name": "emphasis.italic.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#inlines-in-inlines"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)",
+          "name": "emphasis.italic.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#inlines-in-inlines"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\w)([\\*])(?:.+?)(?<!\\W)(\\1)",
+          "name": "emphasis.italic.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\s|^)([\\*])(?=\\w)(?:.+?)(\\1)(?=\\w)",
+          "name": "emphasis.italic.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "entities": {
+      "patterns": [
+        {
+          "match": "(?<=^|\\s)(&)(?=$|\\s|,|!|\\?|\\.)",
+          "name": "ampersand.md"
+        },
+        {
+          "match": "(&)([a-zA-Z0-9]{2,32})(;)",
+          "name": "entity.constant.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(&#)([0-9]{1,8})(;)",
+          "name": "entity.constant.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(&#[x|X])([0-9a-fA-F]{1,8})(;)",
+          "name": "entity.constant.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "escapes": {
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "escape.constant.md"
+        }
+      ]
+    },
+    "html": {
+      "patterns": [
+        {
+          "match": "<(?![a-zA-Z!/])",
+          "name": ""
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    "line-breaks": {
+      "patterns": [
+        {
+          "match": "(  )$",
+          "name": "line-break.constant.md"
+        },
+        {
+          "match": "(\\\\)$",
+          "name": "line-break.constant.md"
+        }
+      ]
+    },
+    "link-destination": {
+      "patterns": [
+        {
+          "name": "destination.link.md",
+          "match": "^(<)(.*)(>)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "markup.underline.link"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "destination.link.md",
+          "match": "(.+)",
+          "captures": {
+            "1": {
+              "name": "markup.underline.link"
+            }
+          }
+        }
+      ]
+    },
+    "link-label": {
+      "patterns": [
+        {
+          "name": "label.link.string.md",
+          "match": "^(\\*?\\[\\^?)(.*)(\\])$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#references"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "link-text": {
+      "patterns": [
+        {
+          "name": "text.link.string.md",
+          "match": "(?x) ^(\\[) ( ( (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() ([^ [:cntrl:]]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})? ) (\\])",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "link.markup.md"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "#link-destination"
+                }
+              ]
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            },
+            "8": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            },
+            "9": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "image.link.string.md",
+          "match": "^(!\\[)(.*)(\\])$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#emphasis"
+                },
+                {
+                  "include": "#code"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "text.link.string.md",
+          "match": "^(\\[)(.*)(\\])$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#emphasis"
+                },
+                {
+                  "include": "#code"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "link-title": {
+      "patterns": [
+        {
+          "name": "title.link.md",
+          "match": "^(['|\"])(.*)(\\1)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "title.link.md",
+          "match": "^(\\()(.*)(\\))$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "links": {
+      "patterns": [
+        {
+          "name": "reference.footnote.link.markup.md",
+          "match": "((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(?!:)",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "definition.footnote.link.markup.md",
+          "match": "((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(:)",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "link.markup.md",
+          "match": "(?x) ( (?:\\[) (?: (?: (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (?:\\() (?:[^ [:cntrl:]]+)? (?: (?:\\s+) (?: (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (?:\\)) (?:\\{[[:ascii:]]*\\})? ) (?:\\]) ) (\\() ([^ [:cntrl:]]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[^}]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#link-destination"
+                }
+              ]
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "link.markup.md",
+          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() ([^ [:cntrl:]()]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[^}]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#link-destination"
+                }
+              ]
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "link.markup.md",
+          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() (<[^[:cntrl:]]*>) (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[^}]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#link-destination"
+                }
+              ]
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "link.markup.md",
+          "match": "(?x) ( (?:\\[) (?: (?: (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (?:\\() (?:[^ [:cntrl:]]+)? (?: (?:\\s+) (?: (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (?:\\)) (?:\\{[[:ascii:]]*\\})? ) (?:\\]) ) ( (?:\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\{[^}]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "link.markup.md",
+          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) ( (?:\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\{[^}]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "link.markup.md",
+          "match": "(?x) ( (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\{[^}]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "reference.link.markup.md",
+          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:(?:\\s)((?:\")(?:.*?)(?:\")))? (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#link-destination"
+                }
+              ]
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "(?x) ( (?:\\[) (?:[^\\[\\]]*) (?:\\]) ) (?!:) (\\{[^}]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "auto.link.markup.md",
+          "match": "(?i:(<)((coap|doi|javascript|aaa|aaas|about|acap|cap|cid|crid|data|dav|dict|dns|file|ftp|geo|go|gopher|h323|http|https|iax|icap|im|imap|info|ipp|iris|iris.beep|iris.xpc|iris.xpcs|iris.lwz|ldap|mailto|mid|msrp|msrps|mtqp|mupdate|news|nfs|ni|nih|nntp|opaquelocktoken|pop|pres|rtsp|service|session|shttp|sieve|sip|sips|sms|snmp|soap.beep|soap.beeps|tag|tel|telnet|tftp|thismessage|tn3270|tip|tv|urn|vemmi|ws|wss|xcon|xcon-userid|xmlrpc.beep|xmlrpc.beeps|xmpp|z39.50r|z39.50s|adiumxtra|afp|afs|aim|apt|attachment|aw|beshare|bitcoin|bolo|callto|chrome|chrome-extension|com-eventbrite-attendee|content|cvs|dlna-playsingle|dlna-playcontainer|dtn|dvb|ed2k|facetime|feed|finger|fish|gg|git|gizmoproject|gtalk|hcp|icon|ipn|irc|irc6|ircs|itms|jar|jms|keyparc|lastfm|ldaps|magnet|maps|market|message|mms|ms-help|msnim|mumble|mvn|notes|oid|palm|paparazzi|platform|proxy|psyc|query|res|resource|rmi|rsync|rtmp|secondlife|sftp|sgn|skype|smb|soldat|spotify|ssh|steam|svn|teamspeak|things|udp|unreal|ut2004|ventrilo|view-source|webcal|wtai|wyciwyg|xfire|xri|ymsgr):(?:[^ [:cntrl:]<>]+))(>))",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "markup.underline.link"
+            },
+            "4": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "email.auto.link.markup.md",
+          "match": "(<)(([a-zA-Z0-9\\.!#$%&'\\*\\+/=?^_`{\\|}~-]+)(@)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*))(>)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "markup.underline.link"
+            },
+            "4": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "liquid": {
+      "patterns": [
+        {
+          "include": "text.html.liquid"
+        }
+      ]
+    },
+    "references": {
+      "patterns": [
+        {
+          "match": "(?x) (?<=^|\\s|\"|'|\\(|\\[) ( (-?@) ( [a-zA-Z0-9_] [a-zA-Z0-9_:.#$%&+?<>~/-]* (?<![:|.|+|?|<|>|/|-]) ) )",
+          "captures": {
+            "2": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "reference.variable.md"
+        }
+      ]
+    },
+    "todo": {
+      "patterns": [
+        {
+          "match": "(?<!\\w)@?(TODO|FIXME|CHANGED|XXX|IDEA|HACK|NOTE|REVIEW|NB|BUG|QUESTION|COMBAK|TEMP)\\b",
+          "name": "storage.type.class.${1:/downcase}.md"
+        }
+      ]
+    },
+    "fenced-code-blocks": {
+      "patterns": [
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:apib|apiblueprint))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.gfm.apib",
+          "patterns": [
+            {
+              "include": "text.html.markdown.source.gfm.apib"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:ass))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.ass",
+          "patterns": [
+            {
+              "include": "source.ass"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:babel))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.js.jsx",
+          "patterns": [
+            {
+              "include": "source.js.jsx"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:coffee|coffeescript|coffee-script))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.coffee",
+          "patterns": [
+            {
+              "include": "source.coffee"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:c))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.c",
+          "patterns": [
+            {
+              "include": "source.c"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:clean))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.clean",
+          "patterns": [
+            {
+              "include": "source.clean"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:clojure))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.clojure",
+          "patterns": [
+            {
+              "include": "source.clojure"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:cpp|c\\+\\+))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.cpp",
+          "patterns": [
+            {
+              "include": "source.cpp"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:cr|crystal))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.crystal",
+          "patterns": [
+            {
+              "include": "source.crystal"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:cs|csharp))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.cs",
+          "patterns": [
+            {
+              "include": "source.cs"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:css))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.css",
+          "patterns": [
+            {
+              "include": "source.css"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:diff|patch|rej))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.diff",
+          "patterns": [
+            {
+              "include": "source.diff"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:elixir))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.elixir",
+          "patterns": [
+            {
+              "include": "source.elixir"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:elm))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.elm",
+          "patterns": [
+            {
+              "include": "source.elm"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:erlang))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.erlang",
+          "patterns": [
+            {
+              "include": "source.erlang"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:go|golang))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.go",
+          "patterns": [
+            {
+              "include": "source.go"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:haskell))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.haskell",
+          "patterns": [
+            {
+              "include": "source.haskell"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:hcl))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.hcl",
+          "patterns": [
+            {
+              "include": "source.hcl"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:html))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.html",
+          "patterns": [
+            {
+              "include": "text.html.basic"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:idris))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.idris",
+          "patterns": [
+            {
+              "include": "source.idris"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:java))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.java",
+          "patterns": [
+            {
+              "include": "source.java"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:javascript|js|jsx))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.js",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:json|har))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.json",
+          "patterns": [
+            {
+              "include": "source.json"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:julia|julia-repl))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.julia",
+          "patterns": [
+            {
+              "include": "source.julia"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:kotlin|kt|kts))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.kotlin",
+          "patterns": [
+            {
+              "include": "source.kotlin"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:latex|tex))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "text.embedded.latex",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:less))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.css.less",
+          "patterns": [
+            {
+              "include": "source.css.less"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:lua))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.lua",
+          "patterns": [
+            {
+              "include": "source.lua"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:make|makefile))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.makefile",
+          "patterns": [
+            {
+              "include": "source.makefile"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:markdown|mdown|md))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "text.embedded.md",
+          "patterns": [
+            {
+              "include": "text.md"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:m|mathematica))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.mathematica",
+          "patterns": [
+            {
+              "include": "source.mathematica"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:mermaid))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.mermaid",
+          "patterns": [
+            {
+              "include": "source.mermaid"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:mson))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.mson",
+          "patterns": [
+            {
+              "include": "text.html.markdown.source.gfm.mson"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:objc|objective-c))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.objc",
+          "patterns": [
+            {
+              "include": "source.objc"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:php))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.text.html.php",
+          "patterns": [
+            {
+              "include": "text.html.php"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:py|python))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.python",
+          "patterns": [
+            {
+              "include": "source.python"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:r))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.r",
+          "patterns": [
+            {
+              "include": "source.r"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:ruby))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.ruby",
+          "patterns": [
+            {
+              "include": "source.ruby"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:rust|rs))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.rust",
+          "patterns": [
+            {
+              "include": "source.rust"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:sas))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.sas",
+          "patterns": [
+            {
+              "include": "source.sas"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:sass))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.sass",
+          "patterns": [
+            {
+              "include": "source.sass"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:scss))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.css.scss",
+          "patterns": [
+            {
+              "include": "source.css.scss"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:sh|bash))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.shell",
+          "patterns": [
+            {
+              "include": "source.shell"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:shellsession|console))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "text.embedded.shell-session",
+          "patterns": [
+            {
+              "include": "text.shell-session"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:sql))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:stata))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.stata",
+          "patterns": [
+            {
+              "include": "source.stata"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:swift))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.swift",
+          "patterns": [
+            {
+              "include": "source.swift"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:ts|typescript))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.ts",
+          "patterns": [
+            {
+              "include": "source.ts"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:xml))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "text.embedded.xml",
+          "patterns": [
+            {
+              "include": "text.xml"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:yaml))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.yaml",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:[a-zA-Z0-9-_]+))(?=(}| |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded",
+          "patterns": [
+            {
+              "include": "source"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "injections": {
+    "source.embedded.text.html.php - (meta.embedded | meta.tag), L:source.embedded.text.html.php meta.tag, L:embedded.source.js.embedded.html": {
+      "patterns": [
+        {
+          "begin": "(^\\s*)(?=<\\?(?![^?]*\\?>))",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.leading.php"
+            }
+          },
+          "end": "(?!\\G)(\\s*$)?",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.trailing.php"
+            }
+          },
+          "patterns": [
+            {
+              "begin": "<\\?(?i:php|=)?",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.begin.php"
+                }
+              },
+              "contentName": "source.php",
+              "end": "(\\?)>",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.end.php"
+                },
+                "1": {
+                  "name": "source.php"
+                }
+              },
+              "name": "meta.embedded.block.php",
+              "patterns": [
+                {
+                  "include": "text.html.php#language"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "begin": "<\\?(?i:php|=)?(?![^?]*\\?>)",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.php"
+            }
+          },
+          "contentName": "source.php",
+          "end": "(\\G)>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.php"
+            },
+            "1": {
+              "name": "source.php"
+            }
+          },
+          "name": "meta.embedded.block.php",
+          "patterns": [
+            {
+              "include": "text.html.php#language"
+            }
+          ]
+        },
+        {
+          "begin": "<\\?(?i:php|=)?",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.php"
+            }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.php"
+            }
+          },
+          "name": "meta.embedded.line.php",
+          "patterns": [
+            {
+              "captures": {
+                "1": {
+                  "name": "source.php"
+                },
+                "2": {
+                  "name": "punctuation.section.embedded.end.php"
+                },
+                "3": {
+                  "name": "source.php"
+                }
+              },
+              "match": "\\G(\\s*)((\\?))(?=>)",
+              "name": "meta.special.empty-tag.php"
+            },
+            {
+              "begin": "\\G",
+              "contentName": "source.php",
+              "end": "(\\?)(?=>)",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.end.php"
+                },
+                "1": {
+                  "name": "source.php"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "text.html.php#language"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "_from": "https://www.atom.io/api/packages/language-jenkinsfile/versions/0.1.1/tarball",
+  "_id": "language-jenkinsfile@0.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-IFTTJx4nlSNJ5wkJcar4mQmw269X2CHIb3MlxBbPoy6mbAC0IOhQDA+vBRqXQmTN4K9qTVBZgmWU5BxN32Zhqg==",
+  "_location": "/language-jenkinsfile",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-jenkinsfile/versions/0.1.1/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-jenkinsfile/versions/0.1.1/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-jenkinsfile/versions/0.1.1/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-jenkinsfile/versions/0.1.1/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/language-jenkinsfile/versions/0.1.1/tarball",
+  "_shasum": "fc5f6db9772985d79126c4a8abc4e84a4638a6ce",
+  "_spec": "https://www.atom.io/api/packages/language-jenkinsfile/versions/0.1.1/tarball",
+  "_where": "/tmp/apm-install-dir-2020011-18772-18s0e90.70d3",
+  "bugs": {
+    "url": "https://github.com/BastienAr/language-jenkinsfile/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Jenkinsfile language support in Atom",
+  "devDependencies": {
+    "coffeelint": "1.10.1"
+  },
+  "engines": {
+    "atom": ">0.50.0 <2.0.0"
+  },
+  "homepage": "https://github.com/BastienAr/language-jenkinsfile#readme",
+  "license": "MIT",
+  "name": "language-jenkinsfile",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BastienAr/language-jenkinsfile.git"
+  },
+  "scripts": {
+    "test": "coffeelint grammars/jenkinsfile.cson settings/language-jenkinsfile.cson snippets/language-jenkinsfile.cson"
+  },
+  "version": "0.1.1",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "coffeelint.json",
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

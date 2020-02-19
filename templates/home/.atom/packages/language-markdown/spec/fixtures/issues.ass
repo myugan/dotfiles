@@ -1,0 +1,558 @@
+@40
+"At the base is the old friend, Wordpress [update: this is old news, it's running [Statamic](http://www.statamic.com) now. But this still should be interesting]." {
+  text.md {
+    "At the base is the old friend, Wordpress [update: this is old news, it's running "
+    "[Statamic](http://www.statamic.com)" {
+      link.markup.md {
+        text.link.string.md {
+          "[": punctuation.md
+          "Statamic"
+          "]": punctuation.md
+        }
+        "(": punctuation.md
+        destination.link.md {
+          "http://www.statamic.com": markup.underline.link
+        }
+        ")": punctuation.md
+      }
+    }
+    " now. But this still should be interesting]."
+  }
+}
+
+# https://github.com/atom/language-gfm/issues/117
+# NOTE expected outcome: only emphasize first letters of words
+@gfm/117a
+"*f*oo *b*ar baz" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "f"
+      "*": punctuation.md
+    }
+    "oo "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "b"
+      "*": punctuation.md
+    }
+    "ar baz"
+  }
+}
+
+@gfm/117b
+"**f**oo **b**ar baz" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "f"
+      "**": punctuation.md
+    }
+    "oo "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "b"
+      "**": punctuation.md
+    }
+    "ar baz"
+  }
+}
+
+# https://github.com/burodepeper/language-markdown/issues/17
+@17a
+"A line with *italics* and **bold** fails." {
+  text.md {
+    "A line with "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "italics"
+      "*": punctuation.md
+    }
+    " and "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "bold"
+      "**": punctuation.md
+    }
+    " fails."
+  }
+}
+
+@17b
+"Even _mixing_ the **type** of *markers* is __not enough__." {
+  text.md {
+    "Even "
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "mixing"
+      "_": punctuation.md
+    }
+    " the "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "type"
+      "**": punctuation.md
+    }
+    " of "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "markers"
+      "*": punctuation.md
+    }
+    " is "
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      "not enough"
+      "__": punctuation.md
+    }
+    "."
+  }
+}
+
+@90
+"**Nested inlines: @username, #123, :+1: and &nbsp;**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "Nested inlines: "
+      "@username" {
+        reference.variable.md {
+          "@": punctuation.md
+          "username"
+        }
+      }
+      ", "
+      "#123" {
+        reference.gfm.variable.md {
+          "#": punctuation.md
+          "123": issue.gfm.md
+        }
+      }
+      ", "
+      ":+1:" {
+        emoji.constant.gfm.md {
+          ":": punctuation.md
+          "+1"
+          ":": punctuation.md
+        }
+      }
+      " and "
+      "&nbsp;" {
+        entity.constant.md {
+          "&": punctuation.md
+          "nbsp"
+          ";": punctuation.md
+        }
+      }
+      "**": punctuation.md
+    }
+  }
+}
+
+@114
+"```javascript{1,3,8-12}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "javascript": language.constant.md
+      "{": punctuation.md
+      "1,3,8-12"
+      "}": punctuation.md
+    }
+  }
+}
+
+@117a
+"[abc](https://uccu.cool3c.com/)and[cde](https://uccu.cool3c.com/)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "abc"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "https://uccu.cool3c.com/": markup.underline.link
+      }
+      ")": punctuation.md
+    }
+    "and"
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "cde"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "https://uccu.cool3c.com/": markup.underline.link
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@117b
+"[abc][1]and[cde][1]" {
+  text.md {
+    "[abc][1]" {
+      link.markup.md {
+        "[abc]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "abc"
+            "]": punctuation.md
+          }
+        }
+        "[1]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "1"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    "and"
+    "[cde][1]" {
+      link.markup.md {
+        "[cde]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "cde"
+            "]": punctuation.md
+          }
+        }
+        "[1]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "1"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+# @120
+# "[[interlink]]" {
+#   text.md {
+#     "[[interlink]]" {
+#       link.markup.md {
+#         interlink.link.string.markup.md {
+#           "[[": punctuation.md
+#           "interlink"
+#           "]]": punctuation.md
+#         }
+#       }
+#     }
+#   }
+# }
+
+@121a
+"```nohighlight" +
+"first block" +
+"```" +
+"" +
+"*dead, non-italic*" +
+"we are still in a `fenced.code.md`, `ctrl-cmd-p` says." +
+"" +
+"```nohighlight" +
+"second block" +
+"```" +
+"" +
+"*resurrection! italic*" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "nohighlight": language.constant.md
+      ""
+      source.embedded {
+        "first block"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "*dead, non-italic*" {
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "dead, non-italic"
+        "*": punctuation.md
+      }
+    }
+    "we are still in a "
+    "`fenced.code.md`" {
+      code.raw.markup.md {
+        "`": punctuation.md
+        "fenced.code.md"
+        "`": punctuation.md
+      }
+    }
+    ", "
+    "`ctrl-cmd-p`" {
+      code.raw.markup.md {
+        "`": punctuation.md
+        "ctrl-cmd-p"
+        "`": punctuation.md
+      }
+    }
+    " says."
+    ""
+    fenced.code.md {
+      "```": punctuation.md
+      "nohighlight": language.constant.md
+      ""
+      source.embedded {
+        "second block"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "*resurrection! italic*" {
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "resurrection! italic"
+        "*": punctuation.md
+      }
+    }
+  }
+}
+
+@121b
+"```js" +
+"var test = "String";" +
+"```" +
+"" +
+"I'm **bold**, and I'm _italic_." +
+"" +
+"```js" +
+"var sum = 12 + 34;" +
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "js": language.constant.md
+      ""
+      source.embedded.js {
+        "var test = "String";"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "I'm "
+    "**bold**" {
+      strong.emphasis.bold.markup.md {
+        "**": punctuation.md
+        "bold"
+        "**": punctuation.md
+      }
+    }
+    ", and I'm "
+    "_italic_" {
+      emphasis.italic.markup.md {
+        "_": punctuation.md
+        "italic"
+        "_": punctuation.md
+      }
+    }
+    "."
+    ""
+    fenced.code.md {
+      "```": punctuation.md
+      "js": language.constant.md
+      ""
+      source.embedded.js {
+        "var sum = 12 + 34;"
+      }
+      "```": punctuation.md
+    }
+  }
+}
+
+@123
+"The "normal" Alpha animation path, which simply transitions from one Alpha value to another in a linear fashion, looks like this:" +
+"```lua" +
+"function(progress, start, delta)" +
+"  return start + (progress * delta)" +
+"end" +
+"```" +
+"" +
+"### Translate" {
+  text.md {
+    "The "normal" Alpha animation path, which simply transitions from one Alpha value to another in a linear fashion, looks like this:"
+    fenced.code.md {
+      "```": punctuation.md
+      "lua": language.constant.md
+      ""
+      source.embedded.lua {
+        "function(progress, start, delta)"
+        "  return start + (progress * delta)"
+        "end"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "### Translate" {
+      heading.markup.md {
+        heading-3.md {
+          "###": punctuation.md
+          " "
+          "Translate"
+        }
+      }
+    }
+  }
+}
+
+@170
+"> This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters." {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters."
+    }
+  }
+}
+
+@210
+"[foo](bar){:target="_blank"} hello world [foo](bar){:target="_blank"}" {
+  text.md {
+    "[foo](bar){:target="blank"}" {
+      link.markup.md {
+        "[foo]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        "(bar)" {
+          "(": punctuation.md
+          destination.link.md {
+            "bar": markup.underline.link
+          }
+          ")": punctuation.md
+        }
+        "{:target="blank"}" {
+          special-attributes.raw.markup.md {
+            "{": punctuation.md
+            ":target="blank"" {
+              other.special.attribute.meta.md {
+                ":target": key.keyword.md
+                "=": punctuation.md
+                ""_blank"": value.string.md
+              }
+            }
+            "}": punctuation.md
+          }
+        }
+      }
+    }
+    " hello world "
+    "[foo](bar){:target="blank"}" {
+      link.markup.md {
+        "[foo]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        "(bar)" {
+          "(": punctuation.md
+          destination.link.md {
+            "bar": markup.underline.link
+          }
+          ")": punctuation.md
+        }
+        "{:target="blank"}" {
+          special-attributes.raw.markup.md {
+            "{": punctuation.md
+            ":target="blank"" {
+              other.special.attribute.meta.md {
+                ":target": key.keyword.md
+                "=": punctuation.md
+                ""_blank"": value.string.md
+              }
+            }
+            "}": punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@178a
+"test1235 test<4 mydata.vcf.gz" {
+  text.md {
+    "test1235 test"
+    "<"
+    "4 mydata.vcf.gz"
+  }
+}
+
+@178b
+"David <3 chocolate!" {
+  text.md {
+    "David "
+    "<"
+    "3 chocolate!"
+  }
+}
+
+@178c
+"lorem <- ipsum" {
+  text.md {
+    "lorem "
+    "<"
+    "- ipsum"
+  }
+}
+
+@174a
+"M&M's": text.md
+
+@174b
+"M &M's": text.md
+
+@174c
+"M& M's": text.md
+
+@174dz
+"M & M's" {
+  text.md {
+    "M "
+    "&": ampersand.md
+    " M's"
+  }
+}
+
+@247
+"```{r fig.cap="Text (\\Cref{s:pilot})."}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "fig.cap="Text (\\Cref{s:pilot})."" {
+        rmarkdown.attribute.meta.md {
+          "fig.cap": key.keyword.md
+          "=": punctuation.md
+          ""Text (\\Cref{s:pilot})."" {
+            value.string.md {
+              """: punctuation.md
+              "Text (\\Cref{s:pilot})."
+              """: punctuation.md
+            }
+          }
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}

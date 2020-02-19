@@ -1,0 +1,49 @@
+.syntax--php {
+
+  &.syntax--string.syntax--quoted {
+    color:@light-gray;
+
+    .syntax--begin,
+    .syntax--end {
+      color:@light-gray;
+    }
+  }
+
+  .syntax--variable {
+    color:@color4light;
+
+    .syntax--punctuation {
+      color:@color4light !important;
+    }
+  }
+
+  .syntax--support.syntax--function.syntax--construct.syntax--output {
+    color:@color1dark;
+  }
+
+  .syntax--support.syntax--function {
+    color:@color1dark;
+  }
+
+  .syntax--keyword {
+    color:#5EC4FF;
+  }
+
+  .syntax--entity.syntax--name.syntax--function {
+    color:@color7light;
+  }
+
+  .syntax--parameters {
+    color:@color4dark;
+  }
+
+  &.syntax--punctuation.syntax--section.syntax--embedded.syntax--begin,
+  &.syntax--punctuation.syntax--section.syntax--embedded.syntax--end {
+    color:@color3dark !important;
+  }
+}
+
+.syntax--punctuation.syntax--definition.syntax--string.syntax--begin.syntax--php,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--end.syntax--php {
+  color:@light-gray !important;
+}

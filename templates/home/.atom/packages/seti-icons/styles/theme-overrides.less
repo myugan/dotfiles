@@ -1,0 +1,260 @@
+atom-workspace {
+  // One Dark, One Light, Genesis
+  &.theme-genesis-ui,
+  &.theme-one-dark-ui,
+  &.theme-one-light-ui {
+    .side-bar-override(-1px);
+    .tab-bar-override();
+  }
+
+  // One Dark, One Light
+  &.theme-one-dark-ui,
+  &.theme-one-light-ui {
+    .project-find-override(0);
+    .fuzzy-finder .icon {
+      &::before {
+        .platform-win32 & {
+          top: 1px;
+        }
+      }
+    }
+  }
+
+  // Atom Dark, Atom Light
+  &.theme-atom-dark-ui,
+  &.theme-atom-light-ui {
+    .tab-bar-override(5px);
+    .project-find-override(0);
+
+    // Sidebar
+    .entries.list-tree .file .icon {
+      &::before {
+        .platform-win32 & {
+          top: 4px;
+        }
+      }
+    }
+  }
+
+  // Genesis
+  &.theme-genesis-ui {
+    // Sidebar
+    .entries.list-tree .file .icon {
+      &::before {
+        .platform-win32 & {
+          top: 0;
+        }
+      }
+    }
+
+    .fuzzy-finder .icon {
+      &::before {
+        .platform-win32 & {
+          top: 4px;
+        }
+      }
+    }
+  }
+
+  // Atom Dark, Atom Light, Genesis
+  &.theme-genesis-ui,
+  &.theme-atom-dark-ui,
+  &.theme-atom-light-ui {
+    // Sidebar
+    .entries.list-tree .file .icon {
+      display: inline-block;
+      margin-top: -5px;
+    }
+
+    .fuzzy-finder-override();
+    .project-find-override();
+  }
+
+  // Atom Material
+  &.theme-atom-material-ui {
+    // Tab Bar
+    .tab-bar .tab .title {
+      &::before {
+        .amu-compact-tab-bar & {
+          margin-top: 13px;
+        }
+      }
+    }
+
+    .tab-bar-override(17px);
+
+    // Sidebar
+    .entries.list-tree .file .icon {
+      &::before {
+        .platform-win32 & {
+          top: 4px;
+        }
+      }
+    }
+
+    // Fuzzy Finder
+    .fuzzy-finder .icon {
+      &::before {
+        top: 4px;
+
+        .platform-win32 & {
+          top: 3px;
+        }
+      }
+    }
+
+    .icon-file-directory {
+      &::before {
+        margin-right: 10px !important;
+      }
+    }
+
+    .icon-file-text,
+    .icon-book {
+      &::before {
+        top: 6px;
+      }
+    }
+  }
+
+  &.theme-native-ui {
+    // Sidebar
+    .entries.list-tree .file .icon {
+      display: inline-block;
+      margin-top: -5px;
+
+      &::before {
+        .platform-win32 {
+          top: -1px;
+        }
+      }
+    }
+
+    .side-bar-override(0);
+    .tab-bar-override(4px);
+    .fuzzy-finder-override();
+  }
+
+  // Nova Atom
+  &.theme-nova-atom-ui {
+    // Sidebar
+    .entries.list-tree .file {
+      &::after {
+        height: 25px !important;
+      }
+    }
+
+    .side-bar-override(-2px);
+    .tab-bar-override();
+    .fuzzy-finder-override();
+  }
+
+  // Seti
+  &.theme-seti-ui {
+    // Tab Bar
+    .tab-bar .tab .title {
+      &::before {
+        .platform-win32 & {
+          margin-top: -1px;
+        }
+      }
+    }
+
+    // Sidebar
+    .entries.list-tree .file .icon {
+      vertical-align: middle;
+
+      .platform-win32 & {
+        display: inline-block;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  // Spacegray Dark
+  &.theme-spacegray-dark-ui {
+    .side-bar-override(0);
+    .tab-bar-override();
+    .fuzzy-finder-override();
+    .project-find-override();
+  }
+
+  // Nucleus Dark
+  &.theme-nucleus-dark-ui {
+    .tab-bar-override(10px);
+    .fuzzy-finder-override(3px);
+
+    // Sidebar
+    .entries.list-tree .file .icon {
+      &::before {
+        .platform-win32 & {
+          top: 4px;
+        }
+      }
+    }
+  }
+}
+
+// Common sidebar override
+.side-bar-override(@top: 4px) {
+  .entries.list-tree .file .icon {
+    &::before {
+      top: @top;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Common tab bar override
+.tab-bar-override(@margin: 7px) {
+  .tab-bar .tab .title {
+    &::before {
+      margin-top: @margin;
+    }
+  }
+}
+
+// Common fuzzy finder override
+.fuzzy-finder-override(@top: 4px) {
+  .fuzzy-finder .icon {
+    &::before {
+      top: @top;
+    }
+  }
+}
+
+// Common project find override
+.project-find-override(@top: 8px) {
+  .preview-pane .path.list-nested-item {
+    .icon-book,
+    .icon-file-media,
+    .icon-file-text {
+      &::before {
+        top: @top;
+      }
+    }
+  }
+}
+
+// One Dark, One Light with minimum tab sizing
+.one-dark-light-theme-minimum-tab-sizing() {
+  .tab-bar .tab .title {
+    &::before {
+      position: static;
+      margin-top: 0;
+      margin-left: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  [theme-one-dark-ui-tabsizing="auto"], [theme-one-light-ui-tabsizing="auto"] {
+    .one-dark-light-theme-minimum-tab-sizing();
+  }
+}
+
+[theme-one-dark-ui-tabsizing="minimum"], [theme-one-light-ui-tabsizing="minimum"] {
+  .one-dark-light-theme-minimum-tab-sizing();
+}

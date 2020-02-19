@@ -1,0 +1,21 @@
+// JSON
+
+.syntax--json {
+  .syntax--string {
+    .uno-2();
+    .syntax--punctuation {
+      .uno-5();
+    }
+  }
+  .syntax--value {
+    & > .syntax--string {
+      .duo-1();
+      .syntax--punctuation {
+        .uno-5();
+      }
+    }
+    .syntax--constant {
+      .duo-2();
+    }
+  }
+}

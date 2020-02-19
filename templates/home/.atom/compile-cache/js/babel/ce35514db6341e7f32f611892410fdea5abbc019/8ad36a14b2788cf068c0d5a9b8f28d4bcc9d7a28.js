@@ -1,0 +1,84 @@
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _utils = require('./utils');
+
+var scopedModes = ['callees', 'callers', 'callstack', 'pointsto', 'whicherrs', 'peers', 'referrers'];
+
+function buildGuruArchive(editor) {
+  var archive = '';
+  var editors = editor ? [editor] : atom.workspace.getTextEditors();
+  for (var e of editors) {
+    if (e.isModified() && (0, _utils.isValidEditor)(e)) {
+      archive += (e.getPath() || '') + '\n';
+      archive += Buffer.byteLength(e.getText(), 'utf8') + '\n';
+      archive += e.getText();
+    }
+  }
+  return archive;
+}
+
+function computeArgs(mode, options, editor) {
+  var pos = arguments.length <= 3 || arguments[3] === undefined ? currentCursorOffset(editor) : arguments[3];
+  return (function () {
+    if (!mode || !editor || !pos && pos !== 0) {
+      return undefined;
+    }
+
+    var filePath = editor.getPath();
+    if (!filePath) {
+      return undefined;
+    }
+
+    var args = ['-json'];
+    if (scopedModes.includes(mode)) {
+      var src = 'src/';
+      var relPath = atom.project.relativizePath(filePath);
+      if (relPath && relPath.length > 0 && relPath[0] !== null) {
+        var scope = relPath[0];
+        var srcIndex = scope.indexOf(src);
+        if (srcIndex !== -1) {
+          scope = scope.substring(srcIndex + src.length, scope.length);
+        }
+        args.push('-scope', scope + '/...');
+      }
+    }
+
+    args.push(mode, filePath + ':#' + pos);
+    return args;
+  })();
+}
+
+function currentCursorOffset(editor) {
+  var pos = (0, _utils.getCursorPosition)(editor);
+  if (!pos) {
+    return 0;
+  }
+  pos = adjustPositionForGuru(pos, editor);
+  return (0, _utils.utf8OffsetForBufferPosition)(pos, editor);
+}
+
+function adjustPositionForGuru(pos, editor) {
+  if (!pos) {
+    return pos;
+  }
+  // Unfortunately guru fails if the cursor is at the end of a word
+  // e.g. "fmt.Println ()"
+  //                  ↑ the cursor is here, between "ln" and "("
+  // In order to avoid this problem we have to check whether the char
+  // at the given position is considered a part of an identifier.
+  // If not step back 1 char as it might contain a valid identifier.
+  var char = editor.getTextInBufferRange([pos, pos.translate([0, 1])]);
+  var nonWordChars = editor.getNonWordCharacters(pos);
+  if (nonWordChars.indexOf(char) >= 0 || /\s/.test(char)) {
+    return pos.translate([0, -1]);
+  }
+  return pos;
+}
+
+exports.adjustPositionForGuru = adjustPositionForGuru;
+exports.buildGuruArchive = buildGuruArchive;
+exports.currentCursorOffset = currentCursorOffset;
+exports.computeArgs = computeArgs;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215dWdhLy5hdG9tL3BhY2thZ2VzL2dvLXBsdXMvbGliL2d1cnUtdXRpbHMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztxQkFNTyxTQUFTOztBQUVoQixJQUFNLFdBQVcsR0FBRyxDQUNsQixTQUFTLEVBQ1QsU0FBUyxFQUNULFdBQVcsRUFDWCxVQUFVLEVBQ1YsV0FBVyxFQUNYLE9BQU8sRUFDUCxXQUFXLENBQ1osQ0FBQTs7QUFFRCxTQUFTLGdCQUFnQixDQUFDLE1BQXdCLEVBQUU7QUFDbEQsTUFBSSxPQUFPLEdBQUcsRUFBRSxDQUFBO0FBQ2hCLE1BQU0sT0FBTyxHQUFHLE1BQU0sR0FBRyxDQUFDLE1BQU0sQ0FBQyxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsY0FBYyxFQUFFLENBQUE7QUFDbkUsT0FBSyxJQUFNLENBQUMsSUFBSSxPQUFPLEVBQUU7QUFDdkIsUUFBSSxDQUFDLENBQUMsVUFBVSxFQUFFLElBQUksMEJBQWMsQ0FBQyxDQUFDLEVBQUU7QUFDdEMsYUFBTyxJQUFJLENBQUMsQ0FBQyxDQUFDLE9BQU8sRUFBRSxJQUFJLEVBQUUsQ0FBQSxHQUFJLElBQUksQ0FBQTtBQUNyQyxhQUFPLElBQUksTUFBTSxDQUFDLFVBQVUsQ0FBQyxDQUFDLENBQUMsT0FBTyxFQUFFLEVBQUUsTUFBTSxDQUFDLEdBQUcsSUFBSSxDQUFBO0FBQ3hELGFBQU8sSUFBSSxDQUFDLENBQUMsT0FBTyxFQUFFLENBQUE7S0FDdkI7R0FDRjtBQUNELFNBQU8sT0FBTyxDQUFBO0NBQ2Y7O0FBRUQsU0FBUyxXQUFXLENBQ2xCLElBQVksRUFDWixPQUE0QixFQUM1QixNQUF1QjtNQUN2QixHQUFXLHlEQUFHLG1CQUFtQixDQUFDLE1BQU0sQ0FBQztzQkFDekI7QUFDaEIsUUFBSSxDQUFDLElBQUksSUFBSSxDQUFDLE1BQU0sSUFBSyxDQUFDLEdBQUcsSUFBSSxHQUFHLEtBQUssQ0FBQyxBQUFDLEVBQUU7QUFDM0MsYUFBTyxTQUFTLENBQUE7S0FDakI7O0FBRUQsUUFBTSxRQUFRLEdBQUcsTUFBTSxDQUFDLE9BQU8sRUFBRSxDQUFBO0FBQ2pDLFFBQUksQ0FBQyxRQUFRLEVBQUU7QUFDYixhQUFPLFNBQVMsQ0FBQTtLQUNqQjs7QUFFRCxRQUFNLElBQUksR0FBRyxDQUFDLE9BQU8sQ0FBQyxDQUFBO0FBQ3RCLFFBQUksV0FBVyxDQUFDLFFBQVEsQ0FBQyxJQUFJLENBQUMsRUFBRTtBQUM5QixVQUFNLEdBQUcsR0FBRyxNQUFNLENBQUE7QUFDbEIsVUFBSSxPQUFPLEdBQUcsSUFBSSxDQUFDLE9BQU8sQ0FBQyxjQUFjLENBQUMsUUFBUSxDQUFDLENBQUE7QUFDbkQsVUFBSSxPQUFPLElBQUksT0FBTyxDQUFDLE1BQU0sR0FBRyxDQUFDLElBQUksT0FBTyxDQUFDLENBQUMsQ0FBQyxLQUFLLElBQUksRUFBRTtBQUN4RCxZQUFJLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxDQUFDLENBQUE7QUFDdEIsWUFBTSxRQUFRLEdBQUcsS0FBSyxDQUFDLE9BQU8sQ0FBQyxHQUFHLENBQUMsQ0FBQTtBQUNuQyxZQUFJLFFBQVEsS0FBSyxDQUFDLENBQUMsRUFBRTtBQUNuQixlQUFLLEdBQUcsS0FBSyxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsR0FBRyxDQUFDLE1BQU0sRUFBRSxLQUFLLENBQUMsTUFBTSxDQUFDLENBQUE7U0FDN0Q7QUFDRCxZQUFJLENBQUMsSUFBSSxDQUFDLFFBQVEsRUFBRSxLQUFLLEdBQUcsTUFBTSxDQUFDLENBQUE7T0FDcEM7S0FDRjs7QUFFRCxRQUFJLENBQUMsSUFBSSxDQUFDLElBQUksRUFBSyxRQUFRLFVBQUssR0FBRyxDQUFHLENBQUE7QUFDdEMsV0FBTyxJQUFJLENBQUE7R0FDWjtDQUFBOztBQUVELFNBQVMsbUJBQW1CLENBQUMsTUFBdUIsRUFBVTtBQUM1RCxNQUFJLEdBQUcsR0FBRyw4QkFBa0IsTUFBTSxDQUFDLENBQUE7QUFDbkMsTUFBSSxDQUFDLEdBQUcsRUFBRTtBQUNSLFdBQU8sQ0FBQyxDQUFBO0dBQ1Q7QUFDRCxLQUFHLEdBQUcscUJBQXFCLENBQUMsR0FBRyxFQUFFLE1BQU0sQ0FBQyxDQUFBO0FBQ3hDLFNBQU8sd0NBQTRCLEdBQUcsRUFBRSxNQUFNLENBQUMsQ0FBQTtDQUNoRDs7QUFFRCxTQUFTLHFCQUFxQixDQUFDLEdBQWUsRUFBRSxNQUF1QixFQUFFO0FBQ3ZFLE1BQUksQ0FBQyxHQUFHLEVBQUU7QUFDUixXQUFPLEdBQUcsQ0FBQTtHQUNYOzs7Ozs7O0FBT0QsTUFBTSxJQUFJLEdBQUcsTUFBTSxDQUFDLG9CQUFvQixDQUFDLENBQUMsR0FBRyxFQUFFLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUE7QUFDdEUsTUFBTSxZQUFZLEdBQUcsTUFBTSxDQUFDLG9CQUFvQixDQUFDLEdBQUcsQ0FBQyxDQUFBO0FBQ3JELE1BQUksWUFBWSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksSUFBSSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsRUFBRTtBQUN0RCxXQUFPLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFBO0dBQzlCO0FBQ0QsU0FBTyxHQUFHLENBQUE7Q0FDWDs7UUFHQyxxQkFBcUIsR0FBckIscUJBQXFCO1FBQ3JCLGdCQUFnQixHQUFoQixnQkFBZ0I7UUFDaEIsbUJBQW1CLEdBQW5CLG1CQUFtQjtRQUNuQixXQUFXLEdBQVgsV0FBVyIsImZpbGUiOiIvaG9tZS9teXVnYS8uYXRvbS9wYWNrYWdlcy9nby1wbHVzL2xpYi9ndXJ1LXV0aWxzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZsb3dcblxuaW1wb3J0IHtcbiAgZ2V0Q3Vyc29yUG9zaXRpb24sXG4gIGlzVmFsaWRFZGl0b3IsXG4gIHV0ZjhPZmZzZXRGb3JCdWZmZXJQb3NpdGlvblxufSBmcm9tICcuL3V0aWxzJ1xuXG5jb25zdCBzY29wZWRNb2RlcyA9IFtcbiAgJ2NhbGxlZXMnLFxuICAnY2FsbGVycycsXG4gICdjYWxsc3RhY2snLFxuICAncG9pbnRzdG8nLFxuICAnd2hpY2hlcnJzJyxcbiAgJ3BlZXJzJyxcbiAgJ3JlZmVycmVycydcbl1cblxuZnVuY3Rpb24gYnVpbGRHdXJ1QXJjaGl2ZShlZGl0b3I6ID9hdG9tJFRleHRFZGl0b3IpIHtcbiAgbGV0IGFyY2hpdmUgPSAnJ1xuICBjb25zdCBlZGl0b3JzID0gZWRpdG9yID8gW2VkaXRvcl0gOiBhdG9tLndvcmtzcGFjZS5nZXRUZXh0RWRpdG9ycygpXG4gIGZvciAoY29uc3QgZSBvZiBlZGl0b3JzKSB7XG4gICAgaWYgKGUuaXNNb2RpZmllZCgpICYmIGlzVmFsaWRFZGl0b3IoZSkpIHtcbiAgICAgIGFyY2hpdmUgKz0gKGUuZ2V0UGF0aCgpIHx8ICcnKSArICdcXG4nXG4gICAgICBhcmNoaXZlICs9IEJ1ZmZlci5ieXRlTGVuZ3RoKGUuZ2V0VGV4dCgpLCAndXRmOCcpICsgJ1xcbidcbiAgICAgIGFyY2hpdmUgKz0gZS5nZXRUZXh0KClcbiAgICB9XG4gIH1cbiAgcmV0dXJuIGFyY2hpdmVcbn1cblxuZnVuY3Rpb24gY29tcHV0ZUFyZ3MoXG4gIG1vZGU6IHN0cmluZyxcbiAgb3B0aW9uczogP3sgZ29wYXRoOiBzdHJpbmcgfSxcbiAgZWRpdG9yOiBhdG9tJFRleHRFZGl0b3IsXG4gIHBvczogbnVtYmVyID0gY3VycmVudEN1cnNvck9mZnNldChlZGl0b3IpXG4pOiA/QXJyYXk8c3RyaW5nPiB7XG4gIGlmICghbW9kZSB8fCAhZWRpdG9yIHx8ICghcG9zICYmIHBvcyAhPT0gMCkpIHtcbiAgICByZXR1cm4gdW5kZWZpbmVkXG4gIH1cblxuICBjb25zdCBmaWxlUGF0aCA9IGVkaXRvci5nZXRQYXRoKClcbiAgaWYgKCFmaWxlUGF0aCkge1xuICAgIHJldHVybiB1bmRlZmluZWRcbiAgfVxuXG4gIGNvbnN0IGFyZ3MgPSBbJy1qc29uJ11cbiAgaWYgKHNjb3BlZE1vZGVzLmluY2x1ZGVzKG1vZGUpKSB7XG4gICAgY29uc3Qgc3JjID0gJ3NyYy8nXG4gICAgbGV0IHJlbFBhdGggPSBhdG9tLnByb2plY3QucmVsYXRpdml6ZVBhdGgoZmlsZVBhdGgpXG4gICAgaWYgKHJlbFBhdGggJiYgcmVsUGF0aC5sZW5ndGggPiAwICYmIHJlbFBhdGhbMF0gIT09IG51bGwpIHtcbiAgICAgIGxldCBzY29wZSA9IHJlbFBhdGhbMF1cbiAgICAgIGNvbnN0IHNyY0luZGV4ID0gc2NvcGUuaW5kZXhPZihzcmMpXG4gICAgICBpZiAoc3JjSW5kZXggIT09IC0xKSB7XG4gICAgICAgIHNjb3BlID0gc2NvcGUuc3Vic3RyaW5nKHNyY0luZGV4ICsgc3JjLmxlbmd0aCwgc2NvcGUubGVuZ3RoKVxuICAgICAgfVxuICAgICAgYXJncy5wdXNoKCctc2NvcGUnLCBzY29wZSArICcvLi4uJylcbiAgICB9XG4gIH1cblxuICBhcmdzLnB1c2gobW9kZSwgYCR7ZmlsZVBhdGh9OiMke3Bvc31gKVxuICByZXR1cm4gYXJnc1xufVxuXG5mdW5jdGlvbiBjdXJyZW50Q3Vyc29yT2Zmc2V0KGVkaXRvcjogYXRvbSRUZXh0RWRpdG9yKTogbnVtYmVyIHtcbiAgbGV0IHBvcyA9IGdldEN1cnNvclBvc2l0aW9uKGVkaXRvcilcbiAgaWYgKCFwb3MpIHtcbiAgICByZXR1cm4gMFxuICB9XG4gIHBvcyA9IGFkanVzdFBvc2l0aW9uRm9yR3VydShwb3MsIGVkaXRvcilcbiAgcmV0dXJuIHV0ZjhPZmZzZXRGb3JCdWZmZXJQb3NpdGlvbihwb3MsIGVkaXRvcilcbn1cblxuZnVuY3Rpb24gYWRqdXN0UG9zaXRpb25Gb3JHdXJ1KHBvczogYXRvbSRQb2ludCwgZWRpdG9yOiBhdG9tJFRleHRFZGl0b3IpIHtcbiAgaWYgKCFwb3MpIHtcbiAgICByZXR1cm4gcG9zXG4gIH1cbiAgLy8gVW5mb3J0dW5hdGVseSBndXJ1IGZhaWxzIGlmIHRoZSBjdXJzb3IgaXMgYXQgdGhlIGVuZCBvZiBhIHdvcmRcbiAgLy8gZS5nLiBcImZtdC5QcmludGxuICgpXCJcbiAgLy8gICAgICAgICAgICAgICAgICDihpEgdGhlIGN1cnNvciBpcyBoZXJlLCBiZXR3ZWVuIFwibG5cIiBhbmQgXCIoXCJcbiAgLy8gSW4gb3JkZXIgdG8gYXZvaWQgdGhpcyBwcm9ibGVtIHdlIGhhdmUgdG8gY2hlY2sgd2hldGhlciB0aGUgY2hhclxuICAvLyBhdCB0aGUgZ2l2ZW4gcG9zaXRpb24gaXMgY29uc2lkZXJlZCBhIHBhcnQgb2YgYW4gaWRlbnRpZmllci5cbiAgLy8gSWYgbm90IHN0ZXAgYmFjayAxIGNoYXIgYXMgaXQgbWlnaHQgY29udGFpbiBhIHZhbGlkIGlkZW50aWZpZXIuXG4gIGNvbnN0IGNoYXIgPSBlZGl0b3IuZ2V0VGV4dEluQnVmZmVyUmFuZ2UoW3BvcywgcG9zLnRyYW5zbGF0ZShbMCwgMV0pXSlcbiAgY29uc3Qgbm9uV29yZENoYXJzID0gZWRpdG9yLmdldE5vbldvcmRDaGFyYWN0ZXJzKHBvcylcbiAgaWYgKG5vbldvcmRDaGFycy5pbmRleE9mKGNoYXIpID49IDAgfHwgL1xccy8udGVzdChjaGFyKSkge1xuICAgIHJldHVybiBwb3MudHJhbnNsYXRlKFswLCAtMV0pXG4gIH1cbiAgcmV0dXJuIHBvc1xufVxuXG5leHBvcnQge1xuICBhZGp1c3RQb3NpdGlvbkZvckd1cnUsXG4gIGJ1aWxkR3VydUFyY2hpdmUsXG4gIGN1cnJlbnRDdXJzb3JPZmZzZXQsXG4gIGNvbXB1dGVBcmdzXG59XG4iXX0=

@@ -1,0 +1,261 @@
+# http://spec.commonmark.org/0.22/#list-items
+#
+# NOTE
+# Skipped examples, because of irrelevancy:
+# 203-205, 207-210, 221-228, 233-239, 252-256, 263-264, 266, 269-271
+# @burodepeper
+
+@206
+"- one"+
+""+
+"  two" {
+  text.md {
+    unordered.list.markup.md {
+      '- ': punctuation.md
+      'one'
+    }
+    ""
+    "  two"
+  }
+}
+
+@211
+"-one"+
+""+
+"2.two" {
+  text.md {
+    "-one"
+    ""
+    "2.two"
+  }
+}
+
+@214
+'123456789. ok' {
+  text.md {
+    ordered.list.markup.md {
+      '123456789. ': punctuation.md
+      'ok'
+    }
+  }
+}
+
+@215
+'1234567890. not ok': text.md
+
+@216
+'0. ok' {
+  text.md {
+    ordered.list.markup.md {
+      '0. ': punctuation.md
+      'ok'
+    }
+  }
+}
+
+@217
+"003. ok" {
+  text.md {
+    ordered.list.markup.md {
+      '003. ': punctuation.md
+      'ok'
+    }
+  }
+}
+
+@218
+"-1. not ok": text.md
+
+# NOTE
+# Removed @219, because it is not related to syntax highlighting
+# Removed @220, because it is not related to syntax highlighting
+# @burodepeper
+
+@229
+"- foo"+
+"-"+
+"- bar" {
+  text.md {
+    unordered.list.markup.md {
+      '- ': punctuation.md
+      'foo'
+    }
+    empty.unordered.list.markup.md {
+      '-': punctuation.md
+    }
+    unordered.list.markup.md {
+      '- ': punctuation.md
+      'bar'
+    }
+  }
+}
+
+# NOTE
+# Removed @230, because it is not related to syntax highlighting
+# @burodepeper
+
+@231
+"1. foo"+
+"2."+
+"3. bar" {
+  text.md {
+    ordered.list.markup.md {
+      '1. ': punctuation.md
+      'foo'
+    }
+    empty.ordered.list.markup.md {
+      '2.': punctuation.md
+    }
+    ordered.list.markup.md {
+      '3. ': punctuation.md
+      'bar'
+    }
+  }
+}
+
+@232
+"*" {
+  text.md {
+    empty.unordered.list.markup.md {
+      '*': punctuation.md
+    }
+  }
+}
+
+@240
+"> 1. > Blockquote"+
+"> continued here." {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      ordered.list.markup.md {
+        "1. ": punctuation.md
+        quote.markup.md {
+          ">": punctuation.md
+          " "
+          "Blockquote"
+        }
+      }
+      ">": punctuation.md
+      " "
+      "continued here."
+    }
+  }
+}
+
+# NOTE
+# Removed @241, because it is not related to syntax highlighting
+# Removed @242, because it is not related to syntax highlighting
+# Removed @243, because it is not related to syntax highlighting
+# Removed @244, because it is not related to syntax highlighting
+# @burodepeper
+
+@245
+"- - foo" {
+  text.md {
+    unordered.list.markup.md {
+      "- ": punctuation.md
+      unordered.list.markup.md {
+        "- ": punctuation.md
+        "foo"
+      }
+    }
+  }
+}
+
+@246
+"1. - 2. foo" {
+  text.md {
+    ordered.list.markup.md {
+      "1. ": punctuation.md
+      unordered.list.markup.md {
+        "- ": punctuation.md
+        ordered.list.markup.md {
+          "2. ": punctuation.md
+          "foo"
+        }
+      }
+    }
+  }
+}
+
+@247
+"- # Foo"+
+"- Bar"+
+"  ---"+
+"  baz" {
+  text.md {
+    unordered.list.markup.md {
+      "- ": punctuation.md
+      heading.markup.md {
+        heading-1.md {
+          "#": punctuation.md
+          " "
+          "Foo"
+        }
+      }
+      "- ": punctuation.md
+      "Bar"
+    }
+    "  ---": hr.constant.md
+    "  baz"
+  }
+}
+
+# NOTE
+# Removed @248, because it is not related to syntax highlighting
+# Removed @249, because it is not related to syntax highlighting
+# Removed @250, because it is not related to syntax highlighting
+# @burodepeper
+
+@251
+"The number of windows in my house is"+
+"14.  The number of doors is 6." {
+  text.md {
+    "The number of windows in my house is"
+    ordered.list.markup.md {
+      "14. ": punctuation.md
+      " The number of doors is 6."
+    }
+  }
+}
+
+# NOTE
+# Removed @257, because it is not related to syntax highlighting
+# Removed @258, because it is not related to syntax highlighting
+# Removed @259, because it is not related to syntax highlighting
+# Removed @260, because it is not related to syntax highlighting
+# Removed @261, because it is not related to syntax highlighting
+# Removed @262, because it is not related to syntax highlighting
+# @burodepeper
+
+@265
+"* a"+
+"  > b"+
+"  >"+
+"* c" {
+  text.md {
+    unordered.list.markup.md {
+      "* ": punctuation.md
+      "a"
+    }
+    quote.markup.md {
+      "  "
+      ">": punctuation.md
+      " "
+      "b"
+      "  "
+      ">": punctuation.md
+    }
+    unordered.list.markup.md {
+      "* ": punctuation.md
+      "c"
+    }
+  }
+}
+
+# NOTE
+# Removed @267, because it is not related to syntax highlighting
+# Removed @268, because it is not related to syntax highlighting
+# @burodepeper

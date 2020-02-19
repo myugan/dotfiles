@@ -1,0 +1,1 @@
+{"source":".highlight.uncovered .region {\n  background-color: #ff5757;\n  opacity: 0.2;\n}\n.highlight.covered .region {\n  background-color: #ff7ac6;\n  opacity: 0.2;\n}\n.line-number.uncovered {\n  color: #f8f8f2 !important;\n  background-color: #ff5757;\n}\n.line-number.covered {\n  color: #f8f8f2 !important;\n  background-color: #ff7ac6;\n}\n"}

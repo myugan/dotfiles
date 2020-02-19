@@ -1,0 +1,34 @@
+// Scrollbars
+
+.scrollbars-visible-always {
+	/deep/ ::-webkit-scrollbar {
+		width: @component-padding;
+		height: @component-padding;
+	}
+
+	/deep/ ::-webkit-scrollbar-track {
+		background: @scrollbar-background-color;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb {
+		border: 3px solid @scrollbar-background-color;
+		background: @scrollbar-color;
+		background-clip: content-box;
+	}
+
+	/deep/ ::-webkit-scrollbar-corner {
+		background: @scrollbar-background-color;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb:vertical:active {
+		border-radius: 0;
+		border-left-width: 0;
+		border-right-width: 0;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb:horizontal:active {
+		border-radius: 0;
+		border-top-width: 0;
+		border-bottom-width: 0;
+	}
+}

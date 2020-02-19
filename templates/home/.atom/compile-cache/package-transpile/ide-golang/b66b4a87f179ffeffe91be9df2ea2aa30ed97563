@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class NoopBusyMessage {
+    setTitle(_) { }
+    dispose() { }
+}
+exports.NoopBusyMessage = NoopBusyMessage;
+class ExecError extends Error {
+    constructor(message) {
+        super(message);
+    }
+}
+exports.ExecError = ExecError;

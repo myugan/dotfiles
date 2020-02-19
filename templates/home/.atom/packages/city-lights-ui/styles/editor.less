@@ -1,0 +1,26 @@
+
+// Mini Editor
+// -------------------
+
+// Mini Editors are the "text inputs" used in find+replace or in the settings.
+atom-text-editor[mini] {
+  padding-left: @component-padding/2;
+  color: @text-color-highlight;
+  border-radius: @component-border-radius;
+  background-color: @input-background-color;
+  height:30px;
+  font-family: @font-family;
+  border: 1px solid transparent;
+  max-height:none !important;
+
+  .placeholder-text {
+    color: #41505E !important;
+  }
+
+  &.is-focused {
+    border: 1px solid #5EC4FF;
+  }
+  .selection .region {
+    background-color: @background-color-selected;
+  }
+}

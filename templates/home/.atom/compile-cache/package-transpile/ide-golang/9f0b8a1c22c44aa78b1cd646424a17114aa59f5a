@@ -1,0 +1,131 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const atom_1 = require("atom");
+const path = require("path");
+const commons_1 = require("./commons");
+const utils = require("./utils");
+class Core {
+    constructor() {
+        this.myPackage = "ide-golang";
+        this.linters = {};
+        this.concurrentProcess = 0;
+    }
+    dispose() {
+        this.busyService = undefined;
+        this.console = undefined;
+        this.linters = {};
+        this.linterRegister = undefined;
+        this.concurrentProcess = 0;
+    }
+    spawn(command, args, opts) {
+        if (this.concurrentProcess >= this.getConfig("maxConcurrency")) {
+            return Promise.reject(new Error("Max concurrency exceeded."));
+        }
+        return (new Promise((resolve, reject) => {
+            if (!opts) {
+                opts = {};
+            }
+            let stdout = "";
+            let stderr = "";
+            const exitFn = (code) => {
+                if (this.concurrentProcess > 0) {
+                    this.concurrentProcess--;
+                }
+                if (code > 0 || stderr) {
+                    reject(new commons_1.ExecError(stderr));
+                    return;
+                }
+                resolve(stdout);
+            };
+            const bp = new atom_1.BufferedProcess({
+                args,
+                autoStart: true,
+                command,
+                exit: exitFn,
+                options: {
+                    cwd: opts.cwd,
+                    env: this.getEnvironments(opts.cwd),
+                },
+                stderr: (data) => { stderr += data; },
+                stdout: (data) => { stdout += data; },
+            });
+            bp.onWillThrowError((e) => {
+                if (e.handle) {
+                    e.handle();
+                }
+                if (this.concurrentProcess > 0) {
+                    this.concurrentProcess--;
+                }
+                reject(e.error);
+            });
+            if (bp.process) {
+                if (opts.input && opts.input.length > 0) {
+                    bp.process.stdin.end(opts.input);
+                }
+            }
+            this.concurrentProcess++;
+        }));
+    }
+    reportBusy(title, options) {
+        if (this.busyService) {
+            return this.busyService.reportBusy(title, options);
+        }
+        return new commons_1.NoopBusyMessage();
+    }
+    logTrace(err) {
+        if (this.console) {
+            this.console.log(String(err));
+        }
+    }
+    logWarn(err) {
+        if (this.console) {
+            this.console.warn(String(err));
+        }
+    }
+    clearMessages() {
+        if (this.linter) {
+            this.linter.clearMessages();
+        }
+    }
+    setAllMessages(messages) {
+        if (this.linter) {
+            this.linter.clearMessages();
+            if (messages.length > 0) {
+                this.linter.setAllMessages(messages);
+            }
+        }
+    }
+    promptForMissingTool(tool) {
+        atom.notifications.addWarning("Missing tool: " + tool);
+    }
+    getEnvironments(p) {
+        const env = {};
+        for (const key of Object.keys(process.env)) {
+            const value = process.env[key];
+            if (value) {
+                env[key] = value;
+            }
+        }
+        const paths = [];
+        const goPath = env.GOPATH || this.getGoPath() || utils.goPathFromPath(p);
+        if (goPath) {
+            env.GOPATH = goPath;
+            paths.push(path.resolve(goPath, "bin"));
+        }
+        const goRoot = env.GOROOT || this.getGoRoot();
+        paths.push(path.resolve(goRoot, "bin"), env.PATH);
+        return Object.assign({}, env, { GOROOT: goRoot, PATH: paths.join(":") });
+    }
+    getGoPath() {
+        const goPath = this.getConfig("gopath");
+        return (goPath && goPath.trim().length > 0) ? goPath : undefined;
+    }
+    getGoRoot() {
+        const goRoot = this.getConfig("goroot");
+        return (goRoot && goRoot.trim().length > 0) ? goRoot : "/usr/local/go";
+    }
+    getConfig(key) {
+        return atom.config.get(this.myPackage + "." + key);
+    }
+}
+exports.Core = Core;

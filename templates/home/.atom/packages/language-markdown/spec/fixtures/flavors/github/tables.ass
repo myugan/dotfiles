@@ -1,0 +1,206 @@
+@1
+"| one | two | three |" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " one "
+      "|": vertical.punctuation.md
+      " two "
+      "|": vertical.punctuation.md
+      " three "
+      "|": vertical.punctuation.md
+    }
+  }
+}
+
+@2
+"one | two | three |": text.md
+
+@3
+"| one | two | three" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " one "
+      "|": vertical.punctuation.md
+      " two "
+      "|": vertical.punctuation.md
+      " three"
+    }
+  }
+}
+
+@4
+"|one|two|three|": text.md
+
+@5
+"| --- | --- | --- |" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " "
+      "---": horizontal.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+      " "
+      "---": horizontal.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+      " "
+      "---": horizontal.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+    }
+  }
+}
+
+@6
+"--- | --- | --- |": text.md
+
+@7
+"| --- | --- | ---" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " "
+      "---": horizontal.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+      " "
+      "---": horizontal.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+      " "
+      "---": horizontal.punctuation.md
+    }
+  }
+}
+
+@8
+"|---|---|---" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      "---": horizontal.punctuation.md
+      "|": vertical.punctuation.md
+      "---": horizontal.punctuation.md
+      "|": vertical.punctuation.md
+      "---": horizontal.punctuation.md
+    }
+  }
+}
+
+@9
+"|:--- |:---:| ---:|" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      ":": alignment.punctuation.md
+      "---": horizontal.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+      ":": alignment.punctuation.md
+      "---": horizontal.punctuation.md
+      ":": alignment.punctuation.md
+      "|": vertical.punctuation.md
+      " "
+      "---": horizontal.punctuation.md
+      ":": alignment.punctuation.md
+      "|": vertical.punctuation.md
+    }
+  }
+}
+
+@10
+"| :-- | :-: | --: |" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " "
+      ":": alignment.punctuation.md
+      "--": horizontal.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+      " "
+      ":": alignment.punctuation.md
+      "-": horizontal.punctuation.md
+      ":": alignment.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+      " "
+      "--": horizontal.punctuation.md
+      ":": alignment.punctuation.md
+      " "
+      "|": vertical.punctuation.md
+    }
+  }
+}
+
+@11
+"| _one_ | **two** | [three] |" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " "
+      "_one_" {
+        emphasis.italic.markup.md {
+          "_": punctuation.md
+          "one"
+          "_": punctuation.md
+        }
+      }
+      " "
+      "|": vertical.punctuation.md
+      " "
+      "**two**" {
+        strong.emphasis.bold.markup.md {
+          "**": punctuation.md
+          "two"
+          "**": punctuation.md
+        }
+      }
+      " "
+      "|": vertical.punctuation.md
+      " "
+      "[three]" {
+        label.link.string.md {
+          "[": punctuation.md
+          "three"
+          "]": punctuation.md
+        }
+      }
+      " "
+      "|": vertical.punctuation.md
+    }
+  }
+}
+
+@12
+"| --- | --- | three |" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " --- "
+      "|": vertical.punctuation.md
+      " --- "
+      "|": vertical.punctuation.md
+      " three "
+      "|": vertical.punctuation.md
+    }
+  }
+}
+
+@12
+"| name | e-mail | address |" {
+  text.md {
+    table.storage.md {
+      "|": vertical.punctuation.md
+      " name "
+      "|": vertical.punctuation.md
+      " e-mail "
+      "|": vertical.punctuation.md
+      " address "
+      "|": vertical.punctuation.md
+    }
+  }
+}

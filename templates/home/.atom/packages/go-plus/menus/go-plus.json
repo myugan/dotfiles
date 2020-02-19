@@ -1,0 +1,95 @@
+{
+  "context-menu": {
+    "atom-text-editor[data-grammar~=\"go\"]:not([mini])": [
+      {
+        "label": "Go",
+        "submenu": [
+          {
+            "label": "Go To Definition",
+            "command": "golang:godef"
+          },
+          {
+            "label": "Implements",
+            "command": "golang:implements"
+          },
+          {
+            "label": "Return From Definition",
+            "command": "golang:godef-return"
+          },
+          {
+            "label": "Run Tests",
+            "command": "golang:run-tests"
+          },
+          {
+            "label": "Clear Test Coverage",
+            "command": "golang:hide-coverage"
+          },
+          {
+            "label": "Rename symbol under cursor",
+            "command": "golang:gorename"
+          },
+          {
+            "label": "Get godoc for symbol under cursor",
+            "command": "golang:showdoc"
+          },
+          {
+            "label": "Add Tags",
+            "command": "golang:add-tags"
+          },
+          {
+            "label": "Remove Tags",
+            "command": "golang:remove-tags"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Go",
+          "submenu": [
+            {
+              "label": "Go To Definition",
+              "command": "golang:godef"
+            },
+            {
+              "label": "Return From Definition",
+              "command": "golang:godef-return"
+            },
+            {
+              "label": "Format With gofmt",
+              "command": "golang:gofmt"
+            },
+            {
+              "label": "Format With goimports",
+              "command": "golang:goimports"
+            },
+            {
+              "label": "Format With goreturns",
+              "command": "golang:goreturns"
+            },
+            {
+              "label": "Run Tests",
+              "command": "golang:run-tests"
+            },
+            {
+              "label": "Clear Test Coverage",
+              "command": "golang:hide-coverage"
+            },
+            {
+              "label": "Get Package",
+              "command": "golang:get-package"
+            },
+            {
+              "label": "Update Tools",
+              "command": "golang:update-tools"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

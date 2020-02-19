@@ -1,0 +1,107 @@
+.syntax--text.syntax--html, .syntax--source.syntax--html:not(.syntax--embedded), .syntax--text.syntax--xml {
+  color: @syntax-color-html-text;
+
+  // comments
+  .syntax--comment {
+    color: @syntax-color-html-comment;
+    font-style: italic;
+  }
+
+  // <tag attribute="value">
+  .syntax--tag {
+
+    // doctype
+    &.syntax--doctype {
+      color: @syntax-color-html-tag-name;
+    }
+
+    // .html and .xml to exclude embedded code
+    .syntax--html, .syntax--xml {
+
+      &.syntax--punctuation {
+
+        // </>
+        &.syntax--tag {
+          color: @syntax-color-html-bracket;
+        }
+
+        // = :
+        &.syntax--separator {
+          color: @syntax-color-html-punctuation;
+        }
+      }
+
+      // tag name
+      &.syntax--name {
+        color: @syntax-color-html-tag-name;
+      }
+
+      // attribute
+      &.syntax--attribute-name {
+        color: @syntax-color-html-attribute;
+      }
+
+      // value
+      &.syntax--string:not(.syntax--doctype) {
+        color: @syntax-color-html-value;
+
+        // style="key: value"
+        .syntax--css:not(.syntax--punctuation) {
+          color: @syntax-color-html-value;
+        }
+      }
+    }
+  }
+
+  // angular mustache jinja
+  .syntax--template, .syntax--scope.syntax--jinja {
+    color: @syntax-color-html-template;
+
+    // {{}} {% %}
+    .syntax--punctuation.syntax--definition.syntax--block.syntax--angular,
+    .syntax--entity.syntax--name.syntax--tag.syntax--mustache,
+    .syntax--entity.syntax--other.syntax--delimiter.syntax--jinja {
+        color: @syntax-color-html-template;
+    }
+
+    // #in_ca, divisibleby
+    .syntax--function.syntax--mustache, .syntax--test.syntax--jinja {
+      color: @syntax-color-template-keyword;
+    }
+  }
+
+  &.syntax--angular {
+
+    // [angular] fix for = in tags
+    .syntax--meta.syntax--tag.syntax--any {
+      color: @syntax-color-html-punctuation;
+    }
+  }
+
+  &.syntax--xml {
+
+    // [xml] fix for = in tags
+    .syntax--meta.syntax--tag:not(.syntax--doctype) {
+      color: @syntax-color-html-punctuation;
+    }
+  }
+
+  // rails php
+  .syntax--embedded {
+
+    // <% %>
+    &.syntax--punctuation.syntax--ruby {
+      color: @syntax-color-html-bracket;
+    }
+
+    // <?php ?>
+    &.syntax--punctuation {
+      color: @syntax-color-html-bracket;
+
+      // ?
+      .syntax--source {
+        color: @syntax-color-html-bracket !important;
+      }
+    }
+  }
+}

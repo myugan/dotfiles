@@ -1,0 +1,607 @@
+{
+  "_from": "https://www.atom.io/api/packages/linter-ui-default/versions/1.8.1/tarball",
+  "_id": "linter-ui-default@1.8.1",
+  "_inBundle": false,
+  "_integrity": "sha512-AtVSWjz9Mx/Zpe8g3Y3nuHESSa3zf1NjL55379NxzKop43nhIlI0IE0QEzlfO0yB89Vignwe3BlQlXlKpQhMeA==",
+  "_location": "/linter-ui-default",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/linter-ui-default/versions/1.8.1/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/linter-ui-default/versions/1.8.1/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/linter-ui-default/versions/1.8.1/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/linter-ui-default/versions/1.8.1/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/linter-ui-default/versions/1.8.1/tarball",
+  "_shasum": "6ac056d31e7e12a586b09be4b1eb42a9c1f36488",
+  "_spec": "https://www.atom.io/api/packages/linter-ui-default/versions/1.8.1/tarball",
+  "_where": "/tmp/apm-install-dir-2020012-2885-152665x.fkph",
+  "bugs": {
+    "url": "https://github.com/steelbrain/linter-ui-default/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "showPanel": {
+      "type": "boolean",
+      "description": "Show panel at the bottom of screen",
+      "default": false,
+      "order": 1
+    },
+    "showTooltip": {
+      "description": "Show inline issue tooltips",
+      "type": "boolean",
+      "default": true,
+      "order": 1
+    },
+    "showStatusBar": {
+      "description": "Show status bar with error / warning / info count at the bottom",
+      "type": "boolean",
+      "default": true,
+      "order": 1
+    },
+    "showDecorations": {
+      "description": "Underline editor text and highlight gutter of issues",
+      "type": "boolean",
+      "default": true,
+      "order": 1
+    },
+    "showProviderName": {
+      "type": "boolean",
+      "description": "Show provider name in tooltip (Hint: It's always shown in the panel)",
+      "default": false,
+      "order": 1
+    },
+    "useBusySignal": {
+      "description": "Whether to integrate with the `busy-signal` package",
+      "type": "boolean",
+      "default": true,
+      "order": 1
+    },
+    "hidePanelWhenEmpty": {
+      "description": "Hide panel when there are no issues to display",
+      "type": "boolean",
+      "default": true,
+      "order": 1
+    },
+    "alwaysTakeMinimumSpace": {
+      "description": "Auto resizes Linter panel when there are less issues to show",
+      "type": "boolean",
+      "default": false,
+      "order": 1
+    },
+    "decorateOnTreeView": {
+      "type": "string",
+      "description": "Underline the selected type in TreeView to indicate issues",
+      "default": "Files",
+      "enum": [
+        "Files and Directories",
+        "Files",
+        "None"
+      ],
+      "order": 2
+    },
+    "panelRepresents": {
+      "type": "string",
+      "enum": [
+        "Entire Project",
+        "Current File",
+        "Current Line"
+      ],
+      "default": "Current File",
+      "order": 2
+    },
+    "statusBarPosition": {
+      "title": "Statusbar Position",
+      "type": "string",
+      "enum": [
+        "Left",
+        "Right"
+      ],
+      "default": "Left",
+      "order": 2
+    },
+    "statusBarRepresents": {
+      "title": "Statusbar Represents",
+      "type": "string",
+      "enum": [
+        "Entire Project",
+        "Current File"
+      ],
+      "default": "Entire Project",
+      "order": 2
+    },
+    "statusBarClickBehavior": {
+      "title": "Statusbar Click Behavior",
+      "type": "string",
+      "enum": [
+        "Toggle Panel",
+        "Toggle Status Bar Scope",
+        "Jump to next issue"
+      ],
+      "default": "Toggle Panel",
+      "order": 2
+    },
+    "tooltipFollows": {
+      "type": "string",
+      "description": "Choose whether tooltips show on mouseover, or follow the keyboard cursor",
+      "enum": [
+        "Both",
+        "Mouse",
+        "Keyboard"
+      ],
+      "default": "Both",
+      "order": 2
+    },
+    "gutterPosition": {
+      "title": "Gutter Highlights Position",
+      "description": "Relative to the line numbers",
+      "type": "string",
+      "enum": [
+        "Left",
+        "Right"
+      ],
+      "default": "Right",
+      "order": 2
+    },
+    "panelHeight": {
+      "title": "Panel Height",
+      "description": "in px",
+      "type": "number",
+      "default": 100,
+      "order": 3
+    }
+  },
+  "consumedServices": {
+    "busy-signal": {
+      "versions": {
+        "1.0.0": "consumeSignal"
+      }
+    },
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-package-deps": "^5.1.0",
+    "disposable-event": "^1.0.3",
+    "marked": "^0.7.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "sb-debounce": "^1.0.1",
+    "sb-react-table": "^1.0.2"
+  },
+  "deprecated": false,
+  "description": "Default UI for the Linter package",
+  "devDependencies": {
+    "eslint-config-steelbrain": "^5.0.0",
+    "flow-bin": "^0.67.1",
+    "jasmine-fix": "^1.0.1"
+  },
+  "engines": {
+    "atom": ">=1.19.0 <2.0.0"
+  },
+  "homepage": "https://github.com/steelbrain/linter-ui-default#readme",
+  "keywords": [
+    "linter-ui",
+    "linter-ui-default"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "name": "linter-ui-default",
+  "package-deps": [
+    "intentions",
+    "linter"
+  ],
+  "providedServices": {
+    "linter-ui": {
+      "versions": {
+        "1.0.0": "provideUI"
+      }
+    },
+    "intentions:list": {
+      "versions": {
+        "1.0.0": "provideIntentions"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steelbrain/linter-ui-default.git"
+  },
+  "scripts": {
+    "lint": "(flow check) && (eslint . ) && (prettier --list-different lib/*.js)",
+    "test": "apm test"
+  },
+  "version": "1.8.1",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "atom-package-deps",
+        "version": "5.1.0",
+        "path": "node_modules/atom-package-deps/lib/index.js"
+      },
+      {
+        "name": "disposable-event",
+        "version": "1.0.3",
+        "path": "node_modules/disposable-event/lib/index.js"
+      },
+      {
+        "name": "is-utf8",
+        "version": "0.2.1",
+        "path": "node_modules/is-utf8/is-utf8.js"
+      },
+      {
+        "name": "js-tokens",
+        "version": "4.0.0",
+        "path": "node_modules/js-tokens/index.js"
+      },
+      {
+        "name": "loose-envify",
+        "version": "1.4.0",
+        "path": "node_modules/loose-envify/index.js"
+      },
+      {
+        "name": "marked",
+        "version": "0.7.0",
+        "path": "node_modules/marked/lib/marked.js"
+      },
+      {
+        "name": "object-assign",
+        "version": "4.1.1",
+        "path": "node_modules/object-assign/index.js"
+      },
+      {
+        "name": "prop-types",
+        "version": "15.7.2",
+        "path": "node_modules/prop-types/index.js"
+      },
+      {
+        "name": "react",
+        "version": "16.12.0",
+        "path": "node_modules/react/index.js"
+      },
+      {
+        "name": "react-dom",
+        "version": "16.12.0",
+        "path": "node_modules/react-dom/index.js"
+      },
+      {
+        "name": "react-is",
+        "version": "16.12.0",
+        "path": "node_modules/react-is/index.js"
+      },
+      {
+        "name": "sb-debounce",
+        "version": "1.0.2",
+        "path": "node_modules/sb-debounce/index.js"
+      },
+      {
+        "name": "sb-event-kit",
+        "version": "2.0.0",
+        "path": "node_modules/sb-event-kit/lib/main.js"
+      },
+      {
+        "name": "sb-fs",
+        "version": "4.0.0",
+        "path": "node_modules/sb-fs/lib/index.js"
+      },
+      {
+        "name": "sb-react-table",
+        "version": "1.0.2",
+        "path": "node_modules/sb-react-table/lib/index.js"
+      },
+      {
+        "name": "scheduler",
+        "version": "0.18.0",
+        "path": "node_modules/scheduler/index.js"
+      },
+      {
+        "name": "semver",
+        "version": "6.3.0",
+        "path": "node_modules/semver/semver.js"
+      },
+      {
+        "name": "strip-bom-buf",
+        "version": "1.0.0",
+        "path": "node_modules/strip-bom-buf/index.js"
+      }
+    ],
+    "extensions": {
+      ".json": [
+        ".eslintrc.json",
+        "node_modules/atom-package-deps/.eslintrc.json",
+        "node_modules/atom-package-deps/package.json",
+        "node_modules/disposable-event/.eslintrc.json",
+        "node_modules/disposable-event/package.json",
+        "node_modules/is-utf8/package.json",
+        "node_modules/js-tokens/package.json",
+        "node_modules/loose-envify/package.json",
+        "node_modules/marked/package.json",
+        "node_modules/object-assign/package.json",
+        "node_modules/prop-types/package.json",
+        "node_modules/react/build-info.json",
+        "node_modules/react/package.json",
+        "node_modules/react-dom/build-info.json",
+        "node_modules/react-dom/package.json",
+        "node_modules/react-is/build-info.json",
+        "node_modules/react-is/package.json",
+        "node_modules/sb-debounce/package.json",
+        "node_modules/sb-event-kit/package.json",
+        "node_modules/sb-fs/package.json",
+        "node_modules/sb-react-table/.eslintrc.json",
+        "node_modules/sb-react-table/package.json",
+        "node_modules/scheduler/build-info.json",
+        "node_modules/scheduler/package.json",
+        "node_modules/semver/package.json",
+        "node_modules/strip-bom-buf/package.json",
+        "package-lock.json",
+        "package.json"
+      ],
+      ".js": [
+        "lib/busy-signal.js",
+        "lib/commands.js",
+        "lib/editor/helpers.js",
+        "lib/editor/index.js",
+        "lib/editors.js",
+        "lib/helpers.js",
+        "lib/index.js",
+        "lib/intentions.js",
+        "lib/main.js",
+        "lib/panel/component.js",
+        "lib/panel/delegate.js",
+        "lib/panel/dock.js",
+        "lib/panel/index.js",
+        "lib/status-bar/element.js",
+        "lib/status-bar/helpers.js",
+        "lib/status-bar/index.js",
+        "lib/tooltip/delegate.js",
+        "lib/tooltip/fix-button.js",
+        "lib/tooltip/index.js",
+        "lib/tooltip/message.js",
+        "lib/tree-view/helpers.js",
+        "lib/tree-view/index.js",
+        "lib/types.js",
+        "node_modules/atom-package-deps/lib/helpers.js",
+        "node_modules/atom-package-deps/lib/index.js",
+        "node_modules/atom-package-deps/lib/types.js",
+        "node_modules/atom-package-deps/lib/view.js",
+        "node_modules/disposable-event/decls/jasmine.js",
+        "node_modules/disposable-event/lib/index.js",
+        "node_modules/is-utf8/is-utf8.js",
+        "node_modules/js-tokens/index.js",
+        "node_modules/loose-envify/cli.js",
+        "node_modules/loose-envify/custom.js",
+        "node_modules/loose-envify/index.js",
+        "node_modules/loose-envify/loose-envify.js",
+        "node_modules/loose-envify/replace.js",
+        "node_modules/marked/lib/marked.js",
+        "node_modules/marked/marked.min.js",
+        "node_modules/object-assign/index.js",
+        "node_modules/prop-types/checkPropTypes.js",
+        "node_modules/prop-types/factory.js",
+        "node_modules/prop-types/factoryWithThrowingShims.js",
+        "node_modules/prop-types/factoryWithTypeCheckers.js",
+        "node_modules/prop-types/index.js",
+        "node_modules/prop-types/lib/ReactPropTypesSecret.js",
+        "node_modules/prop-types/prop-types.js",
+        "node_modules/prop-types/prop-types.min.js",
+        "node_modules/react/cjs/react.development.js",
+        "node_modules/react/cjs/react.production.min.js",
+        "node_modules/react/index.js",
+        "node_modules/react/umd/react.development.js",
+        "node_modules/react/umd/react.production.min.js",
+        "node_modules/react/umd/react.profiling.min.js",
+        "node_modules/react-dom/cjs/react-dom-server.browser.development.js",
+        "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-server.node.development.js",
+        "node_modules/react-dom/cjs/react-dom-server.node.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-test-utils.development.js",
+        "node_modules/react-dom/cjs/react-dom-test-utils.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-fizz.browser.development.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-fizz.browser.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-fizz.node.development.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-fizz.node.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-flight-client.development.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-flight-client.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-flight-server.browser.development.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-flight-server.browser.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-flight-server.node.development.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-flight-server.node.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-native-dependencies.development.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-native-dependencies.production.min.js",
+        "node_modules/react-dom/cjs/react-dom.development.js",
+        "node_modules/react-dom/cjs/react-dom.production.min.js",
+        "node_modules/react-dom/cjs/react-dom.profiling.min.js",
+        "node_modules/react-dom/index.js",
+        "node_modules/react-dom/profiling.js",
+        "node_modules/react-dom/server.browser.js",
+        "node_modules/react-dom/server.js",
+        "node_modules/react-dom/server.node.js",
+        "node_modules/react-dom/test-utils.js",
+        "node_modules/react-dom/umd/react-dom-server.browser.development.js",
+        "node_modules/react-dom/umd/react-dom-server.browser.production.min.js",
+        "node_modules/react-dom/umd/react-dom-test-utils.development.js",
+        "node_modules/react-dom/umd/react-dom-test-utils.production.min.js",
+        "node_modules/react-dom/umd/react-dom-unstable-fizz.browser.development.js",
+        "node_modules/react-dom/umd/react-dom-unstable-fizz.browser.production.min.js",
+        "node_modules/react-dom/umd/react-dom-unstable-flight-client.development.js",
+        "node_modules/react-dom/umd/react-dom-unstable-flight-client.production.min.js",
+        "node_modules/react-dom/umd/react-dom-unstable-flight-server.browser.development.js",
+        "node_modules/react-dom/umd/react-dom-unstable-flight-server.browser.production.min.js",
+        "node_modules/react-dom/umd/react-dom-unstable-native-dependencies.development.js",
+        "node_modules/react-dom/umd/react-dom-unstable-native-dependencies.production.min.js",
+        "node_modules/react-dom/umd/react-dom.development.js",
+        "node_modules/react-dom/umd/react-dom.production.min.js",
+        "node_modules/react-dom/umd/react-dom.profiling.min.js",
+        "node_modules/react-dom/unstable-fizz.browser.js",
+        "node_modules/react-dom/unstable-fizz.js",
+        "node_modules/react-dom/unstable-fizz.node.js",
+        "node_modules/react-dom/unstable-flight-client.js",
+        "node_modules/react-dom/unstable-flight-server.browser.js",
+        "node_modules/react-dom/unstable-flight-server.js",
+        "node_modules/react-dom/unstable-flight-server.node.js",
+        "node_modules/react-dom/unstable-native-dependencies.js",
+        "node_modules/react-is/cjs/react-is.development.js",
+        "node_modules/react-is/cjs/react-is.production.min.js",
+        "node_modules/react-is/index.js",
+        "node_modules/react-is/umd/react-is.development.js",
+        "node_modules/react-is/umd/react-is.production.min.js",
+        "node_modules/sb-debounce/index.js",
+        "node_modules/sb-debounce/test.js",
+        "node_modules/sb-event-kit/lib/composite-disposable.js",
+        "node_modules/sb-event-kit/lib/disposable.js",
+        "node_modules/sb-event-kit/lib/emitter.js",
+        "node_modules/sb-event-kit/lib/main.js",
+        "node_modules/sb-fs/lib/index.js",
+        "node_modules/sb-react-table/lib/helpers.js",
+        "node_modules/sb-react-table/lib/index.js",
+        "node_modules/sb-react-table/lib/types.js",
+        "node_modules/scheduler/cjs/scheduler-tracing.development.js",
+        "node_modules/scheduler/cjs/scheduler-tracing.production.min.js",
+        "node_modules/scheduler/cjs/scheduler-tracing.profiling.min.js",
+        "node_modules/scheduler/cjs/scheduler-unstable_mock.development.js",
+        "node_modules/scheduler/cjs/scheduler-unstable_mock.production.min.js",
+        "node_modules/scheduler/cjs/scheduler.development.js",
+        "node_modules/scheduler/cjs/scheduler.production.min.js",
+        "node_modules/scheduler/index.js",
+        "node_modules/scheduler/tracing-profiling.js",
+        "node_modules/scheduler/tracing.js",
+        "node_modules/scheduler/umd/scheduler-tracing.development.js",
+        "node_modules/scheduler/umd/scheduler-tracing.production.min.js",
+        "node_modules/scheduler/umd/scheduler-tracing.profiling.min.js",
+        "node_modules/scheduler/umd/scheduler-unstable_mock.development.js",
+        "node_modules/scheduler/umd/scheduler-unstable_mock.production.min.js",
+        "node_modules/scheduler/umd/scheduler.development.js",
+        "node_modules/scheduler/umd/scheduler.production.min.js",
+        "node_modules/scheduler/umd/scheduler.profiling.min.js",
+        "node_modules/scheduler/unstable_mock.js",
+        "node_modules/semver/bin/semver.js",
+        "node_modules/semver/semver.js",
+        "node_modules/strip-bom-buf/index.js"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "",
+          "decls",
+          "lib",
+          "lib/editor",
+          "lib/panel",
+          "lib/status-bar",
+          "lib/tooltip",
+          "lib/tree-view",
+          "spec"
+        ],
+        "dependencies": {
+          "atom-package-deps": "^5.1.0",
+          "disposable-event": "^1.0.3",
+          "marked": "^0.7.0",
+          "react": "^16.9.0",
+          "react-dom": "^16.9.0",
+          "sb-debounce": "^1.0.1",
+          "sb-react-table": "^1.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-package-deps",
+          "node_modules/atom-package-deps/lib"
+        ],
+        "dependencies": {
+          "sb-fs": "^4.0.0",
+          "semver": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/disposable-event",
+          "node_modules/disposable-event/decls",
+          "node_modules/disposable-event/lib"
+        ],
+        "dependencies": {
+          "sb-event-kit": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/loose-envify"
+        ],
+        "dependencies": {
+          "js-tokens": "^3.0.0 || ^4.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/prop-types",
+          "node_modules/prop-types/lib"
+        ],
+        "dependencies": {
+          "loose-envify": "^1.4.0",
+          "object-assign": "^4.1.1",
+          "react-is": "^16.8.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/react",
+          "node_modules/react/cjs",
+          "node_modules/react/umd"
+        ],
+        "dependencies": {
+          "loose-envify": "^1.1.0",
+          "object-assign": "^4.1.1",
+          "prop-types": "^15.6.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/react-dom",
+          "node_modules/react-dom/cjs",
+          "node_modules/react-dom/umd"
+        ],
+        "dependencies": {
+          "loose-envify": "^1.1.0",
+          "object-assign": "^4.1.1",
+          "prop-types": "^15.6.2",
+          "scheduler": "^0.18.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/sb-fs/lib",
+          "node_modules/sb-fs"
+        ],
+        "dependencies": {
+          "strip-bom-buf": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/scheduler",
+          "node_modules/scheduler/cjs",
+          "node_modules/scheduler/umd"
+        ],
+        "dependencies": {
+          "loose-envify": "^1.1.0",
+          "object-assign": "^4.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/strip-bom-buf"
+        ],
+        "dependencies": {
+          "is-utf8": "^0.2.1"
+        }
+      }
+    ]
+  }
+}

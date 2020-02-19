@@ -1,0 +1,12 @@
+.syntax--json {
+  color: @color6dark;
+
+  &.syntax--string .syntax--punctuation,
+  .syntax--punctuation.syntax--definition.syntax--array {
+    color: @color6dark;
+  }
+
+  &.syntax--key .syntax--string.syntax--quoted.syntax--double {
+    color: @very-light-gray !important;
+  }
+}

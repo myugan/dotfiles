@@ -1,0 +1,229 @@
+# http://spec.commonmark.org/0.22/#example-298
+@298a
+"`foo`" {
+  text.md {
+    code.raw.markup.md {
+      '`': punctuation.md
+      'foo'
+      '`': punctuation.md
+    }
+  }
+}
+
+@298b
+"before`foo`after" {
+  text.md {
+    "before"
+    code.raw.markup.md {
+      '`': punctuation.md
+      'foo'
+      '`': punctuation.md
+    }
+    "after"
+  }
+}
+
+@298c
+"before `foo` after" {
+  text.md {
+    "before "
+    code.raw.markup.md {
+      '`': punctuation.md
+      'foo'
+      '`': punctuation.md
+    }
+    " after"
+  }
+}
+
+@298d
+"before ```code``` after" {
+  text.md {
+    "before "
+    code.raw.markup.md {
+      '```': punctuation.md
+      'code'
+      '```': punctuation.md
+    }
+    " after"
+  }
+}
+
+@298e
+"before ````code```` after" {
+  text.md {
+    "before "
+    code.raw.markup.md {
+      '````': punctuation.md
+      'code'
+      '````': punctuation.md
+    }
+    " after"
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-299
+@299
+"`` foo ` bar  ``" {
+  text.md {
+    code.raw.markup.md {
+      '``': punctuation.md
+      ' foo ` bar  '
+      '``': punctuation.md
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-300
+@300
+"` `` `" {
+  text.md {
+    code.raw.markup.md {
+      '`': punctuation.md
+      ' `` '
+      '`': punctuation.md
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-301
+@301
+"``"+
+"foo"+
+"``" {
+  text.md {
+    '``'
+    'foo'
+    '``'
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-302
+@302
+"`foo   bar"+
+"  baz`" {
+  text.md {
+    '`foo   bar'
+    '  baz`'
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-303
+@303
+"`foo `` bar`" {
+  text.md {
+    code.raw.markup.md {
+      '`': punctuation.md
+      'foo `` bar'
+      '`': punctuation.md
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-304
+@304
+"`foo\`bar`" {
+  text.md {
+    code.raw.markup.md {
+      '`': punctuation.md
+      'foo\'
+      '`': punctuation.md
+    }
+    'bar`'
+  }
+}
+
+# TODO
+# @305
+# http://spec.commonmark.org/0.22/#example-305
+# "*foo`*`" {
+#   text.md {
+#     '*foo'
+#     code.raw.markup.md {
+#       '`': punctuation.md
+#       '*'
+#       '`': punctuation.md
+#     }
+#   }
+# }
+
+# TODO
+# http://spec.commonmark.org/0.22/#example-306
+# @306
+# "[not a `link](/foo`)" {
+#   text.md {
+#     '[not a'
+#     code.raw.markup.md {
+#       '`': punctuation.md
+#       'link](/foo'
+#       '`': punctuation.md
+#     }
+#     ')'
+#   }
+# }
+
+# http://spec.commonmark.org/0.22/#example-307
+@307
+"`<a href="`">`" {
+  text.md {
+    code.raw.markup.md {
+      '`': punctuation.md
+      '<a href="'
+      '`': punctuation.md
+    }
+    '">`'
+  }
+}
+
+# TODO
+# test fails, because the html package is not included when testing, but it does work in an actual document
+# @308
+# '<a href="`">`' {
+#   text.md {
+#     meta.tag.inline.any.html {
+#       "<": punctuation.definition.tag.begin.html
+#       "a": entity.name.tag.inline.any.html
+#       " "
+#       "href": entity.other.attribute-name.html
+#       "="
+#       string.quoted.double.html {
+#         '"': punctuation.definition.string.begin.html
+#         "`"
+#         '"': punctuation.definition.string.end.html
+#       }
+#       ">": punctuation.definition.tag.begin.html
+#     }
+#     "`"
+#   }
+# }
+
+# http://spec.commonmark.org/0.22/#example-309
+@309
+"`<http://foo.bar.`baz>`" {
+  text.md {
+    code.raw.markup.md {
+      '`': punctuation.md
+      '<http://foo.bar.'
+      '`': punctuation.md
+    }
+    'baz>`'
+  }
+}
+
+# TODO
+# http://spec.commonmark.org/0.22/#example-310
+# @310
+# "<http://foo.bar.`baz>`" {
+#
+# }
+
+# http://spec.commonmark.org/0.22/#example-311
+@311a
+'```foo``': text.md
+
+@311b
+'```foo````': text.md
+
+# http://spec.commonmark.org/0.22/#example-312
+@312
+'`foo': text.md

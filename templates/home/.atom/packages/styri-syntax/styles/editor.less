@@ -1,0 +1,94 @@
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      color: @syntax-gutter-text-color;
+      -webkit-font-smoothing: antialiased;
+
+      &.bracket-matcher {
+        background-color: @syntax-gutter-background-color;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        background-color: @syntax-gutter-cursor-line-color;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.git-line-added, &.git-line-modified {
+         border-left: 2px solid @syntax-gutter-border-color;
+      }
+
+      &.git-line-removed:before {
+         bottom: -1px;
+         border-left-color: @syntax-gutter-border-color;
+      }
+
+      .icon-right {
+        color: @syntax-cursor-color;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @syntax-gutter-text-color-selected;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    border-left: 2px solid @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  .bracket-matcher .region {
+    background: @syntax-bracket-matcher-color;
+    border: 1px solid transparent;
+    border-radius: 3px;
+  }
+
+  .line.cursor-line {
+    background-color: @syntax-cursor-line-color;
+  }
+
+  .find-result .region {
+    background-color: @syntax-result-marker-color;
+    border: 1px solid transparent;
+    border-radius: 3px;
+  }
+
+  .current-result .region {
+    background-color: @syntax-result-marker-color-selected;
+    border: 1px solid transparent;
+    border-radius: 3px;
+  }
+}

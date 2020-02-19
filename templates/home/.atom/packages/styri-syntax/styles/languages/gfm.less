@@ -1,0 +1,56 @@
+.syntax--source.syntax--gfm {
+  color: @syntax-color-gfm-text;
+
+  // comments, not quotes or critics, document header
+  .syntax--comment:not(.syntax--quote):not(.syntax--critic), .syntax--front-matter {
+    color: @syntax-color-gfm-comment;
+    font-style: italic;
+  }
+
+  // quotes
+  .syntax--quote {
+    font-style: italic;
+  }
+
+  // ```
+  .syntax--code>.syntax--support {
+    color: @syntax-color-gfm-code;
+  }
+
+  // - * 1. > #
+  .syntax--list,
+  .syntax--quote .syntax--support,
+  .syntax--heading .syntax--marker {
+    color: @syntax-color-gfm-marker;
+  }
+
+  // inline code, styles
+  .syntax--raw,
+  .syntax--bold,
+  .syntax--italic,
+  .syntax--strike {
+    color: @syntax-color-gfm-style;
+  }
+
+  // {~~ a~>b ~~}
+  .syntax--critic .syntax--marker,
+  .syntax--critic .syntax--operator,
+  .syntax--critic.syntax--comment {
+    color: @syntax-color-gfm-critic;
+  }
+
+  // [link](source)
+  .syntax--link {
+      color: @syntax-color-gfm-link;
+
+    // link
+    .syntax--entity {
+      color: @syntax-color-gfm-text;
+    }
+  }
+
+  // table borders
+  .syntax--border {
+    color: @syntax-color-gfm-comment;
+  }
+}

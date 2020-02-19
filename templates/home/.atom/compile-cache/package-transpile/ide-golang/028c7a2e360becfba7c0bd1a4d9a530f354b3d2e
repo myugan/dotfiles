@@ -1,0 +1,119 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const atom_1 = require("atom");
+const core_1 = require("./core");
+const gocode_1 = require("./gocode");
+const gogetdoc_1 = require("./gogetdoc");
+const goimports_1 = require("./goimports");
+const golint_1 = require("./golint");
+const gooutline_1 = require("./gooutline");
+const guru_1 = require("./guru");
+class GoLanguageClient {
+    constructor() {
+        this.config = require("./config-schema.json");
+        this.core = new core_1.Core();
+        this.gammarScopes = ["source.go"];
+        this.name = "Go";
+        this.priority = 1;
+        this.subscriptions = new atom_1.CompositeDisposable();
+        this.goGetDoc = new gogetdoc_1.GoGetDoc(this.core);
+        this.goCode = new gocode_1.GoCode(this.core);
+        this.goImports = new goimports_1.GoImports(this.core);
+        this.goOutline = new gooutline_1.GoOutline(this.core);
+        this.guru = new guru_1.Guru(this.core);
+        this.golint = new golint_1.GoLint(this.core);
+    }
+    activate() {
+        if (this.subscriptions) {
+            this.subscriptions.dispose();
+        }
+        this.subscriptions = new atom_1.CompositeDisposable();
+        this.subscriptions.add(this.core);
+        this.subscriptions.add(atom.commands.add("atom-text-editor[data-grammar~=\"go\"]", "golang:golint", () => {
+            this.golint.lintCheck(atom.workspace.getActiveTextEditor());
+        }));
+        this.subscriptions.add(atom.workspace.observeTextEditors((editor) => {
+            if (!editor || !editor.getBuffer() || !this.isEditorSupported(editor)) {
+                return;
+            }
+            const bufferSubscriptions = new atom_1.CompositeDisposable();
+            bufferSubscriptions.add(editor.getBuffer().onDidSave(() => {
+                this.golint.lintCheck(editor);
+            }));
+            bufferSubscriptions.add(editor.getBuffer().onDidDestroy(() => {
+                bufferSubscriptions.dispose();
+            }));
+            this.subscriptions.add(bufferSubscriptions);
+        }));
+    }
+    deactivate() {
+        this.subscriptions.dispose();
+    }
+    provideDefinitions() {
+        return {
+            getDefinition: this.guru.getDefinition.bind(this.guru),
+            grammarScopes: this.gammarScopes,
+            name: this.name,
+            priority: this.priority,
+        };
+    }
+    consumeLinterV2(register) {
+        const linter = register({
+            name: this.name,
+        });
+        this.core.linter = linter;
+        this.subscriptions.add(linter);
+    }
+    consumeDatatip(service) {
+        const datatip = service.addProvider({
+            datatip: this.goGetDoc.getDatatip.bind(this.goGetDoc),
+            grammarScopes: this.gammarScopes,
+            priority: this.priority,
+            providerName: this.core.myPackage,
+            validForScope: (scopeName) => this.gammarScopes.includes(scopeName),
+        });
+        this.subscriptions.add(datatip);
+    }
+    consumeBusySignal(busyService) {
+        this.core.busyService = busyService;
+    }
+    consumeConsole(createConsole) {
+        const console = createConsole({ id: "golang", name: this.name });
+        this.core.console = console;
+        this.subscriptions.add(console);
+    }
+    provideAutocomplete() {
+        return {
+            excludeLowerPriority: false,
+            getSuggestions: this.goCode.getSuggestions.bind(this.goCode),
+            inclusionPriority: this.priority,
+            selector: this.gammarScopes.map((g) => "." + g).join(", "),
+            suggestionPriority: this.priority + 1,
+        };
+    }
+    provideFileCodeFormat() {
+        return {
+            formatEntireFile: this.goImports.formatFile.bind(this.goImports),
+            grammarScopes: this.gammarScopes,
+            priority: this.priority,
+        };
+    }
+    provideOutlines() {
+        return {
+            getOutline: this.goOutline.getOutline.bind(this.goOutline),
+            grammarScopes: this.gammarScopes,
+            name: this.name,
+            priority: this.priority,
+        };
+    }
+    provideReferences() {
+        return {
+            findReferences: this.guru.getReferences.bind(this.guru),
+            isEditorSupported: this.isEditorSupported.bind(this),
+        };
+    }
+    isEditorSupported(editor) {
+        return this.gammarScopes.includes(editor.getGrammar().scopeName);
+    }
+}
+module.exports = new GoLanguageClient();

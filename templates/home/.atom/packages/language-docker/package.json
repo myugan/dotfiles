@@ -1,0 +1,52 @@
+{
+  "_from": "https://www.atom.io/api/packages/language-docker/versions/1.1.8/tarball",
+  "_id": "language-docker@1.1.8",
+  "_inBundle": false,
+  "_integrity": "sha512-ryudWOnFm65qU81/1BJUAVfl9bO0L4vJbIQgyF4DvKzYBcVNKrwdcQgZzRxNEkUJfIQsZcyYGX3gp91WPdPHJA==",
+  "_location": "/language-docker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-docker/versions/1.1.8/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-docker/versions/1.1.8/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-docker/versions/1.1.8/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-docker/versions/1.1.8/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/language-docker/versions/1.1.8/tarball",
+  "_shasum": "13730989184f2d85178f464d011af62eb519c582",
+  "_spec": "https://www.atom.io/api/packages/language-docker/versions/1.1.8/tarball",
+  "_where": "/tmp/apm-install-dir-202008-6027-vvsf6x.kn8g",
+  "bugs": {
+    "url": "https://github.com/jagregory/language-docker/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Dockerfile syntax highlighting",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/jagregory/language-docker#readme",
+  "license": "MIT",
+  "name": "language-docker",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagregory/language-docker.git"
+  },
+  "version": "1.1.8",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "_from": "https://www.atom.io/api/packages/monokai/versions/0.24.0/tarball",
+  "_id": "monokai@0.24.0",
+  "_inBundle": false,
+  "_integrity": "sha512-+L+pX4yFYI7ldo4YtXcBeGbiWJxngsY8a2S3S3TKlAzCpIRaRTGELBs/Oh1mFqNxO5UNr5welWK50vMaZU7d6g==",
+  "_location": "/monokai",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/monokai/versions/0.24.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/monokai/versions/0.24.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/monokai/versions/0.24.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/monokai/versions/0.24.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/monokai/versions/0.24.0/tarball",
+  "_shasum": "7efb452093a60ef4f25d0232d6b4c95d98a333e1",
+  "_spec": "https://www.atom.io/api/packages/monokai/versions/0.24.0/tarball",
+  "_where": "/tmp/apm-install-dir-202008-5460-1xvq76s.hgk2",
+  "bugs": {
+    "url": "https://github.com/kevinsawicki/monokai/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A monokai theme",
+  "engines": {
+    "atom": ">=1.13.0"
+  },
+  "homepage": "https://github.com/kevinsawicki/monokai#readme",
+  "license": "MIT",
+  "name": "monokai",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinsawicki/monokai.git"
+  },
+  "theme": "syntax",
+  "version": "0.24.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

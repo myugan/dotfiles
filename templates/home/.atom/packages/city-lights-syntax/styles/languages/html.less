@@ -1,0 +1,32 @@
+.syntax--html {
+
+  &.syntax--string.syntax--quoted {
+    color:@color2medium;
+
+    .syntax--begin,
+    .syntax--end {
+      color:@color2medium;
+    }
+  }
+
+  .syntax--punctuation {
+    color: @light-gray;
+  }
+
+  .syntax--comment .syntax--punctuation {
+    color: @gray;
+  }
+
+  .syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+    color:@color1medium;
+  }
+}
+
+.syntax--entity.syntax--name.syntax--tag.syntax--mustache {
+  color:#b62d65;
+}
+
+.syntax--punctuation.syntax--definition.syntax--string.syntax--begin.syntax--html,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--end.syntax--html {
+  color:@color2medium !important;
+}

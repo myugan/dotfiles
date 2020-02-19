@@ -1,0 +1,27 @@
+"*":
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+  core:
+    disabledPackages: [
+      "language-gfm"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+  editor:
+    fontFamily: "Dank Mono"
+    fontSize: 12
+    scrollPastEnd: true
+    showCursorOnSelection: false
+    showIndentGuide: true
+    tabLength: 3
+  "exception-reporting":
+    userId: "f5aff40e-38d0-42d6-8108-236a1c35fd4b"
+  "linter-terraform-syntax":
+    newVersion: true
+  "linter-ui-default": {}
+  welcome:
+    showOnStartup: false

@@ -1,0 +1,1 @@
+{"key":"line-breaks","patterns":[{"match":"(  )$","name":"line-break.constant.md"},{"match":"(\\\\)$","name":"line-break.constant.md"}]}

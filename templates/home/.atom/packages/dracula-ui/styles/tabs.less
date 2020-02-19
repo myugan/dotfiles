@@ -1,0 +1,177 @@
+@modified-icon-width: 8px;
+@tab-top-padding: 0;
+@tab-bottom-border-height: 1px;
+@tab-border: 1px solid @tab-border-color;
+@tab-max-width: 160px;
+@tab-min-width: 28px;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  box-shadow: inset 0 -1px 0 @tab-border-color;
+  background: @tab-bar-background-color;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    max-width: @tab-max-width;
+    min-width: @tab-min-width;
+    height: @tab-height;
+    line-height: @tab-height;
+    padding: 0;
+    margin: 0;
+    color: @tab-text-color;
+    background: @tab-background-color;
+    border-right: @tab-border;
+    opacity: @tab-inactive-transparency;
+    transition: opacity .3s;
+
+    &:last-of-type {
+      border-right-color: transparent;
+    }
+
+    &:hover .close-icon {
+      transform: scale(1);
+    }
+
+    .title{
+      position: relative;
+      z-index: 1;
+      padding: 0 8px
+    }
+
+    .close-icon {
+      right: 0;
+      z-index: 3;
+      margin-right: 8px;
+      text-align: right;
+      line-height: @tab-height - 2px;
+      color: @tab-icon-color;
+      background: inherit;
+      transform: scale(0);
+      transition: transform .1s;
+
+      &:hover {
+        color: inherit;
+      }
+
+      &:active {
+        opacity: .3;
+      }
+    }
+  }
+
+  .tab.active {
+    z-index: 1;
+    flex: 2 0 auto;
+    padding-right: @modified-icon-width + 2px;
+    background-color: @tab-background-color-active;
+    opacity: 1;
+
+    &:last-of-type {
+      border-right-color: @tab-border-color;
+    }
+
+    & .close-icon {
+      transform: scale(1);
+    }
+
+    // Seamless tab border cover
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      border-bottom: @tab-bottom-border-height solid @tab-background-color-active;
+    }
+  }
+
+  .tab.modified {
+    &:not(:hover) .close-icon {
+      right: 0;
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+      border-color: @tab-accent-color;
+      transform: scale(1);
+    }
+
+    &:hover .close-icon:hover {
+      color: @text-color-highlight;
+    }
+  }
+
+  .tab.is-dragging {
+    background: darken(@tab-background-color, 6%);
+    border-color: transparent;
+    opacity: .5;
+    & .close-icon,
+    &:before,
+    &:after {
+      visibility: hidden;
+    }
+  }
+
+  .tab.active[data-type="TextEditor"] {
+    color: @tab-text-color-editor;
+    background-color: @tab-background-color-editor;
+    &:after {
+      border-bottom-color: @tab-background-color-editor;
+    }
+  }
+
+  .placeholder {
+    margin: 0;
+    height: @tab-height + @tab-top-padding;
+    background: @tab-accent-color;
+    pointer-events: none;
+    &:after {
+      top: @tab-height/2 + @tab-top-padding - 5px ;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      border-radius: 0;
+      border: 5px solid;
+      border-color: transparent transparent transparent @tab-accent-color;
+      background: transparent;
+    }
+
+    &:last-child {
+      margin-left: -2px;
+
+      &:after {
+        margin-left: -10px;
+        border-color: transparent @tab-accent-color transparent transparent;
+      }
+    }
+  }
+}
+
+
+// Active pane marker --------------
+
+.tab-bar:empty:before,
+.tab-bar .tab:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: @tab-height + @tab-bottom-border-height;
+  background: @tab-accent-color;
+  transform: scaleY(0);
+  transition: transform .08s;
+}
+
+atom-pane.active .tab-bar:empty:before,
+atom-pane.active .tab.active:before {
+  transform: scaleY(1);
+}

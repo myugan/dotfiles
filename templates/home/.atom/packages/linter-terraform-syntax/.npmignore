@@ -1,0 +1,6 @@
+node_modules
+.gitignore
+spec
+linter_terraform_syntax.png
+.git
+.travis.yml

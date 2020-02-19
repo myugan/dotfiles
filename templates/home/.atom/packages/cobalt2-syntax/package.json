@@ -1,0 +1,57 @@
+{
+  "_from": "https://www.atom.io/api/packages/cobalt2-syntax/versions/0.5.3/tarball",
+  "_id": "cobalt2-syntax@0.5.3",
+  "_inBundle": false,
+  "_integrity": "sha512-qx46VE/LGW+n554S30upp0jcrdCaMtw01IDQZ666VEblkGaPGGOSG3isv/4CN5+PHZVmz6LKPWLlWVug2XKSzg==",
+  "_location": "/cobalt2-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/cobalt2-syntax/versions/0.5.3/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/cobalt2-syntax/versions/0.5.3/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/cobalt2-syntax/versions/0.5.3/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/cobalt2-syntax/versions/0.5.3/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/cobalt2-syntax/versions/0.5.3/tarball",
+  "_shasum": "2c2852be6604986e47b6135de2ec8a0ab0223575",
+  "_spec": "https://www.atom.io/api/packages/cobalt2-syntax/versions/0.5.3/tarball",
+  "_where": "/tmp/apm-install-dir-2020118-7606-1t2r7tr.k49",
+  "bugs": {
+    "url": "https://github.com/wesbos/cobalt2-atom/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "An Atom theme based on our old blue friend cobalt.",
+  "engines": {
+    "atom": ">=1.13 <2.0.0"
+  },
+  "homepage": "https://github.com/wesbos/cobalt2-atom#readme",
+  "keywords": [
+    "cobalt",
+    "cobalt2",
+    "syntax",
+    "theme"
+  ],
+  "license": "MIT",
+  "name": "cobalt2-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesbos/cobalt2-atom.git"
+  },
+  "theme": "syntax",
+  "version": "0.5.3",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

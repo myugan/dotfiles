@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 18px;
+  font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+atom-text-editor {
+  display: block;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header ------------- */
+
+header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 2em;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin: 2em;
+  width: 15em;
+  padding: 6em 0;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 0.9;
+  text-align: center;
+  border: 2px solid hsla(0,0%,100%,.1);
+}
+.logo-row {
+  display: block;
+  text-transform: uppercase
+}
+.logo-row:nth-child(1) { font-size: 2.5em; }
+.logo-row:nth-child(2) { font-size: 2em; }
+
+.logo-name {
+  display: block;
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 2em;
+}
+.logo-name span {
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+
+
+/* Palette ------------- */
+
+.palette {
+  margin: 2em;
+}
+
+.palette-color {
+  font-family: 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+.palette-color:before {
+  content: "";
+  display: inline-block;
+  width: .8em;
+  height: 1.6em;
+  margin-right: 1em;
+  vertical-align: middle;
+  background-color: currentColor;
+}
+.palette-color.bg:before {
+  box-sizing: border-box;
+  border: 2px solid hsla(0,0%,100%,.1);
+  background-color: inherit;
+}
+
+.palette-color.duo-1 {
+  margin-top: 1em;
+}
+
+.palette-color.bg {
+  display: none;
+}
+
+.palette-color p,
+.palette-color span {
+  display: inline-block;
+  margin: 0 .5em;
+  vertical-align: middle;
+}
+
+
+/* Code ------------- */
+
+main {
+  padding: 0 2em;
+  margin: 0 auto;
+  max-width: 36em;
+}
+
+.code {
+  font-family: 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: .8em;
+  line-height: 1.5;
+}
+.code + .code {
+  margin-top: 2rem;
+}
+
+
+
+/* Nav ------------- */
+
+
+nav {
+  font-size: .8em;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  margin: 2rem;
+  border: 2px solid hsla(0,0%,100%,.05);
+  transform: rotate(45deg);
+  transition: border-color 1s;
+}
+
+header nav a:hover { border-color: hsla(0,0%,100%,.1); transition-duration: .1s; }
+header nav a:active { border-color: hsla(0,0%,100%,.2); transition-duration: .05s; }
+
+.prev {
+  left: 8vw;
+  border-right: none;
+  border-top: none;
+}
+.next {
+  right: 8vw;
+  border-left: none;
+  border-bottom: none;
+}
+
+
+
+
+/* Footer ------------- */
+
+footer {
+  font-size: .8em;
+  padding: 2rem;
+  max-width: 36em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+footer .code {
+  display: block;
+  padding: .4em .8em;
+  margin-top: 1em;
+  border-radius: .2em;
+  font-size: inherit;
+  border: 1px solid hsla(0,0%,100%,.1);
+}
+
+.github {
+  display: inline-block;
+  margin-top: 2rem;
+  opacity: .1;
+  transition: opacity 1.2s;
+}
+.github:hover {
+  opacity: 1;
+  transition-duration: .12s;
+}
+
+.github svg {
+  fill: currentColor;
+}
+
+
+
+/* Larger screens ------------- */
+
+
+@media (min-width: 1000px) {
+  header {
+    padding: 4em;
+  }
+  .logo,
+  .palette {
+    margin: 4em;
+  }
+  .palette-color.bg {
+    display: block;
+    position: fixed;
+    right: 4.2em;
+    bottom: 3em;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    font-size: .75em;
+  }
+  .code {
+    font-size: 1em;
+  }
+  .code + .code {
+    margin-top: 4rem;
+  }
+  nav a {
+    position: absolute;
+    top: 18em;
+  }
+  .prev {
+    left: 4em;
+  }
+  .next {
+    right: 4em;
+  }
+  footer {
+    padding: 4rem;
+  }
+  .github {
+    margin-top: 4rem;
+  }
+}
+
+/* Screenshots ---------------------------------------
+ * Uncomment to clean up
+ * Dimension 1000x660
+**/
+
+/*footer,
+.palette-color.bg {
+  display: none;
+}
+main {
+  display: none;
+  margin-bottom: 6em
+}
+body:not(:hover) nav {
+  display: none;
+}*/

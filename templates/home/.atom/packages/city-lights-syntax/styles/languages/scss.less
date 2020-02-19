@@ -1,0 +1,81 @@
+.syntax--scss, .syntax--css, .syntax--less, .syntax--sass {
+  .syntax--null {
+    color: @very-light-gray !important;
+  }
+
+
+  .syntax--keyword, .syntax--control {
+    color:@color1dark;
+  }
+
+  .syntax--string {
+    color:@color1medium;
+
+    .syntax--punctuation {
+      color:@color1medium;
+    }
+  }
+
+  .syntax--variable {
+    color:@color4light;
+
+    .syntax--punctuation {
+      color:@color4light;
+    }
+  }
+
+  .syntax--punctuation.syntax--section.syntax--function {
+    color:@gray;
+  }
+
+  .syntax--other.syntax--color.syntax--hex.syntax--css {
+    color:@color3light;
+
+    .syntax--punctuation {
+      color:@color3medium;
+    }
+  }
+
+  &.syntax--id,
+  &.syntax--class,
+  &.syntax--custom,
+  &.syntax--tag {
+    color:@color2medium !important;
+
+    .syntax--punctuation.syntax--definition.syntax--entity {
+      color:@color2medium;
+    }
+  }
+
+  .syntax--entity {
+    color:@color2light;
+
+    .syntax--punctuation {
+      color:@color2light;
+    }
+  }
+  .syntax--pseudo-class,
+  .syntax--pseudo-element {
+    color:@color2light !important;
+  }
+
+  .syntax--support.syntax--type.syntax--property-name {
+    color:@very-light-gray !important;
+  }
+
+  .syntax--support {
+    color:@light-gray !important;
+  }
+
+  .syntax--meta.syntax--property-name.syntax--scss {
+    color: @light-gray;
+  }
+
+  .syntax--important {
+    color:@color3dark;
+  }
+
+  .syntax--keyword.syntax--other.syntax--unit {
+    color:@color3medium;
+  }
+}

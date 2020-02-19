@@ -1,0 +1,1 @@
+{"versions":{"0.0.1":{"name":"trim","version":"0.0.1","dependencies":{},"devDependencies":{"mocha":"*","should":"*"},"_hasShrinkwrap":false,"directories":{},"dist":{"shasum":"5858547f6b290757ee95cccc666fb50084c460dd","tarball":"https://registry.npmjs.org/trim/-/trim-0.0.1.tgz"}}},"name":"trim","dist-tags":{"latest":"0.0.1"},"modified":"2017-03-08T06:06:49.045Z"}

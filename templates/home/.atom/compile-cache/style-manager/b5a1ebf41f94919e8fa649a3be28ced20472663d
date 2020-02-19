@@ -1,0 +1,1 @@
+{"source":".icon-file-text.beautifying:before,\n.icon-file-directory.beautifying:before {\n  background-image: url(\"images/octocat-spinner-128.gif\");\n  background-repeat: no-repeat;\n  background-size: contain;\n  content: \"\";\n}\n"}

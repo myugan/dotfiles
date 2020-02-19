@@ -1,0 +1,670 @@
+# http://spec.commonmark.org/0.22/#fenced-code-blocks
+
+@77
+"```"+
+"<"+
+" >"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      source.embedded {
+        "<"
+        " >"
+      }
+      "```": punctuation.md
+    }
+  }
+}
+
+@78
+"~~~"+
+"<"+
+" >"+
+"~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~": punctuation.md
+      source.embedded {
+        "<"
+        " >"
+      }
+      "~~~": punctuation.md
+    }
+  }
+}
+
+@79
+"```"+
+"aaa"+
+"~~~"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      source.embedded {
+        "aaa"
+        "~~~"
+      }
+      "```": punctuation.md
+    }
+  }
+}
+
+@80
+"~~~"+
+"aaa"+
+"```"+
+"~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~": punctuation.md
+      source.embedded {
+        "aaa"
+        "```"
+      }
+      "~~~": punctuation.md
+    }
+  }
+}
+
+@81
+"````"+
+"aaa"+
+"```"+
+"``````" {
+  text.md {
+    fenced.code.md {
+      "````": punctuation.md
+      source.embedded {
+        "aaa"
+        "```"
+        "``````"
+      }
+    }
+  }
+}
+
+@82
+"~~~~"+
+"aaa"+
+"~~~"+
+"~~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      source.embedded {
+        "aaa"
+        "~~~"
+      }
+      "~~~~": punctuation.md
+    }
+  }
+}
+
+@83
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+    }
+  }
+}
+
+@84
+"`````"+
+""+
+"```"+
+"aaa" {
+  text.md {
+    fenced.code.md {
+      "`````": punctuation.md
+      source.embedded {
+        ""
+        "```"
+        "aaa"
+      }
+    }
+  }
+}
+
+# NOTE
+# The fenced-code-block is restricted/closed by the quote it is in
+@85
+"> ```"+
+"> aaa"+
+""+
+"bbb" {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      fenced.code.md {
+        '```': punctuation.md
+      }
+      ">": punctuation.md
+      " "
+      "aaa"
+    }
+    ""
+    "bbb"
+  }
+}
+
+# NOTE
+# Removed @86, because it is not related to syntax highlighting
+# Removed @87, because it is not related to syntax highlighting
+# Removed @88, because it is not related to syntax highlighting
+# Removed @89, because it is not related to syntax highlighting
+# Removed @90, because it is not related to syntax highlighting
+# @burodepeper
+
+@91
+"    ```"+
+"    aaa"+
+"    ```" {
+  text.md {
+    "    ```"
+    "    aaa"
+    "    ```"
+  }
+}
+
+# NOTE
+# Removed @92, because it is not related to syntax highlighting
+# Removed @93, because it is not related to syntax highlighting
+# Removed @94, because it is not related to syntax highlighting
+# @burodepeper
+
+# NOTE
+# is not implemented according to spec, because our implementation requires
+# begin and end-of-line characters for the markers, so a fenced-code-block can
+# not be on a single line. This element basically falls back to being an empty
+# inline code-span.
+# @burodepeper
+@95
+"``` ```"+
+"aaa" {
+  text.md {
+    "``` ```" {
+      code.raw.markup.md {
+        "```": punctuation.md
+        " "
+        "```": punctuation.md
+      }
+    }
+    "aaa"
+  }
+}
+
+@96
+"~~~~~~"+
+"aaa"+
+"~~~ ~~" {
+  text.md {
+    fenced.code.md {
+      "~~~~~~": punctuation.md
+      source.embedded {
+        "aaa"
+        "~~~ ~~"
+      }
+    }
+  }
+}
+
+@97
+"foo"+
+"```"+
+"bar"+
+"```"+
+"baz" {
+  text.md {
+    "foo"
+    fenced.code.md {
+      "```": punctuation.md
+      source.embedded {
+        "bar"
+      }
+      "```": punctuation.md
+    }
+    "baz"
+  }
+}
+
+@98
+"foo"+
+"---"+
+"~~~"+
+"bar"+
+"~~~"+
+"# baz" {
+  text.md {
+    "foo"
+    "---": hr.constant.md
+    fenced.code.md {
+      "~~~": punctuation.md
+      source.embedded {
+        "bar"
+      }
+      "~~~": punctuation.md
+    }
+    heading.markup.md {
+      heading-1.md {
+        "#": punctuation.md
+        " "
+        "baz"
+      }
+    }
+  }
+}
+
+@99
+"```ruby"+
+"def foo(x)"+
+"  return 3"+
+"end"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "ruby": language.constant.md
+      ""
+      source.embedded.ruby {
+        "def foo(x)"
+        "  return 3"
+        "end"
+      }
+      "```": punctuation.md
+    }
+  }
+}
+
+@100
+"~~~~~~~ ruby startline=3 $%@#$"+
+"def foo(x)"+
+"  return 3"+
+"end"+
+"~~~~~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~~~~~": punctuation.md
+      " "
+      "ruby": language.constant.md
+      " "
+      "startline=3" {
+        other.special.attribute.meta.md {
+          "startline": key.keyword.md
+          "=": punctuation.md
+          "3": value.string.md
+        }
+      }
+      " $%@#$"
+      source.embedded.ruby {
+        "def foo(x)"
+        "  return 3"
+        "end"
+      }
+      "~~~~~~~": punctuation.md
+    }
+  }
+}
+
+# TODO
+# @101
+# "````;"+
+# "````" {
+#   text.md {
+#     fenced.code.md {
+#       "````": punctuation.md
+#       ";"
+#       "````": punctuation.md
+#     }
+#   }
+# }
+
+# NOTE
+# Removed @102, see @95
+# @burodepeper
+
+@103
+"```"+
+"``` aaa"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      source.embedded {
+        "``` aaa"
+      }
+      "```": punctuation.md
+    }
+  }
+}
+
+# @issue-168a
+# "~~~~{.js}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       ".js": language.constant.md
+#       "}": punctuation.md
+#       source.embedded.js {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+# @issue-168b
+# "~~~~{js}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       "js": language.constant.md
+#       "}": punctuation.md
+#       source.embedded.js {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+@issue-168c
+"~~~~js"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "js": language.constant.md
+      ""
+      source.embedded.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168d
+"~~~~ js"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      " "
+      "js": language.constant.md
+      ""
+      source.embedded.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+
+}
+
+@issue-168e
+"~~~~{.js }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      ".js": language.constant.md
+      " "
+      "}": punctuation.md
+      source.embedded.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168f
+"~~~~{js }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      "js": language.constant.md
+      " "
+      "}": punctuation.md
+      source.embedded.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+# @issue-168g
+# "~~~~{.unknownscript}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       ".unknownscript": language.constant.md
+#       "}": punctuation.md
+#       source.embedded {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+# @issue-168h
+# "~~~~{unknownscript}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       "unknownscript": language.constant.md
+#       "}": punctuation.md
+#       source.embedded {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+@issue-168i
+"~~~~unknownscript"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "unknownscript": language.constant.md
+      ""
+      source.embedded {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168j
+"~~~~ unknownscript"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      " "
+      "unknownscript": language.constant.md
+      ""
+      source.embedded {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168k
+"~~~~{.unknownscript }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      ".unknownscript": language.constant.md
+      " "
+      "}": punctuation.md
+      source.embedded {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168l
+"~~~~{unknownscript }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      "unknownscript": language.constant.md
+      " "
+      "}": punctuation.md
+      source.embedded {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+# @issue-168m
+# "~~~~{.js"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     "~~~~{.js"
+#     "let answer = 42"
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       source.embedded {
+#         "> Quote"
+#       }
+#     }
+#   }
+# }
+
+# @issue-168n
+# "~~~~{js"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     "~~~~{js"
+#     "let answer = 42"
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       source.embedded {
+#         "> Quote"
+#       }
+#     }
+#   }
+# }
+
+# @issue-173
+# TODO: add example for php via injection, see /docs/EXAMPLES.md

@@ -1,0 +1,337 @@
+.src(@syntax-color-src-comment,
+     @syntax-color-src-punctuation,
+     @syntax-color-src-operator,
+     @syntax-color-src-keyword,
+     @syntax-color-src-language,
+     @syntax-color-src-variable,
+     @syntax-color-src-string,
+     @syntax-color-src-symbol,
+     @syntax-color-src-regexp,
+     @syntax-color-src-special,
+     @syntax-color-src-placeholder,
+     @syntax-color-src-format,
+     @syntax-color-src-numeric,
+     @syntax-color-src-constant,
+     @syntax-color-src-invalid) {
+
+  color: @syntax-color-src-variable;
+
+  // regexp
+  .syntax--regexp {
+    color: @syntax-color-src-regexp;
+
+    // [python] r'
+    .syntax--storage.syntax--type {
+      color: @syntax-color-src-regexp;
+    }
+
+    // [ruby] /
+    .syntax--punctuation.syntax--section {
+      color: @syntax-color-src-regexp;
+    }
+
+    // /
+    .syntax--punctuation.syntax--string.syntax--string {
+      color: @syntax-color-src-regexp;
+    }
+
+    // [ruby] #{}
+    .syntax--punctuation.syntax--section.syntax--embedded {
+      color: @syntax-color-src-punctuation;
+    }
+
+    // [] () - (?=) (?<=) (?!) (?<!) * | ?P<> \1 ^ $ (?i)
+    .syntax--punctuation.syntax--character-class,
+    .syntax--punctuation.syntax--group,
+    .syntax--punctuation.syntax--parenthesis,
+    .syntax--punctuation.syntax--range,
+    .syntax--look-ahead,
+    .syntax--look-behind,
+    .syntax--negative-look-ahead,
+    .syntax--negative-look-behind,
+    .syntax--keyword.syntax--keyword,
+    .syntax--tag,
+    .syntax--begin,
+    .syntax--end,
+    .syntax--flag {
+      color: @syntax-color-src-special;
+    }
+  }
+
+  // comments
+  .syntax--comment, .syntax--docstring {
+    color: @syntax-color-src-comment;
+    font-style: italic;
+
+    * {
+      color: @syntax-color-src-comment !important;
+    }
+  }
+
+  // strings, heredocs
+  .syntax--quoted:not(.syntax--docstring):not(.syntax--regexp), .syntax--unquoted {
+    color: @syntax-color-src-string;
+
+    >* {
+      color: @syntax-color-src-string;
+
+      // \n, embedded sql
+      .syntax--escape, .syntax--sql.syntax--sql {
+        color: @syntax-color-src-string;
+      }
+
+      // [python] {variable!s}  %(number)03d
+      .syntax--placeholder, .syntax--format {
+        color: @syntax-color-src-placeholder;
+      }
+    }
+
+    // interpolated variables, not this super self, embedded code, not sql
+    .syntax--variable:not(.syntax--language), .syntax--embedded:not(.syntax--sql) {
+      color: @syntax-color-src-variable;
+
+      // {}
+      &.syntax--punctuation {
+        color: @syntax-color-src-punctuation;
+      }
+    }
+  }
+
+  // [python] f''
+  .syntax--fstring {
+
+    // [python] \n
+    .syntax--escape {
+      color: @syntax-color-src-string;
+    }
+
+    // [python] :02d
+    .syntax--format {
+      color: @syntax-color-src-format;
+    }
+
+    // [python] {}
+    .syntax--placeholder {
+      color: @syntax-color-src-punctuation;
+    }
+  }
+
+  // [ruby] :symbol
+  .syntax--symbol.syntax--ruby {
+    color: @syntax-color-src-symbol;
+  }
+
+  // {} (), not <%%>
+  .syntax--punctuation:not(.syntax--embedded) {
+    color: @syntax-color-src-punctuation;
+
+    // '' "" <<
+    &.syntax--string, &.syntax--heredoc {
+      color: @syntax-color-src-string;
+    }
+
+    // [ruby] :''
+    &.syntax--symbol.syntax--ruby {
+      color: @syntax-color-src-symbol;
+    }
+
+    // [ruby] :
+    &.syntax--constant.syntax--ruby:not(.syntax--hashkey) {
+        color: @syntax-color-src-symbol;
+    }
+  }
+
+  // [js] , . ()
+  .syntax--delimiter, .syntax--brace {
+    color: @syntax-color-src-punctuation;
+  }
+
+  // try catch return do
+  .syntax--keyword {
+    color: @syntax-color-src-keyword;
+
+    // && = <
+    &.syntax--operator {
+      color: @syntax-color-src-operator;
+
+      // [c] sizeof
+      &.syntax--sizeof {
+        color: @syntax-color-src-keyword;
+      }
+
+      // [c++] const_cast dynamic_cast and not alignof
+      &.syntax--cpp {
+        color: @syntax-color-src-keyword;
+      }
+
+      // [js] new delete typeof instanceof in of void
+      &.syntax--new, &.syntax--delete,
+      &.syntax--typeof, &.syntax--instanceof,
+      &.syntax--in, &.syntax--of, &.syntax--void {
+        color: @syntax-color-src-keyword;
+      }
+
+      // [perl] eq ne lt gt le ge cmp
+      &.syntax--comparison.syntax--stringwise {
+        color: @syntax-color-src-keyword;
+      }
+
+      // [python] and or not is in
+      // [perl] and or not xor as, not && ||, not //
+      &.syntax--logical.syntax--python,
+      &.syntax--logical.syntax--perl:not(.syntax--c-style):not(.syntax--defined-or) {
+        color: @syntax-color-src-keyword;
+      }
+    }
+
+    // [r] $ :: %:%
+    &.syntax--other.syntax--r {
+      color: @syntax-color-src-operator;
+    }
+
+    // ? :
+    &.syntax--ternary {
+      color: @syntax-color-src-operator;
+    }
+  }
+
+  // [ruby] abort exit open print puts
+  .syntax--kernel.syntax--ruby {
+    color: @syntax-color-src-keyword;
+
+    &.syntax--arrow {
+      color: @syntax-color-src-operator;
+    }
+  }
+
+  // this super
+  .syntax--language {
+    color: @syntax-color-src-language;
+
+    // [python] param in function(param), not self
+    &.syntax--parameter:not(.syntax--special) {
+      color: @syntax-color-src-variable;
+    }
+
+    // true false undefined null
+    &.syntax--constant {
+      color: @syntax-color-src-constant;
+
+      // [perl] __FILE__ module warnings
+      &.syntax--perl {
+        color: @syntax-color-src-variable;
+      }
+    }
+
+    // *
+    &.syntax--wildcard, &.syntax--import-all {
+      color: @syntax-color-src-operator;
+    }
+  }
+
+  // let def const
+  .syntax--storage {
+    color: @syntax-color-src-keyword;
+
+    // [java] String, not int, not ->
+    &.syntax--type.syntax--java:not(.syntax--primitive):not(.syntax--arrow) {
+      color: @syntax-color-src-variable;
+
+      // [java] ?
+      &.syntax--wildcard {
+        color: @syntax-color-src-operator;
+      }
+    }
+
+    // [ruby] & *
+    &.syntax--type.syntax--ruby {
+      color: @syntax-color-src-operator;
+    }
+
+    // [java] path in import path
+    &.syntax--modifier.syntax--java.syntax--import,
+    &.syntax--modifier.syntax--java.syntax--package {
+      color: @syntax-color-src-variable;
+    }
+
+    // [java, js, coffee] => ->
+    &.syntax--type.syntax--arrow,
+    &.syntax--function.syntax--coffee {
+      color: @syntax-color-src-operator;
+    }
+  }
+
+  // [python] list() float() super
+  .syntax--support.syntax--type {
+    color: @syntax-color-src-keyword;
+  }
+
+  // 2 0x7 10e-3
+  .syntax--constant.syntax--numeric:not(.syntax--regexp) {
+    color: @syntax-color-src-numeric;
+
+    // decimal periods
+    .syntax--period {
+      color: @syntax-color-src-numeric;
+    }
+
+    // [python] 0x 0b 0o
+    .syntax--type {
+      color: @syntax-color-src-numeric;
+    }
+  }
+
+  // [c, make] \
+  .syntax--line-continuation, .syntax--continuation {
+    color: @syntax-color-src-punctuation;
+  }
+
+  // invalid
+  .syntax--invalid, .syntax--illegal {
+    color: @syntax-color-src-invalid;
+  }
+}
+
+.syntax--source {
+
+  &:not(.syntax--css):not(.syntax--gfm):not(.syntax--html):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml),
+  &.syntax--embedded.syntax--html:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml) {
+    .src(@syntax-color-src-comment,
+         @syntax-color-src-punctuation,
+         @syntax-color-src-operator,
+         @syntax-color-src-keyword,
+         @syntax-color-src-language,
+         @syntax-color-src-variable,
+         @syntax-color-src-string,
+         @syntax-color-src-symbol,
+         @syntax-color-src-regexp,
+         @syntax-color-src-special,
+         @syntax-color-src-placeholder,
+         @syntax-color-src-format,
+         @syntax-color-src-numeric,
+         @syntax-color-src-constant,
+         @syntax-color-src-invalid);
+  }
+}
+
+.syntax--text.syntax--html {
+
+  // jinja angular mustache
+  .syntax--scope.syntax--jinja, .syntax--template {
+    .src(@syntax-color-template-comment,
+         @syntax-color-template-punctuation,
+         @syntax-color-template-operator,
+         @syntax-color-template-keyword,
+         @syntax-color-template-language,
+         @syntax-color-template-variable,
+         @syntax-color-template-string,
+         @syntax-color-template-symbol,
+         @syntax-color-template-regexp,
+         @syntax-color-template-special,
+         @syntax-color-template-placeholder,
+         @syntax-color-template-format,
+         @syntax-color-template-numeric,
+         @syntax-color-template-constant,
+         @syntax-color-template-invalid);
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "_from": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+  "_id": "duotone-dark-syntax@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-D4F3iIkOSYHcpu8Yh2W5sySMXzcHFZXmDtDUe0wXsgy0aJXvZJ8cIAa/cUUWebtLK7LyQ6zHblNYij155UQwXg==",
+  "_location": "/duotone-dark-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+  "_shasum": "6693e23acc1ad5fbd7518a90d6603c97e03437c5",
+  "_spec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+  "_where": "/tmp/apm-install-dir-2020114-6513-wx7sm4.cn1jk",
+  "bugs": {
+    "url": "https://github.com/simurai/duotone-dark-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "color": {
+      "title": "Custom Colors",
+      "type": "object",
+      "properties": {
+        "uno": {
+          "title": "Uno",
+          "description": "Customize the main color",
+          "order": 1,
+          "type": "color",
+          "default": "#a59ccc"
+        },
+        "duo": {
+          "title": "Duo",
+          "description": "Customize the accent color",
+          "order": 2,
+          "type": "color",
+          "default": "#ffe685"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "chroma-js": "1.1.1",
+    "duotone-syntax": "^2.1.0"
+  },
+  "deprecated": false,
+  "description": "A dark DuoTone syntax theme",
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/simurai/duotone-dark-syntax#readme",
+  "keywords": [
+    "dark",
+    "purple",
+    "gold",
+    "duotone",
+    "syntax"
+  ],
+  "license": "MIT",
+  "main": "lib/duotone",
+  "name": "duotone-dark-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simurai/duotone-dark-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "2.1.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "chroma-js",
+        "version": "1.1.1",
+        "path": "node_modules/chroma-js/chroma.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/duotone.coffee",
+        "node_modules/chroma-js/license.coffee",
+        "node_modules/chroma-js/src/analyze.coffee",
+        "node_modules/chroma-js/src/api.coffee",
+        "node_modules/chroma-js/src/color.coffee",
+        "node_modules/chroma-js/src/colors/colorbrewer.coffee",
+        "node_modules/chroma-js/src/colors/w3cx11.coffee",
+        "node_modules/chroma-js/src/converter/in/cmyk2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/css2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/hex2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/hsi2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/hsl2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/hsv2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/lab2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/lch2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/num2rgb.coffee",
+        "node_modules/chroma-js/src/converter/in/temperature2rgb.coffee",
+        "node_modules/chroma-js/src/converter/misc/lab-constants.coffee",
+        "node_modules/chroma-js/src/converter/misc/lab2lch.coffee",
+        "node_modules/chroma-js/src/converter/misc/lch2lab.coffee",
+        "node_modules/chroma-js/src/converter/out/hsl2css.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2cmyk.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2css.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2hex.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2hsi.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2hsl.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2hsv.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2lab.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2lch.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2luminance.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2num.coffee",
+        "node_modules/chroma-js/src/converter/out/rgb2temperature.coffee",
+        "node_modules/chroma-js/src/generator/bezier.coffee",
+        "node_modules/chroma-js/src/generator/cubehelix.coffee",
+        "node_modules/chroma-js/src/generator/random.coffee",
+        "node_modules/chroma-js/src/index.coffee",
+        "node_modules/chroma-js/src/interpolator/interpolate-hsx.coffee",
+        "node_modules/chroma-js/src/interpolator/interpolate-lab.coffee",
+        "node_modules/chroma-js/src/interpolator/interpolate-num.coffee",
+        "node_modules/chroma-js/src/interpolator/interpolate-rgb.coffee",
+        "node_modules/chroma-js/src/interpolator/interpolate.coffee",
+        "node_modules/chroma-js/src/io/cmyk.coffee",
+        "node_modules/chroma-js/src/io/contrast.coffee",
+        "node_modules/chroma-js/src/io/css.coffee",
+        "node_modules/chroma-js/src/io/gl.coffee",
+        "node_modules/chroma-js/src/io/hex.coffee",
+        "node_modules/chroma-js/src/io/hsi.coffee",
+        "node_modules/chroma-js/src/io/hsl.coffee",
+        "node_modules/chroma-js/src/io/hsv.coffee",
+        "node_modules/chroma-js/src/io/lab.coffee",
+        "node_modules/chroma-js/src/io/lch.coffee",
+        "node_modules/chroma-js/src/io/luminance.coffee",
+        "node_modules/chroma-js/src/io/named.coffee",
+        "node_modules/chroma-js/src/io/num.coffee",
+        "node_modules/chroma-js/src/io/rgb.coffee",
+        "node_modules/chroma-js/src/io/temperature.coffee",
+        "node_modules/chroma-js/src/limits.coffee",
+        "node_modules/chroma-js/src/ops/blend.coffee",
+        "node_modules/chroma-js/src/ops/darken.coffee",
+        "node_modules/chroma-js/src/ops/get.coffee",
+        "node_modules/chroma-js/src/ops/premultiply.coffee",
+        "node_modules/chroma-js/src/ops/saturate.coffee",
+        "node_modules/chroma-js/src/ops/set.coffee",
+        "node_modules/chroma-js/src/scale.coffee",
+        "node_modules/chroma-js/src/utils.coffee"
+      ],
+      ".js": [
+        "node_modules/chroma-js/Gruntfile.js",
+        "node_modules/chroma-js/chroma.js",
+        "node_modules/chroma-js/chroma.min.js",
+        "node_modules/duotone-syntax/docs/palette.js"
+      ],
+      ".json": [
+        "node_modules/chroma-js/bower.json",
+        "node_modules/chroma-js/package.json",
+        "node_modules/duotone-syntax/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          ""
+        ],
+        "dependencies": {
+          "chroma-js": "1.1.1",
+          "duotone-syntax": "^2.1.0"
+        }
+      }
+    ]
+  }
+}

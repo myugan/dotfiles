@@ -1,0 +1,178 @@
+@import "syntax-variables";
+
+// Dracula UI variables
+// -----------------------------------
+
+// Debug (console.log for Less)
+// html:before {
+//   content: "@{variable}";
+// }
+
+// Color Palette ---------------------------------
+@ui-background:   hsl(231, 15%, 18%);
+@ui-currentline:  hsl(232, 14%, 31%);
+@ui-selection:    hsl(232, 14%, 31%);
+@ui-foreground:   hsl(60, 30%, 96%);
+@ui-comment:      hsl(225, 27%, 51%);
+@ui-cyan:         hsl(191, 97%, 77%);
+@ui-green:        hsl(135, 94%, 65%);
+@ui-orange:       hsl(31, 100%, 71%);
+@ui-pink:         hsl(326, 100%, 74%);
+@ui-purple:       hsl(265, 89%, 78%);
+@ui-red:          hsl(0, 100%, 67%);
+@ui-yellow:       hsl(65, 92%, 76%);
+
+@ui-hue:        hue(@ui-background);
+@ui-saturation: saturation(@ui-background);
+@ui-lightness:  lightness(@ui-background);
+@ui-color:      @ui-background;
+
+
+// Base colors -----------------------------------
+
+@base-accent-color:     @ui-pink;
+@base-background-color: @ui-background;
+@base-border-color:     darken(@ui-background, 3%);
+
+// Level Colors -----------------------------------
+
+@level-1-color: lighten(@base-background-color, 6%);
+@level-2-color: @base-background-color;
+@level-3-color: darken(@base-background-color, 3%);
+
+
+// Var + State Background Colors -------------------------------------
+
+@background-color-info:    @ui-cyan;
+@background-color-success: @ui-pink;
+@background-color-warning: @ui-purple;
+@background-color-error:   @ui-red;
+
+@background-color-highlight: lighten(@base-background-color, 4%);
+@background-color-selected: lighten(@base-background-color, 8%);
+
+
+// Component Colors -------------------------------------
+
+@app-background-color:             @base-border-color;
+
+@tree-view-background-color:       @level-3-color;
+@tree-view-border-color:           @base-border-color;
+@tree-view-scrollbar-background-color:  @base-border-color;
+
+@tab-accent-color:                 @ui-green;
+@tab-background-color:             @level-3-color;
+@tab-background-color-active:      @level-2-color;
+@tab-bar-background-color:         @level-3-color;
+@tab-bar-border-color:             @base-border-color;
+@tab-border-color:                 @base-border-color;
+@tab-text-color:                   @text-color-highlight;
+@tab-icon-color:                   @text-color-subtle;
+@tab-inactive-transparency:        .5;
+@tab-background-color-editor:      @ui-background;
+@tab-text-color-editor:            contrast(@ui-background, darken(@ui-background, 50%), @text-color-highlight );
+
+@pane-item-background-color:       @base-background-color;
+@pane-item-border-color:           @base-border-color;
+
+@panel-heading-background-color:   @level-2-color;
+@panel-heading-border-color:       @base-border-color;
+
+@tool-panel-background-color:      @level-3-color;
+@tool-panel-border-color:          @base-border-color;
+
+@inset-panel-background-color:     lighten(@level-2-color, 4%);
+@inset-panel-border-color:         fadeout(@base-border-color, 15%);
+
+@overlay-background-color:         @level-2-color;
+@overlay-border-color:             @base-border-color;
+@overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
+
+@badge-background-color:           lighten(@background-color-highlight, 6%);
+
+@button-background-color:          @level-1-color;
+@button-background-color-hover:    lighten(@button-background-color, 2%);
+@button-background-color-selected: @base-accent-color;
+@button-text-color-selected:       contrast(@button-background-color-selected, white, hsl(@ui-hue,100%,10%), 40% );
+@button-border-color:              @base-border-color;
+@button-border-color-selected:     @base-border-color;
+
+@input-border-color:               hsla(0,0%,0%,.2);
+@input-background-color:           hsla(0,0%,0%,.2);
+@input-background-color-focus:     fadein(@input-background-color, 6%);
+@input-selection-color:            darken(@background-color-selected, 6%);
+@input-selection-color-focus:      @background-color-selected;
+
+@tooltip-background-color:         @base-accent-color;
+@tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
+@tooltip-text-key-color:           @tooltip-background-color;
+@tooltip-background-key-color:     @tooltip-text-color;
+
+@progress-background-color:        @base-accent-color;
+
+@checkbox-background-color:        fade(@base-accent-color, 33%);
+
+@scrollbar-color:                  @base-accent-color;
+@scrollbar-background-color:       @base-background-color;
+
+
+// Utilities
+
+@key-binding-border-color:     hsla(0,0%,100%,.1);
+@key-binding-background-color: hsla(0,0%,100%,.1);
+
+
+// Text Colors -------------------------------------
+
+@text-color: hsl(@ui-hue, @ui-saturation, max(30%, @ui-lightness * 3) );
+@text-color-subtle: fadeout(@text-color, 40%);
+@text-color-faded: fade(@text-color, 20%);
+@text-color-highlight: hsl(@ui-hue, @ui-saturation*8, 88%);
+@text-color-selected: @ui-foreground;
+
+@text-color-info:    @ui-cyan;
+@text-color-success: @ui-green;
+@text-color-warning: @ui-purple;
+@text-color-error:   @ui-red;
+
+@text-color-added:    @text-color-success;
+@text-color-ignored:  @text-color-subtle;
+@text-color-modified: @text-color-warning;
+@text-color-removed:  @text-color-error;
+@text-color-renamed:  @text-color-info;
+
+
+// Sizes -------------------------------------
+
+@font-size:       11px;
+@input-font-size: 14px;
+
+@disclosure-arrow-size: 12px;
+
+@component-padding:      10px;
+@component-icon-padding:  5px;
+@component-icon-size:    16px;
+@component-line-height:  25px;
+@component-border-radius: 3px;
+
+@tab-height: 30px;
+
+
+// Font -------------------------------------
+
+@font-family: 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+
+
+// Settings View -------------------------------------
+
+@settings-list-background-color: darken(@level-2-color, 1.5%);
+@theme-config-box-shadow: inset 0 0 3px hsla(0, 0%, 100%, .4), 0 1px 3px hsla(0, 0%, 0%, .2);
+@theme-config-box-shadow-selected: inset 0 1px 3px hsla(0, 0%, 0%, .1);
+@theme-config-border-selected: hsla(0, 0%, 100%, .75);
+
+// Git
+@git-color-added:    desaturate(@text-color-added, 25%);
+@git-color-ignored:  desaturate(@text-color-ignored, 25%);
+@git-color-modified: desaturate(@text-color-modified, 25%);
+@git-color-removed:  desaturate(@text-color-removed, 25%);
+@git-color-renamed:  desaturate(@text-color-renamed, 25%);

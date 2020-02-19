@@ -1,0 +1,51 @@
+{
+  "_from": "https://www.atom.io/api/packages/dracula-ui/versions/0.6.0/tarball",
+  "_id": "dracula-ui@0.6.0",
+  "_inBundle": false,
+  "_integrity": "sha512-HK796ciO0quDttrdY76SASUVr/X5QXjDaDeYtujuNsEBTA8dB0so2T8+vt9tSFDvU3luvJlXQ1TWc12Kiaui5A==",
+  "_location": "/dracula-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/dracula-ui/versions/0.6.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/dracula-ui/versions/0.6.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/dracula-ui/versions/0.6.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/dracula-ui/versions/0.6.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/dracula-ui/versions/0.6.0/tarball",
+  "_shasum": "9318cb356a76d5120566c3b274c3526cfbb21a64",
+  "_spec": "https://www.atom.io/api/packages/dracula-ui/versions/0.6.0/tarball",
+  "_where": "/tmp/apm-install-dir-2020118-6818-be7b61.0ghfb",
+  "bugs": {
+    "url": "https://github.com/dracula/atom-ui/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "dracula UI theme for Atom",
+  "engines": {
+    "atom": ">1.13.0"
+  },
+  "homepage": "https://github.com/dracula/atom-ui#readme",
+  "license": "MIT",
+  "name": "dracula-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dracula/atom-ui.git"
+  },
+  "theme": "ui",
+  "version": "0.6.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

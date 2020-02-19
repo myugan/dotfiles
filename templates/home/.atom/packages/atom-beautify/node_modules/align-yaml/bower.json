@@ -1,0 +1,7 @@
+{
+  "name": "align-yaml",
+  "version": "0.1.8",
+  "main": [
+    "index.js"
+  ]
+}

@@ -1,0 +1,47 @@
+version: "{build}"
+image: Visual Studio 2017
+
+test: off
+deploy: off
+
+environment:
+  global:
+    # SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the
+    # /E:ON and /V:ON options are not enabled in the batch script intepreter
+    # See: http://stackoverflow.com/a/13751649/163740
+    CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
+    PATH: C:\Ruby23\bin;C:\Ruby23-x64\DevKit\mingw\bin;C:\Python27;C:\Python27\Scripts;%PATH%
+
+init:
+  - cmd: rd /s /q %CHOCOLATEYINSTALL%
+  - ps: iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+
+install:
+  - cinst packages.config -y
+  - refreshenv
+  - apm install
+
+  # https://packaging.python.org/guides/supporting-windows-using-appveyor/
+  - pip install -r requirements.txt
+
+  # Gemfile Install
+  - set PATH=C:\Ruby24-x64\bin;%PATH%
+  - ruby -v
+  - gem update --system
+  - bundle install
+
+  # PHP
+  - ps: Set-Service wuauserv -StartupType Manual
+  # PHP-CS-Fixer
+  - composer install
+
+  # elm-format
+  - npm install -g elm-format@exp
+  
+build_script:
+
+  # Install languages to Atom
+  - apm install --packages-file atom-packages.txt
+  # Run tests on package
+  #- "%LOCALAPPDATA%\\atom\\bin\\atom.cmd --test spec"
+  - apm test --path %LOCALAPPDATA%/atom/bin/atom.cmd

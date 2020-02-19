@@ -1,0 +1,185 @@
+# http://spec.commonmark.org/0.22/#example-8
+@8a
+"***" {
+  text.md {
+    '***': hr.constant.md
+  }
+}
+
+# NOTE
+# A '---' at the start of a document is recognized as the start of a yaml
+# front-matter block. In testing, every tests is technically a separate new
+# document, so this test includes a scope you wouldn't expect. For that reason,
+# test @8d has been added.
+# @burodepeper
+
+@8b
+"---" {
+  text.md {
+    front-matter.yaml.source.md {
+      '---': hr.constant.md
+    }
+  }
+}
+
+@8c
+"___" {
+  text.md {
+    '___': hr.constant.md
+  }
+}
+
+@8d
+" "+
+"---" {
+  text.md {
+    " "
+    '---': hr.constant.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-9
+@9
+"+++" {
+  text.md {
+    front-matter.toml.source.md {
+      '+++': hr.constant.md
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-10
+@10
+"===": text.md
+
+# http://spec.commonmark.org/0.22/#example-11
+@11a
+"--": text.md
+
+@11b
+"**": text.md
+
+@11c
+"__": text.md
+
+# http://spec.commonmark.org/0.22/#example-12
+
+# NOTE
+# Removed @12a, because it is too similar to @12c
+# Removed @12b, because it is too similar to @12c
+# @burodepeper
+
+@12c
+"   ***" {
+  text.md {
+    '   ***': hr.constant.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-13
+@13
+"    ***": text.md
+
+# NOTE
+# Removed @14, because it is not related to syntax highlighting
+# @burodepeper
+
+# http://spec.commonmark.org/0.22/#example-15
+@15
+"_____________________________________" {
+  text.md {
+    "_____________________________________": hr.constant.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-16
+@16
+" - - -" {
+  text.md {
+    " - - -": hr.constant.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-17
+@17
+" **  * ** * ** * **" {
+  text.md {
+    " **  * ** * ** * **": hr.constant.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-18
+@18
+"-     -      -      -" {
+  text.md {
+    "-     -      -      -": hr.constant.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-19
+@19
+"- - - -    " {
+  text.md {
+    "- - - -    ": hr.constant.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-20
+@20a
+"_ _ _ _ a": text.md
+
+# NOTE
+# Removed @20b, because it is too similar to @20a
+# Removed @20c, because it is too similar to @20a
+# @burodepeper
+
+# http://spec.commonmark.org/0.22/#example-21
+@21
+" *-*" {
+  text.md {
+    " "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "-"
+      "*": punctuation.md
+    }
+  }
+}
+
+# NOTE
+# Removed @22, because it is not related to syntax highlighting
+# Removed @23, because it is not related to syntax highlighting
+# Removed @24, because it is not related to syntax highlighting
+# @burodepeper
+
+# http://spec.commonmark.org/0.22/#example-25
+@25
+"* Foo"+
+"* * *"+
+"* Bar" {
+  text.md {
+    unordered.list.markup.md {
+      "* ": punctuation.md
+      "Foo"
+    }
+    "* * *": hr.constant.md
+    unordered.list.markup.md {
+      "* ": punctuation.md
+      "Bar"
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-26
+@26
+"- Foo"+
+"- * * *" {
+  text.md {
+    unordered.list.markup.md {
+      "- ": punctuation.md
+      "Foo"
+      "- ": punctuation.md
+      "* * *": hr.constant.md
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"source":".go-plus-table {\n  width: 100%;\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n.go-plus-table-header {\n  border-bottom: 1px solid #21222c;\n}\n.go-plus-table-row:hover {\n  background-color: #383b4c;\n}\n.go-plus-table-cell {\n  padding: 5px 10px;\n}\n.go-plus-left-pad {\n  padding-left: 24px;\n}\n"}

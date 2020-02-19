@@ -1,0 +1,96 @@
+// Git
+.directory.entry {
+  &.status-ignored .list-item {
+    color: @text-color-subtle !important;
+    .icon::before {
+      opacity: .5
+    }
+  }
+
+  .list-item {
+    position: relative;
+    &:after {
+      content: '';
+      display: flex;
+      align-items: center;
+      position: absolute;
+      width:10px;
+      height:10px;
+      top:50%;
+      transform:translateY(-50%);
+      right:10px;
+    }
+  }
+
+  &.status-added > .header.list-item:after {
+    content: url('atom://city-lights-ui/icons/git-added.svg');
+  }
+
+  &.status-modified > .header.list-item:after {
+    content: url('atom://city-lights-ui/icons/git-modified.svg');
+  }
+}
+
+.file {
+  &.status-ignored {
+    color: @text-color-subtle !important;
+    .icon::before {
+      opacity: .5
+    }
+  }
+  &.status-added,
+  &.status-modified {
+    color: @text-color !important;
+
+    &:before {
+      content:'';
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+    }
+
+
+    &.selected {
+      .name:after {
+        background-image: linear-gradient(-90deg, #2A3038 0%, rgba(42,48,56,0.90) 65%, rgba(42,48,56,0.00) 100%);
+      }
+    }
+
+    &:hover {
+      .name:after {
+        background-image: linear-gradient(-90deg, #1e222a 0%, rgba(42, 48, 56, 0.3) 65%, rgba(42, 48, 56, 0) 100%);
+      }
+    }
+
+    .name {
+      width: 100%;
+      display: inline-block;
+
+      // gradient underneith git status
+      &:after {
+        content: '';
+        background-image: linear-gradient(-90deg, #181E24 0%, rgba(24,30,36,0.90) 65%, rgba(24,30,36,0.00) 100%);
+        position: absolute;
+        right: 0px;
+        top: 0;
+        width: 52px;
+        height: 28px;
+        z-index:2;
+        border-radius:3px !important;
+        overflow:hidden;
+      }
+    }
+  }
+
+  &.status-added:before {
+    z-index:5;
+    content: url('atom://city-lights-ui/icons/git-added.svg');
+  }
+
+  &.status-modified:before {
+    z-index:5;
+    content: url('atom://city-lights-ui/icons/git-modified.svg');
+  }
+}

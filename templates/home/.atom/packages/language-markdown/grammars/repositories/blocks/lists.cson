@@ -1,0 +1,103 @@
+key: 'lists'
+patterns: [
+
+  # Empty lists; for styling purposes, and for detection.
+  {
+    match: '^(?:\\s*)([-+\\*] \\[ \\]\\s?)$'
+    name: 'empty.task.unordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+  }
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[ \\]\\s)$'
+    name: 'empty.task.ordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+  }
+  {
+    match: '^(?:\\s*)([-+\\*]{1}\\s?)$'
+    name: 'empty.unordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+  }
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)]\\s?)$'
+    name: 'empty.ordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+  }
+
+  # Task list-item
+  {
+    match: '^(?:\\s*)([-+\\*] \\[ \\]\\s)(.*)$'
+    name: 'task.unordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[ \\]\\s)(.*)$'
+    name: 'task.ordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+
+  # Completed task list-item
+  {
+    match: '^(?:\\s*)([-+\\*] \\[[xX]\\]\\s)(.*)$'
+    name: 'completed.task.unordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[[xX]\\]\\s)(.*)$'
+    name: 'completed.task.ordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+
+  # Unordered list-item
+  {
+    match: '^(?:\\s*)([-+\\*]{1}\\s)(.*)$'
+    name: 'unordered.list.markup.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+
+  # Ordered list-item
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)]\\s)(.*)$'
+    name: 'ordered.list.markup.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+]

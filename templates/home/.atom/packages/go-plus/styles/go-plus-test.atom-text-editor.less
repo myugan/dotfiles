@@ -1,0 +1,21 @@
+@import "ui-variables";
+
+.highlight.uncovered .region {
+  background-color: @background-color-error;
+  opacity: 0.2;
+}
+
+.highlight.covered .region {
+  background-color: @background-color-success;
+  opacity: 0.2;
+}
+
+.line-number.uncovered{
+  color: @text-color-selected !important;
+  background-color: @background-color-error;
+}
+
+.line-number.covered{
+  color: @text-color-selected !important;
+  background-color: @background-color-success;
+}

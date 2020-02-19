@@ -1,0 +1,49 @@
+.tree-view {
+  font-size: @font-size;
+  background: @tree-view-background-color;
+
+  .project-root {
+    &:before {
+      height: @tab-height + 1px; // + 1px border
+      border-bottom: 1px solid @base-border-color;
+    }
+    & > .header .name {
+        line-height: @tab-height + 1px; // + 1px border
+    }
+  }
+
+  .selected:before {
+    background: @background-color-highlight;
+  }
+}
+
+.tree-view-resizer {
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+	/deep/ ::-webkit-scrollbar-track {
+		background: @tree-view-scrollbar-background-color;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb {
+		border: 3px solid @tree-view-scrollbar-background-color;
+	}
+
+	/deep/ ::-webkit-scrollbar-corner {
+		background: @tree-view-scrollbar-background-color;
+	}
+}
+
+.focusable-panel {
+  opacity: 1;
+  background: @tree-view-background-color;
+
+  &:focus {
+    .selected {
+      color: @text-color-selected;
+      &:before {
+        background: @background-color-selected;
+      }
+    }
+  }
+}

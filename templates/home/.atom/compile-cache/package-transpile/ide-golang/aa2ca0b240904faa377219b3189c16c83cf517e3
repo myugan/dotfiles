@@ -1,0 +1,166 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const atom_1 = require("atom");
+const path = require("path");
+function jsonToDefinitionQueryResult(input) {
+    const positions = input.objpos.split(":");
+    const row = parseInt(positions[1], 10);
+    const col = parseInt(positions[2], 10);
+    return {
+        definitions: [
+            {
+                language: "Go",
+                name: input.desc,
+                path: positions[0],
+                position: new atom_1.Point(row - 1, col - 1),
+            },
+        ],
+    };
+}
+exports.jsonToDefinitionQueryResult = jsonToDefinitionQueryResult;
+function getDirname(editor) {
+    const filePath = editor.getPath();
+    return filePath && path.dirname(filePath);
+}
+exports.getDirname = getDirname;
+function getFileArchive(editor) {
+    const fileContents = editor.getText();
+    return editor.getPath() + "\n" +
+        Buffer.byteLength(fileContents, "utf8") + "\n" + fileContents;
+}
+exports.getFileArchive = getFileArchive;
+function parseLintErrors(input, pathPrefix) {
+    const messages = [];
+    const others = [];
+    const prefix = pathPrefix || "";
+    for (const line of input.split("\n")) {
+        if (line.trim().length === 0) {
+            continue;
+        }
+        const match = /^(.+):(\d+):(\d+):(.*)?$/img.exec(line);
+        if (!match) {
+            others.push(line);
+            continue;
+        }
+        const [, file, lineStr, offsetStr, excerpt] = match;
+        const row = parseInt(lineStr, 10);
+        const offset = parseInt(offsetStr, 10);
+        messages.push({
+            excerpt,
+            location: {
+                file: path.resolve(prefix, file),
+                position: new atom_1.Range([row - 1, offset - 1], [row - 1, offset - 1]),
+            },
+            severity: "error",
+        });
+    }
+    return [messages, others];
+}
+exports.parseLintErrors = parseLintErrors;
+const goOutlineTypeToAtomIcon = {
+    function: "type-function",
+    import: "type-module",
+    package: "type-package",
+    type: "type-class",
+    variable: "type-variable",
+};
+const goOutlineTypeToTokenKind = {
+    function: "method",
+    import: "string",
+    package: "string",
+    type: "type",
+    variable: "param",
+};
+function goOutlineToAtomOutline(editor, outline) {
+    const tokenizedText = [];
+    if (outline.receiverType) {
+        tokenizedText.push({
+            kind: "param",
+            value: "( " + outline.receiverType + ")",
+        }, {
+            kind: "whitespace",
+            value: " ",
+        });
+    }
+    tokenizedText.push({
+        kind: goOutlineTypeToTokenKind[outline.type] || "plain",
+        value: outline.label,
+    });
+    return {
+        children: outline.children ? outline.children.map((item) => goOutlineToAtomOutline(editor, item)) : [],
+        endPosition: editor.getBuffer().positionForCharacterIndex(outline.end - 1),
+        icon: goOutlineTypeToAtomIcon[outline.type],
+        representativeName: outline.label,
+        startPosition: editor.getBuffer().positionForCharacterIndex(outline.start - 1),
+        tokenizedText,
+    };
+}
+exports.goOutlineToAtomOutline = goOutlineToAtomOutline;
+function guruReferrersToAtomReferences(editor, input) {
+    const filePath = editor.getPath();
+    const lines = input.split("\n");
+    const results = [];
+    let symbolName = "";
+    for (const line of lines) {
+        const match = /^(.*):(\d+)\.(\d+)-(\d+)\.(\d+):/.exec(line);
+        if (!match || match.length < 6) {
+            continue;
+        }
+        const [, file, lineStartStr, colStartStr, lineEndStr, colEndStr] = match;
+        if (symbolName.length === 0 && file === filePath) {
+            symbolName = editor.getTextInBufferRange(new atom_1.Range([+lineStartStr - 1, +colStartStr - 1], [+lineEndStr - 1, +colEndStr]));
+        }
+        results.push({
+            name: path.basename(file),
+            range: new atom_1.Range([+lineStartStr - 1, +colStartStr - 1], [+lineEndStr - 1, +colEndStr]),
+            uri: file,
+        });
+    }
+    return {
+        baseUri: filePath || "",
+        referencedSymbolName: symbolName,
+        references: results,
+        type: "data",
+    };
+}
+exports.guruReferrersToAtomReferences = guruReferrersToAtomReferences;
+function goPathFromPath(filePath) {
+    if (!filePath) {
+        return undefined;
+    }
+    while (filePath.length > 4) {
+        if (path.basename(filePath) === "src") {
+            return path.dirname(filePath);
+        }
+        filePath = path.dirname(filePath);
+    }
+    return undefined;
+}
+exports.goPathFromPath = goPathFromPath;
+function getCurrentWordBufferRange(editor, point) {
+    const nonWordCharacters = "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…";
+    const range = _getRegexpRangeAtPosition(editor.getBuffer(), point, new RegExp(`[^\\s${escapeRegExp(nonWordCharacters)}]+`, "g"));
+    return range || new atom_1.Range(point, point);
+}
+exports.getCurrentWordBufferRange = getCurrentWordBufferRange;
+function escapeRegExp(s) {
+    return s ? s.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&") : "";
+}
+function _getRegexpRangeAtPosition(buffer, position, wordRegex) {
+    const { row, column } = position;
+    const rowRange = buffer.rangeForRow(row, false);
+    let matchData;
+    buffer.scanInRange(wordRegex, rowRange, (data) => {
+        const { range } = data;
+        if (position.isGreaterThanOrEqual(range.start) &&
+            position.isLessThan(range.end)) {
+            matchData = data;
+            data.stop();
+            return;
+        }
+        if (range.end.column > column) {
+            data.stop();
+        }
+    });
+    return matchData == null ? null : matchData.range;
+}

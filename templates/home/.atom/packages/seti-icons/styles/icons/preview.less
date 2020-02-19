@@ -1,0 +1,27 @@
+.preview-pane {
+  .path.list-nested-item {
+
+    &.collapsed {
+      border-bottom: solid 1px @black;
+    }
+
+    .icon-file-media, .icon-file-pdf, .icon-file-binary, .icon-file-text, .icon-book, .icon-file-media {
+      &::before {
+        font-size: 22px;
+        top:6px;
+        margin-right: 10px;
+
+        .platform-win32 & {
+          margin-top: 0;
+        }
+      }
+    }
+    &.selected {
+      .icon-file-media, .icon-file-pdf, .icon-file-binary, .icon-file-text, .icon-book, .icon-file-media {
+        &::before {
+          color: @seti-primary-text;
+        }
+      }
+    }
+  }
+}

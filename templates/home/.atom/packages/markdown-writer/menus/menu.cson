@@ -1,0 +1,260 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Markdown Writer'
+      'submenu': [
+        {
+          'label': 'File'
+          'submenu': [
+            {
+              'label': 'Add New Draft',
+              'command': 'markdown-writer:new-draft'
+            }
+            {
+              'label': 'Add New Post',
+              'command': 'markdown-writer:new-post'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Publish Draft',
+              'command': 'markdown-writer:publish-draft'
+            }
+          ]
+        }
+        {
+          'label': 'Front Matter'
+          'submenu': [
+            {
+              'label': 'Manage Tags',
+              'command': 'markdown-writer:manage-post-tags'
+            }
+            {
+              'label': 'Manage Categories',
+              'command': 'markdown-writer:manage-post-categories'
+            }
+          ]
+        }
+        {
+          'label': 'Markup'
+          'submenu': [
+            {
+              'label': 'Insert Link',
+              'command': 'markdown-writer:insert-link'
+            }
+            {
+              'label': 'Insert Image',
+              'command': 'markdown-writer:insert-image'
+            }
+            {
+              'label': 'Insert Footnote',
+              'command': 'markdown-writer:insert-footnote'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Bold',
+              'command': 'markdown-writer:toggle-bold-text'
+            }
+            {
+              'label': 'Italic',
+              'command': 'markdown-writer:toggle-italic-text'
+            }
+            {
+              'label': 'Strikethrough',
+              'command': 'markdown-writer:toggle-strikethrough-text'
+            }
+            {
+              'label': 'Keystroke',
+              'command': 'markdown-writer:toggle-keystroke-text'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Code',
+              'command': 'markdown-writer:toggle-code-text'
+            }
+            {
+              'label': 'Code Block',
+              'command': 'markdown-writer:toggle-codeblock-text'
+            }
+            {
+              'label': 'Math',
+              'command': 'markdown-writer:toggle-math-text'
+            }
+            {
+              'label': 'Math Block',
+              'command': 'markdown-writer:toggle-mathblock-text'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Heading 1'
+              'command': 'markdown-writer:toggle-h1'
+            }
+            {
+              'label': 'Heading 2'
+              'command': 'markdown-writer:toggle-h2'
+            }
+            {
+              'label': 'Heading 3'
+              'command': 'markdown-writer:toggle-h3'
+            }
+            {
+              'label': 'Heading 4'
+              'command': 'markdown-writer:toggle-h4'
+            }
+            {
+              'label': 'Heading 5'
+              'command': 'markdown-writer:toggle-h5'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Unordered List'
+              'command': 'markdown-writer:toggle-ul'
+            }
+            {
+              'label': 'Ordered List'
+              'command': 'markdown-writer:toggle-ol'
+            }
+            {
+              'label': 'Task List'
+              'command': 'markdown-writer:toggle-task'
+            }
+            {
+              'label': 'Toggle Task List'
+              'command': 'markdown-writer:toggle-taskdone'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Blockquote'
+              'command': 'markdown-writer:toggle-blockquote'
+            }
+          ]
+        }
+        {
+          'label': 'CriticMarkup'
+          'submenu': [
+            {
+              'label': 'Addition',
+              'command': 'markdown-writer:toggle-addition-text'
+            }
+            {
+              'label': 'Deletion',
+              'command': 'markdown-writer:toggle-deletion-text'
+            }
+            {
+              'label': 'Substitution',
+              'command': 'markdown-writer:toggle-substitution-text'
+            }
+            {
+              'label': 'Comment',
+              'command': 'markdown-writer:toggle-comment-text'
+            }
+            {
+              'label': 'Highlight',
+              'command': 'markdown-writer:toggle-highlight-text'
+            }
+          ]
+        }
+        {
+          'label': 'Table'
+          'submenu': [
+            {
+              'label': 'Insert Table',
+              'command': 'markdown-writer:insert-table'
+            }
+            {
+              'label': 'Format Table'
+              'command': 'markdown-writer:format-table'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Jump to Next Table Cell'
+              'command': 'markdown-writer:jump-to-next-table-cell'
+            }
+          ]
+        }
+        {
+          'label': 'Folding'
+          'submenu': [
+            {
+              'label': 'Fold All Headings'
+              'command': 'markdown-writer:fold-headings'
+            }
+            {
+              'label': 'Focus Current Heading'
+              'command': 'markdown-writer:focus-current-heading'
+            }
+            {
+              'label': 'Fold All Links'
+              'command': 'markdown-writer:fold-links'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Unfold All'
+              'command': 'editor:unfold-all'
+            }
+            {
+              'label': 'Unfold Current Row'
+              'command': 'editor:unfold-current-row'
+            }
+          ]
+        }
+        {
+          'label': 'Helpers'
+          'submenu': [
+            {
+              'label': 'Insert/Update Table of Content (TOC)'
+              'command': 'markdown-writer:insert-toc'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Jump to Next Heading'
+              'command': 'markdown-writer:jump-to-next-heading'
+            }
+            {
+              'label': 'Jump to Previous Heading'
+              'command': 'markdown-writer:jump-to-previous-heading'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Jump to Link/Definition'
+              'command': 'markdown-writer:jump-to-reference-definition'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Format Ordered List'
+              'command': 'markdown-writer:format-order-list'
+            }
+            { 'type': 'separator' }
+            {
+              'label': 'Open Link in File'
+              'command': 'markdown-writer:open-link-in-file'
+            }
+            {
+              'label': 'Open Link in Browser'
+              'command': 'markdown-writer:open-link-in-browser'
+            }
+          ]
+        }
+        { 'type': 'separator' }
+        {
+          'label': 'Configurations'
+          'submenu': [
+            {
+              'label': 'Create Default Keymaps'
+              'command': 'markdown-writer:create-default-keymaps'
+            }
+            {
+              'label': 'Create Project Configs'
+              'command': 'markdown-writer:create-project-configs'
+            }
+          ]
+        }
+        { 'type': 'separator' }
+        {
+          'label': 'Open Cheat Sheet'
+          'command': 'markdown-writer:open-cheat-sheet'
+        }
+      ]
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "_from": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+  "_id": "styri-syntax@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-3i+A+hei9E6PMZySY46JVna58UTV88QAruIGT5coOr+wPhlm5TO4RkZ3i+9UxDBmW4WPhpfi32B1SBdMidcZ4g==",
+  "_location": "/styri-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+  "_shasum": "584cd17b453c068762a19f861021593231bfcb48",
+  "_spec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+  "_where": "/tmp/apm-install-dir-2020118-11530-31502y.8qejl",
+  "bugs": {
+    "url": "https://github.com/chbk/styri-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A colorful and intuitive syntax theme",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/chbk/styri-syntax#readme",
+  "keywords": [
+    "styri",
+    "color",
+    "dark"
+  ],
+  "license": "Apache-2.0",
+  "name": "styri-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chbk/styri-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "1.0.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

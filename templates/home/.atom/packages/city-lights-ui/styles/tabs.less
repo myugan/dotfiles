@@ -1,0 +1,149 @@
+// Tabs
+// -------------------
+// Displays selectable tabs above the editor.
+// Overrides: atom/tabs
+
+// .tab-bar .tab.modified:not(:hover) .close-icon {
+//   // keep the modified indicator live regardless of active-ness
+//   opacity: 1;
+//   background-color: @text-color !important;
+// }
+
+.tab-bar {
+  background-color: @tab-bar-background-color;
+  border-bottom: 0 solid @base-border-color;
+  padding-top: 8px;
+
+  .tab {
+    color: #585e6f;
+    position: relative;
+    height: @tab-height;
+    line-height: @tab-height;
+    font-size: inherit;
+    border-right: 1px solid @tab-border-color;
+    background-color: @tab-background-color;
+    border-radius: 1px;
+    text-align: center;
+
+    &[data-type="SettingsView"] {
+      .title.icon:before {
+        display:none;
+      }
+    }
+
+    &:hover {
+      .close-icon {
+        opacity: 1;
+      }
+    }
+
+    .close-icon {
+      height: 14px;
+      width: 14px;
+      opacity: 0;
+      background-image: url('atom://city-lights-ui/icons/icon-close-tab.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin-top: 10.5px;
+      border-radius: 50%;
+      // transition: background 200ms ease;
+      &:before {
+        display: none;
+      }
+
+      &:hover {
+        background: #99a1b8 url('atom://city-lights-ui/icons/icon-close-tab-hover.svg') no-repeat center center !important ;
+      }
+    }
+    // Modified Icon (the blue circle) -------------------
+    &.modified:not(:hover) .close-icon {
+      top: 5px;
+      right: 14px;
+      background: none;
+      width: 6px;
+      height: 6px;
+      background-color: @text-color;
+      border: none;
+      opacity:1;
+
+    }
+
+    &.active.modified {
+      &:hover {
+        .close-icon {
+          background-image: url('atom://city-lights-ui/icons/icon-close-tab.svg');
+          background-color:transparent;
+          &:hover {
+            background-color:#99a1b8;
+          }
+         }
+      }
+      .close-icon {
+        background-color: #68a1f0;
+      }
+    }
+
+    &.active .close-icon:hover {
+      color: lighten(#2a3038, 10%);
+      opacity: 1;
+    }
+
+    // Dragging ------------------------------------------
+    // Styles get applied while dragging a tab
+    &.is-dragging {
+      background: @tab-background-color;
+      border-color: transparent;
+      opacity: 0.5;
+    }
+
+    &.active {
+      color: #ccd1e1;
+      background-color: @tab-background-color-active;
+      .title {
+        padding-right:0px !important;
+      }
+      .close-icon {
+        opacity: 1;
+      }
+
+      &:after {
+        content: '';
+        width: 100%;
+        background-image: linear-gradient(to left, #7ec1ff, #478dff);
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .title {
+      &:after {
+        content:'';
+        display:inline-block;
+        position: relative;
+        width:16px;
+        top: 0;
+      }
+    }
+
+    &.small {
+      line-height: @tab-height - 13px !important;
+      height: @tab-height - 13px !important;
+      font-size: inherit;
+
+      .close-icon {
+        margin-top: 5.5px;
+      }
+    }
+
+    &.large {
+      line-height: @tab-height + 8px !important;
+      height: @tab-height + 8px !important;
+
+      .close-icon {
+        margin-top: 16px;
+      }
+    }
+  }
+}

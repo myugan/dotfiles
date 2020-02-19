@@ -1,0 +1,1 @@
+{".text.md:not(.code)":{"editor":{"softWrap":true,"commentStart":"<!-- ","commentEnd":" -->"}}}

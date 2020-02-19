@@ -1,0 +1,61 @@
+'name': 'Dockerfile'
+'fileTypes': [
+  'Dockerfile'
+]
+'patterns': [
+  {
+    'match': '(?i:^\\s*(from)\\s.*?(.+?\\s(as)\\s.*)?)',
+    'captures':
+      '1':
+        'name': 'keyword.control.dockerfile'
+      '3':
+        'name': 'keyword.control.dockerfile'
+  },
+  {
+    'match': '(?i:^\\s*(maintainer)\\s.*)',
+    'captures':
+      '1':
+        'name': 'keyword.control.dockerfile'
+  }
+  {
+    'match': '(?i:^\\s*(onbuild\\s+)?(shell|healthcheck|run|expose|env|add|copy|volume|user|workdir|cmd|entrypoint|label|arg|stopsignal)\\s)'
+    'captures':
+      '0':
+        'name': 'keyword.control.dockerfile'
+      '1':
+        'name': 'keyword.other.special-method.dockerfile'
+  }
+  {
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.double.dockerfile'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escaped.dockerfile'
+      }
+    ]
+  }
+  {
+    'begin': '\''
+    'end': '\''
+    'name': 'string.quoted.single.dockerfile'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escaped.dockerfile'
+      }
+    ]
+  }
+  {
+      'match': '(?m)\\\\$'
+      'captures':
+        '0':
+            'name': 'keyword.control.dockerfile'
+  }
+  {
+    'match': '^\\s*#.*$'
+    'name': 'comment.block.dockerfile'
+  }
+]
+'scopeName': 'source.dockerfile'

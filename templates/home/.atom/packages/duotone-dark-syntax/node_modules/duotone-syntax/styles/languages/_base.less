@@ -1,0 +1,71 @@
+// Language syntax highlighting
+
+// Mixins -----------------------------------
+.punctuation-mixin() {
+  .syntax--punctuation,
+  .syntax--bracket,
+  .syntax--brace {
+    .uno-5();
+  }
+  .syntax--string .syntax--punctuation {
+    .duo-3();
+  }
+}
+
+// Default color -----------------------------------
+// Will be used by all languages when no other scope is defined.
+.syntax--source {
+  .uno-2();
+}
+
+// Uno hue -----------------------------------
+
+.syntax--html.syntax--elements,
+.syntax--entity,
+.syntax--tag,
+.syntax--function-call {
+  .uno-1();
+}
+
+.syntax--attribute-name,
+.syntax--character.syntax--escape {
+  .uno-3();
+}
+
+.syntax--support {
+  .uno-4();
+}
+
+// Uno hue -----------------------------------
+
+.syntax--variable {
+  .uno-3();
+}
+
+// Duo hue -----------------------------------
+.syntax--string,
+.syntax--constant,
+.syntax--storage.syntax--type {
+  .duo-1();
+}
+
+.syntax--keyword,
+.syntax--storage {
+  .duo-2();
+}
+
+
+// Punctuation -----------------------------------
+.punctuation-mixin();
+
+
+// Comments -----------------------------------
+.syntax--comment {
+  .uno-4();
+  font-style: italic;
+}
+
+
+// Text styles -----------------------------------
+.syntax--bold { font-weight: bold; }
+.syntax--italic { font-style: italic; }
