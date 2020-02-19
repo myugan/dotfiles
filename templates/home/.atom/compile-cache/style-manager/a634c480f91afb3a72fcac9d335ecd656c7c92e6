@@ -1,1 +1,0 @@
-{"source":".go-plus-status-bar {\n  color: #73c990;\n}\n.go-plus-status-bar:hover {\n  color: #abdebc;\n}\n.go-plus-status-bar.go-plus-status-unknown {\n  color: #6494ed;\n}\n.go-plus-status-bar.go-plus-status-pending {\n  color: #e2c08d;\n}\n.go-plus-status-bar.go-plus-status-success {\n  color: #73c990;\n}\n.go-plus-status-bar.go-plus-status-fail {\n  color: #ff6347;\n}\n"}

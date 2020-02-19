@@ -1,2 +1,0 @@
-FROM someimage
-UNKNOWN_COMMAND

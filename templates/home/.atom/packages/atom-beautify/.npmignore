@@ -1,9 +1,0 @@
-.DS_Store
-.npmignore
-npm-debug.log
-spec/
-docs/
-examples/
-.travis.yml
-appveyor.yml
-*.md

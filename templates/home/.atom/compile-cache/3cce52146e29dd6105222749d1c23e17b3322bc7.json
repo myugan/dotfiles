@@ -1,1 +1,0 @@
-{"key":"todo","patterns":[{"match":"(?<!\\w)@?(TODO|FIXME|CHANGED|XXX|IDEA|HACK|NOTE|REVIEW|NB|BUG|QUESTION|COMBAK|TEMP)\\b","name":"storage.type.class.${1:/downcase}.md"}]}

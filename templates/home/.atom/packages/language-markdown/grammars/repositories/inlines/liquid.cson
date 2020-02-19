@@ -1,4 +1,0 @@
-key: 'liquid'
-patterns: [
-  { include: 'text.html.liquid' }
-]

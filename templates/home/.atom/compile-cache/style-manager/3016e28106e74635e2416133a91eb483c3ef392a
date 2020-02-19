@@ -1,1 +1,0 @@
-{"source":".editor {\n  font-weight: bold;\n}\n.tree-view {\n  font-size: 11px;\n}\nli.file.entry.list-item,\n.list-tree li.list-nested-item > .list-item {\n  line-height: 22px;\n}\n"}

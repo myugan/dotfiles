@@ -1,8 +1,0 @@
-node_modules
-.flowconfig
-.idea
-/src
-/spec
-.DS_Store
-*.log
-decls

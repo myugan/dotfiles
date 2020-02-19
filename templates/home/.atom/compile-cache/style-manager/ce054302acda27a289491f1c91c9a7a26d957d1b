@@ -1,1 +1,0 @@
-{"source":".editor {\n  font-weight: bold;\n}\nhtml,\nbody,\n.tree-view,\n.tab-bar .tab {\n  font-size: 1rem;\n  font-weight: bold;\n}\nhtml,\nbody,\n.tree-view,\n.tooltip,\n.tab-bar .tab,\n.find-and-replace .find-meta-container,\natom-text-editor[mini],\n.btn,\n.status-bar,\n.list-tree li.list-nested-item > .list-item {\n  font-size: 1rem;\n}\n"}
