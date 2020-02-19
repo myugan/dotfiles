@@ -36,6 +36,20 @@ Currently setup on **Manjaro Linux**:
 
 ![img](img/pebble.png)
 
+Installation
+=====
+
+### Requirements
+- `ansible`
+- `python3`
+
+
+```
+git clone https://github.com/myugan/dotfiles
+cd dotfiles
+ansible-playbook -i hosts -e "user=example" main.yml
+```
+
 Collections
 =====
 
