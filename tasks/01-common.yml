@@ -1,0 +1,47 @@
+---
+- name: Shell configuration
+  template:
+    src: "home/{{ item }}"
+    dest: "/home/{{ user }}/"
+  with_items:
+    - .bashrc
+    - .oh-my-zsh
+    - .zsh
+    - .zshrc
+
+- name: Terminal configuration
+  template:
+    src: "home/{{ item }}"
+    dest: "/home/{{ user }}/"
+  with_items:
+    - .colors
+    - .tmux.conf
+    - .urxvt
+    - .Xresources
+
+- name: Text editor configuration
+  template:
+    src: "home/{{ item }}"
+    dest: "/home/{{ user }}/"
+  with_items:
+    - .nano
+    - .nanorc
+    - .vim
+    - .vimrc
+
+- name: Music player configuration
+  template:
+    src: "home/{{ item }}"
+    dest: "/home/{{ user }}/"
+  with_items:
+    - .mpd
+    - .ncmpcpp
+
+- name: Arch based configuration
+  template:
+    src: "home/{{ item }}"
+    dest: "/home/{{ user }}/"
+  with_items:
+    - .asoundrc
+    - .yaourtrc
+  when: ansible_facts['os_family'] == "Arch Linux"

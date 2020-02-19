@@ -1,0 +1,6 @@
+---
+- name: dotfiles installation
+  hosts: local
+
+  tasks:
+    - import_tasks: tasks/main.yml
