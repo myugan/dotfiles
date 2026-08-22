@@ -41,6 +41,13 @@ nvim
 
 On first launch, plugins install automatically — just wait for it to finish. Opening a file of a given language (e.g. `.py`, `.go`, `.rs`) auto-installs its LSP server the first time — takes a few seconds, needs internet.
 
+### Changing the theme
+
+Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **don't** hand-edit `base46.theme` in `lua/chadrc.lua` and just restart. The theme's colors are pre-compiled to a cache on disk (`~/.local/share/nvim/base46/`) for speed, and that cache is only (re)built automatically the very first time, not whenever the config changes. The picker recompiles it for you when you pick a theme; a hand-edit doesn't, so nvim keeps rendering the *old* theme's colors until you force it:
+```
+:lua require('base46').load_all_highlights()
+```
+
 ## Shortcuts
 
 **"Space" below means: press and release the Space bar, then press the next key(s).** It's not held down together like Ctrl/Alt.
@@ -131,4 +138,4 @@ On first launch, plugins install automatically — just wait for it to finish. O
 | Press | What happens |
 |---|---|
 | Space, then t, then p | typing speed test |
-| Space, then t, then h | switch between light/dark theme |
+| Space, then t, then h | open theme picker (browse/select any installed theme) |
