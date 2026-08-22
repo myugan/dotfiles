@@ -21,19 +21,25 @@ end
 map({ "n", "t" }, "<C-`>", toggle_term, { desc = "terminal toggle VSCode-style" })
 map("n", "<leader>tt", toggle_term, { desc = "terminal toggle VSCode-style" })
 
--- Buffer/tab navigation (tabufline disabled, using bufferline.nvim instead)
-map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
-map("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "buffer goto next" })
-map("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "buffer goto prev" })
-map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "buffer close" })
-map("n", "<A-.>", "<cmd>BufferLineMoveNext<CR>", { desc = "buffer move right" })
-map("n", "<A-,>", "<cmd>BufferLineMovePrev<CR>", { desc = "buffer move left" })
+-- Buffer/tab navigation now comes from NvChad's own tabufline defaults
+-- (<Tab>/<S-Tab> next/prev, <leader>b new, <leader>x close), active
+-- automatically now that tabufline.enabled is back to its default (true).
 
--- Jump straight to tab N
+-- Jump straight to tab N (tabufline's own ordered buffer list, vim.t.bufs)
 for i = 1, 9 do
-  map("n", "<A-" .. i .. ">", "<cmd>BufferLineGoToBuffer " .. i .. "<CR>", { desc = "buffer goto " .. i })
+  map("n", "<A-" .. i .. ">", function()
+    local bufnr = vim.t.bufs[i]
+    if bufnr then
+      require("nvchad.tabufline").goto_buf(bufnr)
+    end
+  end, { desc = "buffer goto " .. i })
 end
-map("n", "<A-0>", "<cmd>BufferLineGoToBuffer -1<CR>", { desc = "buffer goto last" })
+map("n", "<A-0>", function()
+  local bufnr = vim.t.bufs[#vim.t.bufs]
+  if bufnr then
+    require("nvchad.tabufline").goto_buf(bufnr)
+  end
+end, { desc = "buffer goto last" })
 
 -- Claude Code (leader-a namespace)
 map("n", "<leader>ac", "<cmd>ClaudeCode<CR>", { desc = "Claude Code toggle" })
