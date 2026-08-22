@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "nightowl",
+	theme = "tokyonight",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -15,13 +15,10 @@ M.base46 = {
 }
 
 -- M.nvdash = { load_on_startup = true }
-M.ui = {
-	statusline = {
-		enabled = false, -- using lualine.nvim instead
-	},
-	tabufline = {
-		enabled = false, -- using bufferline.nvim instead
-	},
-}
+-- M.ui = {
+--       tabufline = {
+--          lazyload = false
+--      }
+-- }
 
 return M

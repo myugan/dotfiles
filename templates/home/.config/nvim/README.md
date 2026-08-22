@@ -5,9 +5,28 @@
 Prerequisites:
 - Neovim >= 0.11
 - git
-- A [Nerd Font](https://www.nerdfonts.com/) installed and set as your terminal font (icons/bufferline/statusline need it)
+- A **full-coverage Nerd Font** installed and set as your terminal font (see "Font setup" below — this matters more than it sounds)
 - `ripgrep` (`brew install ripgrep`) for Telescope live grep
 - Internet access on first launch (plugins + language servers auto-install)
+
+### Font setup
+
+The sidebar, tabs, and status line all use icon glyphs from a "Nerd Font." Not every Nerd Font build includes every icon set — some narrower/condensed builds (e.g. `3270 Nerd Font`) strip out the newer **Material Design Icons** range to save space, which shows up as broken boxes/tofu specifically in the tab bar (other icons elsewhere may still look fine, which makes it confusing to diagnose).
+
+To avoid that, install a full-coverage font:
+```sh
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+Then in your terminal app, set it as the font used for non-ASCII/icon characters:
+
+**iTerm2:**
+1. Settings (`Cmd+,`) → Profiles → your profile → **Text** tab
+2. Enable "Use a different font for non-ASCII text" if not already on
+3. Set **Non-ASCII Font** to `JetBrainsMono Nerd Font`, size to match your normal font
+4. Restart iTerm2
+
+(Other terminals: just set the whole terminal font to a Nerd Font build — most don't split ASCII/non-ASCII the way iTerm2 does.)
 
 Install:
 ```sh
@@ -55,10 +74,6 @@ On first launch, plugins install automatically — just wait for it to finish. O
 | Shift+Tab | previous tab |
 | Space, then b | open a new empty tab |
 | Space, then x | close current tab |
-| Alt+. | move current tab one spot right |
-| Alt+, | move current tab one spot left |
-| Alt+1 through Alt+9 | jump straight to tab 1–9 |
-| Alt+0 | jump to the last tab |
 
 ### Windows / splits
 | Press | What happens |
