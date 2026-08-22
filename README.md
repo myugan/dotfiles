@@ -9,7 +9,7 @@ Currently setup on **Manjaro Linux**:
 
 - Panel: `dash to panel`
 - Shell: `zsh`
-- Text Editor: `atom` and `vim`
+- Text Editor: `atom`, `vim`, and `neovim` (see [`templates/home/.config/nvim`](templates/home/.config/nvim/README.md) for setup + shortcuts)
 - Icons: `Qojir-manjaro`
 - Terminal Emulator: `gnome-terminal`
 - Terminal Fonts: `Menlo`
