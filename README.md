@@ -20,7 +20,7 @@ defaults). Individual pieces:
 ```sh
 git clone https://github.com/myugan/dotfiles ~/dotfiles
 cd ~/dotfiles
-brew bundle --file=macos/Brewfile
+./install.sh
 ```
 
 Old Manjaro Linux setup (archived, still below)
