@@ -25,10 +25,13 @@ map("n", "<leader>tt", toggle_term, { desc = "terminal toggle VSCode-style" })
 -- (<Tab>/<S-Tab> next/prev, <leader>b new, <leader>x close), active
 -- automatically now that tabufline.enabled is back to its default (true).
 
--- <leader>c: easier-to-remember alias for close (c = close), same action as <leader>x
-map("n", "<leader>c", function()
+-- Close tab: <leader>c (c = close) needs Space first; Alt+c is the same
+-- action without needing Space at all, for a faster single-combo close.
+local close_tab = function()
   require("nvchad.tabufline").close_buffer()
-end, { desc = "buffer close" })
+end
+map("n", "<leader>c", close_tab, { desc = "buffer close" })
+map("n", "<A-c>", close_tab, { desc = "buffer close" })
 
 -- <C-b>: one-key sidebar toggle-focus (VSCode's sidebar mnemonic). Jumps
 -- into the sidebar; press again while inside it to jump back.

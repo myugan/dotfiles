@@ -2,7 +2,10 @@ require("nvchad.configs.lspconfig").defaults()
 
 -- read :h vim.lsp.config for changing options of lsp servers
 
-require("mason").setup()
+-- mason.nvim itself is already configured (PATH="skip", UI icons) by
+-- NvChad's own plugin spec; `require`-ing it here just ensures it's
+-- loaded before mason-lspconfig, without calling .setup() a second time.
+require "mason"
 require("mason-lspconfig").setup {
   automatic_enable = true, -- auto vim.lsp.enable() once a server is installed
 }
