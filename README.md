@@ -2,6 +2,34 @@
   <img width="358" height="100" src="img/dotfiles.png">
 </p>
 
+macOS setup (current)
+=====
+
+Daily driver is now a Mac. See [`macos/README.md`](macos/README.md) for the
+full replicate-from-scratch guide (Homebrew bundle, apps, fonts, system
+defaults). Individual pieces:
+
+- [`macos/`](macos/) — Brewfile (CLI tools, fonts, GUI apps, VS Code
+  extensions), `defaults write` settings
+- [`zsh/`](zsh/) — Oh My Zsh + Powerlevel10k
+- [`git/`](git/) — `.gitconfig`, global gitignore
+- [`nvim/`](nvim/) — NvChad-based Neovim config
+- [`iterm2/`](iterm2/) — profile, colors, fonts (Space Mono + JetBrains Mono Nerd Font)
+- [`obsidian/`](obsidian/) — vault settings for the Personal/Professional vaults
+
+```sh
+git clone https://github.com/myugan/dotfiles ~/dotfiles
+cd ~/dotfiles
+brew bundle --file=macos/Brewfile
+```
+
+Old Manjaro Linux setup (archived, still below)
+=====
+
+Everything below — the Ansible playbook, window manager configs, `templates/`
+— is the previous Linux setup. Kept for history, not maintained against the
+current machine.
+
 About
 =====
 
