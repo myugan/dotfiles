@@ -11,6 +11,9 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 
 map("n", "<leader>tp", "<cmd>Typr<CR>", { desc = "Typing test" })
 map("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit status" })
+map("n", "<leader>gm", function()
+  require("configs.ai_commit").generate()
+end, { desc = "AI-generate commit message from staged diff" })
 
 -- VSCode-style integrated terminal toggle
 -- <leader>tt is the reliable one; Ctrl+` is a bonus but many terminals
