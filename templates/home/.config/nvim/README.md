@@ -8,6 +8,7 @@ Prerequisites:
 - A **full-coverage Nerd Font** installed and set as your terminal font (see "Font setup" below — this matters more than it sounds)
 - `ripgrep` (`brew install ripgrep`) for Telescope live grep
 - Internet access on first launch (plugins + language servers auto-install)
+- The `claude` CLI on PATH, for AI-generated commit messages (`Space, g, m`) — optional, only that one feature needs it
 
 ### Font setup
 
@@ -115,6 +116,7 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 |---|---|
 | Space, then g, then g | open git panel (view changes, stage, commit, push) |
 | Space, then g, then t | search git-changed files |
+| Space, then g, then m | AI-generate a commit message (Conventional Commits) from staged changes, opens an editable buffer — `:w` commits it, `:q` cancels |
 
 ### Terminal
 | Press | What happens |

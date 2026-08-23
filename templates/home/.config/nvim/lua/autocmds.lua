@@ -1,12 +1,14 @@
 require "nvchad.autocmds"
 
--- Open the file explorer (nvim-tree) on startup, cursor back in the
--- real buffer if one was opened (e.g. `nvim somefile.lua`).
+-- Open the file explorer (nvim-tree) on startup, but only when opening
+-- an actual file/directory (e.g. `nvim somefile.lua`). With no
+-- arguments at all, leave the empty buffer alone so the snacks
+-- dashboard can render instead -- it needs that first empty buffer
+-- undisturbed to show up.
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    local had_file = vim.fn.argc() > 0
-    vim.cmd "NvimTreeFocus"
-    if had_file then
+    if vim.fn.argc() > 0 then
+      vim.cmd "NvimTreeFocus"
       vim.cmd "wincmd p"
     end
   end,
