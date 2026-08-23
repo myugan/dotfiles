@@ -1,0 +1,446 @@
+/*
+ * myugan-blog — Obsidian theme synced with https://myugan.com (src/styles/global.css).
+ * Update this file when blog tokens change.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ─── Dark (ported from iTerm2 custom preset "typr") ────────────────────── */
+.theme-dark {
+  --base-h: 208;
+  --base-s: 28%;
+  --base-l: 12%;
+  --accent-h: 223;
+  --accent-s: 44%;
+  --accent-l: 68%;
+
+  --color-base-00: #161f27;
+  --color-base-05: #1f2830;
+  --color-base-10: #283139;
+  --color-base-20: #374048;
+  --color-base-25: #3e474f;
+  --color-base-30: #4a525b;
+  --color-base-35: #555d66;
+  --color-base-40: #636b74;
+  --color-base-50: #7b838c;
+  --color-base-60: #939aa4;
+  --color-base-70: #adb3be;
+  --color-base-100: #ced4df;
+
+  --color-blue: #8a9ed1;
+  --color-blue-rgb: 138, 158, 209;
+  --color-green: #9fe8c3;
+  --color-green-rgb: 159, 232, 195;
+  --color-orange: #fbe9b6;
+  --color-orange-rgb: 251, 233, 182;
+  --color-red: #ef8891;
+  --color-red-rgb: 239, 136, 145;
+  --color-yellow: #fbdf90;
+  --color-yellow-rgb: 251, 223, 144;
+  --color-purple: #d2a2e2;
+  --color-purple-rgb: 210, 162, 226;
+  --color-cyan: #a1e1e8;
+  --color-cyan-rgb: 161, 225, 232;
+  --color-pink: #e1c0ed;
+  --color-pink-rgb: 225, 192, 237;
+
+  --background-primary: #161f27;
+  --background-primary-alt: #1f2830;
+  --background-secondary: #283139;
+  --background-secondary-alt: #374048;
+  --background-modifier-hover: rgba(138, 158, 209, 0.08);
+  --background-modifier-active-hover: rgba(138, 158, 209, 0.15);
+  --background-modifier-border: rgba(138, 158, 209, 0.18);
+  --background-modifier-border-hover: rgba(138, 158, 209, 0.28);
+  --background-modifier-border-focus: rgba(138, 158, 209, 0.42);
+  --background-modifier-form-field: #1f2830;
+
+  --interactive-normal: rgba(138, 158, 209, 0.06);
+  --interactive-hover: rgba(138, 158, 209, 0.12);
+  --interactive-accent: #8a9ed1;
+  --interactive-accent-hover: #acbbe2;
+
+  --nav-item-background-active: rgba(138, 158, 209, 0.16);
+  --nav-item-background-hover: rgba(138, 158, 209, 0.09);
+
+  --text-normal: #ced4df;
+  --text-muted: #adb3be;
+  --text-faint: #7b838c;
+  --text-accent: #8a9ed1;
+  --text-accent-hover: #acbbe2;
+  --text-on-accent: #161f27;
+  --text-on-accent-inverted: #e6eaf1;
+  --text-selection: #31383f;
+  --text-highlight-bg: rgba(138, 158, 209, 0.22);
+
+  --link-color: #8a9ed1;
+  --link-color-hover: #acbbe2;
+  --link-external-color: #acbbe2;
+  --link-unresolved-color: #adb3be;
+  --link-unresolved-opacity: 0.85;
+
+  --bold-color: #e6eaf1;
+  --italic-color: #ced4df;
+
+  --inline-title-color: #ced4df;
+
+  --code-normal: #ced4df;
+  --code-background: #1f2830;
+  --code-comment: #7b838c;
+  --code-function: #acbbe2;
+  --code-keyword: #8a9ed1;
+  --code-important: #fbdf90;
+  --code-property: #d2a2e2;
+  --code-punctuation: #adb3be;
+  --code-string: #9fe8c3;
+  --code-tag: #e1c0ed;
+  --code-value: #fbe9b6;
+
+  --blockquote-border-color: rgba(138, 158, 209, 0.35);
+  --blockquote-color: #7b838c;
+  --callout-border-width: 3px;
+
+  --checkbox-color: #8a9ed1;
+  --checkbox-color-hover: #acbbe2;
+
+  --tag-color: #7b838c;
+  --tag-background: rgba(40, 49, 57, 0.85);
+  --tag-border-color: rgba(138, 158, 209, 0.22);
+
+  --embed-background: #1f2830;
+  --embed-border-left: 3px solid rgba(138, 158, 209, 0.35);
+
+  --divider-color: rgba(138, 158, 209, 0.18);
+  --hr-color: rgba(138, 158, 209, 0.18);
+
+  --modal-border-color: rgba(138, 158, 209, 0.22);
+  --prompt-border-color: rgba(138, 158, 209, 0.22);
+
+  --focus-ring-color: rgba(138, 158, 209, 0.45);
+
+  --tab-active-background: #283139;
+  --tab-outline-color: rgba(138, 158, 209, 0.35);
+
+  --titlebar-background: #161f27;
+  --titlebar-background-focused: #1f2830;
+  --titlebar-text-color: #adb3be;
+
+  --font-interface-theme: 'JetBrains Mono', 'Azeret Mono', ui-monospace, monospace;
+  --font-text-theme: 'Azeret Mono', 'Courier Prime', ui-monospace, monospace;
+  --font-monospace-theme: 'JetBrains Mono', 'Azeret Mono', ui-monospace, monospace;
+
+  --line-height-normal: 1.6;
+  --heading-spacing: 1.25em;
+  --p-spacing: 0.85rem;
+
+  --radius-s: 0px;
+  --radius-m: 2px;
+  --radius-l: 2px;
+
+  /* Code snippets (blog global.css — inline mix + language blocks) */
+  --myugan-inline-code-fg: color-mix(in srgb, #ced4df 96%, #8a9ed1 4%);
+  --myugan-inline-code-bg: color-mix(in srgb, #374048 92%, #8a9ed1 8%);
+  --myugan-cmd-accent: #9fe8c3;
+  --myugan-output-panel-bg: rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Light (matches blog [data-theme="light"]) ─────────────────────────── */
+.theme-light {
+  --accent-h: 226;
+  --accent-s: 71%;
+  --accent-l: 48%;
+
+  --color-base-00: #f7f5f1;
+  --color-base-05: #f3efe8;
+  --color-base-10: #fcfbf8;
+  --color-base-20: #f1ede7;
+  --color-base-25: #ebe5dc;
+  --color-base-30: #e5dfd4;
+  --color-base-35: #d9d2c7;
+  --color-base-40: #c4bdb2;
+  --color-base-50: #9ca3af;
+  --color-base-60: #6b7280;
+  --color-base-70: #4b5563;
+  --color-base-100: #1f2937;
+
+  --color-blue: #2563eb;
+  --color-blue-rgb: 37, 99, 235;
+  --color-green: #16a34a;
+  --color-green-rgb: 22, 163, 74;
+
+  --background-primary: #f7f5f1;
+  --background-primary-alt: #fcfbf8;
+  --background-secondary: #f1ede7;
+  --background-secondary-alt: #ede8e1;
+  --background-modifier-hover: rgba(37, 99, 235, 0.06);
+  --background-modifier-active-hover: rgba(37, 99, 235, 0.11);
+  --background-modifier-border: rgba(37, 99, 235, 0.16);
+  --background-modifier-border-hover: rgba(37, 99, 235, 0.24);
+  --background-modifier-border-focus: rgba(37, 99, 235, 0.38);
+  --background-modifier-form-field: #fcfbf8;
+
+  --interactive-normal: rgba(37, 99, 235, 0.05);
+  --interactive-hover: rgba(37, 99, 235, 0.1);
+  --interactive-accent: #2563eb;
+  --interactive-accent-hover: #1d4ed8;
+
+  --text-normal: #1f2937;
+  --text-muted: #374151;
+  --text-faint: #5b6470;
+  --text-accent: #1f4ed8;
+  --text-accent-hover: #1e40af;
+  --text-on-accent: #ffffff;
+  --text-on-accent-inverted: #1f2937;
+  --text-selection: rgba(31, 41, 55, 0.16);
+  --text-highlight-bg: rgba(37, 99, 235, 0.14);
+
+  --link-color: #2563eb;
+  --link-color-hover: #1d4ed8;
+  --link-external-color: #1d4ed8;
+  --link-unresolved-color: #6b7280;
+
+  --bold-color: #1f2937;
+  --italic-color: #1f2937;
+
+  --inline-title-color: #1f2937;
+
+  --code-normal: #1f2937;
+  --code-background: #ede8e1;
+  --code-comment: #5b6470;
+  --code-keyword: #1d4ed8;
+  --code-function: #1e40af;
+  --code-string: #15803d;
+  --code-tag: #be185d;
+  --code-property: #6d28d9;
+
+  --blockquote-border-color: rgba(37, 99, 235, 0.28);
+  --blockquote-color: #5b6470;
+
+  --tag-color: #5b6470;
+  --tag-background: rgba(252, 251, 248, 0.9);
+  --tag-border-color: rgba(37, 99, 235, 0.18);
+
+  --embed-background: #fcfbf8;
+  --embed-border-left: 3px solid rgba(37, 99, 235, 0.28);
+
+  --divider-color: rgba(37, 99, 235, 0.16);
+  --hr-color: rgba(37, 99, 235, 0.16);
+
+  --modal-border-color: rgba(37, 99, 235, 0.2);
+  --prompt-border-color: rgba(37, 99, 235, 0.2);
+
+  --focus-ring-color: rgba(37, 99, 235, 0.4);
+
+  --tab-active-background: #fcfbf8;
+  --tab-outline-color: rgba(37, 99, 235, 0.28);
+
+  --titlebar-background: #f7f5f1;
+  --titlebar-background-focused: #fcfbf8;
+  --titlebar-text-color: #374151;
+
+  --myugan-inline-code-fg: color-mix(in srgb, #1f2937 96%, #2563eb 4%);
+  --myugan-inline-code-bg: color-mix(in srgb, #ede8e1 92%, #2563eb 8%);
+  --myugan-cmd-accent: #16a34a;
+  --myugan-output-panel-bg: rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Typography (blog: headings uppercase + Courier / body Azeret) ─────── */
+.theme-dark .inline-title,
+.theme-light .inline-title {
+  font-family: 'Space Grotesk', 'Courier Prime', var(--font-text-theme);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.HyperMD-header-1,
+.HyperMD-header-2,
+.HyperMD-header-3,
+.HyperMD-header-4,
+.HyperMD-header-5,
+.HyperMD-header-6 {
+  font-weight: 700;
+}
+
+/* ─── Blockquote & tables (blog prose) ─────────────────────────────────── */
+.markdown-rendered blockquote {
+  border-left-width: 4px;
+  font-style: italic;
+}
+
+.markdown-rendered th {
+  font-weight: 600;
+}
+
+/* ─── Scrollbars (blog global.css) ─────────────────────────────────────── */
+.theme-dark ::-webkit-scrollbar,
+.theme-light ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+  background: var(--background-primary);
+}
+
+.theme-light ::-webkit-scrollbar-track {
+  background: var(--background-primary);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 2px;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 2px;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* ─── Code snippets (blog global.css: inline code, pre, bash / output) ───── */
+/* Reading & Live Preview: `code` then reset inside `pre code` (same as blog). */
+.markdown-preview-view .markdown-rendered code {
+  font-family: var(--font-monospace-theme);
+  font-size: 0.875em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--myugan-inline-code-fg);
+  background-color: var(--myugan-inline-code-bg);
+  padding: 0.12em 0.42em 0.14em;
+  border-radius: 0.3em;
+  border: none;
+  vertical-align: baseline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.markdown-preview-view .markdown-rendered pre > code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.55;
+  color: inherit;
+  font-style: normal;
+  box-decoration-break: unset;
+  -webkit-box-decoration-break: unset;
+}
+
+.markdown-preview-view .markdown-rendered pre {
+  background-color: var(--code-background);
+  padding: 0.85rem 0.95rem;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--background-modifier-border);
+  overflow-x: auto;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.markdown-preview-view .markdown-rendered p + pre {
+  margin-top: 0.25rem;
+}
+
+.markdown-preview-view .markdown-rendered pre + p {
+  margin-top: 0.25rem;
+}
+
+/* Command blocks: bash, shell, zsh, sh */
+.markdown-preview-view .markdown-rendered pre.language-bash,
+.markdown-preview-view .markdown-rendered pre.language-shell,
+.markdown-preview-view .markdown-rendered pre.language-zsh,
+.markdown-preview-view .markdown-rendered pre.language-sh {
+  border-left: 3px solid var(--myugan-cmd-accent);
+}
+
+.markdown-preview-view .markdown-rendered pre.language-bash::before,
+.markdown-preview-view .markdown-rendered pre.language-shell::before,
+.markdown-preview-view .markdown-rendered pre.language-zsh::before,
+.markdown-preview-view .markdown-rendered pre.language-sh::before {
+  content: '$ cmd';
+  position: absolute;
+  top: 0.5rem;
+  right: 2.5rem;
+  font-size: 0.65rem;
+  font-family: var(--font-monospace-theme);
+  color: var(--myugan-cmd-accent);
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+/* Output / plain text blocks */
+.markdown-preview-view .markdown-rendered pre.language-text,
+.markdown-preview-view .markdown-rendered pre.language-output {
+  border-left: 3px solid var(--background-modifier-border);
+  background-color: var(--myugan-output-panel-bg);
+}
+
+.markdown-preview-view .markdown-rendered pre.language-text::before,
+.markdown-preview-view .markdown-rendered pre.language-output::before {
+  content: 'output';
+  position: absolute;
+  top: 0.5rem;
+  right: 2.5rem;
+  font-size: 0.65rem;
+  font-family: var(--font-monospace-theme);
+  color: var(--text-faint);
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+.markdown-preview-view .markdown-rendered pre.language-text code,
+.markdown-preview-view .markdown-rendered pre.language-output code {
+  color: var(--text-muted);
+}
+
+/* Inline code in CM6 (Source / Live Preview): mirror blog inline chip */
+.cm-inline-code {
+  font-family: var(--font-monospace-theme) !important;
+  font-size: 0.875em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  border-radius: 0.3em !important;
+  padding: 0.08em 0.38em 0.1em !important;
+  border: none !important;
+}
+
+.theme-dark .cm-inline-code {
+  color: var(--myugan-inline-code-fg) !important;
+  background-color: var(--myugan-inline-code-bg) !important;
+}
+
+.theme-light .cm-inline-code {
+  color: var(--myugan-inline-code-fg) !important;
+  background-color: var(--myugan-inline-code-bg) !important;
+}
+
+/* Code blocks in edit mode: border + padding similar to blog `pre` */
+.HyperMD-codeblock {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+}
+
+.markdown-preview-view .markdown-rendered h1 code,
+.markdown-preview-view .markdown-rendered h2 code,
+.markdown-preview-view .markdown-rendered h3 code {
+  font-size: 0.8em;
+}

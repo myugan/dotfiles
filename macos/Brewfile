@@ -1,0 +1,113 @@
+tap "datadog/stratus-red-team", "https://github.com/DataDog/stratus-red-team"
+tap "loft-sh/tap"
+# GitOps Continuous Delivery for Kubernetes
+brew "argocd"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Swiss army knife for network attacks and monitoring
+brew "bettercap"
+# Command-line tool for DigitalOcean
+brew "doctl"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# GUI passphrase prompt for GPG (needed for `git commit` signing to work)
+cask "pinentry-mac"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Kubernetes package manager
+brew "helm"
+# Dex to Java decompiler
+brew "jadx"
+# Kubernetes native framework for building AI agents
+brew "kagent"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Kubernetes WithOut Kubelet - Simulates thousands of Nodes and Clusters
+brew "kwok"
+# Linux virtual machines
+brew "lima"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
+# Capability-based sandbox shell for AI agents with OS-enforced isolation
+brew "nono"
+# Generic machine emulator and virtualizer
+brew "qemu"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Daemon to provide vmnet.framework support for rootless QEMU
+brew "socket_vmnet"
+# Penetration testing for SQL injection and database servers
+brew "sqlmap"
+# Tool to build, change, and version infrastructure
+brew "terraform"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Internet file retriever
+brew "wget"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Terminal-based AI coding assistant
+cask "claude-code"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-space-mono"
+cask "font-space-grotesk"
+
+# Apps (installed manually on this machine, not yet via brew --
+# added here so a fresh machine can get them in one `brew bundle`)
+cask "adobe-acrobat-reader"
+cask "calibre"
+cask "cloudflare-warp"
+cask "cursor"
+cask "discord"
+cask "docker-desktop"
+cask "figma"
+cask "firefox"
+cask "ghostty"
+cask "google-chrome"
+cask "iterm2"
+cask "kap"
+cask "microsoft-excel"
+cask "microsoft-outlook"
+cask "microsoft-powerpoint"
+cask "microsoft-teams"
+cask "microsoft-word"
+cask "neovide-app"
+cask "nordvpn"
+cask "notion"
+cask "obs"
+cask "obsidian"
+cask "openvpn-connect"
+cask "shottr"
+cask "tailscale-app"
+cask "twingate"
+cask "utm"
+cask "viber"
+cask "visual-studio-code"
+cask "vlc"
+cask "whatsapp"
+cask "zoom"
+
+vscode "anysphere.remote-ssh"
+vscode "hashicorp.terraform"
+vscode "ms-vscode.makefile-tools"
+vscode "redhat.vscode-yaml"
+go "github.com/anderseknert/kube-review"
+npm "corepack"

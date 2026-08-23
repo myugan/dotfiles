@@ -1,0 +1,136 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Certifications",
+      "path": "Areas/Certifications.md"
+    },
+    {
+      "basename": "Default Service Accounts",
+      "path": "Resources/GCP/IAM/Default Service Accounts.md"
+    },
+    {
+      "basename": "Default Cluster Inventory",
+      "path": "Resources/Kubernetes/Cloud Providers/GKE/Default Cluster Inventory.md"
+    },
+    {
+      "basename": "Overview",
+      "path": "Resources/Kubernetes/Cloud Providers/GKE/Overview.md"
+    },
+    {
+      "basename": "LLM Evaluation",
+      "path": "Projects/kubernetes-security.cloud/LLM Evaluation.md"
+    },
+    {
+      "basename": "_index",
+      "path": "Projects/kubernetes-security.cloud/_index.md"
+    },
+    {
+      "basename": "2026-04-16 persistence-via-unbound-serviceaccount-tokens",
+      "path": "Projects/kubernetes-security.cloud/2026-04-16 persistence-via-unbound-serviceaccount-tokens.md"
+    },
+    {
+      "basename": "2026-04-16 privilege-escalation-serviceaccounts-token",
+      "path": "Projects/kubernetes-security.cloud/2026-04-16 privilege-escalation-serviceaccounts-token.md"
+    },
+    {
+      "basename": "2026-04-20 detecting-impersonation-abuse",
+      "path": "Projects/kubernetes-security.cloud/2026-04-20 detecting-impersonation-abuse.md"
+    },
+    {
+      "basename": "2026-04-20 detecting-unbound-serviceaccount-token-persistence",
+      "path": "Projects/kubernetes-security.cloud/2026-04-20 detecting-unbound-serviceaccount-token-persistence.md"
+    },
+    {
+      "basename": "2026-04-20 securing-argocd-application-access",
+      "path": "Projects/kubernetes-security.cloud/2026-04-20 securing-argocd-application-access.md"
+    },
+    {
+      "basename": "Overview",
+      "path": "Resources/Kubernetes/Overview.md"
+    },
+    {
+      "basename": "Articles",
+      "path": "Resources/Articles.base"
+    },
+    {
+      "basename": "Papers",
+      "path": "Resources/Papers.base"
+    },
+    {
+      "basename": "ServiceAccount Tokens",
+      "path": "Resources/Kubernetes/Commands/ServiceAccount Tokens.md"
+    },
+    {
+      "basename": "etcd",
+      "path": "Resources/Kubernetes/Commands/etcd.md"
+    },
+    {
+      "basename": "Debug Pods",
+      "path": "Resources/Kubernetes/Commands/Debug Pods.md"
+    },
+    {
+      "basename": "Audit Logs",
+      "path": "Resources/Kubernetes/Commands/Audit Logs.md"
+    },
+    {
+      "basename": "Solution",
+      "path": "Solution.md"
+    },
+    {
+      "basename": "Overview",
+      "path": "Resources/Kubernetes/Cloud Providers/Overview.md"
+    },
+    {
+      "basename": "Overview",
+      "path": "Resources/GCP/Overview.md"
+    },
+    {
+      "basename": "Idea(s)",
+      "path": "Projects/Tools/Idea(s).md"
+    },
+    {
+      "basename": "Idea(s)",
+      "path": "Projects/Blog Writing/Idea(s).md"
+    },
+    {
+      "basename": "Conferences",
+      "path": "Areas/Conferences.md"
+    },
+    {
+      "basename": "There's Someone Inside Your Cluster",
+      "path": "Areas/Call For Paper/There's Someone Inside Your Cluster.md"
+    },
+    {
+      "basename": "So You Got a Shell... But Where Are You",
+      "path": "Areas/Call For Paper/So You Got a Shell... But Where Are You.md"
+    },
+    {
+      "basename": "resource",
+      "path": "_templates/resource.md"
+    },
+    {
+      "basename": "project",
+      "path": "_templates/project.md"
+    },
+    {
+      "basename": "Interview",
+      "path": "Projects/Interview.md"
+    },
+    {
+      "basename": "2026-05-20",
+      "path": "2026-05-20.md"
+    },
+    {
+      "basename": "Default Cluster Inventory",
+      "path": "Default Cluster Inventory.md"
+    },
+    {
+      "basename": "Untitled",
+      "path": "Areas/Untitled.md"
+    }
+  ],
+  "omittedPaths": [],
+  "omittedTags": [],
+  "updateOn": "file-open",
+  "omitBookmarks": false
+}
