@@ -1,0 +1,14 @@
+{
+  "interfaceFontFamily": "Space Grotesk",
+  "textFontFamily": "Space Grotesk",
+  "baseFontSize": 16,
+  "baseFontSizeAction": true,
+  "translucency": false,
+  "accentColor": "",
+  "enabledCssSnippets": [
+    "theme"
+  ],
+  "cssTheme": "",
+  "theme": "obsidian",
+  "monospaceFontFamily": ""
+}
