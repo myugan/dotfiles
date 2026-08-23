@@ -10,4 +10,12 @@ if setting up a new machine.
 ```sh
 cp git/.gitconfig ~/.gitconfig
 mkdir -p ~/.config/git && cp git/ignore ~/.config/git/ignore
+
+# GPG commit signing needs a passphrase prompt; pinentry-curses needs a real
+# tty, pinentry-mac pops a native GUI dialog instead (works from anywhere,
+# including non-interactive shells/agents)
+brew install --cask pinentry-mac   # also in macos/Brewfile
+mkdir -p ~/.gnupg
+echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+gpgconf --kill gpg-agent
 ```

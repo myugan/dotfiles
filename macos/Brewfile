@@ -14,6 +14,8 @@ brew "ffmpeg"
 brew "ghostscript"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# GUI passphrase prompt for GPG (needed for `git commit` signing to work)
+cask "pinentry-mac"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Kubernetes package manager
