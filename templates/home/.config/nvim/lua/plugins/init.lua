@@ -33,13 +33,6 @@ return {
   },
 
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {},
-  },
-
-  {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy",
     priority = 1000,
@@ -76,11 +69,8 @@ return {
     opts = {},
   },
 
-  -- Claude Code IDE integration
-  {
-    "folke/snacks.nvim",
-    lazy = true,
-  },
+  -- Claude Code IDE integration (snacks.nvim itself configured in
+  -- plugins/dashboard.lua, this just declares the dependency)
   {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
