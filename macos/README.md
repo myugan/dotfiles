@@ -8,23 +8,25 @@ Manjaro Linux setup and is unrelated to this directory.
 ## Replicate on a fresh Mac
 
 ```sh
-# 1. Xcode Command Line Tools (git, etc.)
-xcode-select --install
-
-# 2. Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# 3. Everything in one shot: CLI tools, fonts, GUI apps, VS Code extensions
 git clone https://github.com/myugan/dotfiles ~/dotfiles
 cd ~/dotfiles
-brew bundle --file=macos/Brewfile
-
-# 4. Shell (see ../zsh/README.md)
-# 5. Git (see ../git/)
-# 6. Neovim (see ../nvim/)
-# 7. iTerm2 (see ../iterm2/README.md)
-# 8. Obsidian (see ../obsidian/README.md)
+./install.sh
 ```
+
+Runs everything: Xcode CLT check, Homebrew, `brew bundle` (CLI tools, fonts,
+apps, VS Code extensions), zsh/Oh My Zsh/Powerlevel10k, git config + GPG
+pinentry, nvim, iTerm2 profile, Obsidian vaults, macOS defaults. Existing
+files are backed up with a timestamp suffix, never silently overwritten.
+
+Run a subset instead of everything:
+
+```sh
+./install.sh zsh nvim        # just these steps
+```
+
+Steps, individually documented: [`../zsh/README.md`](../zsh/README.md),
+[`../git/README.md`](../git/README.md), [`../nvim/README.md`](../nvim/README.md),
+[`../iterm2/README.md`](../iterm2/README.md), [`../obsidian/README.md`](../obsidian/README.md).
 
 `Brewfile` is generated with `brew bundle dump` and includes:
 - CLI formulae (`ripgrep`, `tmux`, `helm`, `kubectl`, `terraform`, `go`, `neovim`, ...)
