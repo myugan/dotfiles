@@ -69,6 +69,13 @@ return {
     end,
   },
 
+  -- Jump cursor to any visible char (not just arrow-key stepping)
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+
   -- Claude Code IDE integration
   {
     "folke/snacks.nvim",

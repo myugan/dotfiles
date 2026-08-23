@@ -41,6 +41,8 @@ nvim
 
 On first launch, plugins install automatically — just wait for it to finish. Opening a file of a given language (e.g. `.py`, `.go`, `.rs`) auto-installs its LSP server the first time — takes a few seconds, needs internet.
 
+**Note on Ctrl+S (save):** terminals classically use Ctrl+S/Ctrl+Q for output flow control, which freezes the terminal instead of reaching nvim. This config's `.zshrc` disables that (`stty -ixon`) so Ctrl+S works as save — if you use a different shell, add the equivalent yourself.
+
 ### Changing the theme
 
 Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **don't** hand-edit `base46.theme` in `lua/chadrc.lua` and just restart. The theme's colors are pre-compiled to a cache on disk (`~/.local/share/nvim/base46/`) for speed, and that cache is only (re)built automatically the very first time, not whenever the config changes. The picker recompiles it for you when you pick a theme; a hand-edit doesn't, so nvim keeps rendering the *old* theme's colors until you force it:
@@ -68,10 +70,9 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 | Press | What happens |
 |---|---|
 | (opens automatically on startup) | |
+| Ctrl+b | jump into sidebar; press again while inside it to jump back (VSCode's sidebar key) |
 | Ctrl+n | show/hide sidebar |
-| Space, then e | jump into sidebar |
-| Ctrl+h | move focus into sidebar |
-| Ctrl+l | move focus out of sidebar, back to file |
+| Space, then e | jump into sidebar (alternate to Ctrl+b) |
 | type `:q` and Enter | closes sidebar + quits nvim in one go, if sidebar is open |
 
 ### Tabs (open files)
@@ -80,7 +81,9 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 | Tab | next tab |
 | Shift+Tab | previous tab |
 | Space, then b | open a new empty tab |
-| Space, then x | close current tab |
+| Space, then c | close current tab (mnemonic: c = close) |
+| Alt+1 through Alt+9 | jump straight to tab 1–9 |
+| Alt+0 | jump to the last tab |
 
 ### Windows / splits
 | Press | What happens |
@@ -95,6 +98,7 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 ### Editing / selecting text
 | Press | What happens |
 |---|---|
+| Ctrl+s | save the file (works while typing too, stays in typing mode) |
 | `;` | same as typing `:` (open command line) |
 | type `jk` while typing text | exits typing mode |
 | `v` | start selecting individual characters |
@@ -103,6 +107,8 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 | `gv` | reselect your last selection |
 | Ctrl+n / Ctrl+p while typing | move down/up through autocomplete suggestions |
 | Ctrl+Space while typing | force-show autocomplete suggestions |
+| `s`, then 1-2 chars | jump cursor straight to any visible spot (type target chars, then the label shown) |
+| `S`, then a label | jump cursor to a code block/function/etc. (syntax-aware jump) |
 
 ### Git
 | Press | What happens |

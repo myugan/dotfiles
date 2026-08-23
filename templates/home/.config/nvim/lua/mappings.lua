@@ -7,7 +7,7 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 
 map("n", "<leader>tp", "<cmd>Typr<CR>", { desc = "Typing test" })
 map("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit status" })
@@ -24,6 +24,21 @@ map("n", "<leader>tt", toggle_term, { desc = "terminal toggle VSCode-style" })
 -- Buffer/tab navigation now comes from NvChad's own tabufline defaults
 -- (<Tab>/<S-Tab> next/prev, <leader>b new, <leader>x close), active
 -- automatically now that tabufline.enabled is back to its default (true).
+
+-- <leader>c: easier-to-remember alias for close (c = close), same action as <leader>x
+map("n", "<leader>c", function()
+  require("nvchad.tabufline").close_buffer()
+end, { desc = "buffer close" })
+
+-- <C-b>: one-key sidebar toggle-focus (VSCode's sidebar mnemonic). Jumps
+-- into the sidebar; press again while inside it to jump back.
+map("n", "<C-b>", function()
+  if vim.bo.filetype == "NvimTree" then
+    vim.cmd "wincmd p"
+  else
+    vim.cmd "NvimTreeFocus"
+  end
+end, { desc = "toggle focus sidebar" })
 
 -- Jump straight to tab N (tabufline's own ordered buffer list, vim.t.bufs)
 for i = 1, 9 do
@@ -63,3 +78,15 @@ map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "resize split up" })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "resize split down" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "resize split left" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "resize split right" })
+
+-- Flash: jump cursor to any visible char by typing a search + label,
+-- instead of moving step by step with arrows/hjkl.
+map({ "n", "x", "o" }, "s", function()
+  require("flash").jump()
+end, { desc = "flash jump" })
+map({ "n", "x", "o" }, "S", function()
+  require("flash").treesitter()
+end, { desc = "flash treesitter jump" })
+map({ "n", "o" }, "<leader>r", function()
+  require("flash").remote()
+end, { desc = "flash remote (act on match without moving)" })
