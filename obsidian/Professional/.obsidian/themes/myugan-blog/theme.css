@@ -1,0 +1,230 @@
+/*
+ * Obsidian theme from myugan.com — src/styles/global.css
+ * Install: copy this whole folder to YOUR_VAULT/.obsidian/themes/myugan-blog/
+ *   (folder name must stay "myugan-blog" — same as "name" in manifest.json)
+ * Or: copy this file to .obsidian/snippets/ and enable the snippet (no manifest).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+.theme-dark {
+  --font-interface-theme: 'Courier Prime', 'Azeret Mono', ui-monospace, monospace;
+  --font-text-theme: 'Azeret Mono', 'JetBrains Mono', ui-monospace, monospace;
+  --font-monospace-theme: 'JetBrains Mono', 'Azeret Mono', ui-monospace, monospace;
+
+  --font-weight: 400;
+  --bold-modifier: 200;
+  --bold-weight: 700;
+  --bold-color: var(--text-normal);
+  --italic-color: var(--text-normal);
+
+  --line-height-normal: 1.6;
+  --heading-spacing: 1.25em;
+  --p-spacing: 1em;
+
+  --accent-h: 217;
+  --accent-s: 94%;
+  --accent-l: 68%;
+
+  --color-base-00: #0c0c0c;
+  --color-base-05: #0e0e0e;
+  --color-base-10: #121212;
+  --color-base-20: #181818;
+  --color-base-25: #1c1c1c;
+  --color-base-30: #222222;
+  --color-base-35: #2a2a2a;
+  --color-base-40: #363636;
+  --color-base-50: #555555;
+  --color-base-60: #7a7a7a;
+  --color-base-70: #a1a1a1;
+  --color-base-100: #d4d4d4;
+
+  --color-blue: #60a5fa;
+  --color-blue-rgb: 96, 165, 250;
+  --color-green: #50fa7b;
+  --color-green-rgb: 80, 250, 123;
+  --color-red: #fb7185;
+  --color-red-rgb: 251, 113, 133;
+  --color-yellow: #fbbf24;
+  --color-yellow-rgb: 251, 191, 36;
+  --color-orange: #fb923c;
+  --color-orange-rgb: 251, 146, 60;
+  --color-purple: #a855f7;
+  --color-purple-rgb: 168, 85, 247;
+  --color-cyan: #22d3ee;
+  --color-cyan-rgb: 34, 211, 238;
+  --color-pink: #f472b6;
+  --color-pink-rgb: 244, 114, 182;
+
+  --background-primary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-10);
+  --background-secondary: var(--color-base-20);
+  --background-secondary-alt: var(--color-base-30);
+
+  --background-modifier-hover: rgba(96, 165, 250, 0.08);
+  --background-modifier-active-hover: rgba(96, 165, 250, 0.14);
+  --background-modifier-border: rgba(96, 165, 250, 0.18);
+  --background-modifier-border-hover: rgba(96, 165, 250, 0.35);
+  --background-modifier-border-focus: rgba(96, 165, 250, 0.45);
+  --background-modifier-form-field: var(--color-base-10);
+
+  --interactive-normal: var(--color-base-25);
+  --interactive-hover: var(--color-base-30);
+  --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 6%));
+
+  --text-normal: #d4d4d4;
+  --text-muted: #a1a1a1;
+  --text-faint: #7a7a7a;
+  --text-accent: #93c5fd;
+  --text-accent-hover: #bfdbfe;
+  --text-on-accent: #0c0c0c;
+  --text-on-accent-inverted: #f8fafc;
+  --text-selection: rgba(96, 165, 250, 0.35);
+  --text-highlight-bg: rgba(96, 165, 250, 0.22);
+
+  --caret-color: var(--text-accent);
+
+  --blockquote-background: rgba(96, 165, 250, 0.06);
+  --blockquote-border-color: rgba(96, 165, 250, 0.35);
+
+  --code-normal: #d5d4d2;
+  --code-background: #121212;
+
+  --modal-border-color: var(--background-modifier-border);
+  --divider-color: var(--background-modifier-border);
+
+  --scrollbar-thumb-bg: rgba(96, 165, 250, 0.22);
+  --scrollbar-active-thumb-bg: rgba(96, 165, 250, 0.4);
+
+  --radius-s: 2px;
+  --radius-m: 2px;
+  --radius-l: 2px;
+  --input-radius: 2px;
+  --button-radius: 2px;
+}
+
+.theme-light {
+  --font-interface-theme: 'Courier Prime', 'Azeret Mono', ui-monospace, monospace;
+  --font-text-theme: 'Azeret Mono', 'JetBrains Mono', ui-monospace, monospace;
+  --font-monospace-theme: 'JetBrains Mono', 'Azeret Mono', ui-monospace, monospace;
+
+  --font-weight: 400;
+  --bold-modifier: 200;
+  --bold-weight: 700;
+  --bold-color: var(--text-normal);
+  --italic-color: var(--text-normal);
+
+  --line-height-normal: 1.6;
+  --heading-spacing: 1.25em;
+  --p-spacing: 1em;
+
+  --accent-h: 226;
+  --accent-s: 71%;
+  --accent-l: 40%;
+
+  --color-base-00: #f1efeb;
+  --color-base-05: #f3f0eb;
+  --color-base-10: #f6f3ee;
+  --color-base-20: #ece7df;
+  --color-base-25: #e8e3db;
+  --color-base-30: #e0dbd3;
+  --color-base-35: #d4cfc7;
+  --color-base-40: #c4bfb8;
+  --color-base-50: #8f8881;
+  --color-base-60: #6b6560;
+  --color-base-70: #5f5953;
+  --color-base-100: #1c1917;
+
+  --color-blue: #3b82f6;
+  --color-blue-rgb: 59, 130, 246;
+  --color-green: #16a34a;
+  --color-green-rgb: 22, 163, 74;
+  --color-red: #dc2626;
+  --color-red-rgb: 220, 38, 38;
+  --color-yellow: #d97706;
+  --color-yellow-rgb: 217, 119, 6;
+  --color-orange: #ea580c;
+  --color-orange-rgb: 234, 88, 12;
+  --color-purple: #a855f7;
+  --color-purple-rgb: 168, 85, 247;
+  --color-cyan: #0891b2;
+  --color-cyan-rgb: 8, 145, 178;
+  --color-pink: #db2777;
+  --color-pink-rgb: 219, 39, 119;
+
+  --background-primary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-10);
+  --background-secondary: var(--color-base-20);
+  --background-secondary-alt: var(--color-base-30);
+
+  --background-modifier-hover: rgba(30, 64, 175, 0.08);
+  --background-modifier-active-hover: rgba(30, 64, 175, 0.14);
+  --background-modifier-border: rgba(30, 64, 175, 0.16);
+  --background-modifier-border-hover: rgba(30, 64, 175, 0.28);
+  --background-modifier-border-focus: rgba(30, 64, 175, 0.4);
+  --background-modifier-form-field: var(--color-base-10);
+
+  --interactive-normal: var(--color-base-25);
+  --interactive-hover: var(--color-base-30);
+  --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
+
+  --text-normal: #1c1917;
+  --text-muted: #5f5953;
+  --text-faint: #8f8881;
+  --text-accent: #1e40af;
+  --text-accent-hover: #1d4ed8;
+  --text-on-accent: #f8fafc;
+  --text-on-accent-inverted: #0f172a;
+  --text-selection: rgba(30, 64, 175, 0.22);
+  --text-highlight-bg: rgba(30, 64, 175, 0.12);
+
+  --caret-color: var(--text-accent);
+
+  --blockquote-background: rgba(30, 64, 175, 0.06);
+  --blockquote-border-color: rgba(30, 64, 175, 0.28);
+
+  --code-normal: #2a2622;
+  --code-background: #e8e4dd;
+
+  --modal-border-color: var(--background-modifier-border);
+  --divider-color: var(--background-modifier-border);
+
+  --scrollbar-thumb-bg: rgba(30, 64, 175, 0.22);
+  --scrollbar-active-thumb-bg: rgba(30, 64, 175, 0.38);
+
+  --radius-s: 2px;
+  --radius-m: 2px;
+  --radius-l: 2px;
+  --input-radius: 2px;
+  --button-radius: 2px;
+}
+
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view {
+  letter-spacing: 0.02em;
+}
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.HyperMD-header {
+  font-family: var(--font-interface-theme);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cm-header {
+  font-family: var(--font-interface-theme) !important;
+}
+
+.inline-title {
+  font-family: var(--font-interface-theme);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,8 @@
+[user]
+	email = myugan59@gmail.com
+	name = Yuga
+	signingkey = 3CA5450F1DDF55A2
+[commit]
+	gpgsign = true
+[gpg]
+	format = openpgp
