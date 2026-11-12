@@ -10,6 +10,10 @@ Fonts (installed via `../macos/Brewfile`):
   (`font-jetbrains-mono-nerd-font`) — powerline/glyph icons for the
   Powerlevel10k prompt
 
+- **Ioskeley Mono** (`IoskeleyMonoTermNFM`, 12pt) — second profile, not on
+  Homebrew; TTFs live in [`fonts/`](fonts/). Install with
+  `cp fonts/*.ttf ~/Library/Fonts/` (done by `install.sh`).
+
 ## Apply on a new machine
 
 ```sh

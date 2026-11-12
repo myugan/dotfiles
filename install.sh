@@ -90,6 +90,8 @@ step_iterm2() {
     warn "no 'defaults' command (not macOS?) — skipping"
     return
   fi
+  mkdir -p "$HOME/Library/Fonts"
+  cp "$REPO_ROOT"/iterm2/fonts/*.ttf "$HOME/Library/Fonts/"
   osascript -e 'tell application "iTerm2" to quit' >/dev/null 2>&1 || true
   defaults import com.googlecode.iterm2 "$REPO_ROOT/iterm2/com.googlecode.iterm2.plist"
   echo "profile imported — relaunch iTerm2"
