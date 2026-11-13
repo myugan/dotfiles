@@ -15,10 +15,6 @@ brew "go"
 brew "helm"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
-# Linux virtual machines
-brew "lima"
-# Run a Kubernetes cluster locally
-brew "minikube"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Generic machine emulator and virtualizer
