@@ -24,3 +24,13 @@ defaults import com.googlecode.iterm2 iterm2/com.googlecode.iterm2.plist
 ```
 
 Relaunch iTerm2.
+
+## Color preset
+
+Ioskeley Mono profile uses **Rosé Pine** (main) in dark mode. The colors are
+already inside `com.googlecode.iterm2.plist` (profile colors plus the
+`Custom Color Presets` list), so `./install.sh iterm2` brings them in.
+
+[`colors/`](colors/) holds standalone `.itermcolors` copies (`rose-pine`,
+`rose-pine-moon`, `rose-pine-dawn`) as a fallback. To import by hand:
+iTerm2 → Settings → Profiles → Colors → Color Presets… → Import…
