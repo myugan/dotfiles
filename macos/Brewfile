@@ -17,12 +17,8 @@ brew "helm"
 brew "kubernetes-cli"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Generic machine emulator and virtualizer
-brew "qemu"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Daemon to provide vmnet.framework support for rootless QEMU
-brew "socket_vmnet"
 # Tool to build, change, and version infrastructure
 brew "terraform"
 # Terminal multiplexer
