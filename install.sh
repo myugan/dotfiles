@@ -94,7 +94,15 @@ step_iterm2() {
   cp "$REPO_ROOT"/iterm2/fonts/*.ttf "$HOME/Library/Fonts/"
   osascript -e 'tell application "iTerm2" to quit' >/dev/null 2>&1 || true
   defaults import com.googlecode.iterm2 "$REPO_ROOT/iterm2/com.googlecode.iterm2.plist"
-  echo "profile imported — relaunch iTerm2"
+  killall cfprefsd >/dev/null 2>&1 || true
+  # verify the import stuck: profile + Rosé Pine preset must be in the live prefs
+  local live
+  live="$(defaults export com.googlecode.iterm2 - 2>/dev/null)"
+  if grep -q '<string>Ioskeley Mono</string>' <<<"$live" && grep -q '<key>rose-pine</key>' <<<"$live"; then
+    echo "profile + Rosé Pine preset imported — relaunch iTerm2"
+  else
+    warn "import did not stick (Ioskeley Mono profile or rose-pine preset missing). Make sure iTerm2 is fully quit and run from Terminal.app, or import iterm2/colors/rose-pine.itermcolors by hand"
+  fi
 }
 
 step_obsidian() {
