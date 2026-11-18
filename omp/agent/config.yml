@@ -1,0 +1,32 @@
+setupVersion: 3
+modelRoles:
+  default: anthropic/claude-opus-5-5:high
+symbolPreset: nerd
+composer:
+  shape: claude
+theme:
+  dark: terminal
+  light: terminal
+statusLine:
+  preset: custom
+  rightSegments:
+    - session_name
+    - token_in
+    - token_out
+    - cost
+    - context_pct
+  leftSegments:
+    - pi
+    - vim
+    - model
+    - mode
+    - path
+    - git
+    - pr
+  sessionAccent: false
+memory:
+  backend: mnemopi
+secrets:
+  enabled: true
+extensionRenderers:
+  assistantText: true

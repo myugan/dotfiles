@@ -16,6 +16,8 @@ defaults). Individual pieces:
 - [`nvim/`](nvim/) — NvChad-based Neovim config
 - [`iterm2/`](iterm2/) — profile, colors, fonts (Space Mono + JetBrains Mono Nerd Font)
 - [`obsidian/`](obsidian/) — vault settings for the Personal/Professional vaults
+- [`omp/`](omp/) — omp coding agent: config, models, theme, emphasis extension, skills
+- [`nono/`](nono/) — sandbox profiles the `omp()` / `claude()` wrappers run in
 
 ```sh
 git clone https://github.com/myugan/dotfiles ~/dotfiles

@@ -1,4 +1,5 @@
 tap "loft-sh/tap"
+tap "can1357/tap"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Play, record, convert, and stream select audio and video codecs
@@ -39,6 +40,14 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 # Terminal-based AI coding assistant
 cask "claude-code"
+# Terminal coding agent (config in omp/)
+brew "can1357/tap/omp"
+# Sandbox the omp()/claude() wrappers in .zshrc run agents in (profiles in nono/)
+brew "nono"
+# Shell history in SQLite; records commands omp runs (atuin hook install omp)
+brew "atuin"
+# Command-line fuzzy finder (Ctrl-T, Alt-C)
+brew "fzf"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-space-mono"
 cask "font-space-grotesk"

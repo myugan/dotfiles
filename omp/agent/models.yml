@@ -1,0 +1,18 @@
+providers:
+   lebrel:
+      # OpenAI-compatible attested endpoint; omp appends /chat/completions
+      baseUrl: https://attested.lebrel.ai/v1
+      api: openai-completions
+      apiKey: LEBREL_API_KEY # reads this env var (key starts with leb_live_)
+      authHeader: true # send Authorization: Bearer <key>
+      models:
+         - id: lebrel/deepseek-v4.1-flash-uncensored
+           name: DeepSeek V4.1 Flash · Lebrel Uncensored
+           contextWindow: 1048544
+           maxTokens: 32768
+           reasoning: true
+         # Routed models work too, e.g.:
+         # - id: deepseek/deepseek-v4-pro
+         #   name: DeepSeek V4 Pro (routed via Lebrel)
+         #   contextWindow: 1048544
+         #   maxTokens: 32768
