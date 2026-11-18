@@ -36,3 +36,27 @@ _G.SmartQuit = function()
 end
 
 vim.cmd [[cnoreabbrev <expr> q (getcmdtype() == ':' && getcmdline() == 'q') ? 'lua SmartQuit()' : 'q']]
+
+-- Markdown preview toggle: <leader>mp, buffer-local to markdown files only.
+-- Leader-prefixed (space, not Cmd/Ctrl) so it can't collide with any
+-- macOS system or terminal-app shortcut -- those all use Cmd (which
+-- terminal nvim never even receives) or Ctrl combos, never bare leader.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function(args)
+    vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", {
+      buffer = args.buf,
+      desc = "markdown preview toggle",
+    })
+  end,
+})
+
+-- Auto-reload nvim config: any .lua file saved under this config dir
+-- gets re-sourced immediately, no restart needed to see the change.
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = vim.fn.stdpath "config" .. "/**/*.lua",
+  callback = function(args)
+    vim.cmd("source " .. args.file)
+    vim.notify("Reloaded " .. vim.fn.fnamemodify(args.file, ":~:."), vim.log.levels.INFO, { title = "nvim config" })
+  end,
+})

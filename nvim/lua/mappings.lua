@@ -28,6 +28,15 @@ map("n", "<leader>tt", toggle_term, { desc = "terminal toggle VSCode-style" })
 -- (<Tab>/<S-Tab> next/prev, <leader>b new, <leader>x close), active
 -- automatically now that tabufline.enabled is back to its default (true).
 
+-- Extra Shift-based buffer switch (muscle-memory alt to Tab/S-Tab, no
+-- leader needed): Shift+L next buffer, Shift+H prev buffer.
+map("n", "<S-l>", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer next" })
+map("n", "<S-h>", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "buffer prev" })
+
 -- Close tab: <leader>c (c = close) needs Space first; Alt+c is the same
 -- action without needing Space at all, for a faster single-combo close.
 local close_tab = function()
@@ -84,6 +93,15 @@ map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "resize split up" })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "resize split down" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "resize split left" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "resize split right" })
+
+-- Resize splits with Ctrl+Alt+hjkl too (repeatable by holding, no arrow
+-- reach needed). NOT plain Alt+hjkl -- that clashes with NvChad's own
+-- <A-h>/<A-v>/<A-i> terminal-toggle binds below. Ctrl+hjkl stays
+-- window-nav, Alt+hjkl stays terminal-toggle, this is a distinct combo.
+map("n", "<C-A-k>", "<cmd>resize +2<CR>", { desc = "resize split up" })
+map("n", "<C-A-j>", "<cmd>resize -2<CR>", { desc = "resize split down" })
+map("n", "<C-A-h>", "<cmd>vertical resize -2<CR>", { desc = "resize split left" })
+map("n", "<C-A-l>", "<cmd>vertical resize +2<CR>", { desc = "resize split right" })
 
 -- Flash: jump cursor to any visible char by typing a search + label,
 -- instead of moving step by step with arrows/hjkl.

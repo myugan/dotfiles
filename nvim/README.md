@@ -81,6 +81,7 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 |---|---|
 | Tab | next tab |
 | Shift+Tab | previous tab |
+| Shift+L / Shift+H | next / previous tab (same as Tab / Shift+Tab) |
 | Space, then b | open a new empty tab |
 | Space, then c | close current tab (mnemonic: c = close) |
 | Alt+1 through Alt+9 | jump straight to tab 1–9 |
@@ -95,6 +96,7 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 | Space, then s, then e | make all splits equal size |
 | Ctrl+h / j / k / l | move focus left / down / up / right between splits |
 | Ctrl+Up / Down / Left / Right | resize the split you're in |
+| Ctrl+Alt+h / j / k / l | resize the split you're in (hold to repeat) |
 
 ### Editing / selecting text
 | Press | What happens |
@@ -110,6 +112,7 @@ Use the picker (`Space`, then `t`, then `h`) to browse and pick a theme — **do
 | Ctrl+Space while typing | force-show autocomplete suggestions |
 | `s`, then 1-2 chars | jump cursor straight to any visible spot (type target chars, then the label shown) |
 | `S`, then a label | jump cursor to a code block/function/etc. (syntax-aware jump) |
+| Space, then m, then p (markdown files) | show/hide a live preview in the browser |
 
 ### Git
 | Press | What happens |
