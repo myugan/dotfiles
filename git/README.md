@@ -3,9 +3,7 @@
 - `.gitconfig` → `~/.gitconfig` — user identity, GPG commit signing on
 - `ignore` → `~/.config/git/ignore` — global gitignore
 
-GPG signing key is referenced by ID only (`3CA5450F1DDF55A2`); the actual key
-is not in this repo — export/import it separately (`gpg --export-secret-keys`)
-if setting up a new machine.
+GPG signing key is referenced by ID only (`3CA5450F1DDF55A2`); the actual key is not in this repo — export/import it separately (`gpg --export-secret-keys`) if setting up a new machine.
 
 ```sh
 cp git/.gitconfig ~/.gitconfig
