@@ -5,12 +5,9 @@
 macOS setup (current)
 =====
 
-Daily driver is now a Mac. See [`macos/README.md`](macos/README.md) for the
-full replicate-from-scratch guide (Homebrew bundle, apps, fonts, system
-defaults). Individual pieces:
+Daily driver is now a Mac. See [`macos/README.md`](macos/README.md) for the full replicate-from-scratch guide (Homebrew bundle, apps, fonts, system defaults). Individual pieces:
 
-- [`macos/`](macos/) — Brewfile (CLI tools, fonts, GUI apps, VS Code
-  extensions), `defaults write` settings
+- [`macos/`](macos/) — Brewfile (CLI tools, fonts, GUI apps, VS Code extensions), `defaults write` settings
 - [`zsh/`](zsh/) — Oh My Zsh + Powerlevel10k
 - [`git/`](git/) — `.gitconfig`, global gitignore
 - [`nvim/`](nvim/) — NvChad-based Neovim config
@@ -28,9 +25,7 @@ cd ~/dotfiles
 Old Manjaro Linux setup (archived, still below)
 =====
 
-Everything below — the Ansible playbook, window manager configs, `templates/`
-— is the previous Linux setup. Kept for history, not maintained against the
-current machine.
+Everything below — the Ansible playbook, window manager configs, `templates/` — is the previous Linux setup. Kept for history, not maintained against the current machine.
 
 About
 =====
