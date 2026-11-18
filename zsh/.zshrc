@@ -121,20 +121,6 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/yuga/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/yuga/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/yuga/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/yuga/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 
 # Added by Antigravity
@@ -162,6 +148,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:/Users/yuga/.iximiuz/labctl/bin
 source <(labctl completion zsh)
+# Added by Kiro CLI
+case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="${PATH:+$PATH:}$HOME/.local/bin" ;; esac
 
 # fzf: Ctrl-T files, Alt-C cd, ** completion. Loaded before Atuin so Atuin keeps Ctrl-R.
 source <(fzf --zsh)
