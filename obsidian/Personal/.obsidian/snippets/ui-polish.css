@@ -1,0 +1,105 @@
+/* UI polish — flat, readable, clean, with Nerd Font glyphs. Pairs with rose-pine.css */
+
+body {
+  --glyph-font: "IoskeleyMonoTerm Nerd Font Mono", "3270 Nerd Font Mono", monospace;
+  --radius-s: 4px;
+  --radius-m: 6px;
+  --radius-l: 8px;
+  --file-line-width: 760px;
+  --line-height-normal: 1.7;
+  --font-text-theme: "Commissioner", -apple-system, "SF Pro Text", sans-serif;
+  --font-interface-theme: "Commissioner", -apple-system, "SF Pro Text", sans-serif;
+  --font-monospace-theme: "IoskeleyMonoTerm Nerd Font Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --code-size: 0.88em;
+  --bold-weight: 600;
+  --nav-item-size: var(--font-ui-small);
+  --nav-item-padding: 4px 8px;
+  --nav-item-border-radius: 4px;
+  --tab-radius-active: 0;
+  /* higher contrast than the raw palette */
+  --text-muted: #a9a5c4;
+  --text-faint: #8a86a3;
+  --divider-color: var(--background-modifier-border);
+}
+
+/* ── Flat chrome: one background, hairline dividers, no shadows ───────── */
+.workspace-ribbon, .workspace-split.mod-left-split, .workspace-split.mod-right-split,
+.workspace-tab-header-container, .mod-root .workspace-tab-header-container,
+.sidebar-toggle-button, .titlebar { background: var(--background-primary); }
+.workspace-tab-header-container { border-bottom: 1px solid var(--divider-color); }
+.workspace-tab-header.is-active { background: transparent; box-shadow: inset 0 -2px 0 var(--interactive-accent); }
+.workspace-tab-header:not(.is-active):hover { background: var(--background-modifier-hover); }
+.status-bar { background: transparent; border: 0; opacity: .6; transition: opacity .15s; }
+.status-bar:hover { opacity: 1; }
+
+/* ── Explorer: calm rows (icons come from the Iconic plugin) ─────────── */
+.nav-folder-title, .nav-file-title { color: var(--text-muted); font-weight: 400; }
+.nav-folder-title:hover, .nav-file-title:hover { color: var(--text-normal); }
+.nav-file-title.is-active { background: var(--background-modifier-active-hover); color: var(--text-normal); font-weight: 600; }
+.nav-folder-title[data-path="Projects"], .nav-folder-title[data-path="Areas"],
+.nav-folder-title[data-path="Resources"], .nav-folder-title[data-path="Archives"] { color: var(--text-normal); font-weight: 600; }
+
+/* ── Reading: clean, no decoration noise ──────────────────────────────── */
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3 { border: 0; letter-spacing: -.01em; }
+.markdown-rendered h1 { font-weight: 700; }
+.markdown-rendered h2, .markdown-rendered h3 { font-weight: 650; }
+.markdown-rendered blockquote { background: none; border-left: 2px solid var(--blockquote-border-color); padding: .1em 1em; color: var(--text-muted); }
+.markdown-rendered pre, .markdown-rendered code { border: 0; border-radius: var(--radius-m); }
+.markdown-rendered table th { background: none; color: var(--text-accent); border-bottom: 2px solid var(--background-modifier-border-hover); }
+.markdown-rendered table td, .markdown-rendered table th { border: 0; border-bottom: 1px solid var(--background-modifier-border); }
+.markdown-rendered hr { border: 0; border-top: 1px solid var(--divider-color); margin: 2em 0; }
+.internal-link { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.tag { border-radius: 999px; padding: .1em .65em; font-size: .85em; border: 0; }
+
+/* ── Callouts: flat tint + glyph titles ───────────────────────────────── */
+.callout { border: 0; border-left: 3px solid rgb(var(--callout-color)); border-radius: var(--radius-m);
+  background: rgba(var(--callout-color), .08); box-shadow: none; }
+.callout-title { font-weight: 600; }
+.callout-icon { display: none; }
+.callout-title::before { font-family: var(--glyph-font); margin-right: .6em; color: rgb(var(--callout-color)); content: "\f05a"; } /*  info */
+.callout[data-callout="warning"] .callout-title::before, .callout[data-callout="caution"] .callout-title::before { content: "\f071"; } /*  */
+.callout[data-callout="danger"] .callout-title::before, .callout[data-callout="bug"] .callout-title::before { content: "\f188"; }   /*  */
+.callout[data-callout="tip"] .callout-title::before, .callout[data-callout="hint"] .callout-title::before { content: "\f0eb"; }      /*  */
+.callout[data-callout="success"] .callout-title::before, .callout[data-callout="check"] .callout-title::before { content: "\f00c"; } /*  */
+.callout[data-callout="question"] .callout-title::before, .callout[data-callout="faq"] .callout-title::before { content: "\f059"; }  /*  */
+.callout[data-callout="note"] .callout-title::before { content: "\f040"; }                                                          /*  */
+.callout[data-callout="quote"] .callout-title::before { content: "\f10d"; }                                                         /*  */
+
+/* ── Properties, modals, menus: flat with hairline borders ────────────── */
+.metadata-container { border: 0; border-bottom: 1px solid var(--divider-color); margin-bottom: 1em; }
+.modal, .menu, .suggestion-container, .prompt, .tooltip, .popover {
+  border: 1px solid var(--background-modifier-border-hover); border-radius: var(--radius-l); box-shadow: none; }
+.suggestion-item.is-selected { background: var(--background-modifier-active-hover); }
+input[type="text"], input[type="search"], textarea, select { border-radius: var(--radius-s); box-shadow: none; }
+button { box-shadow: none; }
+button.mod-cta { font-weight: 600; }
+
+/* ── Thin scrollbars ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { border-radius: 10px; border: 2px solid transparent; background-clip: content-box; }
+
+/* ── Type: crisp, even rhythm ─────────────────────────────────────────── */
+body { -webkit-font-smoothing: antialiased; font-feature-settings: "calt", "kern", "tnum" 0; }
+.markdown-rendered p, .cm-line { font-weight: 400; }
+.markdown-rendered ul, .markdown-rendered ol { margin-block: .4em; }
+.markdown-rendered li { margin-block: .15em; }
+
+/* ── Sidebar: Space Grotesk ───────────────────────────────────────────── */
+.mod-left-split, .mod-left-split .nav-file-title, .mod-left-split .nav-folder-title,
+.mod-left-split .workspace-tab-header, .mod-left-split .search-input-container input {
+  font-family: var(--font-interface-theme);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+/* ── Explorer breathing room (Iconic icons were flush with the edges) ── */
+.nav-files-container { padding: 6px 12px 12px 26px; }
+.mod-left-split .nav-folder-title, .mod-left-split .nav-file-title { padding-inline: 8px 10px; }
+.mod-left-split .iconic-icon, .mod-left-split .nav-folder-title-content .iconic-icon,
+.mod-left-split .nav-file-title-content .iconic-icon { margin-inline-end: 8px; }
+
+/* ── Iconic: monochrome glyph icons, thin stroke ──────────────────────── */
+.iconic-icon svg { color: var(--text-faint) !important; stroke-width: 1.5; }
+.nav-folder-title:hover .iconic-icon svg, .nav-file-title:hover .iconic-icon svg,
+.nav-file-title.is-active .iconic-icon svg { color: var(--text-normal) !important; }
+.workspace-tab-header .iconic-icon svg { color: inherit !important; }

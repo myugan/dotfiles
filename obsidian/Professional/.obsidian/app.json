@@ -1,6 +1,8 @@
 {
-  "showInlineTitle": true,
   "promptDelete": false,
+  "defaultViewMode": "source",
   "readableLineLength": false,
-  "strictLineBreaks": false
+  "settingsPopoutWindow": false,
+  "rightToLeft": false,
+  "showIndentGuide": true
 }

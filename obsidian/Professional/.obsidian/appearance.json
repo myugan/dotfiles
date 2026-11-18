@@ -1,14 +1,12 @@
 {
-  "interfaceFontFamily": "Space Grotesk",
-  "textFontFamily": "Space Grotesk",
-  "baseFontSize": 16,
-  "baseFontSizeAction": true,
-  "translucency": false,
-  "accentColor": "",
-  "enabledCssSnippets": [
-    "theme"
-  ],
-  "cssTheme": "",
   "theme": "obsidian",
-  "monospaceFontFamily": ""
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "rose-pine",
+    "ui-polish"
+  ],
+  "textFontFamily": "Commissioner",
+  "interfaceFontFamily": "Commissioner",
+  "showRibbon": true,
+  "monospaceFontFamily": "IoskeleyMonoTerm Nerd Font Mono, IBM Plex Mono"
 }

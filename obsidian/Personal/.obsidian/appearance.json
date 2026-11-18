@@ -1,4 +1,12 @@
 {
-  "baseFontSize": 14,
-  "baseFontSizeAction": true
+  "theme": "obsidian",
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "rose-pine",
+    "ui-polish"
+  ],
+  "textFontFamily": "Commissioner",
+  "interfaceFontFamily": "Commissioner",
+  "showRibbon": true,
+  "monospaceFontFamily": "IoskeleyMonoTerm Nerd Font Mono, IBM Plex Mono"
 }

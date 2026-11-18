@@ -1,0 +1,66 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": false,
+  "showMenuActions": true,
+  "showSuggestionIcons": false,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "useSearchKeywords": "on",
+  "maxSearchResults": 100,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "maxBackups": 2,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": false,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "Archives": {
+      "icon": "lucide-archive"
+    },
+    "Areas": {
+      "icon": "lucide-target"
+    },
+    "Projects": {
+      "icon": "lucide-rocket"
+    },
+    "Resources": {
+      "icon": "lucide-library"
+    },
+    "Resources/Articles.base": {
+      "icon": "lucide-table"
+    },
+    "Resources/Books.base": {
+      "icon": "lucide-table"
+    },
+    "Resources/Papers.base": {
+      "icon": "lucide-table"
+    },
+    "Skills": {
+      "icon": "lucide-zap"
+    },
+    "_templates": {
+      "icon": "lucide-layout-template"
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [],
+  "folderRules": []
+}

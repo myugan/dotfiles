@@ -1,4 +1,9 @@
 {
   "showUnsupportedFiles": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "defaultViewMode": "source",
+  "readableLineLength": false,
+  "settingsPopoutWindow": false,
+  "rightToLeft": false,
+  "showIndentGuide": true
 }

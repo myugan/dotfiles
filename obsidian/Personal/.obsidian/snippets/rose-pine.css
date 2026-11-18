@@ -1,0 +1,122 @@
+/*
+ * Rosé Pine — Obsidian colors matching iTerm2 preset "rose-pine"
+ * (profile "Ioskeley Mono"). Dark only; light mode uses the same palette.
+ */
+
+.theme-dark,
+.theme-light {
+  --base-h: 249;
+  --base-s: 22%;
+  --base-l: 12%;
+  --accent-h: 267;
+  --accent-s: 57%;
+  --accent-l: 78%;
+
+  --color-base-00: #191724;
+  --color-base-05: #1f1d2e;
+  --color-base-10: #26233a;
+  --color-base-20: #2a2837;
+  --color-base-25: #403d52;
+  --color-base-30: #524f67;
+  --color-base-35: #6e6a86;
+  --color-base-40: #6e6a86;
+  --color-base-50: #908caa;
+  --color-base-60: #908caa;
+  --color-base-70: #e0def4;
+  --color-base-100: #e0def4;
+
+  --color-red: #eb6f92;
+  --color-red-rgb: 235, 111, 146;
+  --color-orange: #ebbcba;
+  --color-orange-rgb: 235, 188, 186;
+  --color-yellow: #f6c177;
+  --color-yellow-rgb: 246, 193, 119;
+  --color-green: #9ccfd8;
+  --color-green-rgb: 156, 207, 216;
+  --color-cyan: #9ccfd8;
+  --color-cyan-rgb: 156, 207, 216;
+  --color-blue: #31748f;
+  --color-blue-rgb: 49, 116, 143;
+  --color-purple: #c4a7e7;
+  --color-purple-rgb: 196, 167, 231;
+  --color-pink: #eb6f92;
+  --color-pink-rgb: 235, 111, 146;
+
+  --color-accent: #c4a7e7;
+  --color-accent-1: #c4a7e7;
+  --color-accent-2: #ebbcba;
+
+  --background-primary: #191724;
+  --background-primary-alt: #1f1d2e;
+  --background-secondary: #1f1d2e;
+  --background-secondary-alt: #191724;
+  --background-modifier-border: #26233a;
+  --background-modifier-border-hover: #403d52;
+  --background-modifier-border-focus: #c4a7e7;
+  --background-modifier-hover: rgba(110, 106, 134, 0.14);
+  --background-modifier-active-hover: rgba(196, 167, 231, 0.15);
+  --background-modifier-form-field: #1f1d2e;
+  --background-modifier-cover: rgba(25, 23, 36, 0.85);
+
+  --text-normal: #e0def4;
+  --text-muted: #908caa;
+  --text-faint: #6e6a86;
+  --text-on-accent: #191724;
+  --text-accent: #c4a7e7;
+  --text-accent-hover: #ebbcba;
+  --text-selection: #2a2837;
+  --text-highlight-bg: rgba(246, 193, 119, 0.3);
+
+  --interactive-normal: #26233a;
+  --interactive-hover: #403d52;
+  --interactive-accent: #c4a7e7;
+  --interactive-accent-hover: #ebbcba;
+
+  --link-color: #c4a7e7;
+  --link-color-hover: #ebbcba;
+  --link-unresolved-color: #eb6f92;
+  --link-external-color: #9ccfd8;
+  --tag-color: #9ccfd8;
+  --tag-background: rgba(156, 207, 216, 0.12);
+
+  --h1-color: #eb6f92;
+  --h2-color: #f6c177;
+  --h3-color: #ebbcba;
+  --h4-color: #31748f;
+  --h5-color: #9ccfd8;
+  --h6-color: #c4a7e7;
+
+  --code-background: #26233a;
+  --code-normal: #e0def4;
+  --code-comment: #6e6a86;
+  --code-function: #ebbcba;
+  --code-keyword: #31748f;
+  --code-string: #f6c177;
+  --code-value: #eb6f92;
+  --code-tag: #eb6f92;
+  --code-property: #9ccfd8;
+  --code-punctuation: #908caa;
+  --code-operator: #908caa;
+  --code-important: #c4a7e7;
+
+  --blockquote-border-color: #c4a7e7;
+  --hr-color: #26233a;
+  --indentation-guide: #26233a;
+  --scrollbar-thumb-bg: #403d52;
+  --scrollbar-active-thumb-bg: #524f67;
+}
+
+.cm-s-obsidian span.cm-inline-code,
+.markdown-rendered code {
+  color: #9ccfd8;
+}
+
+.markdown-rendered strong,
+.cm-s-obsidian span.cm-strong {
+  color: #ebbcba;
+}
+
+.markdown-rendered em,
+.cm-s-obsidian span.cm-em {
+  color: #c4a7e7;
+}

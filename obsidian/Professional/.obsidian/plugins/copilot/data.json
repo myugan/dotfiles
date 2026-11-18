@@ -27,7 +27,7 @@
   "defaultModelKey": "claude-sonnet-4-6|anthropic",
   "embeddingModelKey": "openai/text-embedding-3-small|openrouterai",
   "temperature": 0.1,
-  "maxTokens": "",
+  "maxTokens": 6000,
   "contextTurns": 15,
   "userSystemPrompt": "",
   "openAIProxyBaseUrl": "",
