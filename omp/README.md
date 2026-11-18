@@ -16,15 +16,12 @@ Not stored here, because a tool generates them:
 
 ## Related
 
-- `../zsh/.zshrc` — the `omp()` wrapper that runs omp inside the nono sandbox, Atuin and fzf init, and `PI_EMPHASIS_PILL_ICONS=0` / `PI_EMPHASIS_ROUND_CAPS=0` (square pills without Nerd Font icons; drop them to get icons and rounded ends)
-- `../nono/omp-local.json` — the sandbox profile: read-write on the project, `~/.omp`, `~/.npm` and `~/.atuin` (so Atuin can record from inside the sandbox)
+- `../zsh/.zshrc` — Atuin and fzf init, and `PI_EMPHASIS_PILL_ICONS=0` / `PI_EMPHASIS_ROUND_CAPS=0` (square pills without Nerd Font icons; drop them to get icons and rounded ends)
 
 ## Apply on a new machine
 
 ```sh
-brew bundle --file=macos/Brewfile   # omp, nono, atuin, fzf
-./install.sh omp nono zsh
+brew bundle --file=macos/Brewfile   # omp, atuin, fzf
+./install.sh omp zsh
 export LEBREL_API_KEY=...           # only if you use the Lebrel models
 ```
-
-Then start `omp` from a project directory (the wrapper refuses to sandbox `$HOME`).

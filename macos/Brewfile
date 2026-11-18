@@ -42,8 +42,6 @@ brew "zsh-syntax-highlighting"
 cask "claude-code"
 # Terminal coding agent (config in omp/)
 brew "can1357/tap/omp"
-# Sandbox the omp()/claude() wrappers in .zshrc run agents in (profiles in nono/)
-brew "nono"
 # Shell history in SQLite; records commands omp runs (atuin hook install omp)
 brew "atuin"
 # Command-line fuzzy finder (Ctrl-T, Alt-C)

@@ -160,27 +160,3 @@ eval "$(atuin init zsh --disable-up-arrow)"
 # omp emphasis extension: plain square pills, no Nerd Font icons or rounded ends.
 export PI_EMPHASIS_PILL_ICONS=0
 export PI_EMPHASIS_ROUND_CAPS=0
-
-# Run coding agents inside nono sandbox: rw on $PWD only.
-# Bypass with `command claude` / `command omp`.
-# omp --allow-home: stay in the launch dir instead of switching to a temp dir
-_nono_guard() {
-  if [[ "$PWD" == "$HOME" ]]; then
-    echo "nono: refusing to sandbox from \$HOME; cd into a project dir (or use 'command $1')" >&2
-    return 1
-  fi
-}
-claude() {
-  case "$1" in setup-token|auth|update|doctor|--version|-v|--help|-h) command claude "$@"; return;; esac
-  _nono_guard claude || return
-  nono run --profile claude-local --allow "$PWD" -- command claude "$@"
-}
-omp() {
-  case "$1" in --version|-v|--help|-h) command omp "$@"; return;; esac
-  _nono_guard omp || return
-  mkdir -p "$PWD/.omp-tmp"
-  TMPDIR="$PWD/.omp-tmp" \
-    nono run --profile omp-local --allow "$PWD" -- \
-    env TMPDIR="$PWD/.omp-tmp" TMP="$PWD/.omp-tmp" TEMP="$PWD/.omp-tmp" PI_ARTIFACTS_DIR="$PWD/.omp-tmp/artifacts" \
-    "$(whence -p omp)" --allow-home "$@"
-}

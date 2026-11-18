@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Bootstraps a fresh Mac from this repo's macos/, zsh/, git/, nvim/, iterm2/,
-# obsidian/, omp/, nono/ directories. Safe to re-run: existing files are backed up with a
+# obsidian/, omp/ directories. Safe to re-run: existing files are backed up with a
 # timestamp suffix before being overwritten, never silently clobbered.
 #
 # Usage: ./install.sh [step ...]
@@ -138,14 +138,6 @@ step_omp() {
   warn "models.yml reads LEBREL_API_KEY from the environment — export it before starting omp"
 }
 
-step_nono() {
-  log "nono sandbox profiles (used by the omp()/claude() wrappers in .zshrc)"
-  local f
-  for f in "$REPO_ROOT"/nono/*.json; do
-    backup_and_copy "$f" "$HOME/.config/nono/profiles/$(basename "$f")"
-  done
-}
-
 step_macos_defaults() {
   log "macOS defaults"
   defaults write com.apple.dock tilesize -int 35
@@ -156,7 +148,7 @@ step_macos_defaults() {
   killall Dock >/dev/null 2>&1 || true
 }
 
-ALL_STEPS=(xcode_clt homebrew brewfile zsh git nvim iterm2 obsidian omp nono macos_defaults)
+ALL_STEPS=(xcode_clt homebrew brewfile zsh git nvim iterm2 obsidian omp macos_defaults)
 
 steps=("$@")
 [ ${#steps[@]} -eq 0 ] && steps=("${ALL_STEPS[@]}")
