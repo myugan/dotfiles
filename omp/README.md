@@ -28,7 +28,7 @@ brew bundle --file=macos/Brewfile   # omp, atuin, fzf
 export LEBREL_API_KEY=...           # only if you use the Lebrel models
 ```
 
-This overwrites `~/.omp/agent/config.yml` (default model, memory, secrets) and `models.yml`; the old files are kept as `*.bak-<timestamp>`.
+This overwrites `~/.omp/agent/config.yml` (default model, memory, secrets) and `models.yml`; the old files are kept as `*.bak-<timestamp>`. Your MCP setup stays: `mcp.json` is never written, and the settings that decide which MCP servers load (`mcp.*`, `browser.enabled`) are read from the old `config.yml` and set again on the new one (needs `jq`, built into macOS 15+; without it the old `config.yml` is kept).
 
 ### Look only
 

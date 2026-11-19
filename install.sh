@@ -61,6 +61,13 @@ step_zsh() {
   if [ ! -d "$HOME/.powerlevel10k" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.powerlevel10k"
   fi
+  if [ -f "$HOME/.zshrc" ]; then
+    # Names only: export lines often hold tokens (MCP servers read some from the environment).
+    local lost
+    lost="$(grep -E '^[[:space:]]*export ' "$HOME/.zshrc" | grep -Fvx -f "$REPO_ROOT/zsh/.zshrc" \
+      | sed -E 's/^[[:space:]]*export[[:space:]]+([A-Za-z_][A-Za-z0-9_]*).*/\1/' | sort -u | tr '\n' ' ')"
+    [ -n "$lost" ] && warn "your old ~/.zshrc exports these and the new one does not: ${lost}— copy what you need from ~/.zshrc.bak-${TS}"
+  fi
   backup_and_copy "$REPO_ROOT/zsh/.zshrc"    "$HOME/.zshrc"
   backup_and_copy "$REPO_ROOT/zsh/.zprofile" "$HOME/.zprofile"
   backup_and_copy "$REPO_ROOT/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
@@ -167,14 +174,35 @@ step_obsidian() {
   warn "re-enable community plugins in Obsidian settings, and re-enter the Copilot API key (stripped from data.json before committing)"
 }
 
+# omp settings that decide which MCP servers load; step_omp carries them over when
+# it replaces config.yml (browser.enabled=true drops browser MCP servers).
+omp_mcp_settings() {
+  omp config list --scope global --json 2>/dev/null | jq -r 'to_entries[]
+    | select(.key | test("^mcp\\.|^browser\\.enabled$"))
+    | "\(.key)\t\(.value.value | if type == "string" then . else tojson end)"'
+}
+
 step_omp() {
   log "omp (config, models, theme, emphasis extension, skills)"
-  # File by file: ~/.omp/agent also holds sessions, auth and databases, and
+  # File by file: ~/.omp/agent also holds sessions, auth, databases and mcp.json, and
   # extensions/ holds files other tools manage (atuin.ts, corgi.js).
-  local src="$REPO_ROOT/omp/agent" f
+  local src="$REPO_ROOT/omp/agent" f keep="" keep_config=0
+  if [ -f "$HOME/.omp/agent/config.yml" ]; then
+    if command -v omp >/dev/null 2>&1 && command -v jq >/dev/null 2>&1; then
+      keep="$(omp_mcp_settings)"
+    else
+      keep_config=1
+      warn "omp or jq missing — can't carry MCP settings over, so keeping your existing config.yml"
+    fi
+  fi
   while IFS= read -r f; do
+    [ "$f" = config.yml ] && [ "$keep_config" = 1 ] && continue
     backup_and_copy "$src/$f" "$HOME/.omp/agent/$f"
   done < <(cd "$src" && find . -type f | sed 's|^\./||')
+  local k v
+  while IFS=$'\t' read -r k v; do
+    [ -n "$k" ] && omp config set "$k" "$v" >/dev/null && echo "kept $k = $v"
+  done <<<"$keep"
   if command -v atuin >/dev/null 2>&1; then
     atuin hook install omp   # writes ~/.omp/agent/extensions/atuin.ts
   else
@@ -220,11 +248,36 @@ step_macos_defaults() {
 
 ALL_STEPS=(xcode_clt homebrew brewfile fonts zsh git nvim iterm2 obsidian omp macos_defaults)
 
+# Every MCP config omp reads (its own plus the other tools it imports from), and omp's
+# MCP settings. No step writes them; the run ends by proving that.
+MCP_FILES=(.omp/agent/mcp.json .omp/agent/.mcp.json .claude.json .claude/mcp.json
+  .codex/config.toml .gemini/settings.json .config/opencode/opencode.json
+  .config/opencode/opencode.jsonc .cursor/mcp.json .codeium/windsurf/mcp_config.json)
+
+mcp_snapshot() {
+  local f
+  for f in "${MCP_FILES[@]/#/$HOME/}" "$HOME"/.omp/profiles/*/agent/mcp.json; do
+    [ -f "$f" ] && echo "$(shasum "$f" | cut -d' ' -f1) ${f#"$HOME"/}"
+  done
+  if command -v omp >/dev/null 2>&1 && command -v jq >/dev/null 2>&1; then
+    omp_mcp_settings
+  fi
+}
+
 steps=("$@")
 [ ${#steps[@]} -eq 0 ] && steps=("${ALL_STEPS[@]}")
 
+mcp_before="$(mcp_snapshot)"
 for s in "${steps[@]}"; do
   "step_${s}"
 done
+
+mcp_after="$(mcp_snapshot)"
+if [ "$mcp_before" = "$mcp_after" ]; then
+  log "MCP config unchanged ($(grep -c . <<<"$mcp_before") files/settings checked)"
+else
+  warn "MCP config changed during this run:"
+  diff <(echo "$mcp_before") <(echo "$mcp_after") >&2
+fi
 
 log "done"

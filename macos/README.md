@@ -16,6 +16,8 @@ Runs everything: Xcode CLT check, Homebrew, `brew bundle` (CLI tools, fonts, app
 
 Run it from **Terminal.app**, not iTerm2: the iTerm2 step has to quit iTerm2 to import its profile, so it skips itself inside iTerm2 (re-run `./install.sh iterm2` from Terminal.app afterwards).
 
+No step writes an MCP config. Each run checksums every MCP file omp reads (`~/.omp/agent/mcp.json`, profile `mcp.json` files, and the Claude Code, Codex, Gemini, OpenCode, Cursor and Windsurf configs it imports) plus omp's MCP settings, before and after, and ends with `MCP config unchanged` or a diff. The `zsh` step replaces `~/.zshrc`, so it names any `export` from the old file the new one lacks (tokens MCP servers read from the environment, say); copy them back from `~/.zshrc.bak-<timestamp>`.
+
 `./install.sh fonts` installs every font the configs use: Ioskeley Mono (TTFs in `../iterm2/fonts/`, not on Homebrew), plus the `font-jetbrains-mono-nerd-font`, `font-space-mono`, `font-space-grotesk` and `font-commissioner` casks. The `iterm2`, `obsidian` and `omp_theme` steps run it on their own, so running one of them alone leaves no font missing.
 
 Run a subset instead of everything:
