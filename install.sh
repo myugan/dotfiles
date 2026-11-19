@@ -6,6 +6,7 @@
 # Usage: ./install.sh [step ...]
 #   No args   -> run every step below, in order.
 #   Named args -> run only those steps, e.g. ./install.sh zsh nvim
+#   omp_theme  -> not in the default run; omp's look only (see omp/README.md)
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -136,6 +137,34 @@ step_omp() {
     warn "atuin not installed — skipping its omp hook (brew bundle installs it)"
   fi
   warn "models.yml reads LEBREL_API_KEY from the environment — export it before starting omp"
+}
+
+step_omp_theme() {
+  log "omp look only (themes, emphasis pills, theme + status line settings)"
+  # Leaves the model, memory and secrets settings, models.yml, skills and MCP servers alone.
+  if ! command -v omp >/dev/null 2>&1; then
+    warn "omp not installed — run: brew install can1357/tap/omp"
+    return
+  fi
+  local src="$REPO_ROOT/omp/agent" f
+  for f in "$src"/themes/*.json "$src"/extensions/emphasis.ts "$src"/emphasis.LICENSE; do
+    backup_and_copy "$f" "$HOME/.omp/agent/${f#"$src"/}"
+  done
+  # Same values as omp/agent/config.yml; keep the two in sync.
+  omp config set theme.dark terminal
+  omp config set theme.light terminal
+  omp config set symbolPreset nerd
+  omp config set composer.shape claude
+  omp config set statusLine.preset custom
+  omp config set statusLine.leftSegments '["pi","vim","model","mode","path","git","pr"]'
+  omp config set statusLine.rightSegments '["session_name","token_in","token_out","cost","context_pct"]'
+  omp config set statusLine.sessionAccent false
+  omp config set extensionRenderers.assistantText true   # emphasis.ts draws pills only with this on
+  # symbolPreset nerd needs a Nerd Font in the terminal
+  if [ -d "$HOME/Library/Fonts" ]; then
+    cp "$REPO_ROOT"/iterm2/fonts/*.ttf "$HOME/Library/Fonts/"
+    warn "set iTerm2 → Profiles → Text → Font to 'Ioskeley Mono', or run ./install.sh iterm2 for the full profile + Rosé Pine colors"
+  fi
 }
 
 step_macos_defaults() {

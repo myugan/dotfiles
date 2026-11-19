@@ -20,8 +20,32 @@ Not stored here, because a tool generates them:
 
 ## Apply on a new machine
 
+Everything (config, models, themes, extension, skills, atuin hook):
+
 ```sh
 brew bundle --file=macos/Brewfile   # omp, atuin, fzf
 ./install.sh omp zsh
 export LEBREL_API_KEY=...           # only if you use the Lebrel models
 ```
+
+This overwrites `~/.omp/agent/config.yml` (default model, memory, secrets) and `models.yml`; the old files are kept as `*.bak-<timestamp>`.
+
+### Look only
+
+Themes, emphasis pills, status line and Nerd Font, on top of an existing omp setup:
+
+```sh
+brew install can1357/tap/omp       # skip if already installed
+./install.sh omp_theme
+```
+
+It copies `agent/themes/*.json`, `agent/extensions/emphasis.ts` and `agent/emphasis.LICENSE`, then sets only the look keys with `omp config set`: `theme`, `symbolPreset`, `composer.shape`, `statusLine`, `extensionRenderers.assistantText`. Your model, memory and secrets settings, `models.yml`, skills and MCP servers stay as they are. It also copies the Ioskeley Mono Nerd Font into `~/Library/Fonts`; select it in iTerm2 → Profiles → Text, or run `./install.sh iterm2` for the whole iTerm2 profile with Rosé Pine colors (the `terminal` theme takes its colors from the terminal palette).
+
+Pills are rounded with icons by default. For the square, icon-free pills from `../zsh/.zshrc`, add to your shell rc:
+
+```sh
+export PI_EMPHASIS_PILL_ICONS=0
+export PI_EMPHASIS_ROUND_CAPS=0
+```
+
+Restart omp afterwards.
