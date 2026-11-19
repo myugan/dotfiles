@@ -49,6 +49,7 @@ brew "fzf"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-space-mono"
 cask "font-space-grotesk"
+cask "font-commissioner"
 
 # Apps (installed manually on this machine, not yet via brew --
 # added here so a fresh machine can get them in one `brew bundle`)

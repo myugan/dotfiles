@@ -7,6 +7,7 @@
 #   No args   -> run every step below, in order.
 #   Named args -> run only those steps, e.g. ./install.sh zsh nvim
 #   omp_theme  -> not in the default run; omp's look only (see omp/README.md)
+#   fonts      -> every font the configs use; iterm2, obsidian and omp_theme run it too
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -85,29 +86,72 @@ step_nvim() {
   echo "plugins + LSPs auto-install on first nvim launch"
 }
 
+iterm2_running() {
+  ps -axo comm= | grep -q '/iTerm.app/Contents/MacOS/iTerm2$'
+}
+
+# Fonts the configs name: iTerm2 profiles (Ioskeley Mono, Space Mono, JetBrains Mono NF),
+# Obsidian (Commissioner, Space Grotesk, Ioskeley Mono), omp's nerd symbols (Ioskeley Mono).
+FONT_CASKS=(font-jetbrains-mono-nerd-font font-space-mono font-space-grotesk font-commissioner)
+FONTS_DONE=0
+
+step_fonts() {
+  [ "$FONTS_DONE" = 1 ] && return
+  FONTS_DONE=1
+  log "fonts (Ioskeley Mono from iterm2/fonts, the rest from Homebrew)"
+  mkdir -p "$HOME/Library/Fonts"
+  cp "$REPO_ROOT"/iterm2/fonts/*.ttf "$HOME/Library/Fonts/"
+  if ! command -v brew >/dev/null 2>&1; then
+    warn "Homebrew not installed — skipping ${FONT_CASKS[*]} (run ./install.sh homebrew fonts)"
+    return
+  fi
+  local cask
+  for cask in "${FONT_CASKS[@]}"; do
+    brew list --cask "$cask" >/dev/null 2>&1 && continue
+    brew install --cask "$cask" || warn "$cask failed (a manually installed copy in ~/Library/Fonts blocks it; that copy works too)"
+  done
+}
+
 step_iterm2() {
-  log "iTerm2"
+  log "iTerm2 (Ioskeley Mono profile, Rosé Pine colors)"
   if ! command -v defaults >/dev/null 2>&1; then
     warn "no 'defaults' command (not macOS?) — skipping"
     return
   fi
-  mkdir -p "$HOME/Library/Fonts"
-  cp "$REPO_ROOT"/iterm2/fonts/*.ttf "$HOME/Library/Fonts/"
-  osascript -e 'tell application "iTerm2" to quit' >/dev/null 2>&1 || true
+  step_fonts
+  # Quitting iTerm2 from inside iTerm2 kills this script before the import runs,
+  # and a still-running iTerm2 writes its old prefs back on exit, undoing the import.
+  if [ -n "${ITERM_SESSION_ID:-}" ] || [ "${TERM_PROGRAM:-}" = "iTerm.app" ]; then
+    warn "running inside iTerm2 — skipping. Open Terminal.app and run: $REPO_ROOT/install.sh iterm2"
+    return
+  fi
+  if iterm2_running; then
+    osascript -e 'tell application "iTerm2" to quit' >/dev/null 2>&1 || true
+    local i
+    for i in $(seq 30); do
+      iterm2_running || break
+      sleep 1
+    done
+    if iterm2_running; then
+      warn "iTerm2 is still running (answer its quit prompt, or quit it), then re-run: ./install.sh iterm2"
+      return
+    fi
+  fi
   defaults import com.googlecode.iterm2 "$REPO_ROOT/iterm2/com.googlecode.iterm2.plist"
   killall cfprefsd >/dev/null 2>&1 || true
   # verify the import stuck: profile + Rosé Pine preset must be in the live prefs
   local live
   live="$(defaults export com.googlecode.iterm2 - 2>/dev/null)"
   if grep -q '<string>Ioskeley Mono</string>' <<<"$live" && grep -q '<key>rose-pine</key>' <<<"$live"; then
-    echo "profile + Rosé Pine preset imported — relaunch iTerm2"
+    echo "profile + Rosé Pine preset imported — launch iTerm2"
   else
-    warn "import did not stick (Ioskeley Mono profile or rose-pine preset missing). Make sure iTerm2 is fully quit and run from Terminal.app, or import iterm2/colors/rose-pine.itermcolors by hand"
+    warn "import did not stick (Ioskeley Mono profile or rose-pine preset missing) — import iterm2/colors/rose-pine.itermcolors by hand"
   fi
 }
 
 step_obsidian() {
   log "Obsidian"
+  step_fonts
   local vault_dir="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"
   if [ ! -d "$vault_dir" ]; then
     warn "$vault_dir not found (Obsidian/iCloud not set up yet) — skipping"
@@ -160,11 +204,8 @@ step_omp_theme() {
   omp config set statusLine.rightSegments '["session_name","token_in","token_out","cost","context_pct"]'
   omp config set statusLine.sessionAccent false
   omp config set extensionRenderers.assistantText true   # emphasis.ts draws pills only with this on
-  # symbolPreset nerd needs a Nerd Font in the terminal
-  if [ -d "$HOME/Library/Fonts" ]; then
-    cp "$REPO_ROOT"/iterm2/fonts/*.ttf "$HOME/Library/Fonts/"
-    warn "set iTerm2 → Profiles → Text → Font to 'Ioskeley Mono', or run ./install.sh iterm2 for the full profile + Rosé Pine colors"
-  fi
+  step_fonts   # symbolPreset nerd needs a Nerd Font in the terminal
+  warn "omp's 'terminal' theme takes its colors from the terminal: for Rosé Pine + Ioskeley Mono, open Terminal.app and run ./install.sh iterm2"
 }
 
 step_macos_defaults() {
@@ -177,7 +218,7 @@ step_macos_defaults() {
   killall Dock >/dev/null 2>&1 || true
 }
 
-ALL_STEPS=(xcode_clt homebrew brewfile zsh git nvim iterm2 obsidian omp macos_defaults)
+ALL_STEPS=(xcode_clt homebrew brewfile fonts zsh git nvim iterm2 obsidian omp macos_defaults)
 
 steps=("$@")
 [ ${#steps[@]} -eq 0 ] && steps=("${ALL_STEPS[@]}")

@@ -11,7 +11,7 @@ Daily driver is now a Mac. See [`macos/README.md`](macos/README.md) for the full
 - [`zsh/`](zsh/) — Oh My Zsh + Powerlevel10k
 - [`git/`](git/) — `.gitconfig`, global gitignore
 - [`nvim/`](nvim/) — NvChad-based Neovim config
-- [`iterm2/`](iterm2/) — profile, colors, fonts (Space Mono + JetBrains Mono Nerd Font)
+- [`iterm2/`](iterm2/) — profile, Rosé Pine colors, fonts (Ioskeley Mono, Space Mono, JetBrains Mono Nerd Font)
 - [`obsidian/`](obsidian/) — vault settings for the Personal/Professional vaults
 - [`omp/`](omp/) — omp coding agent: config, models, theme, emphasis extension, skills
 

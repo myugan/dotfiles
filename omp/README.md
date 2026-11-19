@@ -39,7 +39,15 @@ brew install can1357/tap/omp       # skip if already installed
 ./install.sh omp_theme
 ```
 
-It copies `agent/themes/*.json`, `agent/extensions/emphasis.ts` and `agent/emphasis.LICENSE`, then sets only the look keys with `omp config set`: `theme`, `symbolPreset`, `composer.shape`, `statusLine`, `extensionRenderers.assistantText`. Your model, memory and secrets settings, `models.yml`, skills and MCP servers stay as they are. It also copies the Ioskeley Mono Nerd Font into `~/Library/Fonts`; select it in iTerm2 → Profiles → Text, or run `./install.sh iterm2` for the whole iTerm2 profile with Rosé Pine colors (the `terminal` theme takes its colors from the terminal palette).
+Then, for the Rosé Pine colors, quit iTerm2 and run this from **Terminal.app** (the step refuses to run inside iTerm2, because quitting iTerm2 would kill it mid-import):
+
+```sh
+./install.sh iterm2
+```
+
+The active omp theme, `terminal`, has no colors of its own: it uses the terminal's ANSI palette, so omp looks Rosé Pine only when the iTerm2 profile does. `./install.sh iterm2` imports the **Ioskeley Mono** profile with Rosé Pine (light and dark mode) and makes it the default profile. If iTerm2 still opens with the `Default` profile and no `rose-pine` preset, the import did not run; re-run it from Terminal.app with iTerm2 quit.
+
+`omp_theme` copies `agent/themes/*.json`, `agent/extensions/emphasis.ts` and `agent/emphasis.LICENSE`, then sets only the look keys with `omp config set`: `theme`, `symbolPreset`, `composer.shape`, `statusLine`, `extensionRenderers.assistantText`. Your model, memory and secrets settings, `models.yml`, skills and MCP servers stay as they are. It also runs `./install.sh fonts`, so the Nerd Font that `symbolPreset: nerd` and the pill icons need is installed.
 
 Pills are rounded with icons by default. For the square, icon-free pills from `../zsh/.zshrc`, add to your shell rc:
 

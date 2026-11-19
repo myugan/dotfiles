@@ -12,7 +12,11 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-Runs everything: Xcode CLT check, Homebrew, `brew bundle` (CLI tools, fonts, apps, VS Code extensions), zsh/Oh My Zsh/Powerlevel10k, git config + GPG pinentry, nvim, iTerm2 profile, Obsidian vaults, macOS defaults. Existing files are backed up with a timestamp suffix, never silently overwritten.
+Runs everything: Xcode CLT check, Homebrew, `brew bundle` (CLI tools, fonts, apps, VS Code extensions), fonts, zsh/Oh My Zsh/Powerlevel10k, git config + GPG pinentry, nvim, iTerm2 profile, Obsidian vaults, macOS defaults. Existing files are backed up with a timestamp suffix, never silently overwritten.
+
+Run it from **Terminal.app**, not iTerm2: the iTerm2 step has to quit iTerm2 to import its profile, so it skips itself inside iTerm2 (re-run `./install.sh iterm2` from Terminal.app afterwards).
+
+`./install.sh fonts` installs every font the configs use: Ioskeley Mono (TTFs in `../iterm2/fonts/`, not on Homebrew), plus the `font-jetbrains-mono-nerd-font`, `font-space-mono`, `font-space-grotesk` and `font-commissioner` casks. The `iterm2`, `obsidian` and `omp_theme` steps run it on their own, so running one of them alone leaves no font missing.
 
 Run a subset instead of everything:
 
@@ -24,7 +28,7 @@ Steps, individually documented: [`../zsh/README.md`](../zsh/README.md), [`../git
 
 `Brewfile` is generated with `brew bundle dump` and includes:
 - CLI formulae (`ripgrep`, `tmux`, `helm`, `kubectl`, `terraform`, `go`, `neovim`, ...)
-- Fonts: JetBrains Mono Nerd Font (terminal icons/powerline), Space Mono (terminal body font), Space Grotesk (Obsidian UI font)
+- Fonts: JetBrains Mono Nerd Font (terminal icons/powerline), Space Mono (terminal body font), Space Grotesk and Commissioner (Obsidian fonts)
 - GUI apps installed on this machine (browsers, Office, Docker, VPN clients, etc.)
 - VS Code / Cursor extensions
 
